@@ -1,0 +1,22 @@
+{
+  "name": "evntscript",
+  "version": "1.0.0",
+  "description": "Documentation for Vertex Analytics' v9 Javascript API",
+  "author": "PlGGS",
+  "homepage": "https://docs.vertex-analytics.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vertex-analytics/docs"
+  },
+  "dependencies": {
+    "esdoc": "^1.1.0",
+    "esdoc-integrate-manual-plugin": "^1.0.0",
+    "esdoc-publish-html-plugin": "^1.1.2",
+    "esdoc-standard-plugin": "^1.0.0"
+  },
+  "devDependencies": {
+    "esdoc-brand-plugin": "^1.0.1",
+    "esdoc-custom-theme": "^1.4.2",
+    "esdoc-inject-style-plugin": "^1.0.0"
+  }
+}

@@ -1,0 +1,2417 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "const qEditSymb = 2001;\r\nconst littleEndian = true;\r\n\r\n/**\r\n * Class representing the v9 backend\r\n * @example\r\n * <!doctype html>\r\n * <html>\r\n * <head>\r\n *   <script src=\"../_vxaapi-1.0.0/v9.js\"></script>\r\n *   <script>\r\n * \r\n *     class MyFeed extends v9.feed {\r\n *       onOpen(pMeta) {\r\n *       }\r\n *\r\n *       onLoad () {\r\n *       }\r\n *\r\n *       onStop () {\r\n *       }\r\n *\r\n *       onRender () {\r\n *       }\r\n * \r\n *       onEvent(pSymbol, pEvent, pRealTime) {\r\n *       }\r\n *     }\r\n *\r\n *     let\tfeed = new MyFeed(new v9.edit().symbol);\r\n *   </script>\r\n * </head>\r\n * <style>\r\n *   html, body, #container {\r\n *     width: 100%;\r\n *     height: 100%;\r\n *     margin: 0;\r\n *     padding: 0;\r\n *   }\r\n * </style>\r\n * <body>\r\n *   <div id=\"container\"></div>\r\n * </body>\r\n * </html>\r\n * \r\n */\r\n\r\n/**\r\n * Class used for referencing all v9 event enumerations and data\r\n */\r\nexport class v9 {\r\n    constructor() {\r\n        /**\r\n         * Value used specify a non-existent 32 bit price returned\r\n         * @type {Number}\r\n         * @private\r\n         */\r\n        this.PRICE_NULL_32 = 2147483647;\r\n\r\n        /**\r\n         * Value used specify a non-existent 32 bit price returned\r\n         * @type {Bigint}\r\n         * @private\r\n         */\r\n        this.PRICE_NULL_64 = 9223372036854775807;\r\n\r\n        /**\r\n         * @ignore\r\n         * @type {Number}\r\n         * @private\r\n         */\r\n        this.sGroupSettleID = 4294967293;\r\n\r\n        /**\r\n         * Enumerated event type in kEvent.Type (See manual for event types)\r\n         * @type {Number}\r\n         * @public\r\n         * @example\r\n         * Trade: 0,\r\n         * Bid: 1,\r\n         * Ask: 2,\r\n         * ImpliedBid: 3,\r\n         * ImpliedAsk: 4,\r\n         * BookReset: 5,\r\n         */\r\n        this.Aggressor =\r\n        {\r\n            NoAggressor: 0,\r\n            Buy: 1,\r\n            Sell: 2\r\n        },\r\n\r\n        this.HaltReason =\r\n        {\r\n            NotSet: 255,\r\n            GroupSchedule: 0,\r\n            SurveillanceIntervention: 1,\r\n            MarketEvent: 2,\r\n            InstrumentActivation: 3,\r\n            InstrumentExpiration: 4,\r\n            Unknown: 5,\r\n            RecoveryInProcess: 6\r\n        },\r\n\r\n        this.SecurityType =\r\n        {\r\n            NotSet: 0,\r\n            TradingHalt: 2,\r\n            Close: 4,\r\n            NewPriceIndication: 15,\r\n            ReadyToTrade: 17,\r\n            NotAvailableForTrading: 18,\r\n            UnknownorInvalid: 20,\r\n            PreOpen: 21,\r\n            PreCross: 24,\r\n            Cross: 25,\r\n            PostClose: 26,\r\n            NoChange: 103,\r\n            PreClos: 150,\r\n            Restricted: 200,\r\n            Freeze: 201\r\n        },\r\n\r\n        this.SecurityEvent =\r\n        {\r\n            NoEvent: 0,\r\n            NoCancel: 1,\r\n            ResetStatistics: 4,\r\n            ImpliedMatchingON: 5,\r\n            ImpliedMatchingOFF: 6\r\n        },\r\n\r\n        this.BookType =\r\n        {\r\n            NotSet: 85,\r\n            Bid: 66,\r\n            Ask: 83,\r\n            ImpliedBid: 98,\r\n            ImpliedAsk: 115,\r\n            BookReset: 82\r\n        },\r\n\r\n        this.DailyStatisticsType =\r\n        {\r\n            SettlementPrice: 54,\r\n            ClearedVolume: 66,\r\n            OpenInterest: 67,\r\n            FixingPrice: 87\r\n        },\r\n\r\n        this.BookAction =\r\n        {\r\n            NotSet: 255,\r\n            New: 0,\r\n            Change: 1,\r\n            Delete: 2,\r\n            DeleteThru: 3,\r\n            DeleteFrom: 4,\r\n            Overlay: 5,\r\n            Replace: 6\r\n        },\r\n\r\n        this.SessionStatisticsType =\r\n        {\r\n            NotSet: 127,\r\n            OpenPrice: 0,\r\n            HighTrade: 1,\r\n            LowTrade: 2,\r\n            LastTrade: 3,\r\n            HighestBid: 4,\r\n            LowestAsk: 5,\r\n            ClosePrice: 6\r\n        },\r\n\r\n\r\n        this.StateType =\r\n        {\r\n            NotSet: 255,\r\n            DailyOpenPrice: 0,\r\n            IndicativeOpeningPrice: 5,\r\n            DailyClosePrice: 10\r\n        },\r\n\r\n        this.PutOrCall =\r\n        {\r\n            NotSet: 255,\r\n            Put: 0,\r\n            Call: 1\r\n        },\r\n\r\n        this.SettleType =\r\n        {\r\n            Final: 1,\r\n            Actual: 2,\r\n            Rounded: 4,\r\n            Intraday: 8,\r\n            ReservedBits: 16,\r\n            NullValue: 128\r\n        },\r\n\r\n        this.TransactionType =\r\n        {\r\n            NotSet: 255,\r\n            TransactionStart: 0,\r\n            TransactionEnd: 1\r\n        },\r\n\r\n        this.EventIndicator =\r\n        {\r\n            NotSet: 0,\r\n            LastOfType: 1,\r\n            EndOfEvent: 128\r\n        },\r\n\r\n        this.UnionID =\r\n        {\r\n            NotSet: 255,\r\n            NotMapped: 250,\r\n            TradeSummary: 0,\r\n            TradeMatch: 1,\r\n            VolumeUpdate: 2,\r\n            BookLevel: 3,\r\n            OrderBook: 4,\r\n            SecurityStatus: 5,\r\n            DailyStatistics: 6,\r\n            SessionStatistics: 7,\r\n            LimitsBanding: 8,\r\n            ChannelReset: 9,\r\n            TransactionMarker: 10,\r\n            Test: 11,\r\n            ClearingPrice: 12\r\n        }\r\n    }\r\n    \r\n};\r\n\r\nv9.edit = class {\r\n    constructor() {\r\n    }\r\n\r\n    set symbol(pSymb) {\r\n        return gHome._pagesave(gUniq, qEditSymb, pSymb);\r\n    }\r\n\r\n    get symbol() {\r\n        return gHome._pageread(gUniq, qEditSymb);\r\n    }\r\n}\r\n\r\nv9.lineChart = class {\r\n    constructor(pID) {\r\n        this.fLineEnum = gHome.MakeLine(gUniq, (pID) ? document.getElementById(pID) : null);\r\n    }\r\n\r\n    linePush(pItem, pRate, pTime) {\r\n        gHome.LinePush(gUniq, pItem.fCalcEnum, pRate, pTime);\r\n    }\r\n}\r\n\r\nv9.cubeChart = class {\r\n    constructor(pID) {\r\n        this.fCubeEnum = gHome.MakeCube(gUniq, (pID) ? document.getElementById(pID) : null);\r\n    }\r\n\r\n    cubePlus(pItem, pData, pSize) {\r\n        gHome.CubePlus(gUniq, pItem, pData, pSize);\r\n    }\r\n\r\n    cubeDele(pItem, pData) {\r\n        gHome.CubeDele(gUniq, pItem, pData);\r\n    }\r\n\r\n    cubeSave(pItem, pData, pSize) {\r\n        gHome.CubeSave(gUniq, pItem, pData, pSize);\r\n    }\r\n\r\n    cubeRead(pItem, pData) {\r\n        gHome.CubeRead(gUniq, pItem, pData);\r\n    }\r\n\r\n    cubeFree(pItem) {\r\n        gHome.CubeFree(gUniq, pItem);\r\n    }\r\n\r\n    cubePush(pItem, pSave) {\r\n        gHome.CubePush(gUniq, pItem, pSave);\r\n    }\r\n\r\n}\r\n\r\nv9.lineItem = class {\r\n    constructor(pPane) {\r\n        try {\r\n            this.fCalcEnum = gHome.MakeCalc(gUniq, this);\r\n        }\r\n        catch (e) {\r\n            gHome.PageErro(gUniq, \"MakeCalc\", e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Stroke width in pixels\r\n     * @type {Number}\r\n     * @public\r\n     */\r\n    set lineWidth(pData) {\r\n        try {\r\n            this._lineWidth = pData;\r\n            gHome.Calc_lineWidth(gUniq, this.fCalcEnum, pData);\r\n        }\r\n        catch (e) {\r\n            gHome.PageErro(gUniq, \"lineWidth\", e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Stroke color in hexadecimal as a String\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    set strokeStyle(pData) {\r\n        try {\r\n            this._strokeStyle = pData;\r\n            gHome.Calc_strokeStyle(gUniq, this.fCalcEnum, pData);\r\n        }\r\n        catch (e) {\r\n            gHome.PageErroo(gUniq, \"strokeStyle\", e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @todo figure out what this does\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    set format(pData) {\r\n        try {\r\n            this._format = pData;\r\n            gHome.Calc_format(gUniq, this.fCalcEnum, pData);\r\n        }\r\n        catch (e) {\r\n            gHome.PageErro(gUniq, \"format\", e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Text color in hexadecimal as a String\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    set textStyle(pData) {\r\n        try {\r\n            this._textStyle = pData;\r\n            gHome.Calc_textStyle(gUniq, this.fCalcEnum, pData);\r\n        }\r\n        catch (e) {\r\n            gHome.PageErro(gUniq, \"textStyle\", e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @todo figure out what this does\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    set bodyStyle(pData) {\r\n        try {\r\n            this._bodyStyle = pData;\r\n            gHome.Calc_bodyStyle(gUniq, this.fCalcEnum, pData);\r\n        }\r\n        catch (e) {\r\n            gHome.PageErro(gUniq, \"textStyle\", e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Text corresponding to current line price\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    set title(pData) {\r\n        try {\r\n            this._title = pData;\r\n            gHome.Calc_title(gUniq, this.fCalcEnum, pData);\r\n        }\r\n        catch (e) {\r\n            gHome.PageErro(gUniq, \"title\", e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @todo figure out what this does\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    set name(pData) {\r\n        try {\r\n            this._name = pData;\r\n            gHome.Calc_name(gUniq, this.fCalcEnum, pData);\r\n        }\r\n        catch (e) {\r\n            gHome.PageErro(gUniq, \"name\", e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Stroke width in pixels\r\n     * @type {Number}\r\n     * @public\r\n     */\r\n    get lineWidth() {\r\n        return this._lineWidth;\r\n    }\r\n\r\n    /**\r\n     * Stroke color in hexadecimal as a String\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    get strokeStyle() {\r\n        return this._strokeStyle;\r\n    }\r\n\r\n    /**\r\n     * Text color in hexadecimal as a String\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    get textStyle() {\r\n        return this._textStyle;\r\n    }\r\n\r\n    /**\r\n     * @todo figure out what this does\r\n     * @type {String}\r\n     * @readonly\r\n     */\r\n    get eventStyle() {\r\n        return this._eventStyle;\r\n    }\r\n\r\n    /**\r\n     * Text corresponding to current line price\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    get title() {\r\n        return this._title;\r\n    }\r\n\r\n    /**\r\n     * @todo figure out what this does\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    get format() {\r\n        return this._format;\r\n    }\r\n}\r\n\r\nv9.cubeItem = class {\r\n    constructor(pPane) {\r\n        try {\r\n            this.fCalcEnum = gHome.MakeCalc(gUniq, this);\r\n            this.fCubeMaps = new Map();\r\n        }\r\n        catch (e) {\r\n            gHome.PageErro(gUniq, \"MakeCalc\", e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Stroke width in pixels\r\n     * @type {Number}\r\n     * @public\r\n     */\r\n    set lineWidth(pData) {\r\n        try {\r\n            this._lineWidth = pData;\r\n            gHome.Calc_lineWidth(gUniq, this.fCalcEnum, pData);\r\n        }\r\n        catch (e) {\r\n            gHome.PageErro(gUniq, \"lineWidth\", e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Stroke color in hexadecimal as a String\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    set strokeStyle(pData) {\r\n        try {\r\n            this._strokeStyle = pData;\r\n            gHome.Calc_strokeStyle(gUniq, this.fCalcEnum, pData);\r\n        }\r\n        catch (e) {\r\n            gHome.PageErroo(gUniq, \"strokeStyle\", e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @todo figure out what this does\r\n     * @type {String}\r\n     * @readonly\r\n     */\r\n    set format(pData) {\r\n        try {\r\n            this._format = pData;\r\n            gHome.Calc_format(gUniq, this.fCalcEnum, pData);\r\n        }\r\n        catch (e) {\r\n            gHome.PageErro(gUniq, \"format\", e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Text color in hexadecimal as a String\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    set textStyle(pData) {\r\n        try {\r\n            this._textStyle = pData;\r\n            gHome.Calc_textStyle(gUniq, this.fCalcEnum, pData);\r\n        }\r\n        catch (e) {\r\n            gHome.PageErro(gUniq, \"textStyle\", e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @todo figure out what this does\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    set bodyStyle(pData) {\r\n        try {\r\n            this._bodyStyle = pData;\r\n            gHome.Calc_bodyStyle(gUniq, this.fCalcEnum, pData);\r\n        }\r\n        catch (e) {\r\n            gHome.PageErro(gUniq, \"textStyle\", e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Text corresponding to current cube price\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    set title(pData) {\r\n        try {\r\n            this._title = pData;\r\n            gHome.Calc_title(gUniq, this.fCalcEnum, pData);\r\n        }\r\n        catch (e) {\r\n            gHome.PageErro(gUniq, \"title\", e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * @todo figure out what this does\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    set name(pData) {\r\n        try {\r\n            this._name = pData;\r\n            gHome.Calc_name(gUniq, this.fCalcEnum, pData);\r\n        }\r\n        catch (e) {\r\n            gHome.PageErro(gUniq, \"name\", e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Stroke width in pixels\r\n     * @type {Number}\r\n     * @public\r\n     */\r\n    get lineWidth() {\r\n        return this._lineWidth;\r\n    }\r\n\r\n    /**\r\n     * Stroke color in hexadecimal as a String\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    get strokeStyle() {\r\n        return this._strokeStyle;\r\n    }\r\n\r\n    /**\r\n     * Text color in hexadecimal as a String\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    get textStyle() {\r\n        return this._textStyle;\r\n    }\r\n\r\n    /**\r\n     * @todo figure out what this does\r\n     * @type {String}\r\n     * @readonly \r\n     */\r\n    get eventStyle() {\r\n        return this._eventStyle;\r\n    }\r\n\r\n    /**\r\n     * Text corresponding to current cube price\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    get title() {\r\n        return this._title;\r\n    }\r\n\r\n    /**\r\n     * @todo figure out what this does\r\n     * @type {String}\r\n     * @public\r\n     */\r\n    get format() {\r\n        return this._format;\r\n    }\r\n}\r\n\r\n/**\r\n * Returns a JSON object representing the provided event\r\n * @param {Event} pEvent\r\n */\r\nv9.eventToJson = function (pEvent) {\r\n    let tEvent = v9.eventCopy(pEvent);\r\n\r\n    if (tEvent !== undefined) {\r\n        let intCount = 0, repCount = 0;\r\n        const json = JSON.stringify(tEvent, (_, v) => {\r\n            if (typeof v === 'bigint') {\r\n                intCount++;\r\n                return `${v}#bigint`;\r\n            }\r\n            return v;\r\n        });\r\n        const res = json.replace(/\"(-?\\d+)#bigint\"/g, (_, a) => {\r\n            repCount++;\r\n            return a;\r\n        });\r\n        if (repCount > intCount) {\r\n            // You have a string somewhere that looks like \"123#bigint\";\r\n            throw new Error(`BigInt serialization pattern conflict with a string value.`);\r\n        }\r\n        return res;\r\n    }\r\n}\r\n\r\n/**\r\n * Returns a copy of a provided event\r\n * @param {Event} pEvent\r\n */\r\nv9.eventCopy = function (pEvent) {\r\n\r\n    let tEvent = {};\r\n\r\n    if (pEvent.header) {\r\n        tEvent.header = {};\r\n        tEvent.header = Object.assign(pEvent.header);\r\n    }\r\n\r\n    try {\r\n        switch (pEvent.header.unionID) {\r\n            case v9.UnionID.TransactionMarker:\r\n                tEvent.transactionMarker = {};\r\n                tEvent.transactionMarker = Object.assign(pEvent.transactionMarker);\r\n                break;\r\n            case v9.UnionID.ChannelReset:\r\n                tEvent.channelReset = {};\r\n                tEvent.channelReset = Object.assign(pEvent.channelReset);\r\n                break;\r\n            case v9.UnionID.TradeSummary:\r\n                tEvent.tradeSummary = {};\r\n                tEvent.tradeSummary = Object.assign(pEvent.tradeSummary);\r\n                break;\r\n            case v9.UnionID.TradeMatch:\r\n                tEvent.tradeMatch = {};\r\n                tEvent.tradeMatch = Object.assign(pEvent.tradeMatch);\r\n                break;\r\n            case v9.UnionID.VolumeUpdate:\r\n                tEvent.volumeUpdate = {};\r\n                tEvent.volumeUpdate = Object.assign(pEvent.volumeUpdate);\r\n                break;\r\n            case v9.UnionID.BookLevel:\r\n                tEvent.bookLevel = {};\r\n                tEvent.bookLevel = Object.assign(pEvent.bookLevel);\r\n                break;\r\n            case v9.UnionID.OrderBook:\r\n                tEvent.orderBook = {};\r\n                tEvent.orderBook = Object.assign(pEvent.orderBook);\r\n                break;\r\n            case v9.UnionID.SecurityStatus:\r\n                tEvent.securityStatus = {};\r\n                tEvent.securityStatus = Object.assign(pEvent.securityStatus);\r\n                break;\r\n            case v9.UnionID.DailyStatistics:\r\n                tEvent.dailyStatistics = {};\r\n                tEvent.dailyStatistics = Object.assign(pEvent.dailyStatistics);\r\n                break;\r\n            case v9.UnionID.SessionStatistics:\r\n                tEvent.sessionStatistics = {};\r\n                tEvent.sessionStatistics = Object.assign(pEvent.sessionStatistics);\r\n                break;\r\n            case v9.UnionID.LimitsBanding:\r\n                tEvent.limitsBanding = {};\r\n                tEvent.limitsBanding = Object.assign(pEvent.limitsBanding);\r\n                break;\r\n            case v9.UnionID.ClearingPrice:\r\n                tEvent.clearingPrice = {};\r\n                tEvent.clearingPrice = Object.assign(pEvent.clearingPrice);\r\n                break;\r\n        }\r\n    }\r\n    catch (e) {\r\n    }\r\n\r\n    return tEvent;\r\n}\r\n\r\n/**\r\n * This class' functions should be overridden in each script for handling user actions and symbol events\r\n * @example\r\n * class MyFeed extends v9.feed\t{\r\n *\t\tonOpen ()\r\n *\t\t{\r\n *\t\t}\r\n *\r\n *\t\tonLoad ()\r\n *\t\t{\r\n *\t\t}\r\n *\r\n *\t\tonStop ()\r\n *\t\t{\r\n *\t\t}\r\n *\r\n *\t\tonRender ()\r\n *\t\t{\r\n *\t\t}\r\n *\r\n *\t\tonEvent (pSymbol,pEvent,pRealTime)\r\n *\t\t{\r\n *\t\t}\r\n * }\r\n *\r\n * let feed = new MyFeed(new v9.edit().symbol);\r\n */\r\nv9.feed = class {\r\n    /**\r\n     * \r\n     * @param {String} pSymbol\r\n     */\r\n    constructor(pSymbol) {\r\n        gHome.MakeFeed(gUniq, pSymbol);\r\n        gFeed = this;\r\n    }\r\n\r\n    /**\r\n     * Built in feed function that is called when the start button is pressed in order to initialize variables.\r\n     * @param {Object} pMeta - Object representing json meta information. It currently provides the instrument definitions of the supplied symbol.\r\n     * @abstract\r\n     * @example\r\n     * onOpen(pMeta) {\r\n     *\r\n     * }\r\n     */\r\n    onOpen(pMeta) {\r\n\r\n    }\r\n\r\n    /**\r\n     * Built in feed function that is called once the script has read every previous event in the symbol Feed.\r\n     * @abstract\r\n     * @example\r\n     * onLoad() {\r\n     *\r\n     * }\r\n     */\r\n    onLoad() {\r\n    }\r\n\r\n    /**\r\n     * The built in onEvent function is called once for each timestamp tracked in your symbol.\r\n     *\r\n     * This is where you'll be doing most of your calculations on the specific things you're looking for in your symbol. It allows your script to perform different tasks depending on the current event's conditions.\r\n     * @param {String} pSymbol - Name of the current symbol\r\n     * @param {Object} pEvent - Current event being handled\r\n     * @param {Boolean} pRealTime - Boolean determining whether or not to only handle current events\r\n     * @abstract\r\n     * @example\r\n     * onEvent(pSymbol, pEvent, pRealTime) {\r\n     *\r\n     * }\r\n     */\r\n    onEvent(pSymbol, pEvent, pRealTime) {\r\n    }\r\n\r\n    /**\r\n     * Built in feed function that is called once for each frame that is rendered to the viewport.\r\n     * @abstract\r\n     * @example\r\n     * onRender() {\r\n     *\r\n     * }\r\n     */\r\n    onRender() {\r\n    }\r\n\r\n    /**\r\n     * Built in feed function that is called when the stop button is pressed.\r\n     * @abstract\r\n     * @example\r\n     * onStop() {\r\n     *\r\n     * }\r\n     */\r\n    onStop() {\r\n    }\r\n}\r\n\r\n/**\r\n * Reports errors to the debugging window\r\n * @param {String} msg\r\n * @param {String} url\r\n * @param {Number} lineNo\r\n * @param {Number} columnNo\r\n * @param {any} error\r\n */\r\nwindow.onerror = function (msg, url, lineNo, columnNo, error) {\r\n    var string = msg.toLowerCase();\r\n    var substring = \"script error\";\r\n    if (string.indexOf(substring) > -1) {\r\n        gHome._pageerro(gUniq, 'Script Error: See Browser Console for Detail');\r\n    }\r\n    else {\r\n        //var message = [\r\n        //\t'Message: ' + msg,\r\n        //\t'URL: ' + url,\r\n        //\t'Line: ' + lineNo,\r\n        //\t'Column: ' + columnNo,\r\n        //\t'Error object: ' + JSON.stringify(error)\r\n        //].join(' - ');\r\n\r\n        var message = [\r\n            'Message: ' + msg,\r\n            'Line: ' + lineNo,\r\n            'Column: ' + columnNo\r\n        ].join(' - ');\r\n\r\n        gHome._pageerro(gUniq, message);\r\n    }\r\n}\r\n\r\nwindow.onfocus = function () {\r\n    gHome._pagesele(gUniq);\r\n};\r\n",
+    "static": true,
+    "longname": "C:/Users/Blake Reset/source/repos/PlGGS/vxa-doc/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "variable",
+    "name": "qEditSymb",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~qEditSymb",
+    "access": "public",
+    "export": false,
+    "importPath": "evntscript/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "type": {
+      "types": [
+        "number"
+      ]
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "variable",
+    "name": "littleEndian",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~littleEndian",
+    "access": "public",
+    "export": false,
+    "importPath": "evntscript/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "boolean"
+      ]
+    }
+  },
+  {
+    "__docId__": 51,
+    "kind": "class",
+    "name": "v9",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~v9",
+    "access": "public",
+    "export": true,
+    "importPath": "evntscript/src/index.js",
+    "importStyle": "{v9}",
+    "description": "Class used for referencing all v9 event enumerations and data",
+    "lineNumber": 51,
+    "interface": false
+  },
+  {
+    "__docId__": 52,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/index.js~v9",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~v9#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 52,
+    "undocument": true
+  },
+  {
+    "__docId__": 53,
+    "kind": "member",
+    "name": "PRICE_NULL_32",
+    "memberof": "src/index.js~v9",
+    "static": false,
+    "longname": "src/index.js~v9#PRICE_NULL_32",
+    "access": "private",
+    "description": "Value used specify a non-existent 32 bit price returned",
+    "lineNumber": 58,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 54,
+    "kind": "member",
+    "name": "PRICE_NULL_64",
+    "memberof": "src/index.js~v9",
+    "static": false,
+    "longname": "src/index.js~v9#PRICE_NULL_64",
+    "access": "private",
+    "description": "Value used specify a non-existent 32 bit price returned",
+    "lineNumber": 65,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Bigint"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 55,
+    "kind": "member",
+    "name": "sGroupSettleID",
+    "memberof": "src/index.js~v9",
+    "static": false,
+    "longname": "src/index.js~v9#sGroupSettleID",
+    "access": "private",
+    "description": "",
+    "lineNumber": 72,
+    "ignore": true,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "class",
+    "name": "edit",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~edit",
+    "access": "public",
+    "export": false,
+    "importPath": "evntscript/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 237,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 57,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/index.js~edit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~edit#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 238,
+    "undocument": true
+  },
+  {
+    "__docId__": 58,
+    "kind": "set",
+    "name": "symbol",
+    "memberof": "src/index.js~edit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~edit#symbol",
+    "access": "public",
+    "description": null,
+    "lineNumber": 241,
+    "undocument": true
+  },
+  {
+    "__docId__": 59,
+    "kind": "get",
+    "name": "symbol",
+    "memberof": "src/index.js~edit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~edit#symbol",
+    "access": "public",
+    "description": null,
+    "lineNumber": 245,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 60,
+    "kind": "class",
+    "name": "lineChart",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~lineChart",
+    "access": "public",
+    "export": false,
+    "importPath": "evntscript/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 250,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 61,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/index.js~lineChart",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~lineChart#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 251,
+    "undocument": true
+  },
+  {
+    "__docId__": 62,
+    "kind": "member",
+    "name": "fLineEnum",
+    "memberof": "src/index.js~lineChart",
+    "static": false,
+    "longname": "src/index.js~lineChart#fLineEnum",
+    "access": "public",
+    "description": null,
+    "lineNumber": 252,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "linePush",
+    "memberof": "src/index.js~lineChart",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~lineChart#linePush",
+    "access": "public",
+    "description": null,
+    "lineNumber": 255,
+    "undocument": true,
+    "params": [
+      {
+        "name": "pItem",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "pRate",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "pTime",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 64,
+    "kind": "class",
+    "name": "cubeChart",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~cubeChart",
+    "access": "public",
+    "export": false,
+    "importPath": "evntscript/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 260,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 65,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/index.js~cubeChart",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeChart#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 261,
+    "undocument": true
+  },
+  {
+    "__docId__": 66,
+    "kind": "member",
+    "name": "fCubeEnum",
+    "memberof": "src/index.js~cubeChart",
+    "static": false,
+    "longname": "src/index.js~cubeChart#fCubeEnum",
+    "access": "public",
+    "description": null,
+    "lineNumber": 262,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 67,
+    "kind": "method",
+    "name": "cubePlus",
+    "memberof": "src/index.js~cubeChart",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeChart#cubePlus",
+    "access": "public",
+    "description": null,
+    "lineNumber": 265,
+    "undocument": true,
+    "params": [
+      {
+        "name": "pItem",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "pData",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "pSize",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 68,
+    "kind": "method",
+    "name": "cubeDele",
+    "memberof": "src/index.js~cubeChart",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeChart#cubeDele",
+    "access": "public",
+    "description": null,
+    "lineNumber": 269,
+    "undocument": true,
+    "params": [
+      {
+        "name": "pItem",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "pData",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 69,
+    "kind": "method",
+    "name": "cubeSave",
+    "memberof": "src/index.js~cubeChart",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeChart#cubeSave",
+    "access": "public",
+    "description": null,
+    "lineNumber": 273,
+    "undocument": true,
+    "params": [
+      {
+        "name": "pItem",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "pData",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "pSize",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 70,
+    "kind": "method",
+    "name": "cubeRead",
+    "memberof": "src/index.js~cubeChart",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeChart#cubeRead",
+    "access": "public",
+    "description": null,
+    "lineNumber": 277,
+    "undocument": true,
+    "params": [
+      {
+        "name": "pItem",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "pData",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 71,
+    "kind": "method",
+    "name": "cubeFree",
+    "memberof": "src/index.js~cubeChart",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeChart#cubeFree",
+    "access": "public",
+    "description": null,
+    "lineNumber": 281,
+    "undocument": true,
+    "params": [
+      {
+        "name": "pItem",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 72,
+    "kind": "method",
+    "name": "cubePush",
+    "memberof": "src/index.js~cubeChart",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeChart#cubePush",
+    "access": "public",
+    "description": null,
+    "lineNumber": 285,
+    "undocument": true,
+    "params": [
+      {
+        "name": "pItem",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "pSave",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 73,
+    "kind": "class",
+    "name": "lineItem",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~lineItem",
+    "access": "public",
+    "export": false,
+    "importPath": "evntscript/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 291,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 74,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/index.js~lineItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~lineItem#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 292,
+    "undocument": true
+  },
+  {
+    "__docId__": 75,
+    "kind": "member",
+    "name": "fCalcEnum",
+    "memberof": "src/index.js~lineItem",
+    "static": false,
+    "longname": "src/index.js~lineItem#fCalcEnum",
+    "access": "public",
+    "description": null,
+    "lineNumber": 294,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 76,
+    "kind": "set",
+    "name": "lineWidth",
+    "memberof": "src/index.js~lineItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~lineItem#lineWidth",
+    "access": "public",
+    "description": "Stroke width in pixels",
+    "lineNumber": 306,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 77,
+    "kind": "member",
+    "name": "_lineWidth",
+    "memberof": "src/index.js~lineItem",
+    "static": false,
+    "longname": "src/index.js~lineItem#_lineWidth",
+    "access": "private",
+    "description": null,
+    "lineNumber": 308,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 78,
+    "kind": "set",
+    "name": "strokeStyle",
+    "memberof": "src/index.js~lineItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~lineItem#strokeStyle",
+    "access": "public",
+    "description": "Stroke color in hexadecimal as a String",
+    "lineNumber": 321,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 79,
+    "kind": "member",
+    "name": "_strokeStyle",
+    "memberof": "src/index.js~lineItem",
+    "static": false,
+    "longname": "src/index.js~lineItem#_strokeStyle",
+    "access": "private",
+    "description": null,
+    "lineNumber": 323,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 80,
+    "kind": "set",
+    "name": "format",
+    "memberof": "src/index.js~lineItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~lineItem#format",
+    "access": "public",
+    "description": "",
+    "lineNumber": 336,
+    "todo": [
+      "figure out what this does"
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 81,
+    "kind": "member",
+    "name": "_format",
+    "memberof": "src/index.js~lineItem",
+    "static": false,
+    "longname": "src/index.js~lineItem#_format",
+    "access": "private",
+    "description": null,
+    "lineNumber": 338,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 82,
+    "kind": "set",
+    "name": "textStyle",
+    "memberof": "src/index.js~lineItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~lineItem#textStyle",
+    "access": "public",
+    "description": "Text color in hexadecimal as a String",
+    "lineNumber": 351,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 83,
+    "kind": "member",
+    "name": "_textStyle",
+    "memberof": "src/index.js~lineItem",
+    "static": false,
+    "longname": "src/index.js~lineItem#_textStyle",
+    "access": "private",
+    "description": null,
+    "lineNumber": 353,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 84,
+    "kind": "set",
+    "name": "bodyStyle",
+    "memberof": "src/index.js~lineItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~lineItem#bodyStyle",
+    "access": "public",
+    "description": "",
+    "lineNumber": 366,
+    "todo": [
+      "figure out what this does"
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 85,
+    "kind": "member",
+    "name": "_bodyStyle",
+    "memberof": "src/index.js~lineItem",
+    "static": false,
+    "longname": "src/index.js~lineItem#_bodyStyle",
+    "access": "private",
+    "description": null,
+    "lineNumber": 368,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 86,
+    "kind": "set",
+    "name": "title",
+    "memberof": "src/index.js~lineItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~lineItem#title",
+    "access": "public",
+    "description": "Text corresponding to current line price",
+    "lineNumber": 381,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 87,
+    "kind": "member",
+    "name": "_title",
+    "memberof": "src/index.js~lineItem",
+    "static": false,
+    "longname": "src/index.js~lineItem#_title",
+    "access": "private",
+    "description": null,
+    "lineNumber": 383,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 88,
+    "kind": "set",
+    "name": "name",
+    "memberof": "src/index.js~lineItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~lineItem#name",
+    "access": "public",
+    "description": "",
+    "lineNumber": 396,
+    "todo": [
+      "figure out what this does"
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 89,
+    "kind": "member",
+    "name": "_name",
+    "memberof": "src/index.js~lineItem",
+    "static": false,
+    "longname": "src/index.js~lineItem#_name",
+    "access": "private",
+    "description": null,
+    "lineNumber": 398,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 90,
+    "kind": "get",
+    "name": "lineWidth",
+    "memberof": "src/index.js~lineItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~lineItem#lineWidth",
+    "access": "public",
+    "description": "Stroke width in pixels",
+    "lineNumber": 411,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 91,
+    "kind": "get",
+    "name": "strokeStyle",
+    "memberof": "src/index.js~lineItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~lineItem#strokeStyle",
+    "access": "public",
+    "description": "Stroke color in hexadecimal as a String",
+    "lineNumber": 420,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 92,
+    "kind": "get",
+    "name": "textStyle",
+    "memberof": "src/index.js~lineItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~lineItem#textStyle",
+    "access": "public",
+    "description": "Text color in hexadecimal as a String",
+    "lineNumber": 429,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 93,
+    "kind": "get",
+    "name": "eventStyle",
+    "memberof": "src/index.js~lineItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~lineItem#eventStyle",
+    "access": "public",
+    "description": "",
+    "lineNumber": 438,
+    "todo": [
+      "figure out what this does"
+    ],
+    "unknown": [
+      {
+        "tagName": "@readonly",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 94,
+    "kind": "get",
+    "name": "title",
+    "memberof": "src/index.js~lineItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~lineItem#title",
+    "access": "public",
+    "description": "Text corresponding to current line price",
+    "lineNumber": 447,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 95,
+    "kind": "get",
+    "name": "format",
+    "memberof": "src/index.js~lineItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~lineItem#format",
+    "access": "public",
+    "description": "",
+    "lineNumber": 456,
+    "todo": [
+      "figure out what this does"
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 96,
+    "kind": "class",
+    "name": "cubeItem",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~cubeItem",
+    "access": "public",
+    "export": false,
+    "importPath": "evntscript/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 461,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 97,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/index.js~cubeItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeItem#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 462,
+    "undocument": true
+  },
+  {
+    "__docId__": 98,
+    "kind": "member",
+    "name": "fCalcEnum",
+    "memberof": "src/index.js~cubeItem",
+    "static": false,
+    "longname": "src/index.js~cubeItem#fCalcEnum",
+    "access": "public",
+    "description": null,
+    "lineNumber": 464,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 99,
+    "kind": "member",
+    "name": "fCubeMaps",
+    "memberof": "src/index.js~cubeItem",
+    "static": false,
+    "longname": "src/index.js~cubeItem#fCubeMaps",
+    "access": "public",
+    "description": null,
+    "lineNumber": 465,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 100,
+    "kind": "set",
+    "name": "lineWidth",
+    "memberof": "src/index.js~cubeItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeItem#lineWidth",
+    "access": "public",
+    "description": "Stroke width in pixels",
+    "lineNumber": 477,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 101,
+    "kind": "member",
+    "name": "_lineWidth",
+    "memberof": "src/index.js~cubeItem",
+    "static": false,
+    "longname": "src/index.js~cubeItem#_lineWidth",
+    "access": "private",
+    "description": null,
+    "lineNumber": 479,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 102,
+    "kind": "set",
+    "name": "strokeStyle",
+    "memberof": "src/index.js~cubeItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeItem#strokeStyle",
+    "access": "public",
+    "description": "Stroke color in hexadecimal as a String",
+    "lineNumber": 492,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 103,
+    "kind": "member",
+    "name": "_strokeStyle",
+    "memberof": "src/index.js~cubeItem",
+    "static": false,
+    "longname": "src/index.js~cubeItem#_strokeStyle",
+    "access": "private",
+    "description": null,
+    "lineNumber": 494,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 104,
+    "kind": "set",
+    "name": "format",
+    "memberof": "src/index.js~cubeItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeItem#format",
+    "access": "public",
+    "description": "",
+    "lineNumber": 507,
+    "todo": [
+      "figure out what this does"
+    ],
+    "unknown": [
+      {
+        "tagName": "@readonly",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 105,
+    "kind": "member",
+    "name": "_format",
+    "memberof": "src/index.js~cubeItem",
+    "static": false,
+    "longname": "src/index.js~cubeItem#_format",
+    "access": "private",
+    "description": null,
+    "lineNumber": 509,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 106,
+    "kind": "set",
+    "name": "textStyle",
+    "memberof": "src/index.js~cubeItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeItem#textStyle",
+    "access": "public",
+    "description": "Text color in hexadecimal as a String",
+    "lineNumber": 522,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 107,
+    "kind": "member",
+    "name": "_textStyle",
+    "memberof": "src/index.js~cubeItem",
+    "static": false,
+    "longname": "src/index.js~cubeItem#_textStyle",
+    "access": "private",
+    "description": null,
+    "lineNumber": 524,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 108,
+    "kind": "set",
+    "name": "bodyStyle",
+    "memberof": "src/index.js~cubeItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeItem#bodyStyle",
+    "access": "public",
+    "description": "",
+    "lineNumber": 537,
+    "todo": [
+      "figure out what this does"
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 109,
+    "kind": "member",
+    "name": "_bodyStyle",
+    "memberof": "src/index.js~cubeItem",
+    "static": false,
+    "longname": "src/index.js~cubeItem#_bodyStyle",
+    "access": "private",
+    "description": null,
+    "lineNumber": 539,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 110,
+    "kind": "set",
+    "name": "title",
+    "memberof": "src/index.js~cubeItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeItem#title",
+    "access": "public",
+    "description": "Text corresponding to current cube price",
+    "lineNumber": 552,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 111,
+    "kind": "member",
+    "name": "_title",
+    "memberof": "src/index.js~cubeItem",
+    "static": false,
+    "longname": "src/index.js~cubeItem#_title",
+    "access": "private",
+    "description": null,
+    "lineNumber": 554,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 112,
+    "kind": "set",
+    "name": "name",
+    "memberof": "src/index.js~cubeItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeItem#name",
+    "access": "public",
+    "description": "",
+    "lineNumber": 567,
+    "todo": [
+      "figure out what this does"
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 113,
+    "kind": "member",
+    "name": "_name",
+    "memberof": "src/index.js~cubeItem",
+    "static": false,
+    "longname": "src/index.js~cubeItem#_name",
+    "access": "private",
+    "description": null,
+    "lineNumber": 569,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 114,
+    "kind": "get",
+    "name": "lineWidth",
+    "memberof": "src/index.js~cubeItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeItem#lineWidth",
+    "access": "public",
+    "description": "Stroke width in pixels",
+    "lineNumber": 582,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 115,
+    "kind": "get",
+    "name": "strokeStyle",
+    "memberof": "src/index.js~cubeItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeItem#strokeStyle",
+    "access": "public",
+    "description": "Stroke color in hexadecimal as a String",
+    "lineNumber": 591,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 116,
+    "kind": "get",
+    "name": "textStyle",
+    "memberof": "src/index.js~cubeItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeItem#textStyle",
+    "access": "public",
+    "description": "Text color in hexadecimal as a String",
+    "lineNumber": 600,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 117,
+    "kind": "get",
+    "name": "eventStyle",
+    "memberof": "src/index.js~cubeItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeItem#eventStyle",
+    "access": "public",
+    "description": "",
+    "lineNumber": 609,
+    "todo": [
+      "figure out what this does"
+    ],
+    "unknown": [
+      {
+        "tagName": "@readonly",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 118,
+    "kind": "get",
+    "name": "title",
+    "memberof": "src/index.js~cubeItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeItem#title",
+    "access": "public",
+    "description": "Text corresponding to current cube price",
+    "lineNumber": 618,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 119,
+    "kind": "get",
+    "name": "format",
+    "memberof": "src/index.js~cubeItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeItem#format",
+    "access": "public",
+    "description": "",
+    "lineNumber": 627,
+    "todo": [
+      "figure out what this does"
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 120,
+    "kind": "function",
+    "name": "eventToJson",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~eventToJson",
+    "access": "public",
+    "export": false,
+    "importPath": "evntscript/src/index.js",
+    "importStyle": null,
+    "description": "Returns a JSON object representing the provided event",
+    "lineNumber": 636,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Event"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pEvent",
+        "description": ""
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 121,
+    "kind": "function",
+    "name": "eventCopy",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~eventCopy",
+    "access": "public",
+    "export": false,
+    "importPath": "evntscript/src/index.js",
+    "importStyle": null,
+    "description": "Returns a copy of a provided event",
+    "lineNumber": 664,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Event"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pEvent",
+        "description": ""
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 122,
+    "kind": "class",
+    "name": "feed",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~feed",
+    "access": "public",
+    "export": false,
+    "importPath": "evntscript/src/index.js",
+    "importStyle": null,
+    "description": "This class' functions should be overridden in each script for handling user actions and symbol events",
+    "examples": [
+      "class MyFeed extends v9.feed\t{\n\tonOpen ()\n\t{\n\t}\n\n\tonLoad ()\n\t{\n\t}\n\n\tonStop ()\n\t{\n\t}\n\n\tonRender ()\n\t{\n\t}\n\n\tonEvent (pSymbol,pEvent,pRealTime)\n\t{\n\t}\n}\n\nlet feed = new MyFeed(new v9.edit().symbol);"
+    ],
+    "lineNumber": 758,
+    "interface": false
+  },
+  {
+    "__docId__": 123,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/index.js~feed",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~feed#constructor",
+    "access": "public",
+    "description": "",
+    "lineNumber": 763,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pSymbol",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "__docId__": 124,
+    "kind": "method",
+    "name": "onOpen",
+    "memberof": "src/index.js~feed",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~feed#onOpen",
+    "access": "public",
+    "description": "Built in feed function that is called when the start button is pressed in order to initialize variables.",
+    "examples": [
+      "onOpen(pMeta) {\n\n}"
+    ],
+    "lineNumber": 777,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pMeta",
+        "description": "Object representing json meta information. It currently provides the instrument definitions of the supplied symbol."
+      }
+    ],
+    "abstract": true,
+    "return": null
+  },
+  {
+    "__docId__": 125,
+    "kind": "method",
+    "name": "onLoad",
+    "memberof": "src/index.js~feed",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~feed#onLoad",
+    "access": "public",
+    "description": "Built in feed function that is called once the script has read every previous event in the symbol Feed.",
+    "examples": [
+      "onLoad() {\n\n}"
+    ],
+    "lineNumber": 789,
+    "abstract": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 126,
+    "kind": "method",
+    "name": "onEvent",
+    "memberof": "src/index.js~feed",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~feed#onEvent",
+    "access": "public",
+    "description": "The built in onEvent function is called once for each timestamp tracked in your symbol.\n\nThis is where you'll be doing most of your calculations on the specific things you're looking for in your symbol. It allows your script to perform different tasks depending on the current event's conditions.",
+    "examples": [
+      "onEvent(pSymbol, pEvent, pRealTime) {\n\n}"
+    ],
+    "lineNumber": 805,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pSymbol",
+        "description": "Name of the current symbol"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pEvent",
+        "description": "Current event being handled"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pRealTime",
+        "description": "Boolean determining whether or not to only handle current events"
+      }
+    ],
+    "abstract": true,
+    "return": null
+  },
+  {
+    "__docId__": 127,
+    "kind": "method",
+    "name": "onRender",
+    "memberof": "src/index.js~feed",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~feed#onRender",
+    "access": "public",
+    "description": "Built in feed function that is called once for each frame that is rendered to the viewport.",
+    "examples": [
+      "onRender() {\n\n}"
+    ],
+    "lineNumber": 816,
+    "abstract": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 128,
+    "kind": "method",
+    "name": "onStop",
+    "memberof": "src/index.js~feed",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~feed#onStop",
+    "access": "public",
+    "description": "Built in feed function that is called when the stop button is pressed.",
+    "examples": [
+      "onStop() {\n\n}"
+    ],
+    "lineNumber": 827,
+    "abstract": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 129,
+    "kind": "function",
+    "name": "onerror",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~onerror",
+    "access": "public",
+    "export": false,
+    "importPath": "evntscript/src/index.js",
+    "importStyle": null,
+    "description": "Reports errors to the debugging window",
+    "lineNumber": 839,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "msg",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "url",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "lineNo",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "columnNo",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "error",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 130,
+    "kind": "function",
+    "name": "onfocus",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~onfocus",
+    "access": "public",
+    "export": false,
+    "importPath": "evntscript/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 864,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "kind": "index",
+    "content": "<img src=\"src/asset/brand_logo.png\" alt=\"logo\" width=\"160\"/>\r\n# Vertex Analytics | EVNTScript\r\n\r\nEVNTScript is a Javascript-based parser that allows for easy \r\nunderstanding, calculating, and tracking of futures symbols in more \r\nthan just real-time using vNine at [v9.vertex-analytics.com](https://vnine.vertex-analytics.com).\r\n\r\nContact: [support@vertex-analytics.com](mailto:support@vertex-analytics.com)\r\n\r\n###### Documentation by [Blake Boris](https://blakeboris.com)\r\n",
+    "longname": "C:\\Users\\Blake Reset\\source\\repos\\PlGGS\\vxa-doc\\README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\r\n  \"name\": \"evntscript\",\r\n  \"version\": \"1.0.0\",\r\n  \"description\": \"Documentation for Vertex Analytics' EVNTScript JS Parser\",\r\n  \"author\": \"PlGGS\",\r\n  \"homepage\": \"https://doc.vertex-analytics.com\",\r\n  \"license\": \"MIT\",\r\n  \"repository\": {\r\n    \"type\": \"git\",\r\n    \"url\": \"https://github.com/PlGGS/xva-doc\"\r\n  },\r\n  \"dependencies\": {\r\n    \"esdoc\": \"^1.1.0\",\r\n    \"esdoc-integrate-manual-plugin\": \"^1.0.0\",\r\n    \"esdoc-publish-html-plugin\": \"^1.1.2\",\r\n    \"esdoc-standard-plugin\": \"^1.0.0\"\r\n  },\r\n  \"devDependencies\": {\r\n    \"esdoc-brand-plugin\": \"^1.0.1\",\r\n    \"esdoc-custom-theme\": \"^1.4.2\",\r\n    \"esdoc-inject-style-plugin\": \"^1.0.0\"\r\n  }\r\n}\r\n",
+    "longname": "C:\\Users\\Blake Reset\\source\\repos\\PlGGS\\vxa-doc\\package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manualIndex",
+    "globalIndex": true,
+    "content": "<img src=\"image/brand_logo.png\" alt=\"logo\" width=\"160\"/>\r\n# Vertex Analytics | EVNTScript\r\n\r\nEVNTScript is a Javascript-based parser that allows for easy \r\nunderstanding, calculating, and tracking of futures symbols in more \r\nthan just real-time using vNine at [v9.vertex-analytics.com](https://vnine.vertex-analytics.com).\r\n\r\nContact: [support@vertex-analytics.com](mailto:support@vertex-analytics.com)\r\n\r\n###### Documentation by [Blake Boris](https://blakeboris.com)\r\n",
+    "longname": "C:\\Users\\Blake Reset\\source\\repos\\PlGGS\\vxa-doc\\src\\index.md",
+    "name": "./src/index.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manualAsset",
+    "longname": "C:\\Users\\Blake Reset\\source\\repos\\PlGGS\\vxa-doc\\src\\manual\\asset",
+    "name": "./src/manual/asset",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "C:\\Users\\Blake Reset\\source\\repos\\PlGGS\\vxa-doc\\src\\manual\\manual.md",
+    "name": "./src/manual/manual.md",
+    "content": "# Manual\r\n\r\n## The Basics\r\n\r\nThis introduction will help you get your vNine dashboard up and running in no time.  \r\nOnce you've gotten your first pane tracking a symbol, you'll see just how easy it is to \r\nefficiently manage and gain insight into your symbol over time.\r\n\r\nIf you're worried about the programming aspect of EVNTScript, fear not, because \r\nthroughout this documentation, you'll find many different bits of programming \r\nknowledge that will help you translate your predictions into code.\r\n\r\n### Pane Creation\r\n\r\nTo get started, simply drag a new pane into your vNine dashboard from the context menu \r\non the left.\r\n\r\n<img src=\"asset/drag_pane.png\" width=\"40%\" height=\"40%\">\r\n\r\n### Opening the editor\r\n\r\nClick the JS button to open up the Javascript style editor. \r\nYou should be presented with a default, empty sample script corresponding to your new pane.  \r\n\r\nIt may seem daunting at first glance, but soon you'll come to find that nearly \r\neverything in this sample script is crucial for contructing your own.\r\n\r\n<img src=\"asset/click_js.png\" width=\"40%\" height=\"40%\">\r\n\r\n[//]: # \"Replace this image when 'scripted stopped' is fixed\"\r\n\r\n### Testing a script\r\n\r\nOnce in the editor, it's easy to run the default script by simply choosing a symbol and clicking the \r\nstart button.  \r\n\r\nYou should see a series of [Events](../class/src/index.js~Event.html) fill the \r\n[Pane](../class/src/index.js~CEvntPane), and notice that the start button has been greyed out. \r\n\r\n<img src=\"asset/run_default.png\" width=\"40%\" height=\"40%\">\r\n\r\nAt this point, you can click the stop button to stop the default script and get to work on your own.\r\n\r\nFor certain periods throughout the day, EVNTScript will not be able to generate charts. \r\nThis is because the vNine platform makes use of the time in which the exchange is down to process and archive data. \r\nBelow is a chart containing weekly hours of downtime.\r\n\r\n| Monday        | Tuesday       | Wednesday     | Thursday      | Friday  | Saturday   | Sunday  |\r\n|---------------|---------------|---------------|---------------|---------|:----------:|---------|\r\n| 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm- | -          | -5:00pm |\r\n\r\nAlso, please note that some contracts also stop the exchange from 3:15pm-3:30pm on weekdays.\r\n\r\n## Declaring your Variables\r\n\r\nOnce you've opened your Javascript editor, you should see your main CEVNTPane and \r\nCEVNTFeed variables. These are foundational objects you're going to use most to \r\nmaintain the feed of the symbol you're tracking.\r\n\r\n```js\r\nvar gSymbolName = \"\";\r\nvar gEvntPane;\r\nvar gPaneFeed;\r\nvar gFeedDraw;\r\n```\r\n\r\n- [CEvntPane](../class/src/index.js~CEvntPane) ```gEvntPane```  \r\nYour pane variable allows you to create just about everything else we're going to need \r\nto make use of your script.\r\n\r\n[//]: # \"Test whether or not this reference syntax works\"\r\n\r\n- [CEvntFeed](../class/src/index.js~CEvntFeed.html) ```gPaneFeed```  \r\nYour feed variable will be used to track and make use of every single [Event](../class/src/index.js~Event.html) \r\nthat has occured since the exchange last opened.\r\n\r\n- [CEvntDraw](../class/src/index.js~CEvntDraw.html) ```gEvntDraw```  \r\nYour draw variable will let you draw the feed you're tracking to your pane. This is useful \r\nfor determining for yourself whether or not your script is properly handling the data it is \r\nreceiving from your symbol.\r\n\r\n- [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) ```kSymbolName```  \r\nThe symbol name is the technical name of the symbol we want to interpret.\r\n\r\n[//]: # \"[symbols](link to symbol names)\"\r\n\r\n### Built-in Functions\r\n\r\n#### [onLoad](../function/index.html#static-function-onLoad)\r\n\r\nThe built in onLoad function is called when the user clicks the run button shown below.  \r\n\r\n<img src=\"asset/click_run.png\" width=\"40%\" height=\"40%\">\r\n\r\nIt is extremely useful for setting up all of your variables perfectly before your script \r\nbegins running through each and every event in the [onEvent](../function/index.html#static-function-onEvent) method.\r\n\r\n[//]: # \"Test whether or not this reference syntax works\"\r\n\r\n```js\r\nfunction onLoad ()\r\n{\r\n    gEvntPane = MakePane();\r\n    gPaneFeed = gEvntPane.MakeFeed(gSymbolName);\r\n    gFeedDraw = gEvntPane.MakeDraw(gPaneFeed);\t\r\n}\r\n```\r\n\r\n- [MakePane](../function/index.html#static-function-MakePane) ```MakePane()```  \r\nThe built in function [MakePane](../function/index.html#static-function-MakePane) \r\nreturns a new [CEvntPane](../class/src/index.js~CEvntPane.html) object. \r\nMost of the time, the above snippet included, it is used to set your ```gEvntPane``` variable \r\nto a new pane in the initialization of your script.\r\n\r\n- [MakeFeed](../class/src/index.js~CEvntPane.html#instance-method-MakeFeed) ```gEvntPane.MakeFeed(gSymbolName)```  \r\nReturns a new [CEvntFeed](../class/src/index.js~CEvntFeed.html) object \r\nbased on your specified symbol name. If you pass in the same symbol name, this is equivilent to \r\nthe feed that will be tracked in your \r\n[onEvent](../function/index.html#static-function-onEvent) method.\r\n\r\n- [MakeDraw](../class/src/index.js~CEvntPane.html#instance-method-MakeDraw) ```gEvntPane.MakeDraw(gPaneFeed)```  \r\nReturns a new [CEvntDraw](../class/src/index.js~CEvntDraw.html) object \r\nbased on your newly created feed. This will render your feed in your pane.\r\n\r\n#### [onEvent](../function/index.html#static-function-onEvent)\r\n\r\nThe built in onEvent function is called once for each timestamp tracked in your symbol.  \r\n\r\nThis is where you'll be doing most of your calculations on the specific things you're \r\nlooking for in your symbol. It allows your script to perform different tasks depending \r\non the current event's conditions.\r\n\r\n```js\r\nfunction onEvent (pFeed, pSequ)\r\n{\r\n\t\r\n}\r\n```\r\n\r\n- [CEvntFeed](../class/src/index.js~CEvntFeed.html) ```pFeed```  \r\nA feed with timestamps measured in nanoseconds with 64 bit precision.\r\n\r\n- [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) ```pSequ```  \r\nA number that is used for Amount of events within this sequence. It defaults to 0.\r\n\r\n#### [onOpen](../function/index.html#static-function-onOpen)\r\n\r\nThe built in onOpen function is called once the pane has properly loaded and rendered the Symbol information.\r\n\r\nIt allows you to make any last minute changes once your script has successfully tracked each and every \r\nevent in your symbol's feed.\r\n\r\n```js\r\nfunction onOpen ()\r\n{\r\n\t\r\n}\r\n```\r\n\r\n#### [onStop](../function/index.html#static-function-onStop)\r\n\r\nThe built in onStop function is called when the user clicks the stop button shown below.\r\n\r\n<img src=\"asset/click_stop.png\" width=\"40%\" height=\"40%\">\r\n\r\nThis function can be useful for logging data gathered while the symbol was running.\r\n\r\n```js\r\nfunction onStop ()\r\n{\r\n\t\r\n}\r\n```\r\n\r\n## General Formatting\r\n\r\n### Notation\r\n\r\nConstants used for distinguishing variable roles\r\n\r\n- `k` | K denotes a constant variable\r\n- `g` | G denotes a global variable\r\n\r\n```js\r\nvar gEvntPane;\r\nvar gPaneFeed;\r\nvar kSymbolName = \"ESM9\";\r\n```\r\n\r\n## Enumerated Constants\r\n\r\n### [CEvntFeed.FeedStep](../class/src/index.js~CEvntFeed.html#instance-method-FeedStep)\r\n\r\nConstants used for CEvntFeed.FeedStep\r\n\r\n- `kStepShow` | Shows the event aggregating by time\r\n- `kStepHide` | Withholds the event from the Symbol viewport\r\n- `kStepHalt` | Shows the previous event\r\n- `kStepNext` | Advances the step position\r\n\r\n```js\r\ngPaneFeed.FeedStep = kStepHide; //This will hide the current event in the feed\r\n```\r\n\r\n### [kEvent.Type](../class/src/index.js~Event.html#instance-member-Type)\r\n\r\nEnumerated types of events\r\n\r\n- `kEvent.Type.Trade`\r\n- `kEvent.Type.Bid`\r\n- `kEvent.Type.Ask`\r\n- `kEvent.Type.ImpliedBid`\r\n- `kEvent.Type.ImpliedAsk`\r\n- `kEvent.Type.BookReset`\r\n\r\n```js\r\nif (tTick.Type == kEvent.Type.Trade)\r\n{\r\n\t//Do something based on event being a trade\r\n}\r\n```\r\n\r\n### [kEvent.Trade.Aggressor](../class/src/index.js~Trade.html#instance-member-Aggressor)\r\n\r\nEnumerated values for getting the type of aggressor of a trade event\r\n\r\n- `kEvent.Trade.Aggressor.Buy`\r\n- `kEvent.Trade.Aggressor.Sell`\r\n\r\n```js\r\nif (tTick.Type == kEvent.Type.Trade)\r\n{\r\n\tif (tTick.Trade.Aggressor == kEvent.Trade.Aggressor.Buy)\r\n\t{\r\n\t\t//Do something based on trade's aggressor being a buyer\r\n\t}\r\n}\r\n```\r\n\r\n### [kEvent.Bid.Type](../class/src/index.js~Bid.html#instance-member-Type)\r\n\r\nEnumerated values for getting the type of a bid event\r\n\r\n- `kEvent.Bid.Type.New`\r\n- `kEvent.Bid.Type.Change`\r\n- `kEvent.Bid.Type.Delete`\r\n- `kEvent.Bid.Type.DeleteThru`\r\n- `kEvent.Bid.Type.DeleteFrom`\r\n- `kEvent.Bid.Type.Overlay`\r\n- `kEvent.Bid.Type.Replace`\r\n\r\n```js\r\nif (tTick.Bid.Type == kEvent.Bid.Type.New)\r\n{\r\n\t//Do something based on bid's type being new\r\n}\r\n```\r\n\r\n### [kEvent.Ask.Type](../class/src/index.js~Ask.html#instance-member-Type)\r\n\r\nEnumerated values for getting the type of an ask event\r\n\r\n- `kEvent.Ask.Type.New`\r\n- `kEvent.Ask.Type.Change`\r\n- `kEvent.Ask.Type.Delete`\r\n- `kEvent.Ask.Type.DeleteThru`\r\n- `kEvent.Ask.Type.DeleteFrom`\r\n\r\n```js\r\nif (tTick.Ask.Type == kEvent.Ask.Type.New)\r\n{\r\n\t//Do something based on ask's type being new\r\n}\r\n```\r\n\r\n### [CEvntPane.Wave](../class/src/index.js~CEvntPane.html#instance-method-PlayWave)\r\n\r\nEnumerated values for playing different audio files\r\n\r\n- `Bang` | 0\r\n- `Clang` | 1\r\n- `Punch` | 2\r\n- `Ring_1` | 3\r\n- `Ring_2` | 4\r\n- `Ring_3` | 5\r\n- `Ring_4` | 6\r\n- `Ring_5` | 7\r\n- `Ring_6` | 8\r\n- `Ring_7` | 9\r\n- `Slap` | 10\r\n\r\n```js\r\nCEvntPane.PlayWave(0); //Plays a bang!\r\n```\r\n\r\n",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "C:\\Users\\Blake Reset\\source\\repos\\PlGGS\\vxa-doc\\src\\manual\\tutorial1.md",
+    "name": "./src/manual/tutorial1.md",
+    "content": "# Prices | Beginner\r\n\r\nThis sample prepares you to track [Event](../class/src/index.js~Event.html) values and \r\ntest for the highest and lowest prices.\r\n\r\n## Declaring your variables\r\n\r\nOnce you've opened your Javascript editor, you should see your default CEVNTPane and CEVNTFeed \r\nvariables along with some new ones. These are most commonly defined as gEvntPane and gPaneFeed.  \r\n\r\n```js\r\nvar gEvntPane;\r\nvar gPaneFeed;\r\nvar gFeedDraw;\r\nvar kSymbolName = \"\";\r\n\r\nvar gCalcTop, gCalcBot;\r\nvar gStatTop, gStatBot;\r\nvar gDrawTop, gDrawBot;\r\n\r\nvar gOnFirstEvent = true; //tracks whether or not our initial value has been set\r\nvar gTopPrice = 0.0; //tracks the top price value\r\nvar gBotPrice = 0.0; //tracks the bottom price value\r\n```\r\n\r\n- [CEvntCalc](../class/src/index.js~CEvntCalc.html) ```gCalcTop, gCalcBot```  \r\nMake sure to create two variables to save your top and bottom-most prices.\r\n\r\n- [CEvntStat](../class/src/index.js~CEvntStat.html) ```gStatTop, gStatBot```  \r\nYou'll also need to create two variables to display your top and bottom-most prices in your pane.\r\n\r\n- [CEVNTDraw](../class/src/index.js~CEvntDraw.html) ```gDrawTop, gDrawBot```  \r\nFinally, you'll need to create two variables to draw lines corresponding to your top and \r\nbottom-most prices.\r\n\r\n- [Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) ```gOnFirstEvent```  \r\nSince we'll be starting each symbol time period at an undetermined price, we'll need the first \r\nprice as a starting point to base the rest of our conditional statements on.\r\n\r\n- [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) ```gTopPrice, gBotPrice```  \r\nFinally, we'll need two simple variables to hold the number value corresponding to the highest \r\nand lowest prices of the period.\r\n\r\n## Initialization\r\n\r\nNext, you'll need to initialize your variables. In a way, this step is very similar to the \r\n[onLoad](manual.html#onload) section of the manual's introduction to the built in [onLoad](../function/index.html#static-function-onLoad) \r\nfunction, but this time, you're going to need to prepare, or *initialize*, a few more variables.\r\n\r\n### Your Pane\r\n\r\nWhen initializing your [Pane](../class/src/index.js~CEvntPane.html), there are two additional \r\nfields that allow yout to apply attributes to it. \r\n\r\n```js\r\ngEvntPane = MakePane();\r\n\r\ngEvntPane.title = \"Top & Bottom Prices\"; //text at the top of pane\r\ngEvntPane.fillStyle = \"#030308\"; //background color in hexidecimal as a String\r\n```\r\n\r\n- [title](../class/src/index.js~CEvntPane.html#instance-member-title) ```gEvntPane.fillStyle```  \r\nThe title is a simple [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \r\nthat you can make use of to easily identify this pane from the others on your dashboard.\r\n\r\n- [fillStyle](../class/src/index.js~CEvntPane.html#instance-member-fillStyle) ```gEvntPane.fillStyle```  \r\nThe fill style fills the background of your [Pane](../class/src/index.js~CEvntPane.html) with any \r\ncolor of your choosing. Just make sure that you format your value as a hexidecimal color with a # \r\nin a string like: ```\"#000000\"```\r\n\r\n### Your Feed\r\n\r\nJust like in the manual's [onLoad](manual.html#onLoad) section, you'll need to make sure your \r\n[Feed](../class/src/index.js~CEvntFeed.html) is properly initialized in order to see your \r\nsymbol's events.\r\n\r\n```js\r\ngPaneFeed = gEvntPane.MakeFeed(kSymbolName);\r\ngFeedDraw = gEvntPane.MakeDraw(gPaneFeed);\r\n```\r\n\r\n[//]: # \"Ask about reintroducing these two methods or just referring back to the manual again\"\r\n\r\n### Top price\r\n\r\nNow that you've created your [Calc](../class/src/index.js~CEvntCalc.html), \r\n[Stat](../class/src/index.js~CEvntStat.html), and [Draw ](../class/src/index.js~CEvntDraw.html) \r\nvariables to track and draw your top and bottom prices, it's time to give them a purpose.\r\n\r\n#### MakeCalc\r\n\r\nThe first of your variables is the easiest to initialize, because it doesn't have any optional \r\nattributes. More importantly, it's also the easiest to understand. The \r\n[MakeCalc](../class/src/index.js~CEvntFeed.html#instance-method-MakeCalc) function returns a \r\nnew [Calc](../class/src/index.js~CEvntCalc.html) object, and we can make use of that by \r\nsetting our ```gCalcTop``` variable equal to the function.\r\n\r\n```js\r\ngCalcTop = gPaneFeed.MakeCalc();\r\n```\r\n\r\n- [MakeCalc](class/src/index.js~CEvntFeed.html#instance-method-MakeCalc) ```gPaneFeed.MakeCalc()```  \r\nCreates a [Calc](../class/src/index.js~CEvntCalc.html) object that is able to store calculated \r\nvalues.\r\n\r\n#### MakeDraw\r\n\r\nWhile not integral to tracking [Event](../class/src/index.js~Event.html) values in your symbol, \r\ndrawing a line representing the value you're tracking can be helpful for a number of different \r\nreasons. Before you're sure your value tracking is working properly, \r\n[Draw](../class/src/index.js~CEvntDraw.html) objects are extremely useful for troubleshooting, \r\nand after everything's working, they make it easy to track how the value you're tracking has \r\nbeen changing over time.\r\n\r\n```js\r\ngDrawTop = gEvntPane.MakeDraw(gCalcTop);\r\n\r\ngDrawTop.lineWidth = 3.0;\r\ngDrawTop.strokeStyle = \"#f4f427\";\r\n```\r\n\r\n- [MakeDraw](../class/src/index.js~CEvntPane.html#instance-method-MakeDraw) ```gEvntPane.MakeDraw(gCalcTop)```  \r\nCreates a new [Draw](../class/src/index.js~CEvntDraw.html) object that renders lines on your \r\n[Pane](../class/src/index.js~CEvntPane.html) to represent the state of the values you're \r\ntracking with the [Calc](../class/src/index.js~CEvntCalc.html) object you pass into it.\r\n\r\n- [lineWidth](../class/src/index.js~CEvntDraw.html#instance-member-lineWidth) ```gDrawTop.lineWidth```  \r\nThe line width is a [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) \r\nthat represents the width of the line in pixels.\r\n\r\n- [strokeStyle](../class/src/index.js~CEvntDraw.html#instance-member-strokeStyle) ```gDrawTop.strokeStyle```  \r\nThe stroke style fills the line representing the values you're tracking with any color of your \r\nchoosing. Just make sure that you format your value as a hexidecimal color with a # in a \r\nstring like: ```\"#000000\"```\r\n\r\n#### MakeStat\r\n\r\nThe last variable you need to initialize in order to track your top price is your [Stat](../class/src/index.js~CEvntFeed.html) \r\nvariable. This variable is used to display the status of whatever it is that you're tracking \r\nin a box that appears in the top left of your [pane](class/src/index.js~CEvntPane.html).\r\n\r\n```js\r\ngStatTop = gEvntPane.MakeStat(gCalcTop);\r\n\r\ngStatTop.title = \"Top Price\";\r\ngStatTop.fillStyle = \"#f4f427\";\r\n```\r\n\r\n- [MakeStat](../class/src/index.js~CEvntPane.html#instance-method-MakeStat) ```gEvntPane.MakeStat(gCalcTop)```  \r\nCreates a [Stat](../class/src/index.js~CEvntStat.html) object that is used to display any value \r\nprovided by the [Calc](../class/src/index.js~CEvntCalc.html) object that you pass into it in the \r\ntop left corner of your [Pane](../class/src/index.js~CEvntPane.html).\r\n\r\n- [title](../class/src/index.js~CEvntStat.html#instance-member-title) ```gDrawTop.lineWidth```  \r\nThe title represents the text that will be displayed before the value your [Stat](../class/src/index.js~CEvntStat.html) \r\nis tracking.\r\n\r\n- [fillStyle](../class/src/index.js~CEvntStat.html#instance-member-fillStyle) ```gDrawTop.strokeStyle```  \r\nThe fill style fills the background of your [Stat](../class/src/index.js~CEvntStat.html) with any \r\ncolor of your choosing. Just make sure that you format your value as a hexidecimal color with a # \r\nin a string like: ```\"#000000\"```\r\n\r\n### Bottom price\r\n\r\nIn order to track the lowest price of your symbol period in the same way as the highest, you'll \r\nalso need to initialize your three bottom price tracking variables.\r\n\r\n#### MakeCalc\r\n\r\nAgain, the \r\n[MakeCalc](../class/src/index.js~CEvntFeed.html#instance-method-MakeCalc) function is used to return a \r\nnew [Calc](../class/src/index.js~CEvntCalc.html) object to our ```gCalcTop``` variable equal \r\nto the function.\r\n\r\n```js\r\ngCalcBot = gPaneFeed.MakeCalc();\r\n```\r\n\r\n- [MakeCalc](class/src/index.js~CEvntFeed.html#instance-method-MakeCalc) ```gPaneFeed.MakeCalc()```  \r\nCreates a [Calc](../class/src/index.js~CEvntCalc.html) object that is able to store calculated \r\nvalues.\r\n\r\n#### MakeDraw\r\n\r\nThen, you can initialize \r\n\r\nWhile not integral to tracking [Event](../class/src/index.js~Event.html) values in your symbol, \r\ndrawing a line representing the value you're tracking can be helpful for a number of different \r\nreasons. Before you're sure your value tracking is working properly, [Draw](../class/src/index.js~CEvntDraw.html) \r\nobjects are extremely useful for troubleshooting, and after everything's working, they make it \r\neasy to track how the value you're tracking has been changing over time.\r\n\r\n```js\r\ngDrawTop = gEvntPane.MakeDraw(gCalcTop);\r\n\r\ngDrawTop.lineWidth = 3.0;\r\ngDrawTop.strokeStyle = \"#f4f427\";\r\n```\r\n\r\n- [MakeDraw](../class/src/index.js~CEvntPane.html#instance-method-MakeDraw) ```gEvntPane.MakeDraw(gCalcTop)```  \r\nCreates a new [Draw](../class/src/index.js~CEvntDraw.html) object that renders lines on your \r\n[Pane](../class/src/index.js~CEvntPane.html) to represent the state of the values you're \r\ntracking with the [Calc](../class/src/index.js~CEvntCalc.html) object you pass into it.\r\n\r\n- [lineWidth](../class/src/index.js~CEvntDraw.html#instance-member-lineWidth) ```gDrawTop.lineWidth```  \r\nThe line width is a [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) \r\nthat represents the width of the line in pixels.\r\n\r\n- [strokeStyle](../class/src/index.js~CEvntDraw.html#instance-member-strokeStyle) ```gDrawTop.strokeStyle```  \r\nThe stroke style fills the line representing the values you're tracking with any color of your \r\nchoosing. Just make sure that you format your value as a hexidecimal color with a # in a \r\nstring like: ```\"#000000\"```\r\n\r\n#### MakeStat\r\n\r\nThe last variable you need to initialize in order to track your top price is your [Stat](../class/src/index.js~CEvntFeed.html) \r\nvariable. This variable is used to display the status of whatever it is that you're tracking \r\nin a box that appears in the top left of your [pane](class/src/index.js~CEvntPane.html).\r\n\r\n```js\r\ngStatTop = gEvntPane.MakeStat(gCalcTop);\r\n\r\ngStatTop.title = \"Top Price\";\r\ngStatTop.fillStyle = \"#f4f427\";\r\n```\r\n\r\n- [MakeStat](../class/src/index.js~CEvntPane.html#instance-method-MakeStat) ```gEvntPane.MakeStat(gCalcTop)```  \r\nCreates a [Stat](../class/src/index.js~CEvntStat.html) object that is used to display any value \r\nprovided by the [Calc](../class/src/index.js~CEvntCalc.html) object that you pass into it in the \r\ntop left corner of your [Pane](../class/src/index.js~CEvntPane.html).\r\n\r\n- [title](../class/src/index.js~CEvntStat.html#instance-member-title) ```gDrawTop.lineWidth```  \r\nThe title represents the text that will be displayed before the value your [Stat](../class/src/index.js~CEvntStat.html) \r\nis tracking.\r\n\r\n- [fillStyle](../class/src/index.js~CEvntStat.html#instance-member-fillStyle) ```gDrawTop.strokeStyle```  \r\nThe fill style fills the background of your [Stat](../class/src/index.js~CEvntStat.html) with any \r\ncolor of your choosing. Just make sure that you format your value as a hexidecimal color with a # \r\nin a string like: ```\"#000000\"```\r\n\r\n### Complete intialization\r\n\r\nOnce you've prepared everything above, your onLoad function should accomplish the same thing \r\nas the one below. You will probably have arranged your code differently, but as long as \r\neverything is initialized, you're ready to begin working on your \r\n[onEvent](../function/index.html#static-function-onEvent) function.\r\n\r\n```js\r\nfunction onLoad()\r\n{\r\n    //------------------------------------------------\\\r\n    gEvntPane = MakePane();\r\n\r\n    gEvntPane.title = \"Daily Top & Bottom | ESM9 Sample\";\r\n    gEvntPane.fillStyle = \"#030308\";\r\n    //------------------------------------------------/\r\n\r\n    //------------------------------------------------\\\r\n    gPaneFeed = gEvntPane.MakeFeed(kSymbolName);\r\n    gFeedDraw = gEvntPane.MakeDraw(gPaneFeed);\r\n\r\n    gCalcTop = gPaneFeed.MakeCalc();\r\n    gCalcBot = gPaneFeed.MakeCalc();\r\n    //------------------------------------------------/\r\n\r\n    //------------------------------------------------\\\r\n    gDrawTop = gEvntPane.MakeDraw(gCalcTop);\r\n\r\n    gDrawTop.lineWidth = 3.0;\r\n    gDrawTop.strokeStyle = \"#f4f427\";\r\n\r\n    gDrawBot = gEvntPane.MakeDraw(gCalcBot);\r\n\r\n    gDrawBot.lineWidth = 3.0;\r\n    gDrawBot.strokeStyle = \"#ff1c58\";\r\n    //------------------------------------------------/\r\n\r\n    //------------------------------------------------\\\r\n    gStatTop = gEvntPane.MakeStat(gCalcTop);\r\n\r\n    gStatTop.title = \"Top Price\";\r\n    gStatTop.fillStyle = \"#f4f427\";\r\n\r\n    gStatBot = gEvntPane.MakeStat(gCalcBot);\r\n\r\n    gStatBot.title = \"Bot Price\";\r\n    gStatBot.fillStyle = \"#ff1c58\";\r\n    //------------------------------------------------/\r\n}\r\n```\r\n\r\n## Event handling\r\n\r\nNow, it's time to start working on your [onEvent](../function/index.html#static-function-onEvent) \r\nfunction. If you want a refresher on the purpose of the [onEvent](../function/index.html#static-function-onEvent) \r\nfunction, head over to the [manual](manual.html) and catch up on the [onEvent](manual.html#onevent) \r\nsection.\r\n\r\n### Reading your Feed\r\n\r\nWhenever you're dealing with events in your [onEvent](../function/index.html#static-function-onEvent) \r\nmethod, you're going to need to make use of your [Feed](class/src/index.js~CEvntFeed.html)'s \r\n[FeedRead](../class/src/index.js~CEvntFeed.html#instance-method-FeedRead) method to get \r\ninformation about each [Event](../class/src/index.js~Event.html) your function handles.\r\n\r\nBelow, you can see an easy way to capture this [Event](../class/src/index.js~Event.html). You can \r\ncreate a new variable to store the current [Event](../class/src/index.js~Event.html) being read \r\nin from your [Feed](class/src/index.js~CEvntFeed.html). We'll continue to refer to this event as \r\ntTick, but you can call it whatever is most memorable for you.\r\n\r\n```js\r\nvar tTick = pFeed.FeedRead(pSequ);\r\n```\r\n\r\n- [FeedRead](../class/src/index.js~CEvntFeed.html#instance-method-FeedRead) ```pFeed.FeedRead(pSequ)```  \r\nEach event has a sequence value for indexing its position among all of the other [Events](../class/src/index.js~Event.html). \r\nUsing this sequence value, ```pSequ```, [FeedRead](../class/src/index.js~CEvntFeed.html#instance-method-FeedRead) \r\nreturns the [Event](../class/src/index.js~Event.html) at that spot in your symbol's [Feed](class/src/index.js~CEvntFeed.html).\r\n\r\n### Your first Event\r\n\r\nThis will **not** be the case in every sample you right, as you will certainly be tracking more \r\nthan just prices, but for this example, our first [Event](../class/src/index.js~Event.html) is a \r\nspecial case. \r\n\r\nIf you don't take the time to designate the first [Event](../class/src/index.js~Event.html) \r\nas a special case, your ```gTopPrice``` and ```gBotPrice``` variables will still be set to \r\ntheir default to a value of zero, and that means your ```gBotPrice``` variable will most \r\nlikely never be tracked properly.\r\n\r\nTo check for whether or not your script has just come across the first [Event](../class/src/index.js~Event.html), \r\nyou need to use an [if...else statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else). \r\nIf statements allow you to execute different lines of code depending on whether or not a \r\ncondition you set ends up being true or false.\r\n\r\nNow, in order to designate your first [Event](../class/src/index.js~Event.html) as a special \r\ncase, use an [if...else statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) \r\nwith your ```gOnFirstEvent``` variable you created earlier to create a condition.\r\n\r\n```js\r\nif (gOnFirstEvent == true)\r\n{\r\n    gTopPrice = tTick.Trade.Price;\r\n    gBotPrice = tTick.Trade.Price;\r\n    gOnFirstEvent = false;\r\n}\r\n```\r\n\r\nThe statement above checks whether or not your condition, gOnFirstEvent, evaluates to true. If \r\nso, it sets our top and bottom prices to the first price value recorded in your symbol and sets \r\nyour gOnFirstEvent variable to false, so you don't run the code within this if statement again.\r\n\r\nOne thing to note is that the above if statement is logically equivalent to:\r\n\r\n```js\r\nif (gOnFirstEvent)\r\n```\r\n\r\nOmitting the ```== true``` portion of the statement is just shorthand. It works well for \r\ndescriptive variables like gOnFirstEvent, because it lets the statement almost read like a \r\nsentence. ```If on first event, do ...```\r\n\r\n### Other Events\r\n\r\nFor all other events, you're finally going to perform the two major checks to track the top and \r\nbottom prices of your symbol's period. To accomplish this, you can again make use of an [if...else statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else). \r\n\r\n```js\r\nif (tTick.Trade.Price > gTopPrice)\r\n{\r\n    gTopPrice = tTick.Trade.Price;\r\n}\r\nelse if (tTick.Trade.Price < gBotPrice)\r\n{\r\n    gBotPrice = tTick.Trade.Price;\r\n}\r\n```\r\n\r\nHere, you're first going to check whether or not the current trade price is greater than your \r\ntop price variable, and if so, you simply set your top price variable to the current trade price.\r\n\r\nOtherwise, you're going to need to make use of the ```else if``` portion of the statement to \r\nonly perform another check if the last one wasn't true. \r\n\r\nSo if the current price wasn't greater than your top price variable, then your first if statement \r\nwill fail, and you'll need to check whether or not the current trade price is less than your \r\nbottom price variable, and if so, you just set your bottom price variable to the current trade \r\nprice instead.\r\n\r\n### Saving values\r\n\r\nOnce you've checked whether or not the current trade price is of any significance, you'll need to \r\nsave your top and bottom price values to your [Calc]() objects.\r\n\r\nYour [Calc](../class/src/index.js~CEvntStat.html) variables will then relay the prices you saved \r\nto their corresponding [Stat](../class/src/index.js~CEvntStat.html) variables to display their \r\nvalues to the top left corner of your symbol [Pane](../class/src/index.js~CEvntPane.html).\r\n\r\nThis way, no matter how your [onEvent](../function/index.html#static-function-onEvent) function executes, you make sure to save both your top \r\nand bottom prices. Yes, you only actually need to save both of them once, but you we were to save \r\nthem both individually based on the different cases of your function, you would have to repeat \r\nthese lines a rediculous amount of times. This way, you can make sure that everything gets saved \r\nevery single time through the function.\r\n\r\n```js\r\ngCalcTop.CalcSave(pSequ, gTopPrice);\r\ngCalcBot.CalcSave(pSequ, gBotPrice);\r\n```\r\n\r\n- [CalcSave](../class/src/index.js~CEvntCalc.html#instance-method-CalcSave) ```gCalcTop.CalcSave(pSequ, gTopPrice/gBotPrice);```  \r\nSaves a given value to your [Calc](../class/src/index.js~CEvntStat.html) object in order to display \r\nit through your [Stat](../class/src/index.js~CEvntStat.html) object to the left of your [Pane](../class/src/index.js~CEvntPane.html).\r\n\r\n## Results\r\n\r\n#### Congratulations\r\n\r\nAt this point, you should now be able to test, save, and display aspects of events, and \r\nyou should see a chart based off of your selected Symbol for the most recent exchange period like \r\nthe one shown below! Feel free to zoom in and out and scroll through your newly created chart.\r\n\r\nYour script should now provide functionality similar to [this](https://github.com/PlGGS/Vertex-Analytics/blob/master/sample%20scripts/sampleTopBottomPrices.js)\r\n\r\n[//]: # \"Add finished script image ![view chart](asset/view_chart.png)\"\r\n\r\n#### Troubleshooting\r\n\r\nFor certain periods throughout the day, EVNTScript will not be able to generate charts. \r\nThis is because the vNine platform makes use of the time in which the exchange is down to process and archive data. \r\nBelow is a chart containing weekly hours of downtime.\r\n\r\n| Monday        | Tuesday       | Wednesday     | Thursday      | Friday  | Saturday   | Sunday  |\r\n|---------------|---------------|---------------|---------------|---------|:----------:|---------|\r\n| 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm- | -          | -5:00pm |\r\n\r\nAlso, please note that some contracts also stop the exchange from 3:15pm-3:30pm on weekdays.\r\n\r\n#### Contact\r\n\r\nIf you come across any major issue/bugs, please let us know by sending an email with an explanation of what occured to \r\n[support@vertex-analytics.com](mailto:support@vertex-analytics.com).\r\n\r\nAdditionally, if there is something that you think we could improve about this documentation, \r\nplease create a new issue at our repository's [issues page](https://github.com/PlGGS/xva-doc/issues).\r\n",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "C:\\Users\\Blake Reset\\source\\repos\\PlGGS\\vxa-doc\\src\\manual\\tutorial2.md",
+    "name": "./src/manual/tutorial2.md",
+    "content": "# More Than Prices | Beginner\r\n\r\nIn the [Prices](tutorial1.html) commentary, you learned how to track and graph [Event](../class/src/index.js~Event.html) \r\nvalues on a [Pane](../class/src/index.js~CEvntPane.html). Scripts can track more than just prices \r\nthough. In some cases, it might be useful to track the [Quantities](https://bblake.info/vxa-doc/class/src/index.js~Trade.html#instance-member-Quantity) \r\nof [Trades](https://bblake.info/vxa-doc/class/src/index.js~Trade.html). \r\n\r\n[//]: # \"Figure out better name for tutorials/commentaries\"\r\n\r\nThis sample prepares you to efficiently track and plot values other than prices with a multitude of \r\nexamples and tips. Although, before doing so, there are some very important things to keep in mind.\r\n\r\n## Things to Keep in Mind\r\n\r\n### Don't Draw Your Symbol's Feed\r\n\r\nMore often than not, drawing your Symbol's [Event](../class/src/index.js~Event.html) [Feed](../class/src/index.js~CEvntFeed.html) \r\ncan be counterproductive, as it will default the left-hand side of your [Pane](../class/src/index.js~CEvntPane.html) \r\nto be based on [Prices](../class/src/index.js~Trade.html#instance-member-Price).\r\n\r\n### Price Tracking can Blind You\r\n\r\n### Timestamps on the Horizontal\r\n\r\n## Tracking Other Values\r\n\r\n### Event Quantities\r\n\r\n### Totals\r\n\r\n### Differences\r\n\r\n## Results\r\n\r\n#### Congratulations\r\n\r\n...\r\n\r\n#### Troubleshooting\r\n\r\nFor certain periods throughout the day, EVNTScript will not be able to generate charts. \r\nThis is because the vNine platform makes use of the time in which the exchange is down to process and archive data. \r\nBelow is a chart containing weekly hours of downtime.\r\n\r\n| Monday        | Tuesday       | Wednesday     | Thursday      | Friday  | Saturday   | Sunday  |\r\n|---------------|---------------|---------------|---------------|---------|:----------:|---------|\r\n| 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm- | -          | -5:00pm |\r\n\r\nAlso, please note that some contracts also stop the exchange from 3:15pm-3:30pm on weekdays.\r\n\r\n#### Contact\r\n\r\nIf you come across any major issue/bugs, please let us know by sending an email with an explanation of what occured to \r\n[support@vertex-analytics.com](mailto:support@vertex-analytics.com).\r\n\r\nAdditionally, if there is something that you think we could improve about this documentation, \r\nplease create a new issue at our repository's [issues page](https://github.com/PlGGS/xva-doc/issues).\r\n",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "C:\\Users\\Blake Reset\\source\\repos\\PlGGS\\vxa-doc\\src\\manual\\tutorial3.md",
+    "name": "./src/manual/tutorial3.md",
+    "content": "# Visual Customization | Beginner\r\n\r\nThis sample prepares you to fully personalize your dashboard with all of the customization \r\nfeatures vNine offers. \r\n\r\n## Object Attributes\r\n\r\n[//]: # \"Write detailed explanationss for object attributes\"\r\n\r\n### [Pane](../class/src/index.js~CEvntPane.html)\r\n\r\n- title\r\n- fillStyle\r\n\r\n### [Stat](../class/src/index.js~CEvntStat.html)\r\n\r\n- title\r\n- textStyle\r\n\r\n### [Draw](../class/src/index.js~CEvntDraw.html)\r\n\r\n- lineWidth\r\n- strokeStyle\r\n\r\n### [Trig](../class/src/index.js~CEvntTrig.html)\r\n\r\n- title\r\n- textStyle\r\n- duration\r\n\r\n### [Fill](../class/src/index.js~CEvntFill.html)\r\n\r\n- fillStyle\r\n- textStyle\r\n\r\n## Results\r\n\r\n#### Congratulations\r\n\r\n...\r\n\r\n#### Troubleshooting\r\n\r\nFor certain periods throughout the day, EVNTScript will not be able to generate charts. \r\nThis is because the vNine platform makes use of the time in which the exchange is down to process and archive data. \r\nBelow is a chart containing weekly hours of downtime.\r\n\r\n| Monday        | Tuesday       | Wednesday     | Thursday      | Friday  | Saturday   | Sunday  |\r\n|---------------|---------------|---------------|---------------|---------|:----------:|---------|\r\n| 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm- | -          | -5:00pm |\r\n\r\nAlso, please note that some contracts also stop the exchange from 3:15pm-3:30pm on weekdays.\r\n\r\n#### Contact\r\n\r\nIf you come across any major issue/bugs, please let us know by sending an email with an explanation of what occured to \r\n[support@vertex-analytics.com](mailto:support@vertex-analytics.com).\r\n\r\nAdditionally, if there is something that you think we could improve about this documentation, \r\nplease create a new issue at our repository's [issues page](https://github.com/PlGGS/xva-doc/issues).\r\n",
+    "static": true,
+    "access": "public"
+  }
+]
