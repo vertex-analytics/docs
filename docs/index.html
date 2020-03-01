@@ -3,168 +3,13 @@
 understanding, calculating, and tracking of futures symbols in more 
 than just real-time using vNine at <a href="https://vnine.vertex-analytics.com">v9.vertex-analytics.com</a>.</p>
 <p>Contact: <a href="mailto:support@vertex-analytics.com">support@vertex-analytics.com</a></p>
-<h6 id="documentation-by--a-href--https---blakeboris-com--blake-boris--a-">Documentation by <a href="https://blakeboris.com">Blake Boris</a></h6></div><div class="manual-cards"><div class="manual-card-wrap" data-ice="cards"><div class="manual-card js_ManualCard" href="#" tabindex="-1"><div data-ice="card"><h1>Manual</h1><h2>The Basics</h2><p>This introduction will help you get your vNine dashboard up and running in no time.<br>Once you&apos;ve gotten your first pane tracking a symbol, you&apos;ll see just how easy it is to 
-efficiently manage and gain insight into your symbol over time.</p><p>If you&apos;re worried about the programming aspect of EVNTScript, fear not, because 
-throughout this documentation, you&apos;ll find many different bits of programming 
-knowledge that will help you translate your predictions into code.</p><h3>Pane Creation</h3><p>To get started, simply drag a new pane into your vNine dashboard from the context menu 
-on the left.</p><p><img src="./manual/asset/drag_pane.png" width="40%" height="40%"></p><h3>Opening the editor</h3><p>Click the JS button to open up the Javascript style editor. 
-You should be presented with a default, empty sample script corresponding to your new pane.  </p><p>It may seem daunting at first glance, but soon you&apos;ll come to find that nearly 
-everything in this sample script is crucial for contructing your own.</p><p><img src="./manual/asset/click_js.png" width="40%" height="40%"></p><h3>Testing a script</h3><p>Once in the editor, it&apos;s easy to run the default script by simply choosing a symbol and clicking the 
-start button.  </p><p>You should see a series of <a href="./manual/../class/src/index.js~Event.html">Events</a> fill the 
-<a href="./manual/../class/src/index.js~CEvntPane">Pane</a>, and notice that the start button has been greyed out. </p><p><img src="./manual/asset/run_default.png" width="40%" height="40%"></p><p>At this point, you can click the stop button to stop the default script and get to work on your own.</p><p>For certain periods throughout the day, EVNTScript will not be able to generate charts. 
-This is because the vNine platform makes use of the time in which the exchange is down to process and archive data. 
-Below is a chart containing weekly hours of downtime.</p><table>
-<thead>
-<tr>
-<th>Monday</th>
-<th>Tuesday</th>
-<th>Wednesday</th>
-<th>Thursday</th>
-<th>Friday</th>
-<th style="text-align:center">Saturday</th>
-<th>Sunday</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>4:00pm-5:00pm</td>
-<td>4:00pm-5:00pm</td>
-<td>4:00pm-5:00pm</td>
-<td>4:00pm-5:00pm</td>
-<td>4:00pm-</td>
-<td style="text-align:center">-</td>
-<td>-5:00pm</td>
-</tr>
-</tbody>
-</table><p>Also, please note that some contracts also stop the exchange from 3:15pm-3:30pm on weekdays.</p><h2>Declaring your Variables</h2><p>Once you&apos;ve opened your Javascript editor, you should see your main CEVNTPane and 
-CEVNTFeed variables. These are foundational objects you&apos;re going to use most to 
-maintain the feed of the symbol you&apos;re tracking.</p><pre><code class="lang-js"><code class="source-code prettyprint">var gSymbolName = &quot;&quot;;
-var gEvntPane;
-var gPaneFeed;
-var gFeedDraw;</code>
-</code></pre><ul>
-<li><a href="./manual/../class/src/index.js~CEvntPane">CEvntPane</a> <code>gEvntPane</code><br>Your pane variable allows you to create just about everything else we&apos;re going to need 
-to make use of your script.</li>
-</ul><ul>
-<li><p><a href="./manual/../class/src/index.js~CEvntFeed.html">CEvntFeed</a> <code>gPaneFeed</code><br>Your feed variable will be used to track and make use of every single <a href="./manual/../class/src/index.js~Event.html">Event</a> 
-that has occured since the exchange last opened.</p>
-</li>
-<li><p><a href="./manual/../class/src/index.js~CEvntDraw.html">CEvntDraw</a> <code>gEvntDraw</code><br>Your draw variable will let you draw the feed you&apos;re tracking to your pane. This is useful 
-for determining for yourself whether or not your script is properly handling the data it is 
-receiving from your symbol.</p>
-</li>
-<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> <code>kSymbolName</code><br>The symbol name is the technical name of the symbol we want to interpret.</p>
-</li>
-</ul><h3>Built-in Functions</h3><h4><a href="./manual/../function/index.html#static-function-onLoad">onLoad</a></h4><p>The built in onLoad function is called when the user clicks the run button shown below.  </p><p><img src="./manual/asset/click_run.png" width="40%" height="40%"></p><p>It is extremely useful for setting up all of your variables perfectly before your script 
-begins running through each and every event in the <a href="./manual/../function/index.html#static-function-onEvent">onEvent</a> method.</p><pre><code class="lang-js"><code class="source-code prettyprint">function onLoad ()
-{
-    gEvntPane = MakePane();
-    gPaneFeed = gEvntPane.MakeFeed(gSymbolName);
-    gFeedDraw = gEvntPane.MakeDraw(gPaneFeed);    
-}</code>
-</code></pre><ul>
-<li><p><a href="./manual/../function/index.html#static-function-MakePane">MakePane</a> <code>MakePane()</code><br>The built in function <a href="./manual/../function/index.html#static-function-MakePane">MakePane</a> 
-returns a new <a href="./manual/../class/src/index.js~CEvntPane.html">CEvntPane</a> object. 
-Most of the time, the above snippet included, it is used to set your <code>gEvntPane</code> variable 
-to a new pane in the initialization of your script.</p>
-</li>
-<li><p><a href="./manual/../class/src/index.js~CEvntPane.html#instance-method-MakeFeed">MakeFeed</a> <code>gEvntPane.MakeFeed(gSymbolName)</code><br>Returns a new <a href="./manual/../class/src/index.js~CEvntFeed.html">CEvntFeed</a> object 
-based on your specified symbol name. If you pass in the same symbol name, this is equivilent to 
-the feed that will be tracked in your 
-<a href="./manual/../function/index.html#static-function-onEvent">onEvent</a> method.</p>
-</li>
-<li><p><a href="./manual/../class/src/index.js~CEvntPane.html#instance-method-MakeDraw">MakeDraw</a> <code>gEvntPane.MakeDraw(gPaneFeed)</code><br>Returns a new <a href="./manual/../class/src/index.js~CEvntDraw.html">CEvntDraw</a> object 
-based on your newly created feed. This will render your feed in your pane.</p>
-</li>
-</ul><h4><a href="./manual/../function/index.html#static-function-onEvent">onEvent</a></h4><p>The built in onEvent function is called once for each timestamp tracked in your symbol.  </p><p>This is where you&apos;ll be doing most of your calculations on the specific things you&apos;re 
-looking for in your symbol. It allows your script to perform different tasks depending 
-on the current event&apos;s conditions.</p><pre><code class="lang-js"><code class="source-code prettyprint">function onEvent (pFeed, pSequ)
-{
-
-}</code>
-</code></pre><ul>
-<li><p><a href="./manual/../class/src/index.js~CEvntFeed.html">CEvntFeed</a> <code>pFeed</code><br>A feed with timestamps measured in nanoseconds with 64 bit precision.</p>
-</li>
-<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a> <code>pSequ</code><br>A number that is used for Amount of events within this sequence. It defaults to 0.</p>
-</li>
-</ul><h4><a href="./manual/../function/index.html#static-function-onOpen">onOpen</a></h4><p>The built in onOpen function is called once the pane has properly loaded and rendered the Symbol information.</p><p>It allows you to make any last minute changes once your script has successfully tracked each and every 
-event in your symbol&apos;s feed.</p><pre><code class="lang-js"><code class="source-code prettyprint">function onOpen ()
-{
-
-}</code>
-</code></pre><h4><a href="./manual/../function/index.html#static-function-onStop">onStop</a></h4><p>The built in onStop function is called when the user clicks the stop button shown below.</p><p><img src="./manual/asset/click_stop.png" width="40%" height="40%"></p><p>This function can be useful for logging data gathered while the symbol was running.</p><pre><code class="lang-js"><code class="source-code prettyprint">function onStop ()
-{
-
-}</code>
-</code></pre><h2>General Formatting</h2><h3>Notation</h3><p>Constants used for distinguishing variable roles</p><ul>
-<li><code>k</code> | K denotes a constant variable</li>
-<li><code>g</code> | G denotes a global variable</li>
-</ul><pre><code class="lang-js"><code class="source-code prettyprint">var gEvntPane;
-var gPaneFeed;
-var kSymbolName = &quot;ESM9&quot;;</code>
-</code></pre><h2>Enumerated Constants</h2><h3><a href="./manual/../class/src/index.js~CEvntFeed.html#instance-method-FeedStep">CEvntFeed.FeedStep</a></h3><p>Constants used for CEvntFeed.FeedStep</p><ul>
-<li><code>kStepShow</code> | Shows the event aggregating by time</li>
-<li><code>kStepHide</code> | Withholds the event from the Symbol viewport</li>
-<li><code>kStepHalt</code> | Shows the previous event</li>
-<li><code>kStepNext</code> | Advances the step position</li>
-</ul><pre><code class="lang-js"><code class="source-code prettyprint">gPaneFeed.FeedStep = kStepHide; //This will hide the current event in the feed</code>
-</code></pre><h3><a href="./manual/../class/src/index.js~Event.html#instance-member-Type">kEvent.Type</a></h3><p>Enumerated types of events</p><ul>
-<li><code>kEvent.Type.Trade</code></li>
-<li><code>kEvent.Type.Bid</code></li>
-<li><code>kEvent.Type.Ask</code></li>
-<li><code>kEvent.Type.ImpliedBid</code></li>
-<li><code>kEvent.Type.ImpliedAsk</code></li>
-<li><code>kEvent.Type.BookReset</code></li>
-</ul><pre><code class="lang-js"><code class="source-code prettyprint">if (tTick.Type == kEvent.Type.Trade)
-{
-    //Do something based on event being a trade
-}</code>
-</code></pre><h3><a href="./manual/../class/src/index.js~Trade.html#instance-member-Aggressor">kEvent.Trade.Aggressor</a></h3><p>Enumerated values for getting the type of aggressor of a trade event</p><ul>
-<li><code>kEvent.Trade.Aggressor.Buy</code></li>
-<li><code>kEvent.Trade.Aggressor.Sell</code></li>
-</ul><pre><code class="lang-js"><code class="source-code prettyprint">if (tTick.Type == kEvent.Type.Trade)
-{
-    if (tTick.Trade.Aggressor == kEvent.Trade.Aggressor.Buy)
-    {
-        //Do something based on trade&apos;s aggressor being a buyer
-    }
-}</code>
-</code></pre><h3><a href="./manual/../class/src/index.js~Bid.html#instance-member-Type">kEvent.Bid.Type</a></h3><p>Enumerated values for getting the type of a bid event</p><ul>
-<li><code>kEvent.Bid.Type.New</code></li>
-<li><code>kEvent.Bid.Type.Change</code></li>
-<li><code>kEvent.Bid.Type.Delete</code></li>
-<li><code>kEvent.Bid.Type.DeleteThru</code></li>
-<li><code>kEvent.Bid.Type.DeleteFrom</code></li>
-<li><code>kEvent.Bid.Type.Overlay</code></li>
-<li><code>kEvent.Bid.Type.Replace</code></li>
-</ul><pre><code class="lang-js"><code class="source-code prettyprint">if (tTick.Bid.Type == kEvent.Bid.Type.New)
-{
-    //Do something based on bid&apos;s type being new
-}</code>
-</code></pre><h3><a href="./manual/../class/src/index.js~Ask.html#instance-member-Type">kEvent.Ask.Type</a></h3><p>Enumerated values for getting the type of an ask event</p><ul>
-<li><code>kEvent.Ask.Type.New</code></li>
-<li><code>kEvent.Ask.Type.Change</code></li>
-<li><code>kEvent.Ask.Type.Delete</code></li>
-<li><code>kEvent.Ask.Type.DeleteThru</code></li>
-<li><code>kEvent.Ask.Type.DeleteFrom</code></li>
-</ul><pre><code class="lang-js"><code class="source-code prettyprint">if (tTick.Ask.Type == kEvent.Ask.Type.New)
-{
-    //Do something based on ask&apos;s type being new
-}</code>
-</code></pre><h3><a href="./manual/../class/src/index.js~CEvntPane.html#instance-method-PlayWave">CEvntPane.Wave</a></h3><p>Enumerated values for playing different audio files</p><ul>
-<li><code>Bang</code> | 0</li>
-<li><code>Clang</code> | 1</li>
-<li><code>Punch</code> | 2</li>
-<li><code>Ring_1</code> | 3</li>
-<li><code>Ring_2</code> | 4</li>
-<li><code>Ring_3</code> | 5</li>
-<li><code>Ring_4</code> | 6</li>
-<li><code>Ring_5</code> | 7</li>
-<li><code>Ring_6</code> | 8</li>
-<li><code>Ring_7</code> | 9</li>
-<li><code>Slap</code> | 10</li>
-</ul><pre><code class="lang-js"><code class="source-code prettyprint">CEvntPane.PlayWave(0); //Plays a bang!</code>
-</code></pre></div></div><a class="manual-card-link" data-ice="link" tabindex="0" href="manual/manual.html"></a></div>
+<h6 id="documentation-by--a-href--https---blakeboris-com--blake-boris--a-">Documentation by <a href="https://blakeboris.com">Blake Boris</a></h6></div><div class="manual-cards"><div class="manual-card-wrap" data-ice="cards"><div class="manual-card js_ManualCard" href="#" tabindex="-1"><div data-ice="card"><h1>API Manual</h1><p>v9 is an analytical product for tracking past and current futures contracts. It allows you to programmatically perform actions based on 
+incoming CME WebSocket event data with nanosecond precision.</p><h2>Accessing v9</h2><p>The latest build of v9 can always be accessed at <a href="https://v9.vertex-analytics.com">v9.vertex-analytics.com</a>. </p><h2>v9 Editor</h2><p>The v9 Editor is where programmers can write custom Javascript-based scripts to build out individual data visualization solutions.</p><p>Each script, located on the lefthand side, corresponds to a data visualization solution located on the righthand side.</p><h3>Sections</h3><h4>Explorer</h4><ul>
+<li>Top buttons</li>
+<li>Your scripts</li>
+<li>Templates</li>
+<li>Divided up by libraries</li>
+</ul><h4>Text Editor</h4><p>This section is used to edit HTML files that contain data visualization logic for a specified symbol.</p><h4>Debug</h4><p>This section logs syntax and runtime errors within your script(s). This does not include errors within external libraries </p><h4>Pane</h4><p>This sections presents the data visualizations for a script.</p><h4>HTML File Sections</h4><h4>Library Importations</h4><p>This section refers to the top of the HTML file where both v9&apos;s propritary library and third-party libraries</p><h4>JavaScript Section</h4><p>Class Architecture</p><p>This section refers to all of the data visualization logic that is executed within v9&apos;s runtime.</p><h4>CSS Section</h4><p>This section refers to styling overrides one makes within their script(s).</p><h2>v9 Dashboard</h2><p>v9&apos;s Dashboards are composed of either one or multiple scripts written in the v9 Editor, and they can easily be exported and shared with other users. </p><p>v9 Dashboards are where traders/portfolio managers monitor contracts using the charts built out in the v9 Editor section.</p><h3>Dashboard Sections</h3><h4>Explorer Section</h4></div></div><a class="manual-card-link" data-ice="link" tabindex="0" href="manual/manual.html"></a></div>
 <div class="manual-card-wrap" data-ice="cards"><div class="manual-card js_ManualCard" href="#" tabindex="-1"><div data-ice="card"><h1>Prices | Beginner</h1><p>This sample prepares you to track <a href="./manual/../class/src/index.js~Event.html">Event</a> values and 
 test for the highest and lowest prices.</p><h2>Declaring your variables</h2><p>Once you&apos;ve opened your Javascript editor, you should see your default CEVNTPane and CEVNTFeed 
 variables along with some new ones. These are most commonly defined as gEvntPane and gPaneFeed.  </p><pre><code class="lang-js"><code class="source-code prettyprint">var gEvntPane;
@@ -521,26 +366,21 @@ Below is a chart containing weekly hours of downtime.</p><table>
 </table><p>Also, please note that some contracts also stop the exchange from 3:15pm-3:30pm on weekdays.</p><h4>Contact</h4><p>If you come across any major issue/bugs, please let us know by sending an email with an explanation of what occured to 
 <a href="./manual/mailto:support@vertex-analytics.com">support@vertex-analytics.com</a>.</p><p>Additionally, if there is something that you think we could improve about this documentation, 
 please create a new issue at our repository&apos;s <a href="https://github.com/PlGGS/xva-doc/issues">issues page</a>.</p></div></div><a class="manual-card-link" data-ice="link" tabindex="0" href="manual/tutorial3.html"></a></div>
-</div></div></div><footer class="main-footer"><img alt="esdoc logo" class="esdoc-logo" src="image/esdoc-logo-mini.png"> <span>Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span></a></span></footer></main><aside class="sidebar initial js_sidebarLeft sidebar-left" data-ice="nav"><nav class="nav manual-nav" data-ice="manual"><ul class="nav-list manual-toc"><li class="nav-item _indent-h1" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html" class="nav-link _" data-ice="link">Manual</a></li>
-<li class="nav-item _indent-h2" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#the-basics" class="nav-link _" data-ice="link">The Basics</a></li>
-<li class="nav-item _indent-h3" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#pane-creation" class="nav-link _" data-ice="link">Pane Creation</a></li>
-<li class="nav-item _indent-h3" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#opening-the-editor" class="nav-link _" data-ice="link">Opening the editor</a></li>
-<li class="nav-item _indent-h3" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#testing-a-script" class="nav-link _" data-ice="link">Testing a script</a></li>
-<li class="nav-item _indent-h2" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#declaring-your-variables" class="nav-link _" data-ice="link">Declaring your Variables</a></li>
-<li class="nav-item _indent-h3" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#built-in-functions" class="nav-link _" data-ice="link">Built-in Functions</a></li>
-<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#-a-href-----function-index-html-static-function-onload--onload--a-" class="nav-link _" data-ice="link">onLoad</a></li>
-<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#-a-href-----function-index-html-static-function-onevent--onevent--a-" class="nav-link _" data-ice="link">onEvent</a></li>
-<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#-a-href-----function-index-html-static-function-onopen--onopen--a-" class="nav-link _" data-ice="link">onOpen</a></li>
-<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#-a-href-----function-index-html-static-function-onstop--onstop--a-" class="nav-link _" data-ice="link">onStop</a></li>
-<li class="nav-item _indent-h2" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#general-formatting" class="nav-link _" data-ice="link">General Formatting</a></li>
-<li class="nav-item _indent-h3" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#notation" class="nav-link _" data-ice="link">Notation</a></li>
-<li class="nav-item _indent-h2" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#enumerated-constants" class="nav-link _" data-ice="link">Enumerated Constants</a></li>
-<li class="nav-item _indent-h3" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#-a-href-----class-src-index-js-cevntfeed-html-instance-method-feedstep--cevntfeed-feedstep--a-" class="nav-link _" data-ice="link">CEvntFeed.FeedStep</a></li>
-<li class="nav-item _indent-h3" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#-a-href-----class-src-index-js-event-html-instance-member-type--kevent-type--a-" class="nav-link _" data-ice="link">kEvent.Type</a></li>
-<li class="nav-item _indent-h3" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#-a-href-----class-src-index-js-trade-html-instance-member-aggressor--kevent-trade-aggressor--a-" class="nav-link _" data-ice="link">kEvent.Trade.Aggressor</a></li>
-<li class="nav-item _indent-h3" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#-a-href-----class-src-index-js-bid-html-instance-member-type--kevent-bid-type--a-" class="nav-link _" data-ice="link">kEvent.Bid.Type</a></li>
-<li class="nav-item _indent-h3" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#-a-href-----class-src-index-js-ask-html-instance-member-type--kevent-ask-type--a-" class="nav-link _" data-ice="link">kEvent.Ask.Type</a></li>
-<li class="nav-item _indent-h3" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#-a-href-----class-src-index-js-cevntpane-html-instance-method-playwave--cevntpane-wave--a-" class="nav-link _" data-ice="link">CEvntPane.Wave</a></li>
+</div></div></div><footer class="main-footer"><img alt="esdoc logo" class="esdoc-logo" src="image/esdoc-logo-mini.png"> <span>Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span></a></span></footer></main><aside class="sidebar initial js_sidebarLeft sidebar-left" data-ice="nav"><nav class="nav manual-nav" data-ice="manual"><ul class="nav-list manual-toc"><li class="nav-item _indent-h1" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html" class="nav-link _" data-ice="link">API Manual</a></li>
+<li class="nav-item _indent-h2" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#accessing-v9" class="nav-link _" data-ice="link">Accessing v9</a></li>
+<li class="nav-item _indent-h2" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#v9-editor" class="nav-link _" data-ice="link">v9 Editor</a></li>
+<li class="nav-item _indent-h3" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#sections" class="nav-link _" data-ice="link">Sections</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#explorer" class="nav-link _" data-ice="link">Explorer</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#text-editor" class="nav-link _" data-ice="link">Text Editor</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#debug" class="nav-link _" data-ice="link">Debug</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#pane" class="nav-link _" data-ice="link">Pane</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#html-file-sections" class="nav-link _" data-ice="link">HTML File Sections</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#library-importations" class="nav-link _" data-ice="link">Library Importations</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#javascript-section" class="nav-link _" data-ice="link">JavaScript Section</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#css-section" class="nav-link _" data-ice="link">CSS Section</a></li>
+<li class="nav-item _indent-h2" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#v9-dashboard" class="nav-link _" data-ice="link">v9 Dashboard</a></li>
+<li class="nav-item _indent-h3" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#dashboard-sections" class="nav-link _" data-ice="link">Dashboard Sections</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#explorer-section" class="nav-link _" data-ice="link">Explorer Section</a></li>
 </ul></nav>
 <nav class="nav manual-nav" data-ice="manual"><ul class="nav-list manual-toc"><li class="nav-item _indent-h1" data-ice="manualNav" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html" class="nav-link _" data-ice="link">Prices | Beginner</a></li>
 <li class="nav-item _indent-h2" data-ice="manualNav" data-link="manual/tutorial1.html"><a href="manual/tutorial1.html#declaring-your-variables" class="nav-link _" data-ice="link">Declaring your variables</a></li>
