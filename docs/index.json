@@ -2369,7 +2369,7 @@
   {
     "kind": "manualIndex",
     "globalIndex": true,
-    "content": "<img src=\"image/brand_logo.png\" alt=\"logo\" width=\"160\"/>\n# Vertex Analytics | EVNTScript\n\nEVNTScript is a Javascript-based parser that allows for easy \nunderstanding, calculating, and tracking of futures symbols in more \nthan just real-time using vNine at [v9.vertex-analytics.com](https://vnine.vertex-analytics.com).\n\nContact: [support@vertex-analytics.com](mailto:support@vertex-analytics.com)\n\n###### Documentation by [Blake Boris](https://blakeboris.com)\n",
+    "content": "<img src=\"manual/asset/vertex-logo.png\" alt=\"logo\" width=\"160\"/>\n# Vertex Analytics | v9 API\n\nv9 is a Javascript-based parser that allows for easy \nunderstanding, calculating, and tracking of futures symbols in more \nthan just real-time using vNine at [v9.vertex-analytics.com](https://v9.vertex-analytics.com).\n\nContact: [support@vertex-analytics.com](mailto:support@vertex-analytics.com)\n\n###### Documentation by [Blake Boris](https://blakeboris.com), [William Leiby](williamleiby.com), and David Salvador\n",
     "longname": "/mnt/c/Users/Blake Reset/source/repos/PlGGS/docs/src/index.md",
     "name": "./src/index.md",
     "static": true,
