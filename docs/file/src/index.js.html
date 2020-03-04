@@ -606,6 +606,102 @@ v9.edit = class {
     }
 }
 
+/**
+ * This class&apos; functions should be overridden in each script for handling user actions and symbol events
+ * @example
+ * class MyFeed extends v9.feed {
+ *		onOpen (pMeta) {
+ *		}
+ *
+ *		onLoad () {
+ *		}
+ *
+ *		onStop () {
+ *		}
+ *
+ *		onRender () {
+ *		}
+ *
+ *		onEvent (pSymbol,pEvent,pRealTime) {
+ *		}
+ * }
+ *
+ * let feed = new MyFeed(&lt;pSymbol&gt;, &lt;pDate&gt;);
+ */
+v9.feed = class {
+    /**
+     * Used to provide the symbol and date to the current {@link feed}
+     * @param {String} [pSymbol]
+     * @param {String} [pDate]
+     */
+    constructor(pSymbol, pDate) {
+        gHome.MakeFeed(gUniq, pSymbol, pDate);
+        gFeed = this;
+    }
+
+    /**
+     * Built in feed function that is called when the start button is pressed in order to initialize variables.
+     * @param {Object} pMeta - Object representing json meta information. It currently provides the instrument definitions of the supplied symbol.
+     * @abstract
+     * @example
+     * onOpen(pMeta) {
+     *
+     * }
+     */
+    onOpen(pMeta) {
+
+    }
+
+    /**
+     * Built in feed function that is called once the script has read every previous event in the symbol Feed.
+     * @abstract
+     * @example
+     * onLoad() {
+     *
+     * }
+     */
+    onLoad() {
+    }
+
+    /**
+     * Built in feed function that is called once for each frame that is rendered to the viewport.
+     * @abstract
+     * @example
+     * onRender() {
+     *
+     * }
+     */
+    onRender() {
+    }
+
+    /**
+     * Built in feed function that is called once for each timestamp tracked in your symbol.
+     *
+     * This is where you&apos;ll be doing most of your calculations on the specific things you&apos;re looking for in your symbol. It allows your script to perform different tasks depending on the current event&apos;s conditions.
+     * @param {String} pSymbol - Name of the current symbol
+     * @param {Object} pEvent - Current event being handled
+     * @param {Boolean} pRealTime - Boolean determining whether or not to only handle current events
+     * @abstract
+     * @example
+     * onEvent(pSymbol, pEvent, pRealTime) {
+     *
+     * }
+     */
+    onEvent(pSymbol, pEvent, pRealTime) {
+    }
+
+    /**
+     * Built in feed function that is called when the stop button is pressed.
+     * @abstract
+     * @example
+     * onStop() {
+     *
+     * }
+     */
+    onStop() {
+    }
+}
+
 v9.lineChart = class {
     constructor(pID) {
         this.fLineEnum = gHome.MakeLine(gUniq, (pID) ? document.getElementById(pID) : null);
@@ -1085,102 +1181,6 @@ v9.eventCopy = function (pEvent) {
     }
 
     return tEvent;
-}
-
-/**
- * This class&apos; functions should be overridden in each script for handling user actions and symbol events
- * @example
- * class MyFeed extends v9.feed {
- *		onOpen (pMeta) {
- *		}
- *
- *		onLoad () {
- *		}
- *
- *		onStop () {
- *		}
- *
- *		onRender () {
- *		}
- *
- *		onEvent (pSymbol,pEvent,pRealTime) {
- *		}
- * }
- *
- * let feed = new MyFeed(&lt;pSymbol&gt;, &lt;pDate&gt;);
- */
-v9.feed = class {
-    /**
-     * Used to provide the symbol and date to the current {@link feed}
-     * @param {String} [pSymbol]
-     * @param {String} [pDate]
-     */
-    constructor(pSymbol, pDate) {
-        gHome.MakeFeed(gUniq, pSymbol, pDate);
-        gFeed = this;
-    }
-
-    /**
-     * Built in feed function that is called when the start button is pressed in order to initialize variables.
-     * @param {Object} pMeta - Object representing json meta information. It currently provides the instrument definitions of the supplied symbol.
-     * @abstract
-     * @example
-     * onOpen(pMeta) {
-     *
-     * }
-     */
-    onOpen(pMeta) {
-
-    }
-
-    /**
-     * Built in feed function that is called once the script has read every previous event in the symbol Feed.
-     * @abstract
-     * @example
-     * onLoad() {
-     *
-     * }
-     */
-    onLoad() {
-    }
-
-    /**
-     * The built in onEvent function is called once for each timestamp tracked in your symbol.
-     *
-     * This is where you&apos;ll be doing most of your calculations on the specific things you&apos;re looking for in your symbol. It allows your script to perform different tasks depending on the current event&apos;s conditions.
-     * @param {String} pSymbol - Name of the current symbol
-     * @param {Object} pEvent - Current event being handled
-     * @param {Boolean} pRealTime - Boolean determining whether or not to only handle current events
-     * @abstract
-     * @example
-     * onEvent(pSymbol, pEvent, pRealTime) {
-     *
-     * }
-     */
-    onEvent(pSymbol, pEvent, pRealTime) {
-    }
-
-    /**
-     * Built in feed function that is called once for each frame that is rendered to the viewport.
-     * @abstract
-     * @example
-     * onRender() {
-     *
-     * }
-     */
-    onRender() {
-    }
-
-    /**
-     * Built in feed function that is called when the stop button is pressed.
-     * @abstract
-     * @example
-     * onStop() {
-     *
-     * }
-     */
-    onStop() {
-    }
 }
 
 /**
