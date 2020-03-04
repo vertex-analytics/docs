@@ -48,12 +48,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "evntscript/src/index.js~littleendian",
-    "variable/index.html#static-variable-littleEndian",
-    "<span>littleEndian</span> <span class=\"search-result-import-path\">evntscript/src/index.js</span>",
-    "variable"
-  ],
-  [
     "evntscript/src/index.js~onerror",
     "function/index.html#static-function-onerror",
     "<span>onerror</span> <span class=\"search-result-import-path\">evntscript/src/index.js</span>",
@@ -64,12 +58,6 @@ window.esdocSearchIndex = [
     "function/index.html#static-function-onfocus",
     "<span>onfocus</span> <span class=\"search-result-import-path\">evntscript/src/index.js</span>",
     "function"
-  ],
-  [
-    "evntscript/src/index.js~qeditsymb",
-    "variable/index.html#static-variable-qEditSymb",
-    "<span>qEditSymb</span> <span class=\"search-result-import-path\">evntscript/src/index.js</span>",
-    "variable"
   ],
   [
     "evntscript/src/index.js~v9",
@@ -487,13 +475,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~cubeitem#format",
-    "class/src/index.js~cubeItem.html#instance-get-format",
+    "class/src/index.js~cubeItem.html#instance-set-format",
     "src/index.js~cubeItem#format",
     "member"
   ],
   [
     "src/index.js~cubeitem#format",
-    "class/src/index.js~cubeItem.html#instance-set-format",
+    "class/src/index.js~cubeItem.html#instance-get-format",
     "src/index.js~cubeItem#format",
     "member"
   ],
@@ -517,25 +505,25 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~cubeitem#strokestyle",
-    "class/src/index.js~cubeItem.html#instance-get-strokeStyle",
-    "src/index.js~cubeItem#strokeStyle",
-    "member"
-  ],
-  [
-    "src/index.js~cubeitem#strokestyle",
     "class/src/index.js~cubeItem.html#instance-set-strokeStyle",
     "src/index.js~cubeItem#strokeStyle",
     "member"
   ],
   [
-    "src/index.js~cubeitem#textstyle",
-    "class/src/index.js~cubeItem.html#instance-set-textStyle",
-    "src/index.js~cubeItem#textStyle",
+    "src/index.js~cubeitem#strokestyle",
+    "class/src/index.js~cubeItem.html#instance-get-strokeStyle",
+    "src/index.js~cubeItem#strokeStyle",
     "member"
   ],
   [
     "src/index.js~cubeitem#textstyle",
     "class/src/index.js~cubeItem.html#instance-get-textStyle",
+    "src/index.js~cubeItem#textStyle",
+    "member"
+  ],
+  [
+    "src/index.js~cubeitem#textstyle",
+    "class/src/index.js~cubeItem.html#instance-set-textStyle",
     "src/index.js~cubeItem#textStyle",
     "member"
   ],
@@ -568,6 +556,12 @@ window.esdocSearchIndex = [
     "class/src/index.js~edit.html#instance-set-symbol",
     "src/index.js~edit#symbol",
     "member"
+  ],
+  [
+    "src/index.js~enumeration",
+    "typedef/index.html#static-typedef-enumeration",
+    "src/index.js~enumeration",
+    "typedef"
   ],
   [
     "src/index.js~feed#constructor",
@@ -691,13 +685,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~lineitem#format",
-    "class/src/index.js~lineItem.html#instance-set-format",
+    "class/src/index.js~lineItem.html#instance-get-format",
     "src/index.js~lineItem#format",
     "member"
   ],
   [
     "src/index.js~lineitem#format",
-    "class/src/index.js~lineItem.html#instance-get-format",
+    "class/src/index.js~lineItem.html#instance-set-format",
     "src/index.js~lineItem#format",
     "member"
   ],
@@ -733,13 +727,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~lineitem#textstyle",
-    "class/src/index.js~lineItem.html#instance-set-textStyle",
+    "class/src/index.js~lineItem.html#instance-get-textStyle",
     "src/index.js~lineItem#textStyle",
     "member"
   ],
   [
     "src/index.js~lineitem#textstyle",
-    "class/src/index.js~lineItem.html#instance-get-textStyle",
+    "class/src/index.js~lineItem.html#instance-set-textStyle",
     "src/index.js~lineItem#textStyle",
     "member"
   ],
@@ -756,6 +750,18 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/index.js~v9#aggressor",
+    "class/src/index.js~v9.html#instance-member-Aggressor",
+    "src/index.js~v9#Aggressor",
+    "member"
+  ],
+  [
+    "src/index.js~v9#haltreason",
+    "class/src/index.js~v9.html#instance-member-HaltReason",
+    "src/index.js~v9#HaltReason",
+    "member"
+  ],
+  [
     "src/index.js~v9#price_null_32",
     "class/src/index.js~v9.html#instance-member-PRICE_NULL_32",
     "src/index.js~v9#PRICE_NULL_32",
@@ -768,9 +774,45 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/index.js~v9#securitytype",
+    "class/src/index.js~v9.html#instance-member-SecurityType",
+    "src/index.js~v9#SecurityType",
+    "member"
+  ],
+  [
+    "src/index.js~v9#unionid",
+    "class/src/index.js~v9.html#instance-member-UnionID",
+    "src/index.js~v9#UnionID",
+    "member"
+  ],
+  [
     "src/index.js~v9#constructor",
     "class/src/index.js~v9.html#instance-constructor-constructor",
     "src/index.js~v9#constructor",
     "method"
+  ],
+  [
+    "src/index.js~v9.aggressor",
+    "typedef/index.html#static-typedef-Aggressor",
+    "src/index.js~v9.Aggressor",
+    "typedef"
+  ],
+  [
+    "src/index.js~v9.haltreason",
+    "typedef/index.html#static-typedef-HaltReason",
+    "src/index.js~v9.HaltReason",
+    "typedef"
+  ],
+  [
+    "src/index.js~v9.securitytype",
+    "typedef/index.html#static-typedef-SecurityType",
+    "src/index.js~v9.SecurityType",
+    "typedef"
+  ],
+  [
+    "src/index.js~v9.unionid",
+    "typedef/index.html#static-typedef-UnionID",
+    "src/index.js~v9.UnionID",
+    "typedef"
   ]
 ]

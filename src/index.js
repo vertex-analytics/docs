@@ -1,48 +1,19 @@
+/**
+ * @ignore
+ */
 const qEditSymb = 2001;
+/**
+ * @ignore
+ */
+const qEditDate = 2002;
+/**
+ * @ignore
+ */
 const littleEndian = true;
 
 /**
- * Class representing the v9 backend
- * @example
- * <!doctype html>
- * <html>
- * <head>
- *   <script src="../_vxaapi-1.0.0/v9.js"></script>
- *   <script>
- * 
- *     class MyFeed extends v9.feed {
- *       onOpen(pMeta) {
- *       }
- *
- *       onLoad () {
- *       }
- *
- *       onStop () {
- *       }
- *
- *       onRender () {
- *       }
- * 
- *       onEvent(pSymbol, pEvent, pRealTime) {
- *       }
- *     }
- *
- *     let	feed = new MyFeed(new v9.edit().symbol);
- *   </script>
- * </head>
- * <style>
- *   html, body, #container {
- *     width: 100%;
- *     height: 100%;
- *     margin: 0;
- *     padding: 0;
- *   }
- * </style>
- * <body>
- *   <div id="container"></div>
- * </body>
- * </html>
- * 
+ * An {@link Object} that only contains member variables with corresponding {@link number}(s)
+ * @typedef {Object} enumeration
  */
 
 /**
@@ -52,166 +23,53 @@ export class v9 {
     constructor() {
         /**
          * Value used specify a non-existent 32 bit price returned
-         * @type {Number}
          * @private
          */
         this.PRICE_NULL_32 = 2147483647;
 
         /**
-         * Value used specify a non-existent 32 bit price returned
-         * @type {Bigint}
+         * Value used specify a non-existent 64 bit price returned
          * @private
          */
         this.PRICE_NULL_64 = 9223372036854775807;
 
         /**
          * @ignore
-         * @type {Number}
          * @private
          */
         this.sGroupSettleID = 4294967293;
-
+        
         /**
-         * Enumerated event type in kEvent.Type (See manual for event types)
-         * @type {Number}
-         * @public
+         * @typedef {enumeration} UnionID
+         * @property {number} NotSet 255
+         * @property {number} NotMapped 250
+         * @property {number} TradeSummary 0 : Message that contains summary information about trades
+         * @property {number} TradeMatch 1 : Message that contains information on a match of a trade event
+         * @property {number} VolumeUpdate 2 : Message that updates volume data after a TradeSummary event. On certain exchanges if two implied quotes are matched, a VolumeUpdate event will occur showing the change in the total volume, but it will not be tied to a TradeSummary event
+         * @property {number} BookLevel 3 : Message that contains information on a quote that occurred in the first n levels of the book. The instrument definition from the exchange specifies the exact number of levels. This message can show up alongside an OD message
+         * @property {number} OrderBook 4 : Message that contains information on a quote for all price levels
+         * @property {number} SecurityStatus 5 : Message that provides the security group market state change
+         * @property {number} DailyStatistics 6 : Message that provides information about a complete session
+         * @property {number} SessionStatistics 7 : Message that provides information about the session during the session
+         * @property {number} LimitsBanding 8 : Message that provides the daily limits for the current session
+         * @property {number} ChannelReset 9 : Message that indicates if the channel the contract is on was reset and at what time
+         * @property {number} TransactionMarker 10 : The TS message marks the start of a bundle, and the TE message marks the end of that bundle. The exchange considers all the messages between the start and end marker to have been processed together, regardless of how the packets were split during exchange transmission
+         */        
+        /**
+         * A {@link v9}․{@link Aggressor} {@link enumeration} that contains each of the different values that may be returned from:</br>
+         *  - v9.UnionID
+         * @type {enumeration}
          * @example
-         * Trade: 0,
-         * Bid: 1,
-         * Ask: 2,
-         * ImpliedBid: 3,
-         * ImpliedAsk: 4,
-         * BookReset: 5,
+          * onEvent(pSymbol, pEvent, pRealTime) {
+          *     switch (pEvent.header.unionID) {
+          *         case v9.UnionID.<{@link UnionID}>:
+          *             // Do something when pEvent.header.unionID is equal to v9.UnionID.TradeSummary
+          *             break;
+          *         default :
+          *             break;
+          *     }
+          * }
          */
-        this.Aggressor =
-        {
-            NoAggressor: 0,
-            Buy: 1,
-            Sell: 2
-        },
-
-        this.HaltReason =
-        {
-            NotSet: 255,
-            GroupSchedule: 0,
-            SurveillanceIntervention: 1,
-            MarketEvent: 2,
-            InstrumentActivation: 3,
-            InstrumentExpiration: 4,
-            Unknown: 5,
-            RecoveryInProcess: 6
-        },
-
-        this.SecurityType =
-        {
-            NotSet: 0,
-            TradingHalt: 2,
-            Close: 4,
-            NewPriceIndication: 15,
-            ReadyToTrade: 17,
-            NotAvailableForTrading: 18,
-            UnknownorInvalid: 20,
-            PreOpen: 21,
-            PreCross: 24,
-            Cross: 25,
-            PostClose: 26,
-            NoChange: 103,
-            PreClos: 150,
-            Restricted: 200,
-            Freeze: 201
-        },
-
-        this.SecurityEvent =
-        {
-            NoEvent: 0,
-            NoCancel: 1,
-            ResetStatistics: 4,
-            ImpliedMatchingON: 5,
-            ImpliedMatchingOFF: 6
-        },
-
-        this.BookType =
-        {
-            NotSet: 85,
-            Bid: 66,
-            Ask: 83,
-            ImpliedBid: 98,
-            ImpliedAsk: 115,
-            BookReset: 82
-        },
-
-        this.DailyStatisticsType =
-        {
-            SettlementPrice: 54,
-            ClearedVolume: 66,
-            OpenInterest: 67,
-            FixingPrice: 87
-        },
-
-        this.BookAction =
-        {
-            NotSet: 255,
-            New: 0,
-            Change: 1,
-            Delete: 2,
-            DeleteThru: 3,
-            DeleteFrom: 4,
-            Overlay: 5,
-            Replace: 6
-        },
-
-        this.SessionStatisticsType =
-        {
-            NotSet: 127,
-            OpenPrice: 0,
-            HighTrade: 1,
-            LowTrade: 2,
-            LastTrade: 3,
-            HighestBid: 4,
-            LowestAsk: 5,
-            ClosePrice: 6
-        },
-
-
-        this.StateType =
-        {
-            NotSet: 255,
-            DailyOpenPrice: 0,
-            IndicativeOpeningPrice: 5,
-            DailyClosePrice: 10
-        },
-
-        this.PutOrCall =
-        {
-            NotSet: 255,
-            Put: 0,
-            Call: 1
-        },
-
-        this.SettleType =
-        {
-            Final: 1,
-            Actual: 2,
-            Rounded: 4,
-            Intraday: 8,
-            ReservedBits: 16,
-            NullValue: 128
-        },
-
-        this.TransactionType =
-        {
-            NotSet: 255,
-            TransactionStart: 0,
-            TransactionEnd: 1
-        },
-
-        this.EventIndicator =
-        {
-            NotSet: 0,
-            LastOfType: 1,
-            EndOfEvent: 128
-        },
-
         this.UnionID =
         {
             NotSet: 255,
@@ -227,11 +85,221 @@ export class v9 {
             LimitsBanding: 8,
             ChannelReset: 9,
             TransactionMarker: 10,
-            Test: 11,
-            ClearingPrice: 12
-        }
+            Test: 11, //Deprecated
+            ClearingPrice: 12 // FUTURE
+        };
+
+        /**
+         * @typedef {enumeration} Aggressor
+         * @property {number} NoAggressor 0
+         * @property {number} Buy 1
+         * @property {number} Sell 2
+         */
+        /**
+         * A {@link v9}․{@link Aggressor} {@link enumeration} that contains each of the different values that may be returned from:</br>
+         *  - pEvent.tradeSummary.aggressor
+         * @type {Aggressor}
+         * @example
+          * onEvent(pSymbol, pEvent, pRealTime) {
+          *     switch (pEvent.header.unionID) {
+          *    case v9.UnionID.TradeSummary:
+          *                  var agr = pEvent.tradeSummary.aggressor;
+          *              break;
+          *          default :
+          *              break;
+          *     }
+          * }
+          *
+         */
+        this.Aggressor =
+        { 
+            NoAggressor: 0, 
+            Buy: 1, 
+            Sell: 2 
+        };
+
+        /**
+         * @typedef {enumeration} HaltReason
+         * @property {number} NotSet 255
+         * @property {number} GroupSchedule 0
+         * @property {number} SurveillanceIntervention 1
+         * @property {number} MarketEvent 2
+         * @property {number} InstrumentActivation 3
+         * @property {number} InstrumentExpiration 4
+         * @property {number} Unknown 5
+         * @property {number} RecoveryInProcess 6
+         */
+        /**
+         * A {@link v9}․{@link HaltReason} {@link enumeration} that contains each of the different values that may be returned from:</br>
+         *  - pEvent.securityStatus.haltReason
+         * @type {HaltReason}
+         * @example
+         * onEvent(pSymbol, pEvent, pRealTime) {
+         *     switch (pEvent.header.unionID) {
+         *         case v9.UnionID.SecurityStatus:
+         *             var hlt = pEvent.securityStatus.haltReason;
+         *             break;
+         *         default :
+         *             break;
+         *     }
+         * }
+         */
+        this.HaltReason =
+        {
+            NotSet: 255,
+            GroupSchedule: 0,
+            SurveillanceIntervention: 1,
+            MarketEvent: 2,
+            InstrumentActivation: 3,
+            InstrumentExpiration: 4,
+            Unknown: 5,
+            RecoveryInProcess: 6
+        };
+
+        /**
+         * @typedef {enumeration} SecurityType
+         * @property {number} NotSet 0
+         * @property {number} TradingHalt 2
+         * @property {number} Close 4
+         * @property {number} NewPriceIndication 15
+         * @property {number} ReadyToTrade 17
+         * @property {number} NotAvailableForTrading 18
+         * @property {number} UnknownorInvalid 20
+         * @property {number} PreOpen 21
+         * @property {number} PreCross 24
+         * @property {number} PostClose 26
+         * @property {number} NoChange 103
+         * @property {number} PreClose 150 : Only ICE Exchange
+         * @property {number} Restricted 200 : Only EUREX Exchange
+         * @property {number} Freeze 201 : Only EUREX Exchange
+         */
+        /**
+         * A {@link v9}․{@link SecurityType} {@link enumeration} that contains each of the different values that may be returned from:</br>
+         *  - pEvent.securityStatus.type
+         * @type {SecurityType}
+         * @example
+         * onEvent(pSymbol, pEvent, pRealTime) {
+         *     switch (pEvent.header.unionID) {
+         *         case v9.UnionID.SecurityStatus:
+         *             var typ = pEvent.securityStatus.type;
+         *             break;
+         *         default :
+         *             break;
+         *     }
+         * }
+         */
+        this.SecurityType =
+        {
+            NotSet: 0,
+            TradingHalt: 2,
+            Close: 4,
+            NewPriceIndication: 15,
+            ReadyToTrade: 17,
+            NotAvailableForTrading: 18,
+            UnknownorInvalid: 20,
+            PreOpen: 21,
+            PreCross: 24,
+            Cross: 25,
+            PostClose: 26,
+            NoChange: 103,
+            PreClose: 150,
+            Restricted: 200,
+            Freeze: 201
+        };
+
+        /*
+        this.SecurityEvent =
+        {
+            NoEvent: 0,
+            NoCancel: 1,
+            ResetStatistics: 4,
+            ImpliedMatchingON: 5,
+            ImpliedMatchingOFF: 6
+        };
+
+        this.BookType =
+        {
+            NotSet: 85,
+            Bid: 66,
+            Ask: 83,
+            ImpliedBid: 98,
+            ImpliedAsk: 115,
+            BookReset: 82
+        };
+
+        this.DailyStatisticsType =
+        {
+            SettlementPrice: 54,
+            ClearedVolume: 66,
+            OpenInterest: 67,
+            FixingPrice: 87
+        };
+
+        this.BookAction =
+        {
+            NotSet: 255,
+            New: 0,
+            Change: 1,
+            Delete: 2,
+            DeleteThru: 3,
+            DeleteFrom: 4,
+            Overlay: 5,
+            Replace: 6
+        };
+
+        this.SessionStatisticsType =
+        {
+            NotSet: 127,
+            OpenPrice: 0,
+            HighTrade: 1,
+            LowTrade: 2,
+            LastTrade: 3,
+            HighestBid: 4,
+            LowestAsk: 5,
+            ClosePrice: 6
+        };
+
+
+        this.StateType =
+        {
+            NotSet: 255,
+            DailyOpenPrice: 0,
+            IndicativeOpeningPrice: 5,
+            DailyClosePrice: 10
+        };
+
+        this.PutOrCall =
+        {
+            NotSet: 255,
+            Put: 0,
+            Call: 1
+        };
+
+        this.SettleType =
+        {
+            Final: 1,
+            Actual: 2,
+            Rounded: 4,
+            Intraday: 8,
+            ReservedBits: 16,
+            NullValue: 128
+        };
+
+        this.TransactionType =
+        {
+            NotSet: 255,
+            TransactionStart: 0,
+            TransactionEnd: 1
+        };
+
+        this.EventIndicator =
+        {
+            NotSet: 0,
+            LastOfType: 1,
+            EndOfEvent: 128
+        };
+        */
     }
-    
 };
 
 v9.edit = class {
