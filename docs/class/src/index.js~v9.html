@@ -15,7 +15,7 @@
 <li>pEvent.securityStatus.type</li>
 </ul>
 </div></div></td><td></td></tr>
-<tr data-ice="target"><td><span class="access" data-ice="access">public</span>    <span class="override" data-ice="override"></span></td><td><div><p>   <span class="code" data-ice="name"><span><a href="class/src/index.js~v9.html#instance-member-UnionID">UnionID</a></span></span><span class="code" data-ice="signature">: <span><a href="typedef/index.html#static-typedef-enumeration">enumeration</a></span></span></p></div><div><div data-ice="description"><p>A <span><a href="class/src/index.js~v9.html">v9</a></span>&#x2024;<span><a href="typedef/index.html#static-typedef-Aggressor">Aggressor</a></span> <span><a href="typedef/index.html#static-typedef-enumeration">enumeration</a></span> that contains each of the different values that may be returned from:<br></p>
+<tr data-ice="target"><td><span class="access" data-ice="access">public</span>    <span class="override" data-ice="override"></span></td><td><div><p>   <span class="code" data-ice="name"><span><a href="class/src/index.js~v9.html#instance-member-UnionID">UnionID</a></span></span><span class="code" data-ice="signature">: <span><a href="typedef/index.html#static-typedef-enumeration">enumeration</a></span></span></p></div><div><div data-ice="description"><p>A <span><a href="class/src/index.js~v9.html">v9</a></span>&#x2024;<span><a href="typedef/index.html#static-typedef-UnionID">UnionID</a></span> <span><a href="typedef/index.html#static-typedef-enumeration">enumeration</a></span> that contains each of the different values that may be returned from:<br></p>
 <ul>
 <li>v9.UnionID</li>
 </ul>
@@ -67,14 +67,14 @@
     }
 }</code></pre></div>
 </div></div>
-<div class="detail" data-ice="detail"><h3 data-ice="anchor" id="instance-member-UnionID"><span class="access" data-ice="access">public</span>      <span class="code" data-ice="name">UnionID</span><span class="code" data-ice="signature">: <span><a href="typedef/index.html#static-typedef-enumeration">enumeration</a></span></span> <span class="right-info"><span data-ice="source"><span><a href="file/src/index.js.html#lineNumber73">source</a></span></span></span></h3><div data-ice="description"><p>A <span><a href="class/src/index.js~v9.html">v9</a></span>&#x2024;<span><a href="typedef/index.html#static-typedef-Aggressor">Aggressor</a></span> <span><a href="typedef/index.html#static-typedef-enumeration">enumeration</a></span> that contains each of the different values that may be returned from:<br></p>
+<div class="detail" data-ice="detail"><h3 data-ice="anchor" id="instance-member-UnionID"><span class="access" data-ice="access">public</span>      <span class="code" data-ice="name">UnionID</span><span class="code" data-ice="signature">: <span><a href="typedef/index.html#static-typedef-enumeration">enumeration</a></span></span> <span class="right-info"><span data-ice="source"><span><a href="file/src/index.js.html#lineNumber73">source</a></span></span></span></h3><div data-ice="description"><p>A <span><a href="class/src/index.js~v9.html">v9</a></span>&#x2024;<span><a href="typedef/index.html#static-typedef-UnionID">UnionID</a></span> <span><a href="typedef/index.html#static-typedef-enumeration">enumeration</a></span> that contains each of the different values that may be returned from:<br></p>
 <ul>
 <li>v9.UnionID</li>
 </ul>
 </div><div data-ice="example"><h4>Example:</h4><div class="example-doc" data-ice="exampleDoc"><pre class="prettyprint source-code"><code data-ice="exampleCode">onEvent(pSymbol, pEvent, pRealTime) {
     switch (pEvent.header.unionID) {
-        case v9.UnionID.&lt;{@link UnionID}&gt;:
-            // Do something when pEvent.header.unionID is equal to v9.UnionID.TradeSummary
+        case v9.UnionID.&lt;Value&gt;:
+            // Do something when pEvent.header.unionID is equal to v9.UnionID.&lt;Value&gt;
             break;
         default :
             break;

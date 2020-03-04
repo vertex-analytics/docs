@@ -12,7 +12,7 @@ const qEditDate = 2002;
 const littleEndian = true;
 
 /**
- * An {@link Object} that only contains member variables with corresponding {@link number}(s)
+ * A JavaScript {@link Object} that only contains member variables with corresponding {@link number}(s)
  * @typedef {Object} enumeration
  */
 
@@ -56,14 +56,14 @@ export class v9 {
          * @property {number} TransactionMarker 10 : The TS message marks the start of a bundle, and the TE message marks the end of that bundle. The exchange considers all the messages between the start and end marker to have been processed together, regardless of how the packets were split during exchange transmission
          */        
         /**
-         * A {@link v9}․{@link Aggressor} {@link enumeration} that contains each of the different values that may be returned from:</br>
+         * A {@link v9}․{@link UnionID} {@link enumeration} that contains each of the different values that may be returned from:</br>
          *  - v9.UnionID
          * @type {enumeration}
          * @example
           * onEvent(pSymbol, pEvent, pRealTime) {
           *     switch (pEvent.header.unionID) {
-          *         case v9.UnionID.<{@link UnionID}>:
-          *             // Do something when pEvent.header.unionID is equal to v9.UnionID.TradeSummary
+          *         case v9.UnionID.<Value>:
+          *             // Do something when pEvent.header.unionID is equal to v9.UnionID.<Value>
           *             break;
           *         default :
           *             break;
