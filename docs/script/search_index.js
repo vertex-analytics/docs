@@ -487,13 +487,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~cubeitem#linewidth",
-    "class/src/index.js~cubeItem.html#instance-set-lineWidth",
+    "class/src/index.js~cubeItem.html#instance-get-lineWidth",
     "src/index.js~cubeItem#lineWidth",
     "member"
   ],
   [
     "src/index.js~cubeitem#linewidth",
-    "class/src/index.js~cubeItem.html#instance-get-lineWidth",
+    "class/src/index.js~cubeItem.html#instance-set-lineWidth",
     "src/index.js~cubeItem#lineWidth",
     "member"
   ],
@@ -715,13 +715,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~lineitem#strokestyle",
-    "class/src/index.js~lineItem.html#instance-get-strokeStyle",
+    "class/src/index.js~lineItem.html#instance-set-strokeStyle",
     "src/index.js~lineItem#strokeStyle",
     "member"
   ],
   [
     "src/index.js~lineitem#strokestyle",
-    "class/src/index.js~lineItem.html#instance-set-strokeStyle",
+    "class/src/index.js~lineItem.html#instance-get-strokeStyle",
     "src/index.js~lineItem#strokeStyle",
     "member"
   ],
@@ -739,13 +739,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~lineitem#title",
-    "class/src/index.js~lineItem.html#instance-set-title",
+    "class/src/index.js~lineItem.html#instance-get-title",
     "src/index.js~lineItem#title",
     "member"
   ],
   [
     "src/index.js~lineitem#title",
-    "class/src/index.js~lineItem.html#instance-get-title",
+    "class/src/index.js~lineItem.html#instance-set-title",
     "src/index.js~lineItem#title",
     "member"
   ],
@@ -756,9 +756,39 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/index.js~v9#bookaction",
+    "class/src/index.js~v9.html#instance-member-BookAction",
+    "src/index.js~v9#BookAction",
+    "member"
+  ],
+  [
+    "src/index.js~v9#booktype",
+    "class/src/index.js~v9.html#instance-member-BookType",
+    "src/index.js~v9#BookType",
+    "member"
+  ],
+  [
+    "src/index.js~v9#dailystatisticstype",
+    "class/src/index.js~v9.html#instance-member-DailyStatisticsType",
+    "src/index.js~v9#DailyStatisticsType",
+    "member"
+  ],
+  [
+    "src/index.js~v9#eventindicator",
+    "class/src/index.js~v9.html#instance-member-EventIndicator",
+    "src/index.js~v9#EventIndicator",
+    "member"
+  ],
+  [
     "src/index.js~v9#haltreason",
     "class/src/index.js~v9.html#instance-member-HaltReason",
     "src/index.js~v9#HaltReason",
+    "member"
+  ],
+  [
+    "src/index.js~v9#investigatestatus",
+    "class/src/index.js~v9.html#instance-member-InvestigateStatus",
+    "src/index.js~v9#InvestigateStatus",
     "member"
   ],
   [
@@ -774,9 +804,45 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/index.js~v9#putorcall",
+    "class/src/index.js~v9.html#instance-member-PutOrCall",
+    "src/index.js~v9#PutOrCall",
+    "member"
+  ],
+  [
+    "src/index.js~v9#securityevent",
+    "class/src/index.js~v9.html#instance-member-SecurityEvent",
+    "src/index.js~v9#SecurityEvent",
+    "member"
+  ],
+  [
     "src/index.js~v9#securitytype",
     "class/src/index.js~v9.html#instance-member-SecurityType",
     "src/index.js~v9#SecurityType",
+    "member"
+  ],
+  [
+    "src/index.js~v9#sessionstatisticstype",
+    "class/src/index.js~v9.html#instance-member-SessionStatisticsType",
+    "src/index.js~v9#SessionStatisticsType",
+    "member"
+  ],
+  [
+    "src/index.js~v9#settletype",
+    "class/src/index.js~v9.html#instance-member-SettleType",
+    "src/index.js~v9#SettleType",
+    "member"
+  ],
+  [
+    "src/index.js~v9#statetype",
+    "class/src/index.js~v9.html#instance-member-StateType",
+    "src/index.js~v9#StateType",
+    "member"
+  ],
+  [
+    "src/index.js~v9#transactiontype",
+    "class/src/index.js~v9.html#instance-member-TransactionType",
+    "src/index.js~v9#TransactionType",
     "member"
   ],
   [
@@ -798,15 +864,81 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "src/index.js~v9.bookaction",
+    "typedef/index.html#static-typedef-BookAction",
+    "src/index.js~v9.BookAction",
+    "typedef"
+  ],
+  [
+    "src/index.js~v9.booktype",
+    "typedef/index.html#static-typedef-BookType",
+    "src/index.js~v9.BookType",
+    "typedef"
+  ],
+  [
+    "src/index.js~v9.dailystatisticstype",
+    "typedef/index.html#static-typedef-DailyStatisticsType",
+    "src/index.js~v9.DailyStatisticsType",
+    "typedef"
+  ],
+  [
+    "src/index.js~v9.eventindicator",
+    "typedef/index.html#static-typedef-EventIndicator",
+    "src/index.js~v9.EventIndicator",
+    "typedef"
+  ],
+  [
     "src/index.js~v9.haltreason",
     "typedef/index.html#static-typedef-HaltReason",
     "src/index.js~v9.HaltReason",
     "typedef"
   ],
   [
+    "src/index.js~v9.investigatestatus",
+    "typedef/index.html#static-typedef-InvestigateStatus",
+    "src/index.js~v9.InvestigateStatus",
+    "typedef"
+  ],
+  [
+    "src/index.js~v9.putorcall",
+    "typedef/index.html#static-typedef-PutOrCall",
+    "src/index.js~v9.PutOrCall",
+    "typedef"
+  ],
+  [
+    "src/index.js~v9.securityevent",
+    "typedef/index.html#static-typedef-SecurityEvent",
+    "src/index.js~v9.SecurityEvent",
+    "typedef"
+  ],
+  [
     "src/index.js~v9.securitytype",
     "typedef/index.html#static-typedef-SecurityType",
     "src/index.js~v9.SecurityType",
+    "typedef"
+  ],
+  [
+    "src/index.js~v9.sessionstatisticstype",
+    "typedef/index.html#static-typedef-SessionStatisticsType",
+    "src/index.js~v9.SessionStatisticsType",
+    "typedef"
+  ],
+  [
+    "src/index.js~v9.settletype",
+    "typedef/index.html#static-typedef-SettleType",
+    "src/index.js~v9.SettleType",
+    "typedef"
+  ],
+  [
+    "src/index.js~v9.statetype",
+    "typedef/index.html#static-typedef-StateType",
+    "src/index.js~v9.StateType",
+    "typedef"
+  ],
+  [
+    "src/index.js~v9.transactiontype",
+    "typedef/index.html#static-typedef-TransactionType",
+    "src/index.js~v9.TransactionType",
     "typedef"
   ],
   [

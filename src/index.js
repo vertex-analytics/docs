@@ -109,7 +109,6 @@ export class v9 {
           *              break;
           *     }
           * }
-          *
          */
         this.Aggressor =
         { 
@@ -206,8 +205,30 @@ export class v9 {
             Restricted: 200,
             Freeze: 201
         };
-
-        /*
+        
+        /**
+         * @typedef {enumeration} SecurityEvent
+         * @property {number} NoEvent 0
+         * @property {number} NoCancel 1
+         * @property {number} ResetStatistics 4
+         * @property {number} ImpliedMatchingON 5
+         * @property {number} ImpliedMatchingOFF 6
+         */
+        /**
+         * A {@link v9}․{@link SecurityEvent} {@link enumeration} that contains each of the different values that may be returned from:</br>
+         *  - pEvent.securityStatus.securityEvent
+         * @type {SecurityEvent}
+         * @example
+          * onEvent(pSymbol, pEvent, pRealTime) {
+          *     switch (pEvent.header.unionID) {
+          *    case v9.UnionID.SecurityStatus:
+          *                  var sev = pEvent.securityStatus.securityEvent;
+          *              break;
+          *          default :
+          *              break;
+          *     }
+          * }
+         */
         this.SecurityEvent =
         {
             NoEvent: 0,
@@ -217,6 +238,30 @@ export class v9 {
             ImpliedMatchingOFF: 6
         };
 
+        /**
+         * @typedef {enumeration} BookType
+         * @property {number} NotSet 85
+         * @property {number} Bid 66
+         * @property {number} Ask 83
+         * @property {number} ImpliedBid 115
+         * @property {number} ImpliedAsk 82
+         */
+        /**
+         * A {@link v9}․{@link BookType} {@link enumeration} that contains each of the different values that may be returned from:</br>
+         *  - pEvent.orderBook.type
+         *  - pEvent.bookLevel.type
+         * @type {BookType}
+         * @example
+          * onEvent(pSymbol, pEvent, pRealTime) {
+          *     switch (pEvent.header.unionID) {
+          *    case v9.UnionID.OrderBook:
+          *                  var typ = pEvent.orderBook.type;
+          *              break;
+          *          default :
+          *              break;
+          *     }
+          * }
+         */
         this.BookType =
         {
             NotSet: 85,
@@ -227,6 +272,28 @@ export class v9 {
             BookReset: 82
         };
 
+        /**
+         * @typedef {enumeration} DailyStatisticsType
+         * @property {number} SettlePrice '6'
+         * @property {number} ClearedVolume 'B'
+         * @property {number} OpenInterest 'C'
+         * @property {number} Fixing 'W'
+         */
+        /**
+         * A {@link v9}․{@link DailyStatisticsType} {@link enumeration} that contains each of the different values that may be returned from:</br>
+         *  - pEvent.dailyStatistics.type
+         * @type {DailyStatisticsType}
+         * @example
+          * onEvent(pSymbol, pEvent, pRealTime) {
+          *     switch (pEvent.header.unionID) {
+          *    case v9.UnionID.DailyStatistics:
+          *                  var typ = pEvent.dailyStatistics.type;
+          *              break;
+          *          default :
+          *              break;
+          *     }
+          * }
+         */
         this.DailyStatisticsType =
         {
             SettlementPrice: 54,
@@ -235,6 +302,33 @@ export class v9 {
             FixingPrice: 87
         };
 
+        /**
+         * @typedef {enumeration} BookAction
+         * @property {number} NotSet 255
+         * @property {number} New 0
+         * @property {number} Change 1
+         * @property {number} Delete 2
+         * @property {number} DeleteThru 3
+         * @property {number} DeleteFrom 4
+         * @property {number} Overlay 5
+         * @property {number} Replace 6
+         */
+        /**
+         * A {@link v9}․{@link BookAction} {@link enumeration} that contains each of the different values that may be returned from:</br>
+         *  - pEvent.orderBook.action
+         *  - pEvent.bookLevel.action
+         * @type {BookAction}
+         * @example
+         * onEvent(pSymbol, pEvent, pRealTime) {
+         *     switch (pEvent.header.unionID) {
+         *    case v9.UnionID.OrderBook:
+         *                  var act = pEvent.orderBook.action;
+         *              break;
+         *          default :
+         *              break;
+         *     }
+         * }
+         */
         this.BookAction =
         {
             NotSet: 255,
@@ -247,6 +341,32 @@ export class v9 {
             Replace: 6
         };
 
+        /**
+         * @typedef {enumeration} SessionStatisticsType
+         * @property {number} NotSet 127
+         * @property {number} OpenPrice 0
+         * @property {number} HighTrade 1
+         * @property {number} LowTrade 2
+         * @property {number} LastTrade 3
+         * @property {number} HighestBid 4
+         * @property {number} LowestAsk 5
+         * @property {number} ClosePrice 6
+         */
+        /**
+         * A {@link v9}․{@link SessionStatisticsType} {@link enumeration} that contains each of the different values that may be returned from:</br>
+         *  - pEvent.sessionStatistics.type
+         * @type {SessionStatisticsType}
+         * @example
+         * onEvent(pSymbol, pEvent, pRealTime) {
+         *     switch (pEvent.header.unionID) {
+         *    case v9.UnionID.SessionStatistics:
+         *                  var typ = pEvent.sessionStatistics.type;
+         *              break;
+         *          default :
+         *              break;
+         *     }
+         * }
+         */
         this.SessionStatisticsType =
         {
             NotSet: 127,
@@ -259,7 +379,28 @@ export class v9 {
             ClosePrice: 6
         };
 
-
+        /**
+         * @typedef {enumeration} StateType
+         * @property {number} NotSet 255
+         * @property {number} DailyOpenPrice 0
+         * @property {number} IndicativeOpeningPrice 5
+         * @property {number} DailyClosingPrice 10
+         */
+        /**
+         * A {@link v9}․{@link StateType} {@link enumeration} that contains each of the different values that may be returned from:</br>
+         *  - pEvent.sessionStatistics.stateType
+         * @type {StateType}
+         * @example
+          * onEvent(pSymbol, pEvent, pRealTime) {
+          *     switch (pEvent.header.unionID) {
+          *    case v9.UnionID.SessionStatistics:
+          *                  var stt = pEvent.sessionStatistics.stateType;
+          *              break;
+          *          default :
+          *              break;
+          *     }
+          * }
+         */
         this.StateType =
         {
             NotSet: 255,
@@ -268,6 +409,21 @@ export class v9 {
             DailyClosePrice: 10
         };
 
+        /**
+         * @typedef {enumeration} PutOrCall
+         * @property {number} NotSet 255
+         * @property {number} Put 0
+         * @property {number} Call 1
+         */
+        /**
+         * A {@link v9}․{@link PutOrCall} {@link enumeration} that contains each of the different values that may be returned from:</br>
+         *  - pEvent.PutOrCall.type
+         * @type {PutOrCall}
+         * @example
+          * onEvent(pSymbol, pEvent, pRealTime) {
+          *     // N/A
+          * }
+         */
         this.PutOrCall =
         {
             NotSet: 255,
@@ -275,6 +431,30 @@ export class v9 {
             Call: 1
         };
 
+        /**
+         * @typedef {enumeration} SettleType
+         * @property {number} Final 1
+         * @property {number} Actual 2
+         * @property {number} Rounded 4
+         * @property {number} Intraday 8
+         * @property {number} ReservedBits 16
+         * @property {number} NullValue 128
+         */
+        /**
+         * A {@link v9}․{@link SettleType} {@link enumeration} that contains each of the different values that may be returned from:</br>
+         *  - pEvent.dailyStatistics.settleType
+         * @type {SettleType}
+         * @example
+         * onEvent(pSymbol, pEvent, pRealTime) {
+         *     switch (pEvent.header.unionID) {
+         *    case v9.UnionID.DailyStatistics:
+         *                  var stl = pEvent.dailyStatistics.settleType;
+         *              break;
+         *          default :
+         *              break;
+         *     }
+         * }
+         */
         this.SettleType =
         {
             Final: 1,
@@ -285,6 +465,27 @@ export class v9 {
             NullValue: 128
         };
 
+        /**
+         * @typedef {enumeration} TransactionType
+         * @property {number} NotSet 255
+         * @property {number} TransactionStart 0
+         * @property {number} TransactionEnd 1
+         */
+        /**
+         * A {@link v9}․{@link TransactionType} {@link enumeration} that contains each of the different values that may be returned from:</br>
+         *  - pEvent.transactionMarker.transactionType
+         * @type {TransactionType}
+         * @example
+          * onEvent(pSymbol, pEvent, pRealTime) {
+          *     switch (pEvent.header.unionID) {
+          *    case v9.UnionID.TransactionMarker:
+          *                  var ttp = pEvent.transactionMarker.transactionType;
+          *              break;
+          *          default :
+          *              break;
+          *     }
+          * }
+         */
         this.TransactionType =
         {
             NotSet: 255,
@@ -292,13 +493,55 @@ export class v9 {
             TransactionEnd: 1
         };
 
+        /**
+         * @typedef {enumeration} EventIndicator
+         * @property {number} NotSet 0
+         * @property {number} LastOfType 1
+         * @property {number} EndOfEvent 128
+         */
+        /**
+         * A {@link v9}․{@link EventIndicator} {@link enumeration} that contains each of the different values that may be returned from:</br>
+         *  - pEvent.header.eventIndicator
+         * @type {EventIndicator}
+         * @example
+         * onEvent(pSymbol, pEvent, pRealTime) {
+         *     switch (pEvent.header.unionID) {
+         *    case v9.UnionID.EventIndicator:
+         *                  var ind = pEvent.header.eventIndicator;
+         *              break;
+         *          default :
+         *              break;
+         *     }
+         * }
+         */
         this.EventIndicator =
         {
             NotSet: 0,
             LastOfType: 1,
             EndOfEvent: 128
         };
-        */
+
+        /**
+         * @typedef {enumeration} InvestigateStatus
+         * @property {number} NotSet 0
+         * @property {number} UnderInvestigation 1
+         * @property {number} InvestigationStatus 2
+         */
+        /**
+         * A {@link v9}․{@link InvestigateStatus} {@link enumeration} that contains each of the different values that may be returned from:</br>
+         *  - N/A
+         * @type {InvestigateStatus}
+         * @example
+         * onEvent(pSymbol, pEvent, pRealTime) {
+         *    // N/A
+         * }
+         */
+        this.InvestigateStatus =
+        {
+            NotSet: 0,
+            UnderInvestigation: 1,
+            InvestigationCompleted: 2
+        };
     }
 };
 
