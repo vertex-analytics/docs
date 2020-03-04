@@ -48,6 +48,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "evntscript/src/index.js~littleendian",
+    "variable/index.html#static-variable-littleEndian",
+    "<span>littleEndian</span> <span class=\"search-result-import-path\">evntscript/src/index.js</span>",
+    "variable"
+  ],
+  [
     "evntscript/src/index.js~onerror",
     "function/index.html#static-function-onerror",
     "<span>onerror</span> <span class=\"search-result-import-path\">evntscript/src/index.js</span>",
@@ -58,6 +64,18 @@ window.esdocSearchIndex = [
     "function/index.html#static-function-onfocus",
     "<span>onfocus</span> <span class=\"search-result-import-path\">evntscript/src/index.js</span>",
     "function"
+  ],
+  [
+    "evntscript/src/index.js~qeditdate",
+    "variable/index.html#static-variable-qEditDate",
+    "<span>qEditDate</span> <span class=\"search-result-import-path\">evntscript/src/index.js</span>",
+    "variable"
+  ],
+  [
+    "evntscript/src/index.js~qeditsymb",
+    "variable/index.html#static-variable-qEditSymb",
+    "<span>qEditSymb</span> <span class=\"search-result-import-path\">evntscript/src/index.js</span>",
+    "variable"
   ],
   [
     "evntscript/src/index.js~v9",
@@ -475,13 +493,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~cubeitem#format",
-    "class/src/index.js~cubeItem.html#instance-set-format",
+    "class/src/index.js~cubeItem.html#instance-get-format",
     "src/index.js~cubeItem#format",
     "member"
   ],
   [
     "src/index.js~cubeitem#format",
-    "class/src/index.js~cubeItem.html#instance-get-format",
+    "class/src/index.js~cubeItem.html#instance-set-format",
     "src/index.js~cubeItem#format",
     "member"
   ],
@@ -505,13 +523,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~cubeitem#strokestyle",
-    "class/src/index.js~cubeItem.html#instance-set-strokeStyle",
+    "class/src/index.js~cubeItem.html#instance-get-strokeStyle",
     "src/index.js~cubeItem#strokeStyle",
     "member"
   ],
   [
     "src/index.js~cubeitem#strokestyle",
-    "class/src/index.js~cubeItem.html#instance-get-strokeStyle",
+    "class/src/index.js~cubeItem.html#instance-set-strokeStyle",
     "src/index.js~cubeItem#strokeStyle",
     "member"
   ],
@@ -546,15 +564,27 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/index.js~edit#date",
+    "class/src/index.js~edit.html#instance-get-date",
+    "src/index.js~edit#date",
+    "member"
+  ],
+  [
     "src/index.js~edit#symbol",
     "class/src/index.js~edit.html#instance-get-symbol",
     "src/index.js~edit#symbol",
     "member"
   ],
   [
-    "src/index.js~edit#symbol",
-    "class/src/index.js~edit.html#instance-set-symbol",
-    "src/index.js~edit#symbol",
+    "src/index.js~edit#value",
+    "class/src/index.js~edit.html#instance-get-value",
+    "src/index.js~edit#value",
+    "member"
+  ],
+  [
+    "src/index.js~edit#value",
+    "class/src/index.js~edit.html#instance-set-value",
+    "src/index.js~edit#value",
     "member"
   ],
   [
@@ -715,13 +745,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~lineitem#strokestyle",
-    "class/src/index.js~lineItem.html#instance-set-strokeStyle",
+    "class/src/index.js~lineItem.html#instance-get-strokeStyle",
     "src/index.js~lineItem#strokeStyle",
     "member"
   ],
   [
     "src/index.js~lineitem#strokestyle",
-    "class/src/index.js~lineItem.html#instance-get-strokeStyle",
+    "class/src/index.js~lineItem.html#instance-set-strokeStyle",
     "src/index.js~lineItem#strokeStyle",
     "member"
   ],

@@ -1,14 +1,12 @@
 /**
- * @ignore
+ * The current symbol being accessed by the pane
  */
 const qEditSymb = 2001;
 /**
- * @ignore
+ * The current date being accessed by the pane
  */
 const qEditDate = 2002;
-/**
- * @ignore
- */
+
 const littleEndian = true;
 
 /**
@@ -546,15 +544,65 @@ export class v9 {
 };
 
 v9.edit = class {
-    constructor() {
+  /**
+   * Used to retrieve specific values within a {@link feed}․ e․g: symbol and/or date
+   * @param {number} [pEditType] 
+   */
+    constructor(pEditType) 
+    {
+        /**
+         * @ignore
+         * @private
+         */
+        this.fEditType = qEditSymb;
+
+        if (pEditType)
+        {
+            if (pEditType.toUpperCase() === "SYMBOL")
+            {
+                this.fEditType = qEditSymb;
+            }
+            if (pEditType.toUpperCase() === "DATE")
+            {
+                this.fEditType = qEditDate;
+            }
+        }
     }
 
-    set symbol(pSymb) {
-        return gHome._pagesave(gUniq, qEditSymb, pSymb);
+    /**
+     * 
+     * @type {string}
+     * */
+    set value(pEdit)
+    {
+        return gHome._pagesave(gUniq, this.fEditType, pEdit);
     }
 
-    get symbol() {
-        return gHome._pageread(gUniq, qEditSymb);
+    /**
+     * 
+     * @type {string}
+     */
+    get value()
+    {
+        return gHome._pageread(gUniq, this.fEditType);
+    }
+
+    /**
+     * 
+     * @type {string}
+     */
+    get symbol()
+    {
+        return (this.fEditType == qEditSymb) ? this.value : "";
+    }
+
+    /** 
+     * 
+     * @type {string}
+     */
+    get date()
+    {
+        return (this.fEditType == qEditDate) ? this.value : "";
     }
 }
 
@@ -1042,37 +1090,33 @@ v9.eventCopy = function (pEvent) {
 /**
  * This class' functions should be overridden in each script for handling user actions and symbol events
  * @example
- * class MyFeed extends v9.feed	{
- *		onOpen ()
- *		{
+ * class MyFeed extends v9.feed {
+ *		onOpen (pMeta) {
  *		}
  *
- *		onLoad ()
- *		{
+ *		onLoad () {
  *		}
  *
- *		onStop ()
- *		{
+ *		onStop () {
  *		}
  *
- *		onRender ()
- *		{
+ *		onRender () {
  *		}
  *
- *		onEvent (pSymbol,pEvent,pRealTime)
- *		{
+ *		onEvent (pSymbol,pEvent,pRealTime) {
  *		}
  * }
  *
- * let feed = new MyFeed(new v9.edit().symbol);
+ * let feed = new MyFeed(<pSymbol>, <pDate>);
  */
 v9.feed = class {
     /**
-     * 
-     * @param {String} pSymbol
+     * Used to provide the symbol and date to the current {@link feed}
+     * @param {String} [pSymbol]
+     * @param {String} [pDate]
      */
-    constructor(pSymbol) {
-        gHome.MakeFeed(gUniq, pSymbol);
+    constructor(pSymbol, pDate) {
+        gHome.MakeFeed(gUniq, pSymbol, pDate);
         gFeed = this;
     }
 
