@@ -15,9 +15,9 @@
         "unexportedIdentifier": { "enable": true },
         "typeInference": { "enable": true },
         "brand": {
-          "title": "EVNTScript",
-          "description": "EVNTScript is a Javascript-based parser that allows for easy understanding, calculating, and tracking of futures symbols in more than just real-time using vNine at https://vnine.vertex-analytics.com.",
-          "repository": "https://github.com/plggs/vxa-doc",
+          "title": "v9 API",
+          "description": "The Vertex Analytics v9 API allows for easy understanding, calculating, and tracking of futures symbols in more than just real-time using v9 at https://vnine.vertex-analytics.com.",
+          "repository": "https://github.com/vertex-analytics/v9-docs",
           "site": "https://v9.vertex-analytics.com"
         }
       }
