@@ -2,19 +2,74 @@
 <h1 id="vertex-analytics---v9-api">Vertex Analytics | v9 API</h1><p>The Vertex Analytics v9 API allows for easy understanding, calculating, and tracking of futures symbols in more than just real-time using v9 at <a href="https://v9.vertex-analytics.com">https://v9.vertex-analytics.com</a>.</p>
 <p>Contact: <a href="mailto:support@vertex-analytics.com">support@vertex-analytics.com</a></p>
 <h5 id="documentation-by--a-href--https---blakeboris-com--blake-boris--a----a-href--https---williamleiby-com--william-leiby--a---and-david-salvador">Documentation by <a href="https://blakeboris.com">Blake Boris</a>, <a href="https://williamleiby.com">William Leiby</a>, and David Salvador</h5></div><div class="manual-cards"><div class="manual-card-wrap" data-ice="cards"><div class="manual-card js_ManualCard" href="#" tabindex="-1"><div data-ice="card"><h1>API Manual</h1><p>v9 is an analytical product for tracking past and current futures contracts. It allows you to programmatically perform actions based on 
-incoming CME WebSocket event data with nanosecond precision.</p><h2>Accessing v9</h2><p>The latest build of v9 can always be accessed at <a href="https://v9.vertex-analytics.com">v9.vertex-analytics.com</a>. </p><h2>v9 Editor</h2><p>The v9 Editor is where programmers can write custom Javascript-based scripts to build out individual data visualization solutions.</p><p>Each script, located on the lefthand side, corresponds to a data visualization solution located on the righthand side.</p><h3>Sections</h3><h4>Explorer</h4><ul>
+incoming CME WebSocket event data with nanosecond precision.</p><h2>Accessing v9</h2><p>The latest build of v9 may be accessed at <a href="https://v9.vertex-analytics.com">v9.vertex-analytics.com</a>. </p><h2>v9 Editor</h2><p>The v9 Editor is where programmers can write custom Javascript-based scripts to build out individual data visualization solutions.</p><p>Each script, located on the lefthand side, corresponds to a data visualization solution located on the righthand side.</p><h3>Sections</h3><h4>Top-bar</h4><p>The top-bar houses four navigation buttons to the right that each take you to different pages of v9. </p><table>
+<thead>
+<tr>
+<th></th>
+<th>Top-bar Buttons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="./manual/asset/v9-top-dashboard.png"></td>
+<td>Navigates to the v9 Dashboard</td>
+</tr>
+<tr>
+<td><img src="./manual/asset/v9-top-data-center.png"></td>
+<td>Navigates to the v9 Data Center</td>
+</tr>
+<tr>
+<td><img src="./manual/asset/v9-top-help.png"></td>
+<td>Navigates to the v9 Documentation</td>
+</tr>
+<tr>
+<td><img src="./manual/asset/v9-top-sign-out.png"></td>
+<td>Navigates to the v9 Log In Page</td>
+</tr>
+</tbody>
+</table><h4>Left-bar</h4><p>The bar on the left-hand side of the v9 Editor contains options for showing and hiding 
+different sections of v9.</p><table>
+<thead>
+<tr>
+<th></th>
+<th>Left-bar Top Buttons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="./manual/asset/v9-left-explorer-button.png"></td>
+<td>Shows / hides the Explorer</td>
+</tr>
+<tr>
+<td><img src="./manual/asset/v9-left-text-editor-button.png"></td>
+<td>Shows / hides the Text Editor</td>
+</tr>
+<tr>
+<td><img src="./manual/asset/v9-left-pane-button.png"></td>
+<td>Shows / hides the Pane</td>
+</tr>
+<tr>
+<td><img src="./manual/asset/v9-left-debug-button.png"></td>
+<td>Shows / hides the Debug Output</td>
+</tr>
+</tbody>
+</table><h4>Explorer</h4><ul>
 <li>Top buttons</li>
+</ul><p>These buttons correspond to different actions that may be performed on files 
+within the explorer.</p><ul>
 <li>Your scripts</li>
 <li>Templates</li>
 <li>Divided up by libraries</li>
-</ul><h4>Text Editor</h4><p>This section is used to edit HTML files that contain data visualization logic for a specified symbol.</p><h4>Debug</h4><p>This section logs syntax and runtime errors within your script(s). This does not include errors within external libraries </p><h4>Pane</h4><p>This sections presents the data visualizations for a script.</p><h4>HTML File Sections</h4><h4>Library Importations</h4><p>This section refers to the top of the HTML file where both v9&apos;s propritary library and third-party libraries</p><h4>JavaScript Section</h4><p>Class Architecture</p><p>This section refers to all of the data visualization logic that is executed within v9&apos;s runtime.</p><h4>CSS Section</h4><p>This section refers to styling overrides one makes within their script(s).</p><h2>v9 Dashboard</h2><p>v9&apos;s Dashboards are composed of either one or multiple scripts written in the v9 Editor, and they can easily be exported and shared with other users. </p><p>v9 Dashboards are where traders/portfolio managers monitor contracts using the charts built out in the v9 Editor section.</p><h3>Dashboard Sections</h3><h4>Explorer Section</h4></div></div><a class="manual-card-link" data-ice="link" tabindex="0" href="manual/manual.html"></a></div>
+</ul><h4>Text Editor</h4><p>This section is used to edit HTML files that contain data visualization logic for a specified symbol.</p><h4>Debug Output</h4><p>This section logs syntax and runtime errors within your script(s). This does not include errors within external libraries </p><h4>Pane</h4><p>The pane section presents the data visualizations for the current script when run.</p><h4>HTML File Sections</h4><h4>Library Importations</h4><p>This section refers to the top of the HTML file where both v9&apos;s propritary library and third-party libraries</p><h4>JavaScript Section</h4><p>Class Architecture</p><p>This section refers to all of the data visualization logic that is executed within v9&apos;s runtime.</p><h4>CSS Section</h4><p>This section refers to styling overrides one makes within their script(s).</p><h2>v9 Dashboard</h2><p>v9&apos;s Dashboards are composed of either one or multiple scripts written in the v9 Editor, and they can easily be exported and shared with other users. </p><p>v9 Dashboards are where traders/portfolio managers monitor contracts using the charts built out in the v9 Editor section.</p><h3>Dashboard Sections</h3><h4>Explorer Section</h4></div></div><a class="manual-card-link" data-ice="link" tabindex="0" href="manual/manual.html"></a></div>
 </div></div></div><footer class="main-footer"><img alt="esdoc logo" class="esdoc-logo" src="image/esdoc-logo-mini.png"> <span>Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span></a></span></footer></main><aside class="sidebar initial js_sidebarLeft sidebar-left" data-ice="nav"><nav class="nav manual-nav" data-ice="manual"><ul class="nav-list manual-toc"><li class="nav-item _indent-h1" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html" class="nav-link _" data-ice="link">API Manual</a></li>
 <li class="nav-item _indent-h2" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#accessing-v9" class="nav-link _" data-ice="link">Accessing v9</a></li>
 <li class="nav-item _indent-h2" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#v9-editor" class="nav-link _" data-ice="link">v9 Editor</a></li>
 <li class="nav-item _indent-h3" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#sections" class="nav-link _" data-ice="link">Sections</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#top-bar" class="nav-link _" data-ice="link">Top-bar</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#left-bar" class="nav-link _" data-ice="link">Left-bar</a></li>
 <li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#explorer" class="nav-link _" data-ice="link">Explorer</a></li>
 <li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#text-editor" class="nav-link _" data-ice="link">Text Editor</a></li>
-<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#debug" class="nav-link _" data-ice="link">Debug</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#debug-output" class="nav-link _" data-ice="link">Debug Output</a></li>
 <li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#pane" class="nav-link _" data-ice="link">Pane</a></li>
 <li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#html-file-sections" class="nav-link _" data-ice="link">HTML File Sections</a></li>
 <li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#library-importations" class="nav-link _" data-ice="link">Library Importations</a></li>

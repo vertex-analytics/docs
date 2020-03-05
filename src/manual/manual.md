@@ -5,7 +5,7 @@ incoming CME WebSocket event data with nanosecond precision.
 
 ## Accessing v9
 
-The latest build of v9 can always be accessed at [v9.vertex-analytics.com](https://v9.vertex-analytics.com). 
+The latest build of v9 may be accessed at [v9.vertex-analytics.com](https://v9.vertex-analytics.com). 
 
 ## v9 Editor
 
@@ -15,9 +15,36 @@ Each script, located on the lefthand side, corresponds to a data visualization s
 
 ### Sections
 
+#### Top-bar
+
+The top-bar houses four navigation buttons to the right that each take you to different pages of v9. 
+
+|   | Top-bar Buttons |
+|---|---|
+| <img src="asset/v9-top-dashboard.png"> | Navigates to the v9 Dashboard     |
+| <img src="asset/v9-top-data-center.png"> | Navigates to the v9 Data Center |
+| <img src="asset/v9-top-help.png"> | Navigates to the v9 Documentation      |
+| <img src="asset/v9-top-sign-out.png"> | Navigates to the v9 Log In Page    |
+
+#### Left-bar
+
+The bar on the left-hand side of the v9 Editor contains options for showing and hiding 
+different sections of v9.
+
+|   | Left-bar Top Buttons |
+|---|---|
+| <img src="asset/v9-left-explorer-button.png"> | Shows / hides the Explorer        |
+| <img src="asset/v9-left-text-editor-button.png"> | Shows / hides the Text Editor  |
+| <img src="asset/v9-left-pane-button.png"> | Shows / hides the Pane                |
+| <img src="asset/v9-left-debug-button.png"> | Shows / hides the Debug Output       |
+
 #### Explorer
 
 - Top buttons
+
+These buttons correspond to different actions that may be performed on files 
+within the explorer.
+
 - Your scripts
 - Templates
 - Divided up by libraries
@@ -26,13 +53,13 @@ Each script, located on the lefthand side, corresponds to a data visualization s
 
 This section is used to edit HTML files that contain data visualization logic for a specified symbol.
 
-#### Debug
+#### Debug Output
 
 This section logs syntax and runtime errors within your script(s). This does not include errors within external libraries 
 
 #### Pane
 
-This sections presents the data visualizations for a script.
+The pane section presents the data visualizations for the current script when run.
 
 #### HTML File Sections
 
