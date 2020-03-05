@@ -1,5 +1,11 @@
 window.esdocSearchIndex = [
   [
+    "evntscript/src/index.js~event",
+    "class/src/index.js~Event.html",
+    "<span>Event</span> <span class=\"search-result-import-path\">evntscript/src/index.js</span>",
+    "class"
+  ],
+  [
     "evntscript/src/index.js~cubechart",
     "class/src/index.js~cubeChart.html",
     "<span>cubeChart</span> <span class=\"search-result-import-path\">evntscript/src/index.js</span>",
@@ -57,12 +63,6 @@ window.esdocSearchIndex = [
     "evntscript/src/index.js~onerror",
     "function/index.html#static-function-onerror",
     "<span>onerror</span> <span class=\"search-result-import-path\">evntscript/src/index.js</span>",
-    "function"
-  ],
-  [
-    "evntscript/src/index.js~onfocus",
-    "function/index.html#static-function-onfocus",
-    "<span>onfocus</span> <span class=\"search-result-import-path\">evntscript/src/index.js</span>",
     "function"
   ],
   [
@@ -372,6 +372,162 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/index.js~bigint",
+    "typedef/index.html#static-typedef-BigInt",
+    "src/index.js~BigInt",
+    "typedef"
+  ],
+  [
+    "src/index.js~event#booklevel",
+    "class/src/index.js~Event.html#instance-member-bookLevel",
+    "src/index.js~Event#bookLevel",
+    "member"
+  ],
+  [
+    "src/index.js~event#channelreset",
+    "class/src/index.js~Event.html#instance-member-channelReset",
+    "src/index.js~Event#channelReset",
+    "member"
+  ],
+  [
+    "src/index.js~event#constructor",
+    "class/src/index.js~Event.html#instance-constructor-constructor",
+    "src/index.js~Event#constructor",
+    "method"
+  ],
+  [
+    "src/index.js~event#dailystatistics",
+    "class/src/index.js~Event.html#instance-member-dailyStatistics",
+    "src/index.js~Event#dailyStatistics",
+    "member"
+  ],
+  [
+    "src/index.js~event#header",
+    "class/src/index.js~Event.html#instance-member-header",
+    "src/index.js~Event#header",
+    "member"
+  ],
+  [
+    "src/index.js~event#limitsbanding",
+    "class/src/index.js~Event.html#instance-member-limitsBanding",
+    "src/index.js~Event#limitsBanding",
+    "member"
+  ],
+  [
+    "src/index.js~event#orderbook",
+    "class/src/index.js~Event.html#instance-member-orderBook",
+    "src/index.js~Event#orderBook",
+    "member"
+  ],
+  [
+    "src/index.js~event#securitystatus",
+    "class/src/index.js~Event.html#instance-member-securityStatus",
+    "src/index.js~Event#securityStatus",
+    "member"
+  ],
+  [
+    "src/index.js~event#sessionstatistics",
+    "class/src/index.js~Event.html#instance-member-sessionStatistics",
+    "src/index.js~Event#sessionStatistics",
+    "member"
+  ],
+  [
+    "src/index.js~event#tradematch",
+    "class/src/index.js~Event.html#instance-member-tradeMatch",
+    "src/index.js~Event#tradeMatch",
+    "member"
+  ],
+  [
+    "src/index.js~event#tradesummary",
+    "class/src/index.js~Event.html#instance-member-tradeSummary",
+    "src/index.js~Event#tradeSummary",
+    "member"
+  ],
+  [
+    "src/index.js~event#transactionmarker",
+    "class/src/index.js~Event.html#instance-member-transactionMarker",
+    "src/index.js~Event#transactionMarker",
+    "member"
+  ],
+  [
+    "src/index.js~event#volumeupdate",
+    "class/src/index.js~Event.html#instance-member-volumeUpdate",
+    "src/index.js~Event#volumeUpdate",
+    "member"
+  ],
+  [
+    "src/index.js~event.booklevel",
+    "typedef/index.html#static-typedef-BookLevel",
+    "src/index.js~Event.BookLevel",
+    "typedef"
+  ],
+  [
+    "src/index.js~event.channelreset",
+    "typedef/index.html#static-typedef-ChannelReset",
+    "src/index.js~Event.ChannelReset",
+    "typedef"
+  ],
+  [
+    "src/index.js~event.dailystatistics",
+    "typedef/index.html#static-typedef-DailyStatistics",
+    "src/index.js~Event.DailyStatistics",
+    "typedef"
+  ],
+  [
+    "src/index.js~event.header",
+    "typedef/index.html#static-typedef-Header",
+    "src/index.js~Event.Header",
+    "typedef"
+  ],
+  [
+    "src/index.js~event.limitsbanding",
+    "typedef/index.html#static-typedef-LimitsBanding",
+    "src/index.js~Event.LimitsBanding",
+    "typedef"
+  ],
+  [
+    "src/index.js~event.orderbook",
+    "typedef/index.html#static-typedef-OrderBook",
+    "src/index.js~Event.OrderBook",
+    "typedef"
+  ],
+  [
+    "src/index.js~event.securitystatus",
+    "typedef/index.html#static-typedef-SecurityStatus",
+    "src/index.js~Event.SecurityStatus",
+    "typedef"
+  ],
+  [
+    "src/index.js~event.sessionstatistics",
+    "typedef/index.html#static-typedef-SessionStatistics",
+    "src/index.js~Event.SessionStatistics",
+    "typedef"
+  ],
+  [
+    "src/index.js~event.tradematch",
+    "typedef/index.html#static-typedef-TradeMatch",
+    "src/index.js~Event.TradeMatch",
+    "typedef"
+  ],
+  [
+    "src/index.js~event.tradesummary",
+    "typedef/index.html#static-typedef-TradeSummary",
+    "src/index.js~Event.TradeSummary",
+    "typedef"
+  ],
+  [
+    "src/index.js~event.transactionmarker",
+    "typedef/index.html#static-typedef-TransactionMarker",
+    "src/index.js~Event.TransactionMarker",
+    "typedef"
+  ],
+  [
+    "src/index.js~event.volumeupdate",
+    "typedef/index.html#static-typedef-VolumeUpdate",
+    "src/index.js~Event.VolumeUpdate",
+    "typedef"
+  ],
+  [
     "src/index.js~cubechart#constructor",
     "class/src/index.js~cubeChart.html#instance-constructor-constructor",
     "src/index.js~cubeChart#constructor",
@@ -493,13 +649,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~cubeitem#format",
-    "class/src/index.js~cubeItem.html#instance-get-format",
+    "class/src/index.js~cubeItem.html#instance-set-format",
     "src/index.js~cubeItem#format",
     "member"
   ],
   [
     "src/index.js~cubeitem#format",
-    "class/src/index.js~cubeItem.html#instance-set-format",
+    "class/src/index.js~cubeItem.html#instance-get-format",
     "src/index.js~cubeItem#format",
     "member"
   ],
@@ -523,13 +679,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~cubeitem#strokestyle",
-    "class/src/index.js~cubeItem.html#instance-get-strokeStyle",
+    "class/src/index.js~cubeItem.html#instance-set-strokeStyle",
     "src/index.js~cubeItem#strokeStyle",
     "member"
   ],
   [
     "src/index.js~cubeitem#strokestyle",
-    "class/src/index.js~cubeItem.html#instance-set-strokeStyle",
+    "class/src/index.js~cubeItem.html#instance-get-strokeStyle",
     "src/index.js~cubeItem#strokeStyle",
     "member"
   ],
@@ -547,13 +703,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~cubeitem#title",
-    "class/src/index.js~cubeItem.html#instance-get-title",
+    "class/src/index.js~cubeItem.html#instance-set-title",
     "src/index.js~cubeItem#title",
     "member"
   ],
   [
     "src/index.js~cubeitem#title",
-    "class/src/index.js~cubeItem.html#instance-set-title",
+    "class/src/index.js~cubeItem.html#instance-get-title",
     "src/index.js~cubeItem#title",
     "member"
   ],
@@ -577,13 +733,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~edit#value",
-    "class/src/index.js~edit.html#instance-set-value",
+    "class/src/index.js~edit.html#instance-get-value",
     "src/index.js~edit#value",
     "member"
   ],
   [
     "src/index.js~edit#value",
-    "class/src/index.js~edit.html#instance-get-value",
+    "class/src/index.js~edit.html#instance-set-value",
     "src/index.js~edit#value",
     "member"
   ],
@@ -715,25 +871,25 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~lineitem#format",
-    "class/src/index.js~lineItem.html#instance-set-format",
-    "src/index.js~lineItem#format",
-    "member"
-  ],
-  [
-    "src/index.js~lineitem#format",
     "class/src/index.js~lineItem.html#instance-get-format",
     "src/index.js~lineItem#format",
     "member"
   ],
   [
-    "src/index.js~lineitem#linewidth",
-    "class/src/index.js~lineItem.html#instance-set-lineWidth",
-    "src/index.js~lineItem#lineWidth",
+    "src/index.js~lineitem#format",
+    "class/src/index.js~lineItem.html#instance-set-format",
+    "src/index.js~lineItem#format",
     "member"
   ],
   [
     "src/index.js~lineitem#linewidth",
     "class/src/index.js~lineItem.html#instance-get-lineWidth",
+    "src/index.js~lineItem#lineWidth",
+    "member"
+  ],
+  [
+    "src/index.js~lineitem#linewidth",
+    "class/src/index.js~lineItem.html#instance-set-lineWidth",
     "src/index.js~lineItem#lineWidth",
     "member"
   ],
@@ -745,13 +901,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~lineitem#strokestyle",
-    "class/src/index.js~lineItem.html#instance-set-strokeStyle",
+    "class/src/index.js~lineItem.html#instance-get-strokeStyle",
     "src/index.js~lineItem#strokeStyle",
     "member"
   ],
   [
     "src/index.js~lineitem#strokestyle",
-    "class/src/index.js~lineItem.html#instance-get-strokeStyle",
+    "class/src/index.js~lineItem.html#instance-set-strokeStyle",
     "src/index.js~lineItem#strokeStyle",
     "member"
   ],
@@ -769,13 +925,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~lineitem#title",
-    "class/src/index.js~lineItem.html#instance-set-title",
+    "class/src/index.js~lineItem.html#instance-get-title",
     "src/index.js~lineItem#title",
     "member"
   ],
   [
     "src/index.js~lineitem#title",
-    "class/src/index.js~lineItem.html#instance-get-title",
+    "class/src/index.js~lineItem.html#instance-set-title",
     "src/index.js~lineItem#title",
     "member"
   ],

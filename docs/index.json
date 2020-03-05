@@ -567,9 +567,9 @@
     "__docId__": 48,
     "kind": "file",
     "name": "src/index.js",
-    "content": "/**\n * The current symbol being accessed by the pane\n */\nconst qEditSymb = 2001;\n/**\n * The current date being accessed by the pane\n */\nconst qEditDate = 2002;\n\nconst littleEndian = true;\n\n/**\n * A JavaScript {@link Object} that only contains member variables with corresponding {@link number}(s)\n * @typedef {Object} enumeration\n */\n\n/**\n * Class used for referencing all v9 event enumerations and data\n */\nexport class v9 {\n    constructor() {\n        /**\n         * Value used specify a non-existent 32 bit price returned\n         * @private\n         */\n        this.PRICE_NULL_32 = 2147483647;\n\n        /**\n         * Value used specify a non-existent 64 bit price returned\n         * @private\n         */\n        this.PRICE_NULL_64 = 9223372036854775807;\n\n        /**\n         * @ignore\n         * @private\n         */\n        this.sGroupSettleID = 4294967293;\n        \n        /**\n         * @typedef {enumeration} UnionID\n         * @property {number} NotSet 255\n         * @property {number} NotMapped 250\n         * @property {number} TradeSummary 0 : Message that contains summary information about trades\n         * @property {number} TradeMatch 1 : Message that contains information on a match of a trade event\n         * @property {number} VolumeUpdate 2 : Message that updates volume data after a TradeSummary event. On certain exchanges if two implied quotes are matched, a VolumeUpdate event will occur showing the change in the total volume, but it will not be tied to a TradeSummary event\n         * @property {number} BookLevel 3 : Message that contains information on a quote that occurred in the first n levels of the book. The instrument definition from the exchange specifies the exact number of levels. This message can show up alongside an OD message\n         * @property {number} OrderBook 4 : Message that contains information on a quote for all price levels\n         * @property {number} SecurityStatus 5 : Message that provides the security group market state change\n         * @property {number} DailyStatistics 6 : Message that provides information about a complete session\n         * @property {number} SessionStatistics 7 : Message that provides information about the session during the session\n         * @property {number} LimitsBanding 8 : Message that provides the daily limits for the current session\n         * @property {number} ChannelReset 9 : Message that indicates if the channel the contract is on was reset and at what time\n         * @property {number} TransactionMarker 10 : The TS message marks the start of a bundle, and the TE message marks the end of that bundle. The exchange considers all the messages between the start and end marker to have been processed together, regardless of how the packets were split during exchange transmission\n         */        \n        /**\n         * A {@link v9}․{@link UnionID} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - v9.UnionID\n         * @type {enumeration}\n         * @example\n          * onEvent(pSymbol, pEvent, pRealTime) {\n          *     switch (pEvent.header.unionID) {\n          *         case v9.UnionID.<Value>:\n          *             // Do something when pEvent.header.unionID is equal to v9.UnionID.<Value>\n          *             break;\n          *         default :\n          *             break;\n          *     }\n          * }\n         */\n        this.UnionID =\n        {\n            NotSet: 255,\n            NotMapped: 250,\n            TradeSummary: 0,\n            TradeMatch: 1,\n            VolumeUpdate: 2,\n            BookLevel: 3,\n            OrderBook: 4,\n            SecurityStatus: 5,\n            DailyStatistics: 6,\n            SessionStatistics: 7,\n            LimitsBanding: 8,\n            ChannelReset: 9,\n            TransactionMarker: 10,\n            Test: 11, //Deprecated\n            ClearingPrice: 12 // FUTURE\n        };\n\n        /**\n         * @typedef {enumeration} Aggressor\n         * @property {number} NoAggressor 0\n         * @property {number} Buy 1\n         * @property {number} Sell 2\n         */\n        /**\n         * A {@link v9}․{@link Aggressor} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.tradeSummary.aggressor\n         * @type {Aggressor}\n         * @example\n          * onEvent(pSymbol, pEvent, pRealTime) {\n          *     switch (pEvent.header.unionID) {\n          *    case v9.UnionID.TradeSummary:\n          *                  var agr = pEvent.tradeSummary.aggressor;\n          *              break;\n          *          default :\n          *              break;\n          *     }\n          * }\n         */\n        this.Aggressor =\n        { \n            NoAggressor: 0, \n            Buy: 1, \n            Sell: 2 \n        };\n\n        /**\n         * @typedef {enumeration} HaltReason\n         * @property {number} NotSet 255\n         * @property {number} GroupSchedule 0\n         * @property {number} SurveillanceIntervention 1\n         * @property {number} MarketEvent 2\n         * @property {number} InstrumentActivation 3\n         * @property {number} InstrumentExpiration 4\n         * @property {number} Unknown 5\n         * @property {number} RecoveryInProcess 6\n         */\n        /**\n         * A {@link v9}․{@link HaltReason} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.securityStatus.haltReason\n         * @type {HaltReason}\n         * @example\n         * onEvent(pSymbol, pEvent, pRealTime) {\n         *     switch (pEvent.header.unionID) {\n         *         case v9.UnionID.SecurityStatus:\n         *             var hlt = pEvent.securityStatus.haltReason;\n         *             break;\n         *         default :\n         *             break;\n         *     }\n         * }\n         */\n        this.HaltReason =\n        {\n            NotSet: 255,\n            GroupSchedule: 0,\n            SurveillanceIntervention: 1,\n            MarketEvent: 2,\n            InstrumentActivation: 3,\n            InstrumentExpiration: 4,\n            Unknown: 5,\n            RecoveryInProcess: 6\n        };\n\n        /**\n         * @typedef {enumeration} SecurityType\n         * @property {number} NotSet 0\n         * @property {number} TradingHalt 2\n         * @property {number} Close 4\n         * @property {number} NewPriceIndication 15\n         * @property {number} ReadyToTrade 17\n         * @property {number} NotAvailableForTrading 18\n         * @property {number} UnknownorInvalid 20\n         * @property {number} PreOpen 21\n         * @property {number} PreCross 24\n         * @property {number} PostClose 26\n         * @property {number} NoChange 103\n         * @property {number} PreClose 150 : Only ICE Exchange\n         * @property {number} Restricted 200 : Only EUREX Exchange\n         * @property {number} Freeze 201 : Only EUREX Exchange\n         */\n        /**\n         * A {@link v9}․{@link SecurityType} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.securityStatus.type\n         * @type {SecurityType}\n         * @example\n         * onEvent(pSymbol, pEvent, pRealTime) {\n         *     switch (pEvent.header.unionID) {\n         *         case v9.UnionID.SecurityStatus:\n         *             var typ = pEvent.securityStatus.type;\n         *             break;\n         *         default :\n         *             break;\n         *     }\n         * }\n         */\n        this.SecurityType =\n        {\n            NotSet: 0,\n            TradingHalt: 2,\n            Close: 4,\n            NewPriceIndication: 15,\n            ReadyToTrade: 17,\n            NotAvailableForTrading: 18,\n            UnknownorInvalid: 20,\n            PreOpen: 21,\n            PreCross: 24,\n            Cross: 25,\n            PostClose: 26,\n            NoChange: 103,\n            PreClose: 150,\n            Restricted: 200,\n            Freeze: 201\n        };\n        \n        /**\n         * @typedef {enumeration} SecurityEvent\n         * @property {number} NoEvent 0\n         * @property {number} NoCancel 1\n         * @property {number} ResetStatistics 4\n         * @property {number} ImpliedMatchingON 5\n         * @property {number} ImpliedMatchingOFF 6\n         */\n        /**\n         * A {@link v9}․{@link SecurityEvent} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.securityStatus.securityEvent\n         * @type {SecurityEvent}\n         * @example\n          * onEvent(pSymbol, pEvent, pRealTime) {\n          *     switch (pEvent.header.unionID) {\n          *    case v9.UnionID.SecurityStatus:\n          *                  var sev = pEvent.securityStatus.securityEvent;\n          *              break;\n          *          default :\n          *              break;\n          *     }\n          * }\n         */\n        this.SecurityEvent =\n        {\n            NoEvent: 0,\n            NoCancel: 1,\n            ResetStatistics: 4,\n            ImpliedMatchingON: 5,\n            ImpliedMatchingOFF: 6\n        };\n\n        /**\n         * @typedef {enumeration} BookType\n         * @property {number} NotSet 85\n         * @property {number} Bid 66\n         * @property {number} Ask 83\n         * @property {number} ImpliedBid 115\n         * @property {number} ImpliedAsk 82\n         */\n        /**\n         * A {@link v9}․{@link BookType} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.orderBook.type\n         *  - pEvent.bookLevel.type\n         * @type {BookType}\n         * @example\n          * onEvent(pSymbol, pEvent, pRealTime) {\n          *     switch (pEvent.header.unionID) {\n          *    case v9.UnionID.OrderBook:\n          *                  var typ = pEvent.orderBook.type;\n          *              break;\n          *          default :\n          *              break;\n          *     }\n          * }\n         */\n        this.BookType =\n        {\n            NotSet: 85,\n            Bid: 66,\n            Ask: 83,\n            ImpliedBid: 98,\n            ImpliedAsk: 115,\n            BookReset: 82\n        };\n\n        /**\n         * @typedef {enumeration} DailyStatisticsType\n         * @property {number} SettlePrice '6'\n         * @property {number} ClearedVolume 'B'\n         * @property {number} OpenInterest 'C'\n         * @property {number} Fixing 'W'\n         */\n        /**\n         * A {@link v9}․{@link DailyStatisticsType} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.dailyStatistics.type\n         * @type {DailyStatisticsType}\n         * @example\n          * onEvent(pSymbol, pEvent, pRealTime) {\n          *     switch (pEvent.header.unionID) {\n          *    case v9.UnionID.DailyStatistics:\n          *                  var typ = pEvent.dailyStatistics.type;\n          *              break;\n          *          default :\n          *              break;\n          *     }\n          * }\n         */\n        this.DailyStatisticsType =\n        {\n            SettlementPrice: 54,\n            ClearedVolume: 66,\n            OpenInterest: 67,\n            FixingPrice: 87\n        };\n\n        /**\n         * @typedef {enumeration} BookAction\n         * @property {number} NotSet 255\n         * @property {number} New 0\n         * @property {number} Change 1\n         * @property {number} Delete 2\n         * @property {number} DeleteThru 3\n         * @property {number} DeleteFrom 4\n         * @property {number} Overlay 5\n         * @property {number} Replace 6\n         */\n        /**\n         * A {@link v9}․{@link BookAction} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.orderBook.action\n         *  - pEvent.bookLevel.action\n         * @type {BookAction}\n         * @example\n         * onEvent(pSymbol, pEvent, pRealTime) {\n         *     switch (pEvent.header.unionID) {\n         *    case v9.UnionID.OrderBook:\n         *                  var act = pEvent.orderBook.action;\n         *              break;\n         *          default :\n         *              break;\n         *     }\n         * }\n         */\n        this.BookAction =\n        {\n            NotSet: 255,\n            New: 0,\n            Change: 1,\n            Delete: 2,\n            DeleteThru: 3,\n            DeleteFrom: 4,\n            Overlay: 5,\n            Replace: 6\n        };\n\n        /**\n         * @typedef {enumeration} SessionStatisticsType\n         * @property {number} NotSet 127\n         * @property {number} OpenPrice 0\n         * @property {number} HighTrade 1\n         * @property {number} LowTrade 2\n         * @property {number} LastTrade 3\n         * @property {number} HighestBid 4\n         * @property {number} LowestAsk 5\n         * @property {number} ClosePrice 6\n         */\n        /**\n         * A {@link v9}․{@link SessionStatisticsType} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.sessionStatistics.type\n         * @type {SessionStatisticsType}\n         * @example\n         * onEvent(pSymbol, pEvent, pRealTime) {\n         *     switch (pEvent.header.unionID) {\n         *    case v9.UnionID.SessionStatistics:\n         *                  var typ = pEvent.sessionStatistics.type;\n         *              break;\n         *          default :\n         *              break;\n         *     }\n         * }\n         */\n        this.SessionStatisticsType =\n        {\n            NotSet: 127,\n            OpenPrice: 0,\n            HighTrade: 1,\n            LowTrade: 2,\n            LastTrade: 3,\n            HighestBid: 4,\n            LowestAsk: 5,\n            ClosePrice: 6\n        };\n\n        /**\n         * @typedef {enumeration} StateType\n         * @property {number} NotSet 255\n         * @property {number} DailyOpenPrice 0\n         * @property {number} IndicativeOpeningPrice 5\n         * @property {number} DailyClosingPrice 10\n         */\n        /**\n         * A {@link v9}․{@link StateType} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.sessionStatistics.stateType\n         * @type {StateType}\n         * @example\n          * onEvent(pSymbol, pEvent, pRealTime) {\n          *     switch (pEvent.header.unionID) {\n          *    case v9.UnionID.SessionStatistics:\n          *                  var stt = pEvent.sessionStatistics.stateType;\n          *              break;\n          *          default :\n          *              break;\n          *     }\n          * }\n         */\n        this.StateType =\n        {\n            NotSet: 255,\n            DailyOpenPrice: 0,\n            IndicativeOpeningPrice: 5,\n            DailyClosePrice: 10\n        };\n\n        /**\n         * @typedef {enumeration} PutOrCall\n         * @property {number} NotSet 255\n         * @property {number} Put 0\n         * @property {number} Call 1\n         */\n        /**\n         * A {@link v9}․{@link PutOrCall} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.PutOrCall.type\n         * @type {PutOrCall}\n         * @example\n          * onEvent(pSymbol, pEvent, pRealTime) {\n          *     // N/A\n          * }\n         */\n        this.PutOrCall =\n        {\n            NotSet: 255,\n            Put: 0,\n            Call: 1\n        };\n\n        /**\n         * @typedef {enumeration} SettleType\n         * @property {number} Final 1\n         * @property {number} Actual 2\n         * @property {number} Rounded 4\n         * @property {number} Intraday 8\n         * @property {number} ReservedBits 16\n         * @property {number} NullValue 128\n         */\n        /**\n         * A {@link v9}․{@link SettleType} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.dailyStatistics.settleType\n         * @type {SettleType}\n         * @example\n         * onEvent(pSymbol, pEvent, pRealTime) {\n         *     switch (pEvent.header.unionID) {\n         *    case v9.UnionID.DailyStatistics:\n         *                  var stl = pEvent.dailyStatistics.settleType;\n         *              break;\n         *          default :\n         *              break;\n         *     }\n         * }\n         */\n        this.SettleType =\n        {\n            Final: 1,\n            Actual: 2,\n            Rounded: 4,\n            Intraday: 8,\n            ReservedBits: 16,\n            NullValue: 128\n        };\n\n        /**\n         * @typedef {enumeration} TransactionType\n         * @property {number} NotSet 255\n         * @property {number} TransactionStart 0\n         * @property {number} TransactionEnd 1\n         */\n        /**\n         * A {@link v9}․{@link TransactionType} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.transactionMarker.transactionType\n         * @type {TransactionType}\n         * @example\n          * onEvent(pSymbol, pEvent, pRealTime) {\n          *     switch (pEvent.header.unionID) {\n          *    case v9.UnionID.TransactionMarker:\n          *                  var ttp = pEvent.transactionMarker.transactionType;\n          *              break;\n          *          default :\n          *              break;\n          *     }\n          * }\n         */\n        this.TransactionType =\n        {\n            NotSet: 255,\n            TransactionStart: 0,\n            TransactionEnd: 1\n        };\n\n        /**\n         * @typedef {enumeration} EventIndicator\n         * @property {number} NotSet 0\n         * @property {number} LastOfType 1\n         * @property {number} EndOfEvent 128\n         */\n        /**\n         * A {@link v9}․{@link EventIndicator} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.header.eventIndicator\n         * @type {EventIndicator}\n         * @example\n         * onEvent(pSymbol, pEvent, pRealTime) {\n         *     switch (pEvent.header.unionID) {\n         *    case v9.UnionID.EventIndicator:\n         *                  var ind = pEvent.header.eventIndicator;\n         *              break;\n         *          default :\n         *              break;\n         *     }\n         * }\n         */\n        this.EventIndicator =\n        {\n            NotSet: 0,\n            LastOfType: 1,\n            EndOfEvent: 128\n        };\n\n        /**\n         * @typedef {enumeration} InvestigateStatus\n         * @property {number} NotSet 0\n         * @property {number} UnderInvestigation 1\n         * @property {number} InvestigationStatus 2\n         */\n        /**\n         * A {@link v9}․{@link InvestigateStatus} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - N/A\n         * @type {InvestigateStatus}\n         * @example\n         * onEvent(pSymbol, pEvent, pRealTime) {\n         *    // N/A\n         * }\n         */\n        this.InvestigateStatus =\n        {\n            NotSet: 0,\n            UnderInvestigation: 1,\n            InvestigationCompleted: 2\n        };\n    }\n};\n\nv9.edit = class {\n  /**\n   * Used to retrieve specific values within a {@link feed}․ e․g: symbol and/or date\n   * @param {number} [pEditType] \n   */\n    constructor(pEditType) \n    {\n        /**\n         * @ignore\n         * @private\n         */\n        this.fEditType = qEditSymb;\n\n        if (pEditType)\n        {\n            if (pEditType.toUpperCase() === \"SYMBOL\")\n            {\n                this.fEditType = qEditSymb;\n            }\n            if (pEditType.toUpperCase() === \"DATE\")\n            {\n                this.fEditType = qEditDate;\n            }\n        }\n    }\n\n    /**\n     * \n     * @type {string}\n     * */\n    set value(pEdit)\n    {\n        return gHome._pagesave(gUniq, this.fEditType, pEdit);\n    }\n\n    /**\n     * \n     * @type {string}\n     */\n    get value()\n    {\n        return gHome._pageread(gUniq, this.fEditType);\n    }\n\n    /**\n     * \n     * @type {string}\n     */\n    get symbol()\n    {\n        return (this.fEditType == qEditSymb) ? this.value : \"\";\n    }\n\n    /** \n     * \n     * @type {string}\n     */\n    get date()\n    {\n        return (this.fEditType == qEditDate) ? this.value : \"\";\n    }\n}\n\n/**\n * This class' functions should be overridden in each script for handling user actions and symbol events\n * @example\n * class MyFeed extends v9.feed {\n *\t\tonOpen (pMeta) {\n *\t\t}\n *\n *\t\tonLoad () {\n *\t\t}\n *\n *\t\tonStop () {\n *\t\t}\n *\n *\t\tonRender () {\n *\t\t}\n *\n *\t\tonEvent (pSymbol,pEvent,pRealTime) {\n *\t\t}\n * }\n *\n * let feed = new MyFeed(<pSymbol>, <pDate>);\n */\nv9.feed = class {\n    /**\n     * Used to provide the symbol and date to the current {@link feed}\n     * @param {String} [pSymbol]\n     * @param {String} [pDate]\n     */\n    constructor(pSymbol, pDate) {\n        gHome.MakeFeed(gUniq, pSymbol, pDate);\n        gFeed = this;\n    }\n\n    /**\n     * Built in feed function that is called when the start button is pressed in order to initialize variables.\n     * @param {Object} pMeta - Object representing json meta information. It currently provides the instrument definitions of the supplied symbol.\n     * @abstract\n     * @example\n     * onOpen(pMeta) {\n     *\n     * }\n     */\n    onOpen(pMeta) {\n\n    }\n\n    /**\n     * Built in feed function that is called once the script has read every previous event in the symbol Feed.\n     * @abstract\n     * @example\n     * onLoad() {\n     *\n     * }\n     */\n    onLoad() {\n    }\n\n    /**\n     * Built in feed function that is called once for each frame that is rendered to the viewport.\n     * @abstract\n     * @example\n     * onRender() {\n     *\n     * }\n     */\n    onRender() {\n    }\n\n    /**\n     * Built in feed function that is called once for each timestamp tracked in your symbol.\n     *\n     * This is where you'll be doing most of your calculations on the specific things you're looking for in your symbol. It allows your script to perform different tasks depending on the current event's conditions.\n     * @param {String} pSymbol - Name of the current symbol\n     * @param {Object} pEvent - Current event being handled\n     * @param {Boolean} pRealTime - Boolean determining whether or not to only handle current events\n     * @abstract\n     * @example\n     * onEvent(pSymbol, pEvent, pRealTime) {\n     *\n     * }\n     */\n    onEvent(pSymbol, pEvent, pRealTime) {\n    }\n\n    /**\n     * Built in feed function that is called when the stop button is pressed.\n     * @abstract\n     * @example\n     * onStop() {\n     *\n     * }\n     */\n    onStop() {\n    }\n}\n\nv9.lineChart = class {\n    constructor(pID) {\n        this.fLineEnum = gHome.MakeLine(gUniq, (pID) ? document.getElementById(pID) : null);\n    }\n\n    linePush(pItem, pRate, pTime) {\n        gHome.LinePush(gUniq, pItem.fCalcEnum, pRate, pTime);\n    }\n}\n\nv9.cubeChart = class {\n    constructor(pID) {\n        this.fCubeEnum = gHome.MakeCube(gUniq, (pID) ? document.getElementById(pID) : null);\n    }\n\n    cubePlus(pItem, pData, pSize) {\n        gHome.CubePlus(gUniq, pItem, pData, pSize);\n    }\n\n    cubeDele(pItem, pData) {\n        gHome.CubeDele(gUniq, pItem, pData);\n    }\n\n    cubeSave(pItem, pData, pSize) {\n        gHome.CubeSave(gUniq, pItem, pData, pSize);\n    }\n\n    cubeRead(pItem, pData) {\n        gHome.CubeRead(gUniq, pItem, pData);\n    }\n\n    cubeFree(pItem) {\n        gHome.CubeFree(gUniq, pItem);\n    }\n\n    cubePush(pItem, pSave) {\n        gHome.CubePush(gUniq, pItem, pSave);\n    }\n\n}\n\nv9.lineItem = class {\n    constructor(pPane) {\n        try {\n            this.fCalcEnum = gHome.MakeCalc(gUniq, this);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"MakeCalc\", e);\n        }\n    }\n\n    /**\n     * Stroke width in pixels\n     * @type {Number}\n     * @public\n     */\n    set lineWidth(pData) {\n        try {\n            this._lineWidth = pData;\n            gHome.Calc_lineWidth(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"lineWidth\", e);\n        }\n    }\n\n    /**\n     * Stroke color in hexadecimal as a String\n     * @type {String}\n     * @public\n     */\n    set strokeStyle(pData) {\n        try {\n            this._strokeStyle = pData;\n            gHome.Calc_strokeStyle(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErroo(gUniq, \"strokeStyle\", e);\n        }\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @public\n     */\n    set format(pData) {\n        try {\n            this._format = pData;\n            gHome.Calc_format(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"format\", e);\n        }\n    }\n\n    /**\n     * Text color in hexadecimal as a String\n     * @type {String}\n     * @public\n     */\n    set textStyle(pData) {\n        try {\n            this._textStyle = pData;\n            gHome.Calc_textStyle(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"textStyle\", e);\n        }\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @public\n     */\n    set bodyStyle(pData) {\n        try {\n            this._bodyStyle = pData;\n            gHome.Calc_bodyStyle(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"textStyle\", e);\n        }\n    }\n\n    /**\n     * Text corresponding to current line price\n     * @type {String}\n     * @public\n     */\n    set title(pData) {\n        try {\n            this._title = pData;\n            gHome.Calc_title(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"title\", e);\n        }\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @public\n     */\n    set name(pData) {\n        try {\n            this._name = pData;\n            gHome.Calc_name(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"name\", e);\n        }\n    }\n\n    /**\n     * Stroke width in pixels\n     * @type {Number}\n     * @public\n     */\n    get lineWidth() {\n        return this._lineWidth;\n    }\n\n    /**\n     * Stroke color in hexadecimal as a String\n     * @type {String}\n     * @public\n     */\n    get strokeStyle() {\n        return this._strokeStyle;\n    }\n\n    /**\n     * Text color in hexadecimal as a String\n     * @type {String}\n     * @public\n     */\n    get textStyle() {\n        return this._textStyle;\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @readonly\n     */\n    get eventStyle() {\n        return this._eventStyle;\n    }\n\n    /**\n     * Text corresponding to current line price\n     * @type {String}\n     * @public\n     */\n    get title() {\n        return this._title;\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @public\n     */\n    get format() {\n        return this._format;\n    }\n}\n\nv9.cubeItem = class {\n    constructor(pPane) {\n        try {\n            this.fCalcEnum = gHome.MakeCalc(gUniq, this);\n            this.fCubeMaps = new Map();\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"MakeCalc\", e);\n        }\n    }\n\n    /**\n     * Stroke width in pixels\n     * @type {Number}\n     * @public\n     */\n    set lineWidth(pData) {\n        try {\n            this._lineWidth = pData;\n            gHome.Calc_lineWidth(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"lineWidth\", e);\n        }\n    }\n\n    /**\n     * Stroke color in hexadecimal as a String\n     * @type {String}\n     * @public\n     */\n    set strokeStyle(pData) {\n        try {\n            this._strokeStyle = pData;\n            gHome.Calc_strokeStyle(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErroo(gUniq, \"strokeStyle\", e);\n        }\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @readonly\n     */\n    set format(pData) {\n        try {\n            this._format = pData;\n            gHome.Calc_format(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"format\", e);\n        }\n    }\n\n    /**\n     * Text color in hexadecimal as a String\n     * @type {String}\n     * @public\n     */\n    set textStyle(pData) {\n        try {\n            this._textStyle = pData;\n            gHome.Calc_textStyle(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"textStyle\", e);\n        }\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @public\n     */\n    set bodyStyle(pData) {\n        try {\n            this._bodyStyle = pData;\n            gHome.Calc_bodyStyle(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"textStyle\", e);\n        }\n    }\n\n    /**\n     * Text corresponding to current cube price\n     * @type {String}\n     * @public\n     */\n    set title(pData) {\n        try {\n            this._title = pData;\n            gHome.Calc_title(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"title\", e);\n        }\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @public\n     */\n    set name(pData) {\n        try {\n            this._name = pData;\n            gHome.Calc_name(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"name\", e);\n        }\n    }\n\n    /**\n     * Stroke width in pixels\n     * @type {Number}\n     * @public\n     */\n    get lineWidth() {\n        return this._lineWidth;\n    }\n\n    /**\n     * Stroke color in hexadecimal as a String\n     * @type {String}\n     * @public\n     */\n    get strokeStyle() {\n        return this._strokeStyle;\n    }\n\n    /**\n     * Text color in hexadecimal as a String\n     * @type {String}\n     * @public\n     */\n    get textStyle() {\n        return this._textStyle;\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @readonly \n     */\n    get eventStyle() {\n        return this._eventStyle;\n    }\n\n    /**\n     * Text corresponding to current cube price\n     * @type {String}\n     * @public\n     */\n    get title() {\n        return this._title;\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @public\n     */\n    get format() {\n        return this._format;\n    }\n}\n\n/**\n * Returns a JSON object representing the provided event\n * @param {Event} pEvent\n */\nv9.eventToJson = function (pEvent) {\n    let tEvent = v9.eventCopy(pEvent);\n\n    if (tEvent !== undefined) {\n        let intCount = 0, repCount = 0;\n        const json = JSON.stringify(tEvent, (_, v) => {\n            if (typeof v === 'bigint') {\n                intCount++;\n                return `${v}#bigint`;\n            }\n            return v;\n        });\n        const res = json.replace(/\"(-?\\d+)#bigint\"/g, (_, a) => {\n            repCount++;\n            return a;\n        });\n        if (repCount > intCount) {\n            // You have a string somewhere that looks like \"123#bigint\";\n            throw new Error(`BigInt serialization pattern conflict with a string value.`);\n        }\n        return res;\n    }\n}\n\n/**\n * Returns a copy of a provided event\n * @param {Event} pEvent\n */\nv9.eventCopy = function (pEvent) {\n\n    let tEvent = {};\n\n    if (pEvent.header) {\n        tEvent.header = {};\n        tEvent.header = Object.assign(pEvent.header);\n    }\n\n    try {\n        switch (pEvent.header.unionID) {\n            case v9.UnionID.TransactionMarker:\n                tEvent.transactionMarker = {};\n                tEvent.transactionMarker = Object.assign(pEvent.transactionMarker);\n                break;\n            case v9.UnionID.ChannelReset:\n                tEvent.channelReset = {};\n                tEvent.channelReset = Object.assign(pEvent.channelReset);\n                break;\n            case v9.UnionID.TradeSummary:\n                tEvent.tradeSummary = {};\n                tEvent.tradeSummary = Object.assign(pEvent.tradeSummary);\n                break;\n            case v9.UnionID.TradeMatch:\n                tEvent.tradeMatch = {};\n                tEvent.tradeMatch = Object.assign(pEvent.tradeMatch);\n                break;\n            case v9.UnionID.VolumeUpdate:\n                tEvent.volumeUpdate = {};\n                tEvent.volumeUpdate = Object.assign(pEvent.volumeUpdate);\n                break;\n            case v9.UnionID.BookLevel:\n                tEvent.bookLevel = {};\n                tEvent.bookLevel = Object.assign(pEvent.bookLevel);\n                break;\n            case v9.UnionID.OrderBook:\n                tEvent.orderBook = {};\n                tEvent.orderBook = Object.assign(pEvent.orderBook);\n                break;\n            case v9.UnionID.SecurityStatus:\n                tEvent.securityStatus = {};\n                tEvent.securityStatus = Object.assign(pEvent.securityStatus);\n                break;\n            case v9.UnionID.DailyStatistics:\n                tEvent.dailyStatistics = {};\n                tEvent.dailyStatistics = Object.assign(pEvent.dailyStatistics);\n                break;\n            case v9.UnionID.SessionStatistics:\n                tEvent.sessionStatistics = {};\n                tEvent.sessionStatistics = Object.assign(pEvent.sessionStatistics);\n                break;\n            case v9.UnionID.LimitsBanding:\n                tEvent.limitsBanding = {};\n                tEvent.limitsBanding = Object.assign(pEvent.limitsBanding);\n                break;\n            case v9.UnionID.ClearingPrice:\n                tEvent.clearingPrice = {};\n                tEvent.clearingPrice = Object.assign(pEvent.clearingPrice);\n                break;\n        }\n    }\n    catch (e) {\n    }\n\n    return tEvent;\n}\n\n/**\n * Reports errors to the debugging window\n * @param {String} msg\n * @param {String} url\n * @param {Number} lineNo\n * @param {Number} columnNo\n * @param {any} error\n */\nwindow.onerror = function (msg, url, lineNo, columnNo, error) {\n    var string = msg.toLowerCase();\n    var substring = \"script error\";\n    if (string.indexOf(substring) > -1) {\n        gHome._pageerro(gUniq, 'Script Error: See Browser Console for Detail');\n    }\n    else {\n        //var message = [\n        //\t'Message: ' + msg,\n        //\t'URL: ' + url,\n        //\t'Line: ' + lineNo,\n        //\t'Column: ' + columnNo,\n        //\t'Error object: ' + JSON.stringify(error)\n        //].join(' - ');\n\n        var message = [\n            'Message: ' + msg,\n            'Line: ' + lineNo,\n            'Column: ' + columnNo\n        ].join(' - ');\n\n        gHome._pageerro(gUniq, message);\n    }\n}\n\nwindow.onfocus = function () {\n    gHome._pagesele(gUniq);\n};\n",
+    "content": "/**\n * The current symbol being accessed by the pane\n */\nconst qEditSymb = 2001;\n/**\n * The current date being accessed by the pane\n */\nconst qEditDate = 2002;\n\nconst littleEndian = true;\n\n/**\n * A built-in JavaScript {@link Object} that only contains member variables with corresponding {@link number}(s)\n * @typedef {Object} enumeration\n */\n/**\n * A built-in JavaScript {@link Object} that provides a way to represent whole numbers larger than 2^53-1 \n * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt\n * @typedef {Object} BigInt\n */\n\n/**\n * Class used for referencing all v9 event enumerations and data\n */\nexport class v9 {\n    constructor() {\n        /**\n         * Value used specify a non-existent 32 bit price returned\n         * @private\n         */\n        this.PRICE_NULL_32 = 2147483647;\n\n        /**\n         * Value used specify a non-existent 64 bit price returned\n         * @private\n         */\n        this.PRICE_NULL_64 = 9223372036854775807;\n\n        /**\n         * @ignore\n         * @private\n         */\n        this.sGroupSettleID = 4294967293;\n        \n        /**\n         * @typedef {enumeration} UnionID\n         * @property {number} NotSet 255\n         * @property {number} NotMapped 250\n         * @property {number} TradeSummary 0 : Message that contains summary information about trades\n         * @property {number} TradeMatch 1 : Message that contains information on a match of a trade event\n         * @property {number} VolumeUpdate 2 : Message that updates volume data after a TradeSummary event. On certain exchanges if two implied quotes are matched, a VolumeUpdate event will occur showing the change in the total volume, but it will not be tied to a TradeSummary event\n         * @property {number} BookLevel 3 : Message that contains information on a quote that occurred in the first n levels of the book. The instrument definition from the exchange specifies the exact number of levels. This message can show up alongside an OD message\n         * @property {number} OrderBook 4 : Message that contains information on a quote for all price levels\n         * @property {number} SecurityStatus 5 : Message that provides the security group market state change\n         * @property {number} DailyStatistics 6 : Message that provides information about a complete session\n         * @property {number} SessionStatistics 7 : Message that provides information about the session during the session\n         * @property {number} LimitsBanding 8 : Message that provides the daily limits for the current session\n         * @property {number} ChannelReset 9 : Message that indicates if the channel the contract is on was reset and at what time\n         * @property {number} TransactionMarker 10 : The TS message marks the start of a bundle, and the TE message marks the end of that bundle. The exchange considers all the messages between the start and end marker to have been processed together, regardless of how the packets were split during exchange transmission\n         */        \n        /**\n         * A {@link v9}․{@link UnionID} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - v9.UnionID\n         * @type {enumeration}\n         * @example\n          * onEvent(pSymbol, pEvent, pRealTime) {\n          *     switch (pEvent.header.unionID) {\n          *         case v9.UnionID.<Value>:\n          *             // Do something when pEvent.header.unionID is equal to v9.UnionID.<Value>\n          *             break;\n          *         default :\n          *             break;\n          *     }\n          * }\n         */\n        this.UnionID =\n        {\n            NotSet: 255,\n            NotMapped: 250,\n            TradeSummary: 0,\n            TradeMatch: 1,\n            VolumeUpdate: 2,\n            BookLevel: 3,\n            OrderBook: 4,\n            SecurityStatus: 5,\n            DailyStatistics: 6,\n            SessionStatistics: 7,\n            LimitsBanding: 8,\n            ChannelReset: 9,\n            TransactionMarker: 10,\n            Test: 11, //Deprecated\n            ClearingPrice: 12 // FUTURE\n        };\n\n        /**\n         * @typedef {enumeration} Aggressor\n         * @property {number} NoAggressor 0\n         * @property {number} Buy 1\n         * @property {number} Sell 2\n         */\n        /**\n         * A {@link v9}․{@link Aggressor} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.tradeSummary.aggressor\n         * @type {Aggressor}\n         * @example\n          * onEvent(pSymbol, pEvent, pRealTime) {\n          *     switch (pEvent.header.unionID) {\n          *    case v9.UnionID.TradeSummary:\n          *                  var agr = pEvent.tradeSummary.aggressor;\n          *              break;\n          *          default :\n          *              break;\n          *     }\n          * }\n         */\n        this.Aggressor =\n        { \n            NoAggressor: 0, \n            Buy: 1, \n            Sell: 2 \n        };\n\n        /**\n         * @typedef {enumeration} HaltReason\n         * @property {number} NotSet 255\n         * @property {number} GroupSchedule 0\n         * @property {number} SurveillanceIntervention 1\n         * @property {number} MarketEvent 2\n         * @property {number} InstrumentActivation 3\n         * @property {number} InstrumentExpiration 4\n         * @property {number} Unknown 5\n         * @property {number} RecoveryInProcess 6\n         */\n        /**\n         * A {@link v9}․{@link HaltReason} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.securityStatus.haltReason\n         * @type {HaltReason}\n         * @example\n         * onEvent(pSymbol, pEvent, pRealTime) {\n         *     switch (pEvent.header.unionID) {\n         *         case v9.UnionID.SecurityStatus:\n         *             var hlt = pEvent.securityStatus.haltReason;\n         *             break;\n         *         default :\n         *             break;\n         *     }\n         * }\n         */\n        this.HaltReason =\n        {\n            NotSet: 255,\n            GroupSchedule: 0,\n            SurveillanceIntervention: 1,\n            MarketEvent: 2,\n            InstrumentActivation: 3,\n            InstrumentExpiration: 4,\n            Unknown: 5,\n            RecoveryInProcess: 6\n        };\n\n        /**\n         * @typedef {enumeration} SecurityType\n         * @property {number} NotSet 0\n         * @property {number} TradingHalt 2\n         * @property {number} Close 4\n         * @property {number} NewPriceIndication 15\n         * @property {number} ReadyToTrade 17\n         * @property {number} NotAvailableForTrading 18\n         * @property {number} UnknownorInvalid 20\n         * @property {number} PreOpen 21\n         * @property {number} PreCross 24\n         * @property {number} PostClose 26\n         * @property {number} NoChange 103\n         * @property {number} PreClose 150 : Only ICE Exchange\n         * @property {number} Restricted 200 : Only EUREX Exchange\n         * @property {number} Freeze 201 : Only EUREX Exchange\n         */\n        /**\n         * A {@link v9}․{@link SecurityType} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.securityStatus.type\n         * @type {SecurityType}\n         * @example\n         * onEvent(pSymbol, pEvent, pRealTime) {\n         *     switch (pEvent.header.unionID) {\n         *         case v9.UnionID.SecurityStatus:\n         *             var typ = pEvent.securityStatus.type;\n         *             break;\n         *         default :\n         *             break;\n         *     }\n         * }\n         */\n        this.SecurityType =\n        {\n            NotSet: 0,\n            TradingHalt: 2,\n            Close: 4,\n            NewPriceIndication: 15,\n            ReadyToTrade: 17,\n            NotAvailableForTrading: 18,\n            UnknownorInvalid: 20,\n            PreOpen: 21,\n            PreCross: 24,\n            Cross: 25,\n            PostClose: 26,\n            NoChange: 103,\n            PreClose: 150,\n            Restricted: 200,\n            Freeze: 201\n        };\n        \n        /**\n         * @typedef {enumeration} SecurityEvent\n         * @property {number} NoEvent 0\n         * @property {number} NoCancel 1\n         * @property {number} ResetStatistics 4\n         * @property {number} ImpliedMatchingON 5\n         * @property {number} ImpliedMatchingOFF 6\n         */\n        /**\n         * A {@link v9}․{@link SecurityEvent} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.securityStatus.securityEvent\n         * @type {SecurityEvent}\n         * @example\n          * onEvent(pSymbol, pEvent, pRealTime) {\n          *     switch (pEvent.header.unionID) {\n          *    case v9.UnionID.SecurityStatus:\n          *                  var sev = pEvent.securityStatus.securityEvent;\n          *              break;\n          *          default :\n          *              break;\n          *     }\n          * }\n         */\n        this.SecurityEvent =\n        {\n            NoEvent: 0,\n            NoCancel: 1,\n            ResetStatistics: 4,\n            ImpliedMatchingON: 5,\n            ImpliedMatchingOFF: 6\n        };\n\n        /**\n         * @typedef {enumeration} BookType\n         * @property {number} NotSet 85\n         * @property {number} Bid 66\n         * @property {number} Ask 83\n         * @property {number} ImpliedBid 98\n         * @property {number} ImpliedAsk 115\n         * @property {number} BookReset 82\n         */\n        /**\n         * A {@link v9}․{@link BookType} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.orderBook.type\n         *  - pEvent.bookLevel.type\n         * @type {BookType}\n         * @example\n          * onEvent(pSymbol, pEvent, pRealTime) {\n          *     switch (pEvent.header.unionID) {\n          *    case v9.UnionID.OrderBook:\n          *                  var typ = pEvent.orderBook.type;\n          *              break;\n          *          default :\n          *              break;\n          *     }\n          * }\n         */\n        this.BookType =\n        {\n            NotSet: 85,\n            Bid: 66,\n            Ask: 83,\n            ImpliedBid: 98,\n            ImpliedAsk: 115,\n            BookReset: 82\n        };\n\n        /**\n         * @typedef {enumeration} DailyStatisticsType\n         * @property {number} SettlePrice '6'\n         * @property {number} ClearedVolume 'B'\n         * @property {number} OpenInterest 'C'\n         * @property {number} Fixing 'W'\n         */\n        /**\n         * A {@link v9}․{@link DailyStatisticsType} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.dailyStatistics.type\n         * @type {DailyStatisticsType}\n         * @example\n          * onEvent(pSymbol, pEvent, pRealTime) {\n          *     switch (pEvent.header.unionID) {\n          *    case v9.UnionID.DailyStatistics:\n          *                  var typ = pEvent.dailyStatistics.type;\n          *              break;\n          *          default :\n          *              break;\n          *     }\n          * }\n         */\n        this.DailyStatisticsType =\n        {\n            SettlementPrice: 54,\n            ClearedVolume: 66,\n            OpenInterest: 67,\n            FixingPrice: 87\n        };\n\n        /**\n         * @typedef {enumeration} BookAction\n         * @property {number} NotSet 255\n         * @property {number} New 0\n         * @property {number} Change 1\n         * @property {number} Delete 2\n         * @property {number} DeleteThru 3\n         * @property {number} DeleteFrom 4\n         * @property {number} Overlay 5\n         * @property {number} Replace 6\n         */\n        /**\n         * A {@link v9}․{@link BookAction} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.orderBook.action\n         *  - pEvent.bookLevel.action\n         * @type {BookAction}\n         * @example\n         * onEvent(pSymbol, pEvent, pRealTime) {\n         *     switch (pEvent.header.unionID) {\n         *    case v9.UnionID.OrderBook:\n         *                  var act = pEvent.orderBook.action;\n         *              break;\n         *          default :\n         *              break;\n         *     }\n         * }\n         */\n        this.BookAction =\n        {\n            NotSet: 255,\n            New: 0,\n            Change: 1,\n            Delete: 2,\n            DeleteThru: 3,\n            DeleteFrom: 4,\n            Overlay: 5,\n            Replace: 6\n        };\n\n        /**\n         * @typedef {enumeration} SessionStatisticsType\n         * @property {number} NotSet 127\n         * @property {number} OpenPrice 0\n         * @property {number} HighTrade 1\n         * @property {number} LowTrade 2\n         * @property {number} LastTrade 3\n         * @property {number} HighestBid 4\n         * @property {number} LowestAsk 5\n         * @property {number} ClosePrice 6\n         */\n        /**\n         * A {@link v9}․{@link SessionStatisticsType} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.sessionStatistics.type\n         * @type {SessionStatisticsType}\n         * @example\n         * onEvent(pSymbol, pEvent, pRealTime) {\n         *     switch (pEvent.header.unionID) {\n         *         case v9.UnionID.SessionStatistics:\n         *                  var typ = pEvent.sessionStatistics.type;\n         *              break;\n         *          default :\n         *              break;\n         *     }\n         * }\n         */\n        this.SessionStatisticsType =\n        {\n            NotSet: 127,\n            OpenPrice: 0,\n            HighTrade: 1,\n            LowTrade: 2,\n            LastTrade: 3,\n            HighestBid: 4,\n            LowestAsk: 5,\n            ClosePrice: 6\n        };\n\n        /**\n         * @typedef {enumeration} StateType\n         * @property {number} NotSet 255\n         * @property {number} DailyOpenPrice 0\n         * @property {number} IndicativeOpeningPrice 5\n         * @property {number} DailyClosingPrice 10\n         */\n        /**\n         * A {@link v9}․{@link StateType} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.sessionStatistics.stateType\n         * @type {StateType}\n         * @example\n          * onEvent(pSymbol, pEvent, pRealTime) {\n          *     switch (pEvent.header.unionID) {\n          *    case v9.UnionID.SessionStatistics:\n          *                  var stt = pEvent.sessionStatistics.stateType;\n          *              break;\n          *          default :\n          *              break;\n          *     }\n          * }\n         */\n        this.StateType =\n        {\n            NotSet: 255,\n            DailyOpenPrice: 0,\n            IndicativeOpeningPrice: 5,\n            DailyClosePrice: 10\n        };\n\n        /**\n         * @typedef {enumeration} PutOrCall\n         * @property {number} NotSet 255\n         * @property {number} Put 0\n         * @property {number} Call 1\n         */\n        /**\n         * A {@link v9}․{@link PutOrCall} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.PutOrCall.type\n         * @type {PutOrCall}\n         * @example\n          * onEvent(pSymbol, pEvent, pRealTime) {\n          *     // N/A\n          * }\n         */\n        this.PutOrCall =\n        {\n            NotSet: 255,\n            Put: 0,\n            Call: 1\n        };\n\n        /**\n         * @typedef {enumeration} SettleType\n         * @property {number} Final 1\n         * @property {number} Actual 2\n         * @property {number} Rounded 4\n         * @property {number} Intraday 8\n         * @property {number} ReservedBits 16\n         * @property {number} NullValue 128\n         */\n        /**\n         * A {@link v9}․{@link SettleType} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.dailyStatistics.settleType\n         * @type {SettleType}\n         * @example\n         * onEvent(pSymbol, pEvent, pRealTime) {\n         *     switch (pEvent.header.unionID) {\n         *    case v9.UnionID.DailyStatistics:\n         *                  var stl = pEvent.dailyStatistics.settleType;\n         *              break;\n         *          default :\n         *              break;\n         *     }\n         * }\n         */\n        this.SettleType =\n        {\n            Final: 1,\n            Actual: 2,\n            Rounded: 4,\n            Intraday: 8,\n            ReservedBits: 16,\n            NullValue: 128\n        };\n\n        /**\n         * @typedef {enumeration} TransactionType\n         * @property {number} NotSet 255\n         * @property {number} TransactionStart 0\n         * @property {number} TransactionEnd 1\n         */\n        /**\n         * A {@link v9}․{@link TransactionType} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.transactionMarker.transactionType\n         * @type {TransactionType}\n         * @example\n          * onEvent(pSymbol, pEvent, pRealTime) {\n          *     switch (pEvent.header.unionID) {\n          *    case v9.UnionID.TransactionMarker:\n          *                  var ttp = pEvent.transactionMarker.transactionType;\n          *              break;\n          *          default :\n          *              break;\n          *     }\n          * }\n         */\n        this.TransactionType =\n        {\n            NotSet: 255,\n            TransactionStart: 0,\n            TransactionEnd: 1\n        };\n\n        /**\n         * @typedef {enumeration} EventIndicator\n         * @property {number} NotSet 0\n         * @property {number} LastOfType 1\n         * @property {number} EndOfEvent 128\n         */\n        /**\n         * A {@link v9}․{@link EventIndicator} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - pEvent.header.eventIndicator\n         * @type {EventIndicator}\n         * @example\n         * onEvent(pSymbol, pEvent, pRealTime) {\n         *     switch (pEvent.header.unionID) {\n         *    case v9.UnionID.EventIndicator:\n         *                  var ind = pEvent.header.eventIndicator;\n         *              break;\n         *          default :\n         *              break;\n         *     }\n         * }\n         */\n        this.EventIndicator =\n        {\n            NotSet: 0,\n            LastOfType: 1,\n            EndOfEvent: 128\n        };\n\n        /**\n         * @typedef {enumeration} InvestigateStatus\n         * @property {number} NotSet 0\n         * @property {number} UnderInvestigation 1\n         * @property {number} InvestigationStatus 2\n         */\n        /**\n         * A {@link v9}․{@link InvestigateStatus} {@link enumeration} that contains each of the different values that may be returned from:</br>\n         *  - N/A\n         * @type {InvestigateStatus}\n         * @example\n         * onEvent(pSymbol, pEvent, pRealTime) {\n         *    // N/A\n         * }\n         */\n        this.InvestigateStatus =\n        {\n            NotSet: 0,\n            UnderInvestigation: 1,\n            InvestigationCompleted: 2\n        };\n    }\n};\n\nv9.edit = class {\n  /**\n   * Used to retrieve specific values within a {@link feed}․ e․g: symbol and/or date\n   * @param {number} [pEditType] \n   */\n    constructor(pEditType) \n    {\n        /**\n         * @ignore\n         * @private\n         */\n        this.fEditType = qEditSymb;\n\n        if (pEditType)\n        {\n            if (pEditType.toUpperCase() === \"SYMBOL\")\n            {\n                this.fEditType = qEditSymb;\n            }\n            if (pEditType.toUpperCase() === \"DATE\")\n            {\n                this.fEditType = qEditDate;\n            }\n        }\n    }\n\n    /**\n     * \n     * @deprecated\n     * @type {string}\n     * */\n    set value(pEdit)\n    {\n        return gHome._pagesave(gUniq, this.fEditType, pEdit);\n    }\n\n    /**\n     * @deprecated\n     * @type {string}\n     */\n    get value()\n    {\n        return gHome._pageread(gUniq, this.fEditType);\n    }\n\n    /**\n     * @deprecated\n     * @type {string}\n     */\n    get symbol()\n    {\n        return (this.fEditType == qEditSymb) ? this.value : \"\";\n    }\n\n    /** \n     * @deprecated\n     * @type {string}\n     */\n    get date()\n    {\n        return (this.fEditType == qEditDate) ? this.value : \"\";\n    }\n}\n\n/**\n * This class' functions should be overridden in each script for handling user actions and symbol events\n * @example\n * class MyFeed extends v9.feed {\n *\t\tonOpen (pMeta) {\n *\t\t}\n *\n *\t\tonLoad () {\n *\t\t}\n *\n *\t\tonStop () {\n *\t\t}\n *\n *\t\tonRender () {\n *\t\t}\n *\n *\t\tonEvent (pSymbol,pEvent,pRealTime) {\n *\t\t}\n * }\n *\n * let feed = new MyFeed(<pSymbol>, <pDate>);\n */\nv9.feed = class {\n    /**\n     * Used to provide the symbol and date to the current {@link feed}\n     * @param {String} [pSymbol]\n     * @param {String} [pDate]\n     */\n    constructor(pSymbol, pDate) {\n        gHome.MakeFeed(gUniq, pSymbol, pDate);\n        gFeed = this;\n    }\n\n    /**\n     * Built in feed function that is called when the start button is pressed in order to initialize variables.\n     * @param {Object} pMeta - Object representing json meta information. It currently provides the instrument definitions of the supplied symbol.\n     * @abstract\n     * @example\n     * onOpen(pMeta) {\n     *\n     * }\n     */\n    onOpen(pMeta) {\n\n    }\n\n    /**\n     * Built in feed function that is called once the script has read every previous event in the symbol Feed.\n     * @abstract\n     * @example\n     * onLoad() {\n     *\n     * }\n     */\n    onLoad() {\n    }\n\n    /**\n     * Built in feed function that is called once for each frame that is rendered to the viewport.\n     * @abstract\n     * @example\n     * onRender() {\n     *\n     * }\n     */\n    onRender() {\n    }\n\n    /**\n     * Built in feed function that is called once for each timestamp tracked in your symbol.\n     *\n     * This is where you'll be doing most of your calculations on the specific things you're looking for in your symbol. It allows your script to perform different tasks depending on the current event's conditions.\n     * @param {String} pSymbol - Name of the current symbol\n     * @param {Object} pEvent - Current event being handled\n     * @param {Boolean} pRealTime - Boolean determining whether or not to only handle current events\n     * @abstract\n     * @example\n     * onEvent(pSymbol, pEvent, pRealTime) {\n     *\n     * }\n     */\n    onEvent(pSymbol, pEvent, pRealTime) {\n    }\n\n    /**\n     * Built in feed function that is called when the stop button is pressed.\n     * @abstract\n     * @example\n     * onStop() {\n     *\n     * }\n     */\n    onStop() {\n    }\n}\n\nv9.lineChart = class {\n    constructor(pID) {\n        this.fLineEnum = gHome.MakeLine(gUniq, (pID) ? document.getElementById(pID) : null);\n    }\n\n    linePush(pItem, pRate, pTime) {\n        gHome.LinePush(gUniq, pItem.fCalcEnum, pRate, pTime);\n    }\n}\n\nv9.cubeChart = class {\n    constructor(pID) {\n        this.fCubeEnum = gHome.MakeCube(gUniq, (pID) ? document.getElementById(pID) : null);\n    }\n\n    cubePlus(pItem, pData, pSize) {\n        gHome.CubePlus(gUniq, pItem, pData, pSize);\n    }\n\n    cubeDele(pItem, pData) {\n        gHome.CubeDele(gUniq, pItem, pData);\n    }\n\n    cubeSave(pItem, pData, pSize) {\n        gHome.CubeSave(gUniq, pItem, pData, pSize);\n    }\n\n    cubeRead(pItem, pData) {\n        gHome.CubeRead(gUniq, pItem, pData);\n    }\n\n    cubeFree(pItem) {\n        gHome.CubeFree(gUniq, pItem);\n    }\n\n    cubePush(pItem, pSave) {\n        gHome.CubePush(gUniq, pItem, pSave);\n    }\n\n}\n\nv9.lineItem = class {\n    constructor(pPane) {\n        try {\n            this.fCalcEnum = gHome.MakeCalc(gUniq, this);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"MakeCalc\", e);\n        }\n    }\n\n    /**\n     * Stroke width in pixels\n     * @type {Number}\n     * @public\n     */\n    set lineWidth(pData) {\n        try {\n            this._lineWidth = pData;\n            gHome.Calc_lineWidth(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"lineWidth\", e);\n        }\n    }\n\n    /**\n     * Stroke color in hexadecimal as a String\n     * @type {String}\n     * @public\n     */\n    set strokeStyle(pData) {\n        try {\n            this._strokeStyle = pData;\n            gHome.Calc_strokeStyle(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErroo(gUniq, \"strokeStyle\", e);\n        }\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @public\n     */\n    set format(pData) {\n        try {\n            this._format = pData;\n            gHome.Calc_format(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"format\", e);\n        }\n    }\n\n    /**\n     * Text color in hexadecimal as a String\n     * @type {String}\n     * @public\n     */\n    set textStyle(pData) {\n        try {\n            this._textStyle = pData;\n            gHome.Calc_textStyle(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"textStyle\", e);\n        }\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @public\n     */\n    set bodyStyle(pData) {\n        try {\n            this._bodyStyle = pData;\n            gHome.Calc_bodyStyle(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"textStyle\", e);\n        }\n    }\n\n    /**\n     * Text corresponding to current line price\n     * @type {String}\n     * @public\n     */\n    set title(pData) {\n        try {\n            this._title = pData;\n            gHome.Calc_title(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"title\", e);\n        }\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @public\n     */\n    set name(pData) {\n        try {\n            this._name = pData;\n            gHome.Calc_name(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"name\", e);\n        }\n    }\n\n    /**\n     * Stroke width in pixels\n     * @type {Number}\n     * @public\n     */\n    get lineWidth() {\n        return this._lineWidth;\n    }\n\n    /**\n     * Stroke color in hexadecimal as a String\n     * @type {String}\n     * @public\n     */\n    get strokeStyle() {\n        return this._strokeStyle;\n    }\n\n    /**\n     * Text color in hexadecimal as a String\n     * @type {String}\n     * @public\n     */\n    get textStyle() {\n        return this._textStyle;\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @readonly\n     */\n    get eventStyle() {\n        return this._eventStyle;\n    }\n\n    /**\n     * Text corresponding to current line price\n     * @type {String}\n     * @public\n     */\n    get title() {\n        return this._title;\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @public\n     */\n    get format() {\n        return this._format;\n    }\n}\n\nv9.cubeItem = class {\n    constructor(pPane) {\n        try {\n            this.fCalcEnum = gHome.MakeCalc(gUniq, this);\n            this.fCubeMaps = new Map();\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"MakeCalc\", e);\n        }\n    }\n\n    /**\n     * Stroke width in pixels\n     * @type {Number}\n     * @public\n     */\n    set lineWidth(pData) {\n        try {\n            this._lineWidth = pData;\n            gHome.Calc_lineWidth(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"lineWidth\", e);\n        }\n    }\n\n    /**\n     * Stroke color in hexadecimal as a String\n     * @type {String}\n     * @public\n     */\n    set strokeStyle(pData) {\n        try {\n            this._strokeStyle = pData;\n            gHome.Calc_strokeStyle(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErroo(gUniq, \"strokeStyle\", e);\n        }\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @readonly\n     */\n    set format(pData) {\n        try {\n            this._format = pData;\n            gHome.Calc_format(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"format\", e);\n        }\n    }\n\n    /**\n     * Text color in hexadecimal as a String\n     * @type {String}\n     * @public\n     */\n    set textStyle(pData) {\n        try {\n            this._textStyle = pData;\n            gHome.Calc_textStyle(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"textStyle\", e);\n        }\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @public\n     */\n    set bodyStyle(pData) {\n        try {\n            this._bodyStyle = pData;\n            gHome.Calc_bodyStyle(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"textStyle\", e);\n        }\n    }\n\n    /**\n     * Text corresponding to current cube price\n     * @type {String}\n     * @public\n     */\n    set title(pData) {\n        try {\n            this._title = pData;\n            gHome.Calc_title(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"title\", e);\n        }\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @public\n     */\n    set name(pData) {\n        try {\n            this._name = pData;\n            gHome.Calc_name(gUniq, this.fCalcEnum, pData);\n        }\n        catch (e) {\n            gHome.PageErro(gUniq, \"name\", e);\n        }\n    }\n\n    /**\n     * Stroke width in pixels\n     * @type {Number}\n     * @public\n     */\n    get lineWidth() {\n        return this._lineWidth;\n    }\n\n    /**\n     * Stroke color in hexadecimal as a String\n     * @type {String}\n     * @public\n     */\n    get strokeStyle() {\n        return this._strokeStyle;\n    }\n\n    /**\n     * Text color in hexadecimal as a String\n     * @type {String}\n     * @public\n     */\n    get textStyle() {\n        return this._textStyle;\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @readonly \n     */\n    get eventStyle() {\n        return this._eventStyle;\n    }\n\n    /**\n     * Text corresponding to current cube price\n     * @type {String}\n     * @public\n     */\n    get title() {\n        return this._title;\n    }\n\n    /**\n     * @todo figure out what this does\n     * @type {String}\n     * @public\n     */\n    get format() {\n        return this._format;\n    }\n}\n\n/**\n * Returns a JSON object representing the provided event\n * @param {Event} pEvent\n */\nv9.eventToJson = function (pEvent) {\n    let tEvent = v9.eventCopy(pEvent);\n\n    if (tEvent !== undefined) {\n        let intCount = 0, repCount = 0;\n        const json = JSON.stringify(tEvent, (_, v) => {\n            if (typeof v === 'bigint') {\n                intCount++;\n                return `${v}#bigint`;\n            }\n            return v;\n        });\n        const res = json.replace(/\"(-?\\d+)#bigint\"/g, (_, a) => {\n            repCount++;\n            return a;\n        });\n        if (repCount > intCount) {\n            // You have a string somewhere that looks like \"123#bigint\";\n            throw new Error(`BigInt serialization pattern conflict with a string value.`);\n        }\n        return res;\n    }\n}\n\n/**\n * Returns a copy of a provided event\n * @param {Event} pEvent\n */\nv9.eventCopy = function (pEvent) {\n\n    let tEvent = {};\n\n    if (pEvent.header) {\n        tEvent.header = {};\n        tEvent.header = Object.assign(pEvent.header);\n    }\n\n    try {\n        switch (pEvent.header.unionID) {\n            case v9.UnionID.TransactionMarker:\n                tEvent.transactionMarker = {};\n                tEvent.transactionMarker = Object.assign(pEvent.transactionMarker);\n                break;\n            case v9.UnionID.ChannelReset:\n                tEvent.channelReset = {};\n                tEvent.channelReset = Object.assign(pEvent.channelReset);\n                break;\n            case v9.UnionID.TradeSummary:\n                tEvent.tradeSummary = {};\n                tEvent.tradeSummary = Object.assign(pEvent.tradeSummary);\n                break;\n            case v9.UnionID.TradeMatch:\n                tEvent.tradeMatch = {};\n                tEvent.tradeMatch = Object.assign(pEvent.tradeMatch);\n                break;\n            case v9.UnionID.VolumeUpdate:\n                tEvent.volumeUpdate = {};\n                tEvent.volumeUpdate = Object.assign(pEvent.volumeUpdate);\n                break;\n            case v9.UnionID.BookLevel:\n                tEvent.bookLevel = {};\n                tEvent.bookLevel = Object.assign(pEvent.bookLevel);\n                break;\n            case v9.UnionID.OrderBook:\n                tEvent.orderBook = {};\n                tEvent.orderBook = Object.assign(pEvent.orderBook);\n                break;\n            case v9.UnionID.SecurityStatus:\n                tEvent.securityStatus = {};\n                tEvent.securityStatus = Object.assign(pEvent.securityStatus);\n                break;\n            case v9.UnionID.DailyStatistics:\n                tEvent.dailyStatistics = {};\n                tEvent.dailyStatistics = Object.assign(pEvent.dailyStatistics);\n                break;\n            case v9.UnionID.SessionStatistics:\n                tEvent.sessionStatistics = {};\n                tEvent.sessionStatistics = Object.assign(pEvent.sessionStatistics);\n                break;\n            case v9.UnionID.LimitsBanding:\n                tEvent.limitsBanding = {};\n                tEvent.limitsBanding = Object.assign(pEvent.limitsBanding);\n                break;\n            case v9.UnionID.ClearingPrice:\n                tEvent.clearingPrice = {};\n                tEvent.clearingPrice = Object.assign(pEvent.clearingPrice);\n                break;\n        }\n    }\n    catch (e) {\n    }\n\n    return tEvent;\n}\n\n/**\n * Reports errors to the debugging window\n * @param {String} msg\n * @param {String} url\n * @param {Number} lineNo\n * @param {Number} columnNo\n * @param {any} error\n */\nwindow.onerror = function (msg, url, lineNo, columnNo, error) {\n    var string = msg.toLowerCase();\n    var substring = \"script error\";\n    if (string.indexOf(substring) > -1) {\n        gHome._pageerro(gUniq, 'Script Error: See Browser Console for Detail');\n    }\n    else {\n        //var message = [\n        //\t'Message: ' + msg,\n        //\t'URL: ' + url,\n        //\t'Line: ' + lineNo,\n        //\t'Column: ' + columnNo,\n        //\t'Error object: ' + JSON.stringify(error)\n        //].join(' - ');\n\n        var message = [\n            'Message: ' + msg,\n            'Line: ' + lineNo,\n            'Column: ' + columnNo\n        ].join(' - ');\n\n        gHome._pageerro(gUniq, message);\n    }\n}\n\n/**\n * Class used for referencing any individual event from the current {@link feed}\n */\nexport class Event {\n    constructor() {\n        /**\n         * @typedef {object} Header\n         * @property {number} unionID Enumerated value used to find the type of an Event object\n         * @property {number} sequence The current Event object's session array index\n         * @property {number} time The exact time of the current Event in nanoseconds as a BigInt\n         * @property {number} timeH The higher half of the aforementioned time member as a Number\n         * @property {number} timeL The lower half of the aforementioned time member as a Number\n         * @property {number} milliseconds The aforementioned time member in milliseconds as a Number\n         */\n        /**\n         * Each Event’s header object provides access to general Event information and is accessed using:\n         *  - <EventName>.header.<memberName>\n         * @type {Header}\n         * @example\n         * onEvent(pSymbol, pEvent, pRealTime) {\n         *     switch (pEvent.header.unionID) {\n         *         case v9.UnionID.TradeSummary:\n         *             var fTime = new Date(pEvent.header.milliseconds).toLocalTimeString(); //Formats the date and time based off of the current Event's time in milliseconds\n         *             break;\n         *         default :\n         *             break;\n         *     }\n         * }\n         */\n        this.header = {\n            unionID: 255,\n            sequence: 0, //Each event within a feed has an assigned sequence value that \n            time: 0,\n            timeH: 0,\n            timeL: 0,\n            milliseconds: 0,\n        };\n\n        /**\n         * @typedef {enumeration} TradeSummary\n         * @property {number} price The price of the current Event\n         * @property {number} quantity The total quantity matched for the the current Event\n         * @property {number} matches The number of upcoming orders that will participate in the current Event\n         * @property {Aggressor} aggressor The aggressor of the trade the current Event is summarizing\n         * @property {boolean} isImplied Whether or not the trade the current Event is summarizing was implied\n         * @property {number} isSnapshot Whether or not the current Event is a market summary\n         * @property {number} volume The accumulated volume of the current session\n         */\n        /**\n         * Each tradeSummary Event object is accessed using:\n\t     *  - <EventName>.header.tradeSummary\n         * @type {TradeSummary}\n         */\n        this.tradeSummary = {\n            price: 0,\n            quantity: 0,\n            matches: 0,\n            aggressor: 0,\n            isImplied: false,\n            isSnapshot: false,\n            volume: 0,\n        };\n\n        /**\n         * @typedef {object} TradeMatch\n         * @property {number} price The price of the current Event\n         * @property {number} quantity The total quantity matched for the current Event\n         * @property {number} number The enumerated value from 0 to number of TradeSummary.matches\n         * @property {boolean} isAggressor Whether or not the current Event was made by the aggressor of the trade.\n         * @property {number} orderID The identifier for the current Event’s order\n         * @property {number} auxilaryID The original identifier for the current Event’s order.\n         * @property {number} flags These bits are exchange specific. If you don’t know which exchange this file came from, the exchange for this instrId is located in the Instrument Information message.\n         */\n        /**\n         * Each tradeMatch Event object is accessed using:\n\t     *  - <EventName>.header.tradeMatch\n         * @type {TradeMatch}\n         */\n        this.tradeMatch = {\n            price: 0,\n            quantity: 0,\n            number: 0,\n            isAggressor: 0,\n            orderID: 0,\n            auxiliaryID: 0,\n            flags: 0,\n        };\n\n        /**\n         * @typedef {object} VolumeUpdate\n         * @property {number} volume The total volume for the session including the current Event\n         * @property {number} vwap An ICE-specific stat metric\n         */\n        /**\n         * Each volumeUpdate Event object is accessed using:\n\t     *  - <EventName>.header.volumeUpdate\n         * @type {VolumeUpdate}\n         * */\n        this.volumeUpdate = {\n            volume: 0,\n            vwap: 0,\n        };\n\n        /**\n         * @typedef {object} BookLevel\n         * @property {number} price The price of the current Event\n         * @property {number} quantity The total quantity matched for the the current Event\n         * @property {number} orders The number of orders that participated at the current Event’s price level\n         * @property {number} impliedQuantity The total implied quantity at the current event’s price level\n         * @property {number} impliedOrders The total number of implied orders at the current event’s price level\n         * @property {number} level The price level at which the event occurred\n         * @property {BookAction} action The book action of the order corresponding to the current event\n         * @property {BookType} type The type of the current Event\n         * @property {boolean} isEndEvent Whether or not the current Event is the last Event of the packet\n         */\n        /**\n         * Each bookLevel Event object is accessed using:\n\t     *  - <EventName>.header.bookLevel\n         * @type {BookLevel}\n         */\n        this.bookLevel = {\n            price: 0,\n            quantity: 0,\n            orders: 0,\n            impliedQuantity: 0,\n            impliedOrders: 0,\n            level: 0,\n            action: 255,\n            type: 85,\n            isEndEvent: false,\n        };\n\n        /**\n         * @typedef {object} OrderBook\n         * @property {number} price The price of the current Event\n         * @property {BookType} type The type of the current Event\n         * @property {number} quantity The total quantity matched for the current Event\n         * @property {number} priorityID The order priority for execution on the current order book : Lower = higher priority\n         * @property {boolean} auxilaryID The first OrderID assigned because some exchanges change the orderID : Only ICE and Eurex Exchanges\n         * @property {number} previousID If an orderID is changed, this is the ID that was just replaced : Eurex\n         * @property {number} orderID The identifier for the current Event's order\n         * @property {BookAction} action The book action of the order corresponding to the current event\n         */\n        /**\n         * Each orderBook Event object is accessed using:\n\t     *  - <EventName>.header.orderBook\n         * @type {OrderBook}\n         */\n        this.orderBook = {\n            price: 0,\n            type: 85,\n            quantity: 0,\n            priorityID: 0,\n            auxiliaryID: 0,\n            previousID: 0,\n            orderID: 0,\n            action: 255,\n        };\n\n        /**\n         * @typedef {object} SecurityStatus\n         * @property {number} group The exchange specific code assigned to a group of related securities, which are concurrently affected by market events\n         * @property {BookType} asset The underlying asset code represented as a String\n         * @property {number} sessionDate The date of the current Event's trading session\n         * @property {number} type The total implied quantity at the current event's price level\n         * @property {HaltReason} haltReason The reason why the market has been halted\n         * @property {SecurityEvent} securityEvent Additional reasoning for the market being halted\n         */\n        /**\n         * Each securityStatus Event object is accessed using:\n\t     *  - <EventName>.header.securityStatus\n         * @type {SecurityStatus}\n         */\n        this.securityStatus = {\n            group: \"\",\n            asset: \"\",\n            sessionDate: 0,\n            type: 0,\n            haltReason: 255,\n            securityEvent: 0\n        };\n\n        /**\n         * @typedef {object} DailyStatistics\n         * @property {number} price The price of the current Event\n         * @property {number} instrumentID The unique instrument identifier for the current exchange\n         * @property {number} impliedQuantity The total number of Events in the current session : Only applies to OpenInterest type\n         * @property {number} impliedOrders The total number of implied orders at the current event's price level\n         * @property {number} level The price level at which the event occurred\n         * @property {BookAction} action The book action of the order corresponding to the current event\n         * @property {DailyStatisticsType} type The type of the current Event\n         * @property {SettleType} settleType The settlement type of the current Event\n         * @property {boolean} isEndEvent Whether or not the current Event is the last Event of the packet\n         */\n        /** \n         * Each dailyStatistics Event object is accessed using:\n         *  - <EventName>.header.dailyStatistics\n         * @type {DailyStatistics}\n         */\n        this.dailyStatistics = {\n            price: 0,\n            instrumentID: 0,\n            size: 0,\n            impliedQuantity: 0,\n            impliedOrders: 0,\n            level: 0,\n            action: 255,\n            type: 0,// waiting for Ed\n            settleType: 0,\n            isEndEvent: false,\n        };\n\n        /**\n         * @typedef {object} SessionStatistics\n         * @property {number} price The price of the current Event\n         * @property {number} instrumentID The unique instrument identifier for the current exchange\n         * @property {StateType} stateType The OpeningPrice type of the current Event\n         * @property {BookAction} action The book action of the order corresponding to the current event\n         * @property {SessionStatisticsType} type The type of the current Event\n         * @property {number} size The total number of Events in the current session\n         */\n        /** \n         * Each sessionStatistics Event object is accessed using:\n         *  - <EventName>.header.sessionStatistics\n         * @type {SessionStatistics}\n         */\n        this.sessionStatistics = {\n            price: 0,\n            instrumentID: 0,\n            stateType: 255,\n            action: 255,\n            type: 127,\n            size: 0\n        };\n\n        /**\n         * @typedef {object} LimitsBanding\n         * @property {number} highLimit The lowest price level the contract can trade in this session\n         * @property {number} lowLimit The highest price level the contract can trade in this session\n         * @property {number} maxVariation The maximum tradeable range for this session\n         */\n        /** \n         * Each limitsBanding Event object is accessed using:\n         *  - <EventName>.header.limitsBanding\n         * @type {LimitsBanding}\n         */\n        this.limitsBanding = {\n            highLimit: 0,\n            lowLimit: 0,\n            maxVariation: 0\n        };\n\n        /**\n         * @typedef {object} ChannelReset\n         * @property {BookType} type The type of the current Event\n         */\n        /** \n         * Each channelReset Event object is accessed using:\n         *  - <EventName>.header.channelReset\n         * @type {ChannelReset}\n         * */\n        this.channelReset = {\n            type: 85\n        };\n\n        /**\n         * @typedef {object} TransactionMarker\n         * @property {TransactionType} type The type of the current Event\n         */\n        /** \n         * Each transactionMarker Event object is accessed using:\n\t     *  - <EventName>.header.transactionMarker\n         * @type {TransactionMarker}\n         * @return \n         */\n        this.transactionMarker = {\n            type: 255\n        };\n    }\n}\n",
     "static": true,
-    "longname": "/mnt/c/Users/Blake Reset/source/repos/PlGGS/docs/src/index.js",
+    "longname": "V:/docs/src/index.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -640,7 +640,7 @@
     "static": true,
     "longname": "src/index.js~enumeration",
     "access": "public",
-    "description": "A JavaScript {@link Object} that only contains member variables with corresponding {@link number}(s)",
+    "description": "A built-in JavaScript {@link Object} that only contains member variables with corresponding {@link number}(s)",
     "type": {
       "types": [
         "Object"
@@ -651,6 +651,26 @@
   },
   {
     "__docId__": 53,
+    "kind": "typedef",
+    "name": "BigInt",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~BigInt",
+    "access": "public",
+    "description": "A built-in JavaScript {@link Object} that provides a way to represent whole numbers larger than 2^53-1 ",
+    "see": [
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt"
+    ],
+    "type": {
+      "types": [
+        "Object"
+      ],
+      "optional": false,
+      "name": "BigInt"
+    }
+  },
+  {
+    "__docId__": 54,
     "kind": "class",
     "name": "v9",
     "memberof": "src/index.js",
@@ -661,11 +681,11 @@
     "importPath": "evntscript/src/index.js",
     "importStyle": "{v9}",
     "description": "Class used for referencing all v9 event enumerations and data",
-    "lineNumber": 20,
+    "lineNumber": 25,
     "interface": false
   },
   {
-    "__docId__": 54,
+    "__docId__": 55,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/index.js~v9",
@@ -675,11 +695,11 @@
     "longname": "src/index.js~v9#constructor",
     "access": "public",
     "description": null,
-    "lineNumber": 21,
+    "lineNumber": 26,
     "undocument": true
   },
   {
-    "__docId__": 55,
+    "__docId__": 56,
     "kind": "member",
     "name": "PRICE_NULL_32",
     "memberof": "src/index.js~v9",
@@ -687,23 +707,7 @@
     "longname": "src/index.js~v9#PRICE_NULL_32",
     "access": "private",
     "description": "Value used specify a non-existent 32 bit price returned",
-    "lineNumber": 26,
-    "type": {
-      "types": [
-        "number"
-      ]
-    }
-  },
-  {
-    "__docId__": 56,
-    "kind": "member",
-    "name": "PRICE_NULL_64",
-    "memberof": "src/index.js~v9",
-    "static": false,
-    "longname": "src/index.js~v9#PRICE_NULL_64",
-    "access": "private",
-    "description": "Value used specify a non-existent 64 bit price returned",
-    "lineNumber": 32,
+    "lineNumber": 31,
     "type": {
       "types": [
         "number"
@@ -713,14 +717,13 @@
   {
     "__docId__": 57,
     "kind": "member",
-    "name": "sGroupSettleID",
+    "name": "PRICE_NULL_64",
     "memberof": "src/index.js~v9",
     "static": false,
-    "longname": "src/index.js~v9#sGroupSettleID",
+    "longname": "src/index.js~v9#PRICE_NULL_64",
     "access": "private",
-    "description": "",
-    "lineNumber": 38,
-    "ignore": true,
+    "description": "Value used specify a non-existent 64 bit price returned",
+    "lineNumber": 37,
     "type": {
       "types": [
         "number"
@@ -729,6 +732,23 @@
   },
   {
     "__docId__": 58,
+    "kind": "member",
+    "name": "sGroupSettleID",
+    "memberof": "src/index.js~v9",
+    "static": false,
+    "longname": "src/index.js~v9#sGroupSettleID",
+    "access": "private",
+    "description": "",
+    "lineNumber": 43,
+    "ignore": true,
+    "type": {
+      "types": [
+        "number"
+      ]
+    }
+  },
+  {
+    "__docId__": 59,
     "kind": "typedef",
     "name": "UnionID",
     "memberof": "src/index.js~v9",
@@ -877,7 +897,7 @@
     }
   },
   {
-    "__docId__": 59,
+    "__docId__": 60,
     "kind": "member",
     "name": "UnionID",
     "memberof": "src/index.js~v9",
@@ -888,7 +908,7 @@
     "examples": [
       "onEvent(pSymbol, pEvent, pRealTime) {\n    switch (pEvent.header.unionID) {\n        case v9.UnionID.<Value>:\n            // Do something when pEvent.header.unionID is equal to v9.UnionID.<Value>\n            break;\n        default :\n            break;\n    }\n}"
     ],
-    "lineNumber": 71,
+    "lineNumber": 76,
     "type": {
       "nullable": null,
       "types": [
@@ -899,7 +919,7 @@
     }
   },
   {
-    "__docId__": 60,
+    "__docId__": 61,
     "kind": "typedef",
     "name": "Aggressor",
     "memberof": "src/index.js~v9",
@@ -948,7 +968,7 @@
     }
   },
   {
-    "__docId__": 61,
+    "__docId__": 62,
     "kind": "member",
     "name": "Aggressor",
     "memberof": "src/index.js~v9",
@@ -959,7 +979,7 @@
     "examples": [
       "onEvent(pSymbol, pEvent, pRealTime) {\n    switch (pEvent.header.unionID) {\n   case v9.UnionID.TradeSummary:\n                 var agr = pEvent.tradeSummary.aggressor;\n             break;\n         default :\n             break;\n    }\n}"
     ],
-    "lineNumber": 111,
+    "lineNumber": 116,
     "type": {
       "nullable": null,
       "types": [
@@ -970,7 +990,7 @@
     }
   },
   {
-    "__docId__": 62,
+    "__docId__": 63,
     "kind": "typedef",
     "name": "HaltReason",
     "memberof": "src/index.js~v9",
@@ -1069,7 +1089,7 @@
     }
   },
   {
-    "__docId__": 63,
+    "__docId__": 64,
     "kind": "member",
     "name": "HaltReason",
     "memberof": "src/index.js~v9",
@@ -1080,7 +1100,7 @@
     "examples": [
       "onEvent(pSymbol, pEvent, pRealTime) {\n    switch (pEvent.header.unionID) {\n        case v9.UnionID.SecurityStatus:\n            var hlt = pEvent.securityStatus.haltReason;\n            break;\n        default :\n            break;\n    }\n}"
     ],
-    "lineNumber": 144,
+    "lineNumber": 149,
     "type": {
       "nullable": null,
       "types": [
@@ -1091,7 +1111,7 @@
     }
   },
   {
-    "__docId__": 64,
+    "__docId__": 65,
     "kind": "typedef",
     "name": "SecurityType",
     "memberof": "src/index.js~v9",
@@ -1250,7 +1270,7 @@
     }
   },
   {
-    "__docId__": 65,
+    "__docId__": 66,
     "kind": "member",
     "name": "SecurityType",
     "memberof": "src/index.js~v9",
@@ -1261,7 +1281,7 @@
     "examples": [
       "onEvent(pSymbol, pEvent, pRealTime) {\n    switch (pEvent.header.unionID) {\n        case v9.UnionID.SecurityStatus:\n            var typ = pEvent.securityStatus.type;\n            break;\n        default :\n            break;\n    }\n}"
     ],
-    "lineNumber": 188,
+    "lineNumber": 193,
     "type": {
       "nullable": null,
       "types": [
@@ -1272,7 +1292,7 @@
     }
   },
   {
-    "__docId__": 66,
+    "__docId__": 67,
     "kind": "typedef",
     "name": "SecurityEvent",
     "memberof": "src/index.js~v9",
@@ -1341,7 +1361,7 @@
     }
   },
   {
-    "__docId__": 67,
+    "__docId__": 68,
     "kind": "member",
     "name": "SecurityEvent",
     "memberof": "src/index.js~v9",
@@ -1352,7 +1372,7 @@
     "examples": [
       "onEvent(pSymbol, pEvent, pRealTime) {\n    switch (pEvent.header.unionID) {\n   case v9.UnionID.SecurityStatus:\n                 var sev = pEvent.securityStatus.securityEvent;\n             break;\n         default :\n             break;\n    }\n}"
     ],
-    "lineNumber": 230,
+    "lineNumber": 235,
     "type": {
       "nullable": null,
       "types": [
@@ -1363,7 +1383,7 @@
     }
   },
   {
-    "__docId__": 68,
+    "__docId__": 69,
     "kind": "typedef",
     "name": "BookType",
     "memberof": "src/index.js~v9",
@@ -1410,7 +1430,7 @@
         "spread": false,
         "optional": false,
         "name": "ImpliedBid",
-        "description": "115"
+        "description": "98"
       },
       {
         "nullable": null,
@@ -1420,6 +1440,16 @@
         "spread": false,
         "optional": false,
         "name": "ImpliedAsk",
+        "description": "115"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "BookReset",
         "description": "82"
       }
     ],
@@ -1432,7 +1462,7 @@
     }
   },
   {
-    "__docId__": 69,
+    "__docId__": 70,
     "kind": "member",
     "name": "BookType",
     "memberof": "src/index.js~v9",
@@ -1443,7 +1473,7 @@
     "examples": [
       "onEvent(pSymbol, pEvent, pRealTime) {\n    switch (pEvent.header.unionID) {\n   case v9.UnionID.OrderBook:\n                 var typ = pEvent.orderBook.type;\n             break;\n         default :\n             break;\n    }\n}"
     ],
-    "lineNumber": 263,
+    "lineNumber": 269,
     "type": {
       "nullable": null,
       "types": [
@@ -1454,7 +1484,7 @@
     }
   },
   {
-    "__docId__": 70,
+    "__docId__": 71,
     "kind": "typedef",
     "name": "DailyStatisticsType",
     "memberof": "src/index.js~v9",
@@ -1513,7 +1543,7 @@
     }
   },
   {
-    "__docId__": 71,
+    "__docId__": 72,
     "kind": "member",
     "name": "DailyStatisticsType",
     "memberof": "src/index.js~v9",
@@ -1524,7 +1554,7 @@
     "examples": [
       "onEvent(pSymbol, pEvent, pRealTime) {\n    switch (pEvent.header.unionID) {\n   case v9.UnionID.DailyStatistics:\n                 var typ = pEvent.dailyStatistics.type;\n             break;\n         default :\n             break;\n    }\n}"
     ],
-    "lineNumber": 295,
+    "lineNumber": 301,
     "type": {
       "nullable": null,
       "types": [
@@ -1535,7 +1565,7 @@
     }
   },
   {
-    "__docId__": 72,
+    "__docId__": 73,
     "kind": "typedef",
     "name": "BookAction",
     "memberof": "src/index.js~v9",
@@ -1634,7 +1664,7 @@
     }
   },
   {
-    "__docId__": 73,
+    "__docId__": 74,
     "kind": "member",
     "name": "BookAction",
     "memberof": "src/index.js~v9",
@@ -1645,7 +1675,7 @@
     "examples": [
       "onEvent(pSymbol, pEvent, pRealTime) {\n    switch (pEvent.header.unionID) {\n   case v9.UnionID.OrderBook:\n                 var act = pEvent.orderBook.action;\n             break;\n         default :\n             break;\n    }\n}"
     ],
-    "lineNumber": 330,
+    "lineNumber": 336,
     "type": {
       "nullable": null,
       "types": [
@@ -1656,7 +1686,7 @@
     }
   },
   {
-    "__docId__": 74,
+    "__docId__": 75,
     "kind": "typedef",
     "name": "SessionStatisticsType",
     "memberof": "src/index.js~v9",
@@ -1755,7 +1785,7 @@
     }
   },
   {
-    "__docId__": 75,
+    "__docId__": 76,
     "kind": "member",
     "name": "SessionStatisticsType",
     "memberof": "src/index.js~v9",
@@ -1764,9 +1794,9 @@
     "access": "public",
     "description": "A {@link v9}․{@link SessionStatisticsType} {@link enumeration} that contains each of the different values that may be returned from:</br>\n - pEvent.sessionStatistics.type",
     "examples": [
-      "onEvent(pSymbol, pEvent, pRealTime) {\n    switch (pEvent.header.unionID) {\n   case v9.UnionID.SessionStatistics:\n                 var typ = pEvent.sessionStatistics.type;\n             break;\n         default :\n             break;\n    }\n}"
+      "onEvent(pSymbol, pEvent, pRealTime) {\n    switch (pEvent.header.unionID) {\n        case v9.UnionID.SessionStatistics:\n                 var typ = pEvent.sessionStatistics.type;\n             break;\n         default :\n             break;\n    }\n}"
     ],
-    "lineNumber": 368,
+    "lineNumber": 374,
     "type": {
       "nullable": null,
       "types": [
@@ -1777,7 +1807,7 @@
     }
   },
   {
-    "__docId__": 76,
+    "__docId__": 77,
     "kind": "typedef",
     "name": "StateType",
     "memberof": "src/index.js~v9",
@@ -1836,7 +1866,7 @@
     }
   },
   {
-    "__docId__": 77,
+    "__docId__": 78,
     "kind": "member",
     "name": "StateType",
     "memberof": "src/index.js~v9",
@@ -1847,7 +1877,7 @@
     "examples": [
       "onEvent(pSymbol, pEvent, pRealTime) {\n    switch (pEvent.header.unionID) {\n   case v9.UnionID.SessionStatistics:\n                 var stt = pEvent.sessionStatistics.stateType;\n             break;\n         default :\n             break;\n    }\n}"
     ],
-    "lineNumber": 402,
+    "lineNumber": 408,
     "type": {
       "nullable": null,
       "types": [
@@ -1858,7 +1888,7 @@
     }
   },
   {
-    "__docId__": 78,
+    "__docId__": 79,
     "kind": "typedef",
     "name": "PutOrCall",
     "memberof": "src/index.js~v9",
@@ -1907,7 +1937,7 @@
     }
   },
   {
-    "__docId__": 79,
+    "__docId__": 80,
     "kind": "member",
     "name": "PutOrCall",
     "memberof": "src/index.js~v9",
@@ -1918,7 +1948,7 @@
     "examples": [
       "onEvent(pSymbol, pEvent, pRealTime) {\n    // N/A\n}"
     ],
-    "lineNumber": 425,
+    "lineNumber": 431,
     "type": {
       "nullable": null,
       "types": [
@@ -1929,7 +1959,7 @@
     }
   },
   {
-    "__docId__": 80,
+    "__docId__": 81,
     "kind": "typedef",
     "name": "SettleType",
     "memberof": "src/index.js~v9",
@@ -2008,7 +2038,7 @@
     }
   },
   {
-    "__docId__": 81,
+    "__docId__": 82,
     "kind": "member",
     "name": "SettleType",
     "memberof": "src/index.js~v9",
@@ -2019,7 +2049,7 @@
     "examples": [
       "onEvent(pSymbol, pEvent, pRealTime) {\n    switch (pEvent.header.unionID) {\n   case v9.UnionID.DailyStatistics:\n                 var stl = pEvent.dailyStatistics.settleType;\n             break;\n         default :\n             break;\n    }\n}"
     ],
-    "lineNumber": 456,
+    "lineNumber": 462,
     "type": {
       "nullable": null,
       "types": [
@@ -2030,7 +2060,7 @@
     }
   },
   {
-    "__docId__": 82,
+    "__docId__": 83,
     "kind": "typedef",
     "name": "TransactionType",
     "memberof": "src/index.js~v9",
@@ -2079,7 +2109,7 @@
     }
   },
   {
-    "__docId__": 83,
+    "__docId__": 84,
     "kind": "member",
     "name": "TransactionType",
     "memberof": "src/index.js~v9",
@@ -2090,7 +2120,7 @@
     "examples": [
       "onEvent(pSymbol, pEvent, pRealTime) {\n    switch (pEvent.header.unionID) {\n   case v9.UnionID.TransactionMarker:\n                 var ttp = pEvent.transactionMarker.transactionType;\n             break;\n         default :\n             break;\n    }\n}"
     ],
-    "lineNumber": 487,
+    "lineNumber": 493,
     "type": {
       "nullable": null,
       "types": [
@@ -2101,7 +2131,7 @@
     }
   },
   {
-    "__docId__": 84,
+    "__docId__": 85,
     "kind": "typedef",
     "name": "EventIndicator",
     "memberof": "src/index.js~v9",
@@ -2150,7 +2180,7 @@
     }
   },
   {
-    "__docId__": 85,
+    "__docId__": 86,
     "kind": "member",
     "name": "EventIndicator",
     "memberof": "src/index.js~v9",
@@ -2161,7 +2191,7 @@
     "examples": [
       "onEvent(pSymbol, pEvent, pRealTime) {\n    switch (pEvent.header.unionID) {\n   case v9.UnionID.EventIndicator:\n                 var ind = pEvent.header.eventIndicator;\n             break;\n         default :\n             break;\n    }\n}"
     ],
-    "lineNumber": 515,
+    "lineNumber": 521,
     "type": {
       "nullable": null,
       "types": [
@@ -2172,7 +2202,7 @@
     }
   },
   {
-    "__docId__": 86,
+    "__docId__": 87,
     "kind": "typedef",
     "name": "InvestigateStatus",
     "memberof": "src/index.js~v9",
@@ -2221,7 +2251,7 @@
     }
   },
   {
-    "__docId__": 87,
+    "__docId__": 88,
     "kind": "member",
     "name": "InvestigateStatus",
     "memberof": "src/index.js~v9",
@@ -2232,7 +2262,7 @@
     "examples": [
       "onEvent(pSymbol, pEvent, pRealTime) {\n   // N/A\n}"
     ],
-    "lineNumber": 537,
+    "lineNumber": 543,
     "type": {
       "nullable": null,
       "types": [
@@ -2243,7 +2273,7 @@
     }
   },
   {
-    "__docId__": 88,
+    "__docId__": 89,
     "kind": "class",
     "name": "edit",
     "memberof": "src/index.js",
@@ -2254,12 +2284,12 @@
     "importPath": "evntscript/src/index.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 546,
+    "lineNumber": 552,
     "undocument": true,
     "interface": false
   },
   {
-    "__docId__": 89,
+    "__docId__": 90,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/index.js~edit",
@@ -2269,7 +2299,7 @@
     "longname": "src/index.js~edit#constructor",
     "access": "public",
     "description": "Used to retrieve specific values within a {@link feed}․ e․g: symbol and/or date",
-    "lineNumber": 551,
+    "lineNumber": 557,
     "params": [
       {
         "nullable": null,
@@ -2284,7 +2314,7 @@
     ]
   },
   {
-    "__docId__": 90,
+    "__docId__": 91,
     "kind": "member",
     "name": "fEditType",
     "memberof": "src/index.js~edit",
@@ -2292,7 +2322,7 @@
     "longname": "src/index.js~edit#fEditType",
     "access": "private",
     "description": "",
-    "lineNumber": 557,
+    "lineNumber": 563,
     "ignore": true,
     "type": {
       "types": [
@@ -2301,7 +2331,7 @@
     }
   },
   {
-    "__docId__": 93,
+    "__docId__": 94,
     "kind": "set",
     "name": "value",
     "memberof": "src/index.js~edit",
@@ -2311,28 +2341,8 @@
     "longname": "src/index.js~edit#value",
     "access": "public",
     "description": "",
-    "lineNumber": 576,
-    "type": {
-      "nullable": null,
-      "types": [
-        "string"
-      ],
-      "spread": false,
-      "description": null
-    }
-  },
-  {
-    "__docId__": 94,
-    "kind": "get",
-    "name": "value",
-    "memberof": "src/index.js~edit",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/index.js~edit#value",
-    "access": "public",
-    "description": "",
-    "lineNumber": 585,
+    "lineNumber": 583,
+    "deprecated": true,
     "type": {
       "nullable": null,
       "types": [
@@ -2345,15 +2355,16 @@
   {
     "__docId__": 95,
     "kind": "get",
-    "name": "symbol",
+    "name": "value",
     "memberof": "src/index.js~edit",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/index.js~edit#symbol",
+    "longname": "src/index.js~edit#value",
     "access": "public",
     "description": "",
-    "lineNumber": 594,
+    "lineNumber": 592,
+    "deprecated": true,
     "type": {
       "nullable": null,
       "types": [
@@ -2366,15 +2377,16 @@
   {
     "__docId__": 96,
     "kind": "get",
-    "name": "date",
+    "name": "symbol",
     "memberof": "src/index.js~edit",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/index.js~edit#date",
+    "longname": "src/index.js~edit#symbol",
     "access": "public",
     "description": "",
-    "lineNumber": 603,
+    "lineNumber": 601,
+    "deprecated": true,
     "type": {
       "nullable": null,
       "types": [
@@ -2386,6 +2398,28 @@
   },
   {
     "__docId__": 97,
+    "kind": "get",
+    "name": "date",
+    "memberof": "src/index.js~edit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~edit#date",
+    "access": "public",
+    "description": "",
+    "lineNumber": 610,
+    "deprecated": true,
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 98,
     "kind": "class",
     "name": "feed",
     "memberof": "src/index.js",
@@ -2399,11 +2433,11 @@
     "examples": [
       "class MyFeed extends v9.feed {\n\tonOpen (pMeta) {\n\t}\n\n\tonLoad () {\n\t}\n\n\tonStop () {\n\t}\n\n\tonRender () {\n\t}\n\n\tonEvent (pSymbol,pEvent,pRealTime) {\n\t}\n}\n\nlet feed = new MyFeed(<pSymbol>, <pDate>);"
     ],
-    "lineNumber": 631,
+    "lineNumber": 638,
     "interface": false
   },
   {
-    "__docId__": 98,
+    "__docId__": 99,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/index.js~feed",
@@ -2413,7 +2447,7 @@
     "longname": "src/index.js~feed#constructor",
     "access": "public",
     "description": "Used to provide the symbol and date to the current {@link feed}",
-    "lineNumber": 637,
+    "lineNumber": 644,
     "params": [
       {
         "nullable": null,
@@ -2438,7 +2472,7 @@
     ]
   },
   {
-    "__docId__": 99,
+    "__docId__": 100,
     "kind": "method",
     "name": "onOpen",
     "memberof": "src/index.js~feed",
@@ -2451,7 +2485,7 @@
     "examples": [
       "onOpen(pMeta) {\n\n}"
     ],
-    "lineNumber": 651,
+    "lineNumber": 658,
     "params": [
       {
         "nullable": null,
@@ -2468,7 +2502,7 @@
     "return": null
   },
   {
-    "__docId__": 100,
+    "__docId__": 101,
     "kind": "method",
     "name": "onLoad",
     "memberof": "src/index.js~feed",
@@ -2481,13 +2515,13 @@
     "examples": [
       "onLoad() {\n\n}"
     ],
-    "lineNumber": 663,
+    "lineNumber": 670,
     "abstract": true,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 101,
+    "__docId__": 102,
     "kind": "method",
     "name": "onRender",
     "memberof": "src/index.js~feed",
@@ -2500,13 +2534,13 @@
     "examples": [
       "onRender() {\n\n}"
     ],
-    "lineNumber": 674,
+    "lineNumber": 681,
     "abstract": true,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 102,
+    "__docId__": 103,
     "kind": "method",
     "name": "onEvent",
     "memberof": "src/index.js~feed",
@@ -2519,7 +2553,7 @@
     "examples": [
       "onEvent(pSymbol, pEvent, pRealTime) {\n\n}"
     ],
-    "lineNumber": 690,
+    "lineNumber": 697,
     "params": [
       {
         "nullable": null,
@@ -2556,7 +2590,7 @@
     "return": null
   },
   {
-    "__docId__": 103,
+    "__docId__": 104,
     "kind": "method",
     "name": "onStop",
     "memberof": "src/index.js~feed",
@@ -2569,13 +2603,13 @@
     "examples": [
       "onStop() {\n\n}"
     ],
-    "lineNumber": 701,
+    "lineNumber": 708,
     "abstract": true,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 104,
+    "__docId__": 105,
     "kind": "class",
     "name": "lineChart",
     "memberof": "src/index.js",
@@ -2586,12 +2620,12 @@
     "importPath": "evntscript/src/index.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 705,
+    "lineNumber": 712,
     "undocument": true,
     "interface": false
   },
   {
-    "__docId__": 105,
+    "__docId__": 106,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/index.js~lineChart",
@@ -2601,11 +2635,11 @@
     "longname": "src/index.js~lineChart#constructor",
     "access": "public",
     "description": null,
-    "lineNumber": 706,
+    "lineNumber": 713,
     "undocument": true
   },
   {
-    "__docId__": 106,
+    "__docId__": 107,
     "kind": "member",
     "name": "fLineEnum",
     "memberof": "src/index.js~lineChart",
@@ -2613,7 +2647,7 @@
     "longname": "src/index.js~lineChart#fLineEnum",
     "access": "public",
     "description": null,
-    "lineNumber": 707,
+    "lineNumber": 714,
     "undocument": true,
     "type": {
       "types": [
@@ -2622,7 +2656,7 @@
     }
   },
   {
-    "__docId__": 107,
+    "__docId__": 108,
     "kind": "method",
     "name": "linePush",
     "memberof": "src/index.js~lineChart",
@@ -2632,7 +2666,7 @@
     "longname": "src/index.js~lineChart#linePush",
     "access": "public",
     "description": null,
-    "lineNumber": 710,
+    "lineNumber": 717,
     "undocument": true,
     "params": [
       {
@@ -2657,7 +2691,7 @@
     "return": null
   },
   {
-    "__docId__": 108,
+    "__docId__": 109,
     "kind": "class",
     "name": "cubeChart",
     "memberof": "src/index.js",
@@ -2668,12 +2702,12 @@
     "importPath": "evntscript/src/index.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 715,
+    "lineNumber": 722,
     "undocument": true,
     "interface": false
   },
   {
-    "__docId__": 109,
+    "__docId__": 110,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/index.js~cubeChart",
@@ -2683,11 +2717,11 @@
     "longname": "src/index.js~cubeChart#constructor",
     "access": "public",
     "description": null,
-    "lineNumber": 716,
+    "lineNumber": 723,
     "undocument": true
   },
   {
-    "__docId__": 110,
+    "__docId__": 111,
     "kind": "member",
     "name": "fCubeEnum",
     "memberof": "src/index.js~cubeChart",
@@ -2695,7 +2729,7 @@
     "longname": "src/index.js~cubeChart#fCubeEnum",
     "access": "public",
     "description": null,
-    "lineNumber": 717,
+    "lineNumber": 724,
     "undocument": true,
     "type": {
       "types": [
@@ -2704,7 +2738,7 @@
     }
   },
   {
-    "__docId__": 111,
+    "__docId__": 112,
     "kind": "method",
     "name": "cubePlus",
     "memberof": "src/index.js~cubeChart",
@@ -2714,7 +2748,7 @@
     "longname": "src/index.js~cubeChart#cubePlus",
     "access": "public",
     "description": null,
-    "lineNumber": 720,
+    "lineNumber": 727,
     "undocument": true,
     "params": [
       {
@@ -2731,35 +2765,6 @@
       },
       {
         "name": "pSize",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": null
-  },
-  {
-    "__docId__": 112,
-    "kind": "method",
-    "name": "cubeDele",
-    "memberof": "src/index.js~cubeChart",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/index.js~cubeChart#cubeDele",
-    "access": "public",
-    "description": null,
-    "lineNumber": 724,
-    "undocument": true,
-    "params": [
-      {
-        "name": "pItem",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "pData",
         "types": [
           "*"
         ]
@@ -2770,6 +2775,35 @@
   {
     "__docId__": 113,
     "kind": "method",
+    "name": "cubeDele",
+    "memberof": "src/index.js~cubeChart",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeChart#cubeDele",
+    "access": "public",
+    "description": null,
+    "lineNumber": 731,
+    "undocument": true,
+    "params": [
+      {
+        "name": "pItem",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "pData",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 114,
+    "kind": "method",
     "name": "cubeSave",
     "memberof": "src/index.js~cubeChart",
     "generator": false,
@@ -2778,7 +2812,7 @@
     "longname": "src/index.js~cubeChart#cubeSave",
     "access": "public",
     "description": null,
-    "lineNumber": 728,
+    "lineNumber": 735,
     "undocument": true,
     "params": [
       {
@@ -2803,7 +2837,7 @@
     "return": null
   },
   {
-    "__docId__": 114,
+    "__docId__": 115,
     "kind": "method",
     "name": "cubeRead",
     "memberof": "src/index.js~cubeChart",
@@ -2813,7 +2847,7 @@
     "longname": "src/index.js~cubeChart#cubeRead",
     "access": "public",
     "description": null,
-    "lineNumber": 732,
+    "lineNumber": 739,
     "undocument": true,
     "params": [
       {
@@ -2832,7 +2866,7 @@
     "return": null
   },
   {
-    "__docId__": 115,
+    "__docId__": 116,
     "kind": "method",
     "name": "cubeFree",
     "memberof": "src/index.js~cubeChart",
@@ -2842,7 +2876,7 @@
     "longname": "src/index.js~cubeChart#cubeFree",
     "access": "public",
     "description": null,
-    "lineNumber": 736,
+    "lineNumber": 743,
     "undocument": true,
     "params": [
       {
@@ -2855,7 +2889,7 @@
     "return": null
   },
   {
-    "__docId__": 116,
+    "__docId__": 117,
     "kind": "method",
     "name": "cubePush",
     "memberof": "src/index.js~cubeChart",
@@ -2865,7 +2899,7 @@
     "longname": "src/index.js~cubeChart#cubePush",
     "access": "public",
     "description": null,
-    "lineNumber": 740,
+    "lineNumber": 747,
     "undocument": true,
     "params": [
       {
@@ -2884,7 +2918,7 @@
     "return": null
   },
   {
-    "__docId__": 117,
+    "__docId__": 118,
     "kind": "class",
     "name": "lineItem",
     "memberof": "src/index.js",
@@ -2895,12 +2929,12 @@
     "importPath": "evntscript/src/index.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 746,
+    "lineNumber": 753,
     "undocument": true,
     "interface": false
   },
   {
-    "__docId__": 118,
+    "__docId__": 119,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/index.js~lineItem",
@@ -2910,11 +2944,11 @@
     "longname": "src/index.js~lineItem#constructor",
     "access": "public",
     "description": null,
-    "lineNumber": 747,
+    "lineNumber": 754,
     "undocument": true
   },
   {
-    "__docId__": 119,
+    "__docId__": 120,
     "kind": "member",
     "name": "fCalcEnum",
     "memberof": "src/index.js~lineItem",
@@ -2922,7 +2956,7 @@
     "longname": "src/index.js~lineItem#fCalcEnum",
     "access": "public",
     "description": null,
-    "lineNumber": 749,
+    "lineNumber": 756,
     "undocument": true,
     "type": {
       "types": [
@@ -2931,7 +2965,7 @@
     }
   },
   {
-    "__docId__": 120,
+    "__docId__": 121,
     "kind": "set",
     "name": "lineWidth",
     "memberof": "src/index.js~lineItem",
@@ -2941,7 +2975,7 @@
     "longname": "src/index.js~lineItem#lineWidth",
     "access": "public",
     "description": "Stroke width in pixels",
-    "lineNumber": 761,
+    "lineNumber": 768,
     "type": {
       "nullable": null,
       "types": [
@@ -2952,7 +2986,7 @@
     }
   },
   {
-    "__docId__": 121,
+    "__docId__": 122,
     "kind": "member",
     "name": "_lineWidth",
     "memberof": "src/index.js~lineItem",
@@ -2960,7 +2994,7 @@
     "longname": "src/index.js~lineItem#_lineWidth",
     "access": "private",
     "description": null,
-    "lineNumber": 763,
+    "lineNumber": 770,
     "undocument": true,
     "type": {
       "types": [
@@ -2969,7 +3003,7 @@
     }
   },
   {
-    "__docId__": 122,
+    "__docId__": 123,
     "kind": "set",
     "name": "strokeStyle",
     "memberof": "src/index.js~lineItem",
@@ -2979,7 +3013,7 @@
     "longname": "src/index.js~lineItem#strokeStyle",
     "access": "public",
     "description": "Stroke color in hexadecimal as a String",
-    "lineNumber": 776,
+    "lineNumber": 783,
     "type": {
       "nullable": null,
       "types": [
@@ -2990,7 +3024,7 @@
     }
   },
   {
-    "__docId__": 123,
+    "__docId__": 124,
     "kind": "member",
     "name": "_strokeStyle",
     "memberof": "src/index.js~lineItem",
@@ -2998,7 +3032,7 @@
     "longname": "src/index.js~lineItem#_strokeStyle",
     "access": "private",
     "description": null,
-    "lineNumber": 778,
+    "lineNumber": 785,
     "undocument": true,
     "type": {
       "types": [
@@ -3007,7 +3041,7 @@
     }
   },
   {
-    "__docId__": 124,
+    "__docId__": 125,
     "kind": "set",
     "name": "format",
     "memberof": "src/index.js~lineItem",
@@ -3017,7 +3051,7 @@
     "longname": "src/index.js~lineItem#format",
     "access": "public",
     "description": "",
-    "lineNumber": 791,
+    "lineNumber": 798,
     "todo": [
       "figure out what this does"
     ],
@@ -3031,7 +3065,7 @@
     }
   },
   {
-    "__docId__": 125,
+    "__docId__": 126,
     "kind": "member",
     "name": "_format",
     "memberof": "src/index.js~lineItem",
@@ -3039,7 +3073,7 @@
     "longname": "src/index.js~lineItem#_format",
     "access": "private",
     "description": null,
-    "lineNumber": 793,
+    "lineNumber": 800,
     "undocument": true,
     "type": {
       "types": [
@@ -3048,7 +3082,7 @@
     }
   },
   {
-    "__docId__": 126,
+    "__docId__": 127,
     "kind": "set",
     "name": "textStyle",
     "memberof": "src/index.js~lineItem",
@@ -3058,7 +3092,7 @@
     "longname": "src/index.js~lineItem#textStyle",
     "access": "public",
     "description": "Text color in hexadecimal as a String",
-    "lineNumber": 806,
+    "lineNumber": 813,
     "type": {
       "nullable": null,
       "types": [
@@ -3069,7 +3103,7 @@
     }
   },
   {
-    "__docId__": 127,
+    "__docId__": 128,
     "kind": "member",
     "name": "_textStyle",
     "memberof": "src/index.js~lineItem",
@@ -3077,7 +3111,7 @@
     "longname": "src/index.js~lineItem#_textStyle",
     "access": "private",
     "description": null,
-    "lineNumber": 808,
+    "lineNumber": 815,
     "undocument": true,
     "type": {
       "types": [
@@ -3086,7 +3120,7 @@
     }
   },
   {
-    "__docId__": 128,
+    "__docId__": 129,
     "kind": "set",
     "name": "bodyStyle",
     "memberof": "src/index.js~lineItem",
@@ -3096,7 +3130,7 @@
     "longname": "src/index.js~lineItem#bodyStyle",
     "access": "public",
     "description": "",
-    "lineNumber": 821,
+    "lineNumber": 828,
     "todo": [
       "figure out what this does"
     ],
@@ -3110,7 +3144,7 @@
     }
   },
   {
-    "__docId__": 129,
+    "__docId__": 130,
     "kind": "member",
     "name": "_bodyStyle",
     "memberof": "src/index.js~lineItem",
@@ -3118,7 +3152,7 @@
     "longname": "src/index.js~lineItem#_bodyStyle",
     "access": "private",
     "description": null,
-    "lineNumber": 823,
+    "lineNumber": 830,
     "undocument": true,
     "type": {
       "types": [
@@ -3127,7 +3161,7 @@
     }
   },
   {
-    "__docId__": 130,
+    "__docId__": 131,
     "kind": "set",
     "name": "title",
     "memberof": "src/index.js~lineItem",
@@ -3137,7 +3171,7 @@
     "longname": "src/index.js~lineItem#title",
     "access": "public",
     "description": "Text corresponding to current line price",
-    "lineNumber": 836,
+    "lineNumber": 843,
     "type": {
       "nullable": null,
       "types": [
@@ -3148,7 +3182,7 @@
     }
   },
   {
-    "__docId__": 131,
+    "__docId__": 132,
     "kind": "member",
     "name": "_title",
     "memberof": "src/index.js~lineItem",
@@ -3156,7 +3190,7 @@
     "longname": "src/index.js~lineItem#_title",
     "access": "private",
     "description": null,
-    "lineNumber": 838,
+    "lineNumber": 845,
     "undocument": true,
     "type": {
       "types": [
@@ -3165,7 +3199,7 @@
     }
   },
   {
-    "__docId__": 132,
+    "__docId__": 133,
     "kind": "set",
     "name": "name",
     "memberof": "src/index.js~lineItem",
@@ -3175,7 +3209,7 @@
     "longname": "src/index.js~lineItem#name",
     "access": "public",
     "description": "",
-    "lineNumber": 851,
+    "lineNumber": 858,
     "todo": [
       "figure out what this does"
     ],
@@ -3189,7 +3223,7 @@
     }
   },
   {
-    "__docId__": 133,
+    "__docId__": 134,
     "kind": "member",
     "name": "_name",
     "memberof": "src/index.js~lineItem",
@@ -3197,7 +3231,7 @@
     "longname": "src/index.js~lineItem#_name",
     "access": "private",
     "description": null,
-    "lineNumber": 853,
+    "lineNumber": 860,
     "undocument": true,
     "type": {
       "types": [
@@ -3206,7 +3240,7 @@
     }
   },
   {
-    "__docId__": 134,
+    "__docId__": 135,
     "kind": "get",
     "name": "lineWidth",
     "memberof": "src/index.js~lineItem",
@@ -3216,7 +3250,7 @@
     "longname": "src/index.js~lineItem#lineWidth",
     "access": "public",
     "description": "Stroke width in pixels",
-    "lineNumber": 866,
+    "lineNumber": 873,
     "type": {
       "nullable": null,
       "types": [
@@ -3227,7 +3261,7 @@
     }
   },
   {
-    "__docId__": 135,
+    "__docId__": 136,
     "kind": "get",
     "name": "strokeStyle",
     "memberof": "src/index.js~lineItem",
@@ -3237,28 +3271,7 @@
     "longname": "src/index.js~lineItem#strokeStyle",
     "access": "public",
     "description": "Stroke color in hexadecimal as a String",
-    "lineNumber": 875,
-    "type": {
-      "nullable": null,
-      "types": [
-        "String"
-      ],
-      "spread": false,
-      "description": null
-    }
-  },
-  {
-    "__docId__": 136,
-    "kind": "get",
-    "name": "textStyle",
-    "memberof": "src/index.js~lineItem",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/index.js~lineItem#textStyle",
-    "access": "public",
-    "description": "Text color in hexadecimal as a String",
-    "lineNumber": 884,
+    "lineNumber": 882,
     "type": {
       "nullable": null,
       "types": [
@@ -3271,24 +3284,15 @@
   {
     "__docId__": 137,
     "kind": "get",
-    "name": "eventStyle",
+    "name": "textStyle",
     "memberof": "src/index.js~lineItem",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/index.js~lineItem#eventStyle",
+    "longname": "src/index.js~lineItem#textStyle",
     "access": "public",
-    "description": "",
-    "lineNumber": 893,
-    "todo": [
-      "figure out what this does"
-    ],
-    "unknown": [
-      {
-        "tagName": "@readonly",
-        "tagValue": ""
-      }
-    ],
+    "description": "Text color in hexadecimal as a String",
+    "lineNumber": 891,
     "type": {
       "nullable": null,
       "types": [
@@ -3301,15 +3305,24 @@
   {
     "__docId__": 138,
     "kind": "get",
-    "name": "title",
+    "name": "eventStyle",
     "memberof": "src/index.js~lineItem",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/index.js~lineItem#title",
+    "longname": "src/index.js~lineItem#eventStyle",
     "access": "public",
-    "description": "Text corresponding to current line price",
-    "lineNumber": 902,
+    "description": "",
+    "lineNumber": 900,
+    "todo": [
+      "figure out what this does"
+    ],
+    "unknown": [
+      {
+        "tagName": "@readonly",
+        "tagValue": ""
+      }
+    ],
     "type": {
       "nullable": null,
       "types": [
@@ -3322,6 +3335,27 @@
   {
     "__docId__": 139,
     "kind": "get",
+    "name": "title",
+    "memberof": "src/index.js~lineItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~lineItem#title",
+    "access": "public",
+    "description": "Text corresponding to current line price",
+    "lineNumber": 909,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 140,
+    "kind": "get",
     "name": "format",
     "memberof": "src/index.js~lineItem",
     "generator": false,
@@ -3330,7 +3364,7 @@
     "longname": "src/index.js~lineItem#format",
     "access": "public",
     "description": "",
-    "lineNumber": 911,
+    "lineNumber": 918,
     "todo": [
       "figure out what this does"
     ],
@@ -3344,7 +3378,7 @@
     }
   },
   {
-    "__docId__": 140,
+    "__docId__": 141,
     "kind": "class",
     "name": "cubeItem",
     "memberof": "src/index.js",
@@ -3355,12 +3389,12 @@
     "importPath": "evntscript/src/index.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 916,
+    "lineNumber": 923,
     "undocument": true,
     "interface": false
   },
   {
-    "__docId__": 141,
+    "__docId__": 142,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/index.js~cubeItem",
@@ -3370,11 +3404,11 @@
     "longname": "src/index.js~cubeItem#constructor",
     "access": "public",
     "description": null,
-    "lineNumber": 917,
+    "lineNumber": 924,
     "undocument": true
   },
   {
-    "__docId__": 142,
+    "__docId__": 143,
     "kind": "member",
     "name": "fCalcEnum",
     "memberof": "src/index.js~cubeItem",
@@ -3382,24 +3416,7 @@
     "longname": "src/index.js~cubeItem#fCalcEnum",
     "access": "public",
     "description": null,
-    "lineNumber": 919,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 143,
-    "kind": "member",
-    "name": "fCubeMaps",
-    "memberof": "src/index.js~cubeItem",
-    "static": false,
-    "longname": "src/index.js~cubeItem#fCubeMaps",
-    "access": "public",
-    "description": null,
-    "lineNumber": 920,
+    "lineNumber": 926,
     "undocument": true,
     "type": {
       "types": [
@@ -3409,6 +3426,23 @@
   },
   {
     "__docId__": 144,
+    "kind": "member",
+    "name": "fCubeMaps",
+    "memberof": "src/index.js~cubeItem",
+    "static": false,
+    "longname": "src/index.js~cubeItem#fCubeMaps",
+    "access": "public",
+    "description": null,
+    "lineNumber": 927,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 145,
     "kind": "set",
     "name": "lineWidth",
     "memberof": "src/index.js~cubeItem",
@@ -3418,7 +3452,7 @@
     "longname": "src/index.js~cubeItem#lineWidth",
     "access": "public",
     "description": "Stroke width in pixels",
-    "lineNumber": 932,
+    "lineNumber": 939,
     "type": {
       "nullable": null,
       "types": [
@@ -3429,7 +3463,7 @@
     }
   },
   {
-    "__docId__": 145,
+    "__docId__": 146,
     "kind": "member",
     "name": "_lineWidth",
     "memberof": "src/index.js~cubeItem",
@@ -3437,7 +3471,7 @@
     "longname": "src/index.js~cubeItem#_lineWidth",
     "access": "private",
     "description": null,
-    "lineNumber": 934,
+    "lineNumber": 941,
     "undocument": true,
     "type": {
       "types": [
@@ -3446,7 +3480,7 @@
     }
   },
   {
-    "__docId__": 146,
+    "__docId__": 147,
     "kind": "set",
     "name": "strokeStyle",
     "memberof": "src/index.js~cubeItem",
@@ -3456,7 +3490,7 @@
     "longname": "src/index.js~cubeItem#strokeStyle",
     "access": "public",
     "description": "Stroke color in hexadecimal as a String",
-    "lineNumber": 947,
+    "lineNumber": 954,
     "type": {
       "nullable": null,
       "types": [
@@ -3467,7 +3501,7 @@
     }
   },
   {
-    "__docId__": 147,
+    "__docId__": 148,
     "kind": "member",
     "name": "_strokeStyle",
     "memberof": "src/index.js~cubeItem",
@@ -3475,7 +3509,7 @@
     "longname": "src/index.js~cubeItem#_strokeStyle",
     "access": "private",
     "description": null,
-    "lineNumber": 949,
+    "lineNumber": 956,
     "undocument": true,
     "type": {
       "types": [
@@ -3484,7 +3518,7 @@
     }
   },
   {
-    "__docId__": 148,
+    "__docId__": 149,
     "kind": "set",
     "name": "format",
     "memberof": "src/index.js~cubeItem",
@@ -3494,7 +3528,7 @@
     "longname": "src/index.js~cubeItem#format",
     "access": "public",
     "description": "",
-    "lineNumber": 962,
+    "lineNumber": 969,
     "todo": [
       "figure out what this does"
     ],
@@ -3514,7 +3548,7 @@
     }
   },
   {
-    "__docId__": 149,
+    "__docId__": 150,
     "kind": "member",
     "name": "_format",
     "memberof": "src/index.js~cubeItem",
@@ -3522,7 +3556,7 @@
     "longname": "src/index.js~cubeItem#_format",
     "access": "private",
     "description": null,
-    "lineNumber": 964,
+    "lineNumber": 971,
     "undocument": true,
     "type": {
       "types": [
@@ -3531,7 +3565,7 @@
     }
   },
   {
-    "__docId__": 150,
+    "__docId__": 151,
     "kind": "set",
     "name": "textStyle",
     "memberof": "src/index.js~cubeItem",
@@ -3541,7 +3575,7 @@
     "longname": "src/index.js~cubeItem#textStyle",
     "access": "public",
     "description": "Text color in hexadecimal as a String",
-    "lineNumber": 977,
+    "lineNumber": 984,
     "type": {
       "nullable": null,
       "types": [
@@ -3552,7 +3586,7 @@
     }
   },
   {
-    "__docId__": 151,
+    "__docId__": 152,
     "kind": "member",
     "name": "_textStyle",
     "memberof": "src/index.js~cubeItem",
@@ -3560,7 +3594,7 @@
     "longname": "src/index.js~cubeItem#_textStyle",
     "access": "private",
     "description": null,
-    "lineNumber": 979,
+    "lineNumber": 986,
     "undocument": true,
     "type": {
       "types": [
@@ -3569,7 +3603,7 @@
     }
   },
   {
-    "__docId__": 152,
+    "__docId__": 153,
     "kind": "set",
     "name": "bodyStyle",
     "memberof": "src/index.js~cubeItem",
@@ -3579,7 +3613,7 @@
     "longname": "src/index.js~cubeItem#bodyStyle",
     "access": "public",
     "description": "",
-    "lineNumber": 992,
+    "lineNumber": 999,
     "todo": [
       "figure out what this does"
     ],
@@ -3593,7 +3627,7 @@
     }
   },
   {
-    "__docId__": 153,
+    "__docId__": 154,
     "kind": "member",
     "name": "_bodyStyle",
     "memberof": "src/index.js~cubeItem",
@@ -3601,7 +3635,7 @@
     "longname": "src/index.js~cubeItem#_bodyStyle",
     "access": "private",
     "description": null,
-    "lineNumber": 994,
+    "lineNumber": 1001,
     "undocument": true,
     "type": {
       "types": [
@@ -3610,7 +3644,7 @@
     }
   },
   {
-    "__docId__": 154,
+    "__docId__": 155,
     "kind": "set",
     "name": "title",
     "memberof": "src/index.js~cubeItem",
@@ -3620,7 +3654,7 @@
     "longname": "src/index.js~cubeItem#title",
     "access": "public",
     "description": "Text corresponding to current cube price",
-    "lineNumber": 1007,
+    "lineNumber": 1014,
     "type": {
       "nullable": null,
       "types": [
@@ -3631,7 +3665,7 @@
     }
   },
   {
-    "__docId__": 155,
+    "__docId__": 156,
     "kind": "member",
     "name": "_title",
     "memberof": "src/index.js~cubeItem",
@@ -3639,7 +3673,7 @@
     "longname": "src/index.js~cubeItem#_title",
     "access": "private",
     "description": null,
-    "lineNumber": 1009,
+    "lineNumber": 1016,
     "undocument": true,
     "type": {
       "types": [
@@ -3648,7 +3682,7 @@
     }
   },
   {
-    "__docId__": 156,
+    "__docId__": 157,
     "kind": "set",
     "name": "name",
     "memberof": "src/index.js~cubeItem",
@@ -3658,7 +3692,7 @@
     "longname": "src/index.js~cubeItem#name",
     "access": "public",
     "description": "",
-    "lineNumber": 1022,
+    "lineNumber": 1029,
     "todo": [
       "figure out what this does"
     ],
@@ -3672,7 +3706,7 @@
     }
   },
   {
-    "__docId__": 157,
+    "__docId__": 158,
     "kind": "member",
     "name": "_name",
     "memberof": "src/index.js~cubeItem",
@@ -3680,7 +3714,7 @@
     "longname": "src/index.js~cubeItem#_name",
     "access": "private",
     "description": null,
-    "lineNumber": 1024,
+    "lineNumber": 1031,
     "undocument": true,
     "type": {
       "types": [
@@ -3689,7 +3723,7 @@
     }
   },
   {
-    "__docId__": 158,
+    "__docId__": 159,
     "kind": "get",
     "name": "lineWidth",
     "memberof": "src/index.js~cubeItem",
@@ -3699,7 +3733,7 @@
     "longname": "src/index.js~cubeItem#lineWidth",
     "access": "public",
     "description": "Stroke width in pixels",
-    "lineNumber": 1037,
+    "lineNumber": 1044,
     "type": {
       "nullable": null,
       "types": [
@@ -3710,7 +3744,7 @@
     }
   },
   {
-    "__docId__": 159,
+    "__docId__": 160,
     "kind": "get",
     "name": "strokeStyle",
     "memberof": "src/index.js~cubeItem",
@@ -3720,28 +3754,7 @@
     "longname": "src/index.js~cubeItem#strokeStyle",
     "access": "public",
     "description": "Stroke color in hexadecimal as a String",
-    "lineNumber": 1046,
-    "type": {
-      "nullable": null,
-      "types": [
-        "String"
-      ],
-      "spread": false,
-      "description": null
-    }
-  },
-  {
-    "__docId__": 160,
-    "kind": "get",
-    "name": "textStyle",
-    "memberof": "src/index.js~cubeItem",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/index.js~cubeItem#textStyle",
-    "access": "public",
-    "description": "Text color in hexadecimal as a String",
-    "lineNumber": 1055,
+    "lineNumber": 1053,
     "type": {
       "nullable": null,
       "types": [
@@ -3754,6 +3767,27 @@
   {
     "__docId__": 161,
     "kind": "get",
+    "name": "textStyle",
+    "memberof": "src/index.js~cubeItem",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~cubeItem#textStyle",
+    "access": "public",
+    "description": "Text color in hexadecimal as a String",
+    "lineNumber": 1062,
+    "type": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 162,
+    "kind": "get",
     "name": "eventStyle",
     "memberof": "src/index.js~cubeItem",
     "generator": false,
@@ -3762,7 +3796,7 @@
     "longname": "src/index.js~cubeItem#eventStyle",
     "access": "public",
     "description": "",
-    "lineNumber": 1064,
+    "lineNumber": 1071,
     "todo": [
       "figure out what this does"
     ],
@@ -3782,7 +3816,7 @@
     }
   },
   {
-    "__docId__": 162,
+    "__docId__": 163,
     "kind": "get",
     "name": "title",
     "memberof": "src/index.js~cubeItem",
@@ -3792,7 +3826,7 @@
     "longname": "src/index.js~cubeItem#title",
     "access": "public",
     "description": "Text corresponding to current cube price",
-    "lineNumber": 1073,
+    "lineNumber": 1080,
     "type": {
       "nullable": null,
       "types": [
@@ -3803,7 +3837,7 @@
     }
   },
   {
-    "__docId__": 163,
+    "__docId__": 164,
     "kind": "get",
     "name": "format",
     "memberof": "src/index.js~cubeItem",
@@ -3813,7 +3847,7 @@
     "longname": "src/index.js~cubeItem#format",
     "access": "public",
     "description": "",
-    "lineNumber": 1082,
+    "lineNumber": 1089,
     "todo": [
       "figure out what this does"
     ],
@@ -3827,7 +3861,7 @@
     }
   },
   {
-    "__docId__": 164,
+    "__docId__": 165,
     "kind": "function",
     "name": "eventToJson",
     "memberof": "src/index.js",
@@ -3840,40 +3874,7 @@
     "importPath": "evntscript/src/index.js",
     "importStyle": null,
     "description": "Returns a JSON object representing the provided event",
-    "lineNumber": 1091,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "Event"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "pEvent",
-        "description": ""
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 165,
-    "kind": "function",
-    "name": "eventCopy",
-    "memberof": "src/index.js",
-    "generator": false,
-    "async": false,
-    "static": true,
-    "longname": "src/index.js~eventCopy",
-    "access": "public",
-    "export": false,
-    "importPath": "evntscript/src/index.js",
-    "importStyle": null,
-    "description": "Returns a copy of a provided event",
-    "lineNumber": 1119,
+    "lineNumber": 1098,
     "params": [
       {
         "nullable": null,
@@ -3895,6 +3896,39 @@
   {
     "__docId__": 166,
     "kind": "function",
+    "name": "eventCopy",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~eventCopy",
+    "access": "public",
+    "export": false,
+    "importPath": "evntscript/src/index.js",
+    "importStyle": null,
+    "description": "Returns a copy of a provided event",
+    "lineNumber": 1126,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Event"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "pEvent",
+        "description": ""
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 167,
+    "kind": "function",
     "name": "onerror",
     "memberof": "src/index.js",
     "generator": false,
@@ -3906,7 +3940,7 @@
     "importPath": "evntscript/src/index.js",
     "importStyle": null,
     "description": "Reports errors to the debugging window",
-    "lineNumber": 1194,
+    "lineNumber": 1201,
     "params": [
       {
         "nullable": null,
@@ -3962,28 +3996,1147 @@
     "return": null
   },
   {
-    "__docId__": 167,
-    "kind": "function",
-    "name": "onfocus",
+    "__docId__": 168,
+    "kind": "class",
+    "name": "Event",
     "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~Event",
+    "access": "public",
+    "export": true,
+    "importPath": "evntscript/src/index.js",
+    "importStyle": "{Event}",
+    "description": "Class used for referencing any individual event from the current {@link feed}",
+    "lineNumber": 1229,
+    "interface": false
+  },
+  {
+    "__docId__": 169,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/index.js~Event",
     "generator": false,
     "async": false,
-    "static": true,
-    "longname": "src/index.js~onfocus",
+    "static": false,
+    "longname": "src/index.js~Event#constructor",
     "access": "public",
-    "export": false,
-    "importPath": "evntscript/src/index.js",
-    "importStyle": null,
     "description": null,
-    "lineNumber": 1219,
-    "undocument": true,
-    "params": [],
-    "return": null
+    "lineNumber": 1230,
+    "undocument": true
+  },
+  {
+    "__docId__": 170,
+    "kind": "typedef",
+    "name": "Header",
+    "memberof": "src/index.js~Event",
+    "static": true,
+    "longname": "src/index.js~Event.Header",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "unionID",
+        "description": "Enumerated value used to find the type of an Event object"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "sequence",
+        "description": "The current Event object's session array index"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "time",
+        "description": "The exact time of the current Event in nanoseconds as a BigInt"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "timeH",
+        "description": "The higher half of the aforementioned time member as a Number"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "timeL",
+        "description": "The lower half of the aforementioned time member as a Number"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "milliseconds",
+        "description": "The aforementioned time member in milliseconds as a Number"
+      }
+    ],
+    "type": {
+      "types": [
+        "object"
+      ],
+      "optional": false,
+      "name": "Header"
+    }
+  },
+  {
+    "__docId__": 171,
+    "kind": "member",
+    "name": "header",
+    "memberof": "src/index.js~Event",
+    "static": false,
+    "longname": "src/index.js~Event#header",
+    "access": "public",
+    "description": "Each Event’s header object provides access to general Event information and is accessed using:\n - <EventName>.header.<memberName>",
+    "examples": [
+      "onEvent(pSymbol, pEvent, pRealTime) {\n    switch (pEvent.header.unionID) {\n        case v9.UnionID.TradeSummary:\n            var fTime = new Date(pEvent.header.milliseconds).toLocalTimeString(); //Formats the date and time based off of the current Event's time in milliseconds\n            break;\n        default :\n            break;\n    }\n}"
+    ],
+    "lineNumber": 1255,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Header"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 172,
+    "kind": "typedef",
+    "name": "TradeSummary",
+    "memberof": "src/index.js~Event",
+    "static": true,
+    "longname": "src/index.js~Event.TradeSummary",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "price",
+        "description": "The price of the current Event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "quantity",
+        "description": "The total quantity matched for the the current Event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "matches",
+        "description": "The number of upcoming orders that will participate in the current Event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Aggressor"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "aggressor",
+        "description": "The aggressor of the trade the current Event is summarizing"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "isImplied",
+        "description": "Whether or not the trade the current Event is summarizing was implied"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "isSnapshot",
+        "description": "Whether or not the current Event is a market summary"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "volume",
+        "description": "The accumulated volume of the current session"
+      }
+    ],
+    "type": {
+      "types": [
+        "enumeration"
+      ],
+      "optional": false,
+      "name": "TradeSummary"
+    }
+  },
+  {
+    "__docId__": 173,
+    "kind": "member",
+    "name": "tradeSummary",
+    "memberof": "src/index.js~Event",
+    "static": false,
+    "longname": "src/index.js~Event#tradeSummary",
+    "access": "public",
+    "description": "Each tradeSummary Event object is accessed using:\n - <EventName>.header.tradeSummary",
+    "lineNumber": 1279,
+    "type": {
+      "nullable": null,
+      "types": [
+        "TradeSummary"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 174,
+    "kind": "typedef",
+    "name": "TradeMatch",
+    "memberof": "src/index.js~Event",
+    "static": true,
+    "longname": "src/index.js~Event.TradeMatch",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "price",
+        "description": "The price of the current Event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "quantity",
+        "description": "The total quantity matched for the current Event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "number",
+        "description": "The enumerated value from 0 to number of TradeSummary.matches"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "isAggressor",
+        "description": "Whether or not the current Event was made by the aggressor of the trade."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "orderID",
+        "description": "The identifier for the current Event’s order"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "auxilaryID",
+        "description": "The original identifier for the current Event’s order."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "flags",
+        "description": "These bits are exchange specific. If you don’t know which exchange this file came from, the exchange for this instrId is located in the Instrument Information message."
+      }
+    ],
+    "type": {
+      "types": [
+        "object"
+      ],
+      "optional": false,
+      "name": "TradeMatch"
+    }
+  },
+  {
+    "__docId__": 175,
+    "kind": "member",
+    "name": "tradeMatch",
+    "memberof": "src/index.js~Event",
+    "static": false,
+    "longname": "src/index.js~Event#tradeMatch",
+    "access": "public",
+    "description": "Each tradeMatch Event object is accessed using:\n - <EventName>.header.tradeMatch",
+    "lineNumber": 1304,
+    "type": {
+      "nullable": null,
+      "types": [
+        "TradeMatch"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 176,
+    "kind": "typedef",
+    "name": "VolumeUpdate",
+    "memberof": "src/index.js~Event",
+    "static": true,
+    "longname": "src/index.js~Event.VolumeUpdate",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "volume",
+        "description": "The total volume for the session including the current Event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "vwap",
+        "description": "An ICE-specific stat metric"
+      }
+    ],
+    "type": {
+      "types": [
+        "object"
+      ],
+      "optional": false,
+      "name": "VolumeUpdate"
+    }
+  },
+  {
+    "__docId__": 177,
+    "kind": "member",
+    "name": "volumeUpdate",
+    "memberof": "src/index.js~Event",
+    "static": false,
+    "longname": "src/index.js~Event#volumeUpdate",
+    "access": "public",
+    "description": "Each volumeUpdate Event object is accessed using:\n - <EventName>.header.volumeUpdate",
+    "lineNumber": 1324,
+    "type": {
+      "nullable": null,
+      "types": [
+        "VolumeUpdate"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 178,
+    "kind": "typedef",
+    "name": "BookLevel",
+    "memberof": "src/index.js~Event",
+    "static": true,
+    "longname": "src/index.js~Event.BookLevel",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "price",
+        "description": "The price of the current Event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "quantity",
+        "description": "The total quantity matched for the the current Event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "orders",
+        "description": "The number of orders that participated at the current Event’s price level"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "impliedQuantity",
+        "description": "The total implied quantity at the current event’s price level"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "impliedOrders",
+        "description": "The total number of implied orders at the current event’s price level"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "level",
+        "description": "The price level at which the event occurred"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "BookAction"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "action",
+        "description": "The book action of the order corresponding to the current event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "BookType"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "The type of the current Event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "isEndEvent",
+        "description": "Whether or not the current Event is the last Event of the packet"
+      }
+    ],
+    "type": {
+      "types": [
+        "object"
+      ],
+      "optional": false,
+      "name": "BookLevel"
+    }
+  },
+  {
+    "__docId__": 179,
+    "kind": "member",
+    "name": "bookLevel",
+    "memberof": "src/index.js~Event",
+    "static": false,
+    "longname": "src/index.js~Event#bookLevel",
+    "access": "public",
+    "description": "Each bookLevel Event object is accessed using:\n - <EventName>.header.bookLevel",
+    "lineNumber": 1346,
+    "type": {
+      "nullable": null,
+      "types": [
+        "BookLevel"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 180,
+    "kind": "typedef",
+    "name": "OrderBook",
+    "memberof": "src/index.js~Event",
+    "static": true,
+    "longname": "src/index.js~Event.OrderBook",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "price",
+        "description": "The price of the current Event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "BookType"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "The type of the current Event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "quantity",
+        "description": "The total quantity matched for the current Event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "priorityID",
+        "description": "The order priority for execution on the current order book : Lower = higher priority"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "auxilaryID",
+        "description": "The first OrderID assigned because some exchanges change the orderID : Only ICE and Eurex Exchanges"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "previousID",
+        "description": "If an orderID is changed, this is the ID that was just replaced : Eurex"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "orderID",
+        "description": "The identifier for the current Event's order"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "BookAction"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "action",
+        "description": "The book action of the order corresponding to the current event"
+      }
+    ],
+    "type": {
+      "types": [
+        "object"
+      ],
+      "optional": false,
+      "name": "OrderBook"
+    }
+  },
+  {
+    "__docId__": 181,
+    "kind": "member",
+    "name": "orderBook",
+    "memberof": "src/index.js~Event",
+    "static": false,
+    "longname": "src/index.js~Event#orderBook",
+    "access": "public",
+    "description": "Each orderBook Event object is accessed using:\n - <EventName>.header.orderBook",
+    "lineNumber": 1374,
+    "type": {
+      "nullable": null,
+      "types": [
+        "OrderBook"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 182,
+    "kind": "typedef",
+    "name": "SecurityStatus",
+    "memberof": "src/index.js~Event",
+    "static": true,
+    "longname": "src/index.js~Event.SecurityStatus",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "group",
+        "description": "The exchange specific code assigned to a group of related securities, which are concurrently affected by market events"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "BookType"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "asset",
+        "description": "The underlying asset code represented as a String"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "sessionDate",
+        "description": "The date of the current Event's trading session"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "The total implied quantity at the current event's price level"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "HaltReason"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "haltReason",
+        "description": "The reason why the market has been halted"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "SecurityEvent"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "securityEvent",
+        "description": "Additional reasoning for the market being halted"
+      }
+    ],
+    "type": {
+      "types": [
+        "object"
+      ],
+      "optional": false,
+      "name": "SecurityStatus"
+    }
+  },
+  {
+    "__docId__": 183,
+    "kind": "member",
+    "name": "securityStatus",
+    "memberof": "src/index.js~Event",
+    "static": false,
+    "longname": "src/index.js~Event#securityStatus",
+    "access": "public",
+    "description": "Each securityStatus Event object is accessed using:\n - <EventName>.header.securityStatus",
+    "lineNumber": 1399,
+    "type": {
+      "nullable": null,
+      "types": [
+        "SecurityStatus"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 184,
+    "kind": "typedef",
+    "name": "DailyStatistics",
+    "memberof": "src/index.js~Event",
+    "static": true,
+    "longname": "src/index.js~Event.DailyStatistics",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "price",
+        "description": "The price of the current Event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "instrumentID",
+        "description": "The unique instrument identifier for the current exchange"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "impliedQuantity",
+        "description": "The total number of Events in the current session : Only applies to OpenInterest type"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "impliedOrders",
+        "description": "The total number of implied orders at the current event's price level"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "level",
+        "description": "The price level at which the event occurred"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "BookAction"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "action",
+        "description": "The book action of the order corresponding to the current event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "DailyStatisticsType"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "The type of the current Event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "SettleType"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "settleType",
+        "description": "The settlement type of the current Event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "isEndEvent",
+        "description": "Whether or not the current Event is the last Event of the packet"
+      }
+    ],
+    "type": {
+      "types": [
+        "object"
+      ],
+      "optional": false,
+      "name": "DailyStatistics"
+    }
+  },
+  {
+    "__docId__": 185,
+    "kind": "member",
+    "name": "dailyStatistics",
+    "memberof": "src/index.js~Event",
+    "static": false,
+    "longname": "src/index.js~Event#dailyStatistics",
+    "access": "public",
+    "description": "Each dailyStatistics Event object is accessed using:\n - <EventName>.header.dailyStatistics",
+    "lineNumber": 1425,
+    "type": {
+      "nullable": null,
+      "types": [
+        "DailyStatistics"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 186,
+    "kind": "typedef",
+    "name": "SessionStatistics",
+    "memberof": "src/index.js~Event",
+    "static": true,
+    "longname": "src/index.js~Event.SessionStatistics",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "price",
+        "description": "The price of the current Event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "instrumentID",
+        "description": "The unique instrument identifier for the current exchange"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "StateType"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "stateType",
+        "description": "The OpeningPrice type of the current Event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "BookAction"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "action",
+        "description": "The book action of the order corresponding to the current event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "SessionStatisticsType"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "The type of the current Event"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "size",
+        "description": "The total number of Events in the current session"
+      }
+    ],
+    "type": {
+      "types": [
+        "object"
+      ],
+      "optional": false,
+      "name": "SessionStatistics"
+    }
+  },
+  {
+    "__docId__": 187,
+    "kind": "member",
+    "name": "sessionStatistics",
+    "memberof": "src/index.js~Event",
+    "static": false,
+    "longname": "src/index.js~Event#sessionStatistics",
+    "access": "public",
+    "description": "Each sessionStatistics Event object is accessed using:\n - <EventName>.header.sessionStatistics",
+    "lineNumber": 1452,
+    "type": {
+      "nullable": null,
+      "types": [
+        "SessionStatistics"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 188,
+    "kind": "typedef",
+    "name": "LimitsBanding",
+    "memberof": "src/index.js~Event",
+    "static": true,
+    "longname": "src/index.js~Event.LimitsBanding",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "highLimit",
+        "description": "The lowest price level the contract can trade in this session"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "lowLimit",
+        "description": "The highest price level the contract can trade in this session"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "maxVariation",
+        "description": "The maximum tradeable range for this session"
+      }
+    ],
+    "type": {
+      "types": [
+        "object"
+      ],
+      "optional": false,
+      "name": "LimitsBanding"
+    }
+  },
+  {
+    "__docId__": 189,
+    "kind": "member",
+    "name": "limitsBanding",
+    "memberof": "src/index.js~Event",
+    "static": false,
+    "longname": "src/index.js~Event#limitsBanding",
+    "access": "public",
+    "description": "Each limitsBanding Event object is accessed using:\n - <EventName>.header.limitsBanding",
+    "lineNumber": 1472,
+    "type": {
+      "nullable": null,
+      "types": [
+        "LimitsBanding"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 190,
+    "kind": "typedef",
+    "name": "ChannelReset",
+    "memberof": "src/index.js~Event",
+    "static": true,
+    "longname": "src/index.js~Event.ChannelReset",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "BookType"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "The type of the current Event"
+      }
+    ],
+    "type": {
+      "types": [
+        "object"
+      ],
+      "optional": false,
+      "name": "ChannelReset"
+    }
+  },
+  {
+    "__docId__": 191,
+    "kind": "member",
+    "name": "channelReset",
+    "memberof": "src/index.js~Event",
+    "static": false,
+    "longname": "src/index.js~Event#channelReset",
+    "access": "public",
+    "description": "Each channelReset Event object is accessed using:\n - <EventName>.header.channelReset",
+    "lineNumber": 1487,
+    "type": {
+      "nullable": null,
+      "types": [
+        "ChannelReset"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 192,
+    "kind": "typedef",
+    "name": "TransactionMarker",
+    "memberof": "src/index.js~Event",
+    "static": true,
+    "longname": "src/index.js~Event.TransactionMarker",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "TransactionType"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "The type of the current Event"
+      }
+    ],
+    "type": {
+      "types": [
+        "object"
+      ],
+      "optional": false,
+      "name": "TransactionMarker"
+    }
+  },
+  {
+    "__docId__": 193,
+    "kind": "member",
+    "name": "transactionMarker",
+    "memberof": "src/index.js~Event",
+    "static": false,
+    "longname": "src/index.js~Event#transactionMarker",
+    "access": "public",
+    "description": "Each transactionMarker Event object is accessed using:\n - <EventName>.header.transactionMarker",
+    "lineNumber": 1501,
+    "type": {
+      "nullable": null,
+      "types": [
+        "TransactionMarker"
+      ],
+      "spread": false,
+      "description": null
+    }
   },
   {
     "kind": "index",
     "content": "# Vertex Analytics Documentation\n\nVertex Analytics' v9 JavaScript API\n\n# License\n\n\"You're under no obligation to choose a license. However, without a license, the default copyright laws apply, meaning that you retain all rights to your source code and no one may reproduce, distribute, or create derivative works from your work.\" ([GitHub Help](\"https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository\"))\n\nDocumentation Library Used: [ESDoc](\"https://esdoc.org/manual/usage.html\")\n\n# Authors\n- Blake Boris\n- David Salvador\n- William Leiby\n",
-    "longname": "/mnt/c/Users/Blake Reset/source/repos/PlGGS/docs/README.md",
+    "longname": "V:\\docs\\README.md",
     "name": "./README.md",
     "static": true,
     "access": "public"
@@ -3991,7 +5144,7 @@
   {
     "kind": "packageJSON",
     "content": "{\n  \"name\": \"evntscript\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Documentation for Vertex Analytics' v9 Javascript API\",\n  \"author\": \"PlGGS\",\n  \"homepage\": \"https://docs.vertex-analytics.com\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/vertex-analytics/docs\"\n  },\n  \"dependencies\": {\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-integrate-manual-plugin\": \"^1.0.0\",\n    \"esdoc-publish-html-plugin\": \"^1.1.2\",\n    \"esdoc-standard-plugin\": \"^1.0.0\"\n  },\n  \"devDependencies\": {\n    \"esdoc-brand-plugin\": \"^1.0.1\",\n    \"esdoc-custom-theme\": \"^1.4.2\",\n    \"esdoc-inject-style-plugin\": \"^1.0.0\"\n  }\n}\n",
-    "longname": "/mnt/c/Users/Blake Reset/source/repos/PlGGS/docs/package.json",
+    "longname": "V:\\docs\\package.json",
     "name": "package.json",
     "static": true,
     "access": "public"
@@ -4000,21 +5153,21 @@
     "kind": "manualIndex",
     "globalIndex": true,
     "content": "<img src=\"manual/asset/vertex-logo.png\" alt=\"logo\" width=\"160\"/>\n# Vertex Analytics | v9 API\n\nv9 is a Javascript-based parser that allows for easy \nunderstanding, calculating, and tracking of futures symbols in more \nthan just real-time using vNine at [v9.vertex-analytics.com](https://v9.vertex-analytics.com).\n\nContact: [support@vertex-analytics.com](mailto:support@vertex-analytics.com)\n\n###### Documentation by [Blake Boris](https://blakeboris.com), [William Leiby](williamleiby.com), and David Salvador\n",
-    "longname": "/mnt/c/Users/Blake Reset/source/repos/PlGGS/docs/src/index.md",
+    "longname": "V:\\docs\\src\\index.md",
     "name": "./src/index.md",
     "static": true,
     "access": "public"
   },
   {
     "kind": "manualAsset",
-    "longname": "/mnt/c/Users/Blake Reset/source/repos/PlGGS/docs/src/manual/asset",
+    "longname": "V:\\docs\\src\\manual\\asset",
     "name": "./src/manual/asset",
     "static": true,
     "access": "public"
   },
   {
     "kind": "manual",
-    "longname": "/mnt/c/Users/Blake Reset/source/repos/PlGGS/docs/src/manual/manual.md",
+    "longname": "V:\\docs\\src\\manual\\manual.md",
     "name": "./src/manual/manual.md",
     "content": "# API Manual\n\nv9 is an analytical product for tracking past and current futures contracts. It allows you to programmatically perform actions based on \nincoming CME WebSocket event data with nanosecond precision.\n\n## Accessing v9\n\nThe latest build of v9 can always be accessed at [v9.vertex-analytics.com](https://v9.vertex-analytics.com). \n\n## v9 Editor\n\nThe v9 Editor is where programmers can write custom Javascript-based scripts to build out individual data visualization solutions.\n\nEach script, located on the lefthand side, corresponds to a data visualization solution located on the righthand side.\n\n### Sections\n\n#### Explorer\n\n- Top buttons\n- Your scripts\n- Templates\n- Divided up by libraries\n\n#### Text Editor\n\nThis section is used to edit HTML files that contain data visualization logic for a specified symbol.\n\n#### Debug\n\nThis section logs syntax and runtime errors within your script(s). This does not include errors within external libraries \n\n#### Pane\n\nThis sections presents the data visualizations for a script.\n\n#### HTML File Sections\n\n#### Library Importations\n\nThis section refers to the top of the HTML file where both v9's propritary library and third-party libraries\n\n#### JavaScript Section\n\nClass Architecture\n\nThis section refers to all of the data visualization logic that is executed within v9's runtime.\n\n#### CSS Section\n\nThis section refers to styling overrides one makes within their script(s).\n\n## v9 Dashboard\n\nv9's Dashboards are composed of either one or multiple scripts written in the v9 Editor, and they can easily be exported and shared with other users. \n\nv9 Dashboards are where traders/portfolio managers monitor contracts using the charts built out in the v9 Editor section.\n\n### Dashboard Sections\n\n#### Explorer Section\n\n\n",
     "static": true,
@@ -4022,7 +5175,7 @@
   },
   {
     "kind": "manual",
-    "longname": "/mnt/c/Users/Blake Reset/source/repos/PlGGS/docs/src/manual/tutorial1.md",
+    "longname": "V:\\docs\\src\\manual\\tutorial1.md",
     "name": "./src/manual/tutorial1.md",
     "content": "# Prices | Beginner\n\nThis sample prepares you to track [Event](../class/src/index.js~Event.html) values and \ntest for the highest and lowest prices.\n\n## Declaring your variables\n\nOnce you've opened your Javascript editor, you should see your default CEVNTPane and CEVNTFeed \nvariables along with some new ones. These are most commonly defined as gEvntPane and gPaneFeed.  \n\n```js\nvar gEvntPane;\nvar gPaneFeed;\nvar gFeedDraw;\nvar kSymbolName = \"\";\n\nvar gCalcTop, gCalcBot;\nvar gStatTop, gStatBot;\nvar gDrawTop, gDrawBot;\n\nvar gOnFirstEvent = true; //tracks whether or not our initial value has been set\nvar gTopPrice = 0.0; //tracks the top price value\nvar gBotPrice = 0.0; //tracks the bottom price value\n```\n\n- [CEvntCalc](../class/src/index.js~CEvntCalc.html) ```gCalcTop, gCalcBot```  \nMake sure to create two variables to save your top and bottom-most prices.\n\n- [CEvntStat](../class/src/index.js~CEvntStat.html) ```gStatTop, gStatBot```  \nYou'll also need to create two variables to display your top and bottom-most prices in your pane.\n\n- [CEVNTDraw](../class/src/index.js~CEvntDraw.html) ```gDrawTop, gDrawBot```  \nFinally, you'll need to create two variables to draw lines corresponding to your top and \nbottom-most prices.\n\n- [Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) ```gOnFirstEvent```  \nSince we'll be starting each symbol time period at an undetermined price, we'll need the first \nprice as a starting point to base the rest of our conditional statements on.\n\n- [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) ```gTopPrice, gBotPrice```  \nFinally, we'll need two simple variables to hold the number value corresponding to the highest \nand lowest prices of the period.\n\n## Initialization\n\nNext, you'll need to initialize your variables. In a way, this step is very similar to the \n[onLoad](manual.html#onload) section of the manual's introduction to the built in [onLoad](../function/index.html#static-function-onLoad) \nfunction, but this time, you're going to need to prepare, or *initialize*, a few more variables.\n\n### Your Pane\n\nWhen initializing your [Pane](../class/src/index.js~CEvntPane.html), there are two additional \nfields that allow yout to apply attributes to it. \n\n```js\ngEvntPane = MakePane();\n\ngEvntPane.title = \"Top & Bottom Prices\"; //text at the top of pane\ngEvntPane.fillStyle = \"#030308\"; //background color in hexidecimal as a String\n```\n\n- [title](../class/src/index.js~CEvntPane.html#instance-member-title) ```gEvntPane.fillStyle```  \nThe title is a simple [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \nthat you can make use of to easily identify this pane from the others on your dashboard.\n\n- [fillStyle](../class/src/index.js~CEvntPane.html#instance-member-fillStyle) ```gEvntPane.fillStyle```  \nThe fill style fills the background of your [Pane](../class/src/index.js~CEvntPane.html) with any \ncolor of your choosing. Just make sure that you format your value as a hexidecimal color with a # \nin a string like: ```\"#000000\"```\n\n### Your Feed\n\nJust like in the manual's [onLoad](manual.html#onLoad) section, you'll need to make sure your \n[Feed](../class/src/index.js~CEvntFeed.html) is properly initialized in order to see your \nsymbol's events.\n\n```js\ngPaneFeed = gEvntPane.MakeFeed(kSymbolName);\ngFeedDraw = gEvntPane.MakeDraw(gPaneFeed);\n```\n\n[//]: # \"Ask about reintroducing these two methods or just referring back to the manual again\"\n\n### Top price\n\nNow that you've created your [Calc](../class/src/index.js~CEvntCalc.html), \n[Stat](../class/src/index.js~CEvntStat.html), and [Draw ](../class/src/index.js~CEvntDraw.html) \nvariables to track and draw your top and bottom prices, it's time to give them a purpose.\n\n#### MakeCalc\n\nThe first of your variables is the easiest to initialize, because it doesn't have any optional \nattributes. More importantly, it's also the easiest to understand. The \n[MakeCalc](../class/src/index.js~CEvntFeed.html#instance-method-MakeCalc) function returns a \nnew [Calc](../class/src/index.js~CEvntCalc.html) object, and we can make use of that by \nsetting our ```gCalcTop``` variable equal to the function.\n\n```js\ngCalcTop = gPaneFeed.MakeCalc();\n```\n\n- [MakeCalc](class/src/index.js~CEvntFeed.html#instance-method-MakeCalc) ```gPaneFeed.MakeCalc()```  \nCreates a [Calc](../class/src/index.js~CEvntCalc.html) object that is able to store calculated \nvalues.\n\n#### MakeDraw\n\nWhile not integral to tracking [Event](../class/src/index.js~Event.html) values in your symbol, \ndrawing a line representing the value you're tracking can be helpful for a number of different \nreasons. Before you're sure your value tracking is working properly, \n[Draw](../class/src/index.js~CEvntDraw.html) objects are extremely useful for troubleshooting, \nand after everything's working, they make it easy to track how the value you're tracking has \nbeen changing over time.\n\n```js\ngDrawTop = gEvntPane.MakeDraw(gCalcTop);\n\ngDrawTop.lineWidth = 3.0;\ngDrawTop.strokeStyle = \"#f4f427\";\n```\n\n- [MakeDraw](../class/src/index.js~CEvntPane.html#instance-method-MakeDraw) ```gEvntPane.MakeDraw(gCalcTop)```  \nCreates a new [Draw](../class/src/index.js~CEvntDraw.html) object that renders lines on your \n[Pane](../class/src/index.js~CEvntPane.html) to represent the state of the values you're \ntracking with the [Calc](../class/src/index.js~CEvntCalc.html) object you pass into it.\n\n- [lineWidth](../class/src/index.js~CEvntDraw.html#instance-member-lineWidth) ```gDrawTop.lineWidth```  \nThe line width is a [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) \nthat represents the width of the line in pixels.\n\n- [strokeStyle](../class/src/index.js~CEvntDraw.html#instance-member-strokeStyle) ```gDrawTop.strokeStyle```  \nThe stroke style fills the line representing the values you're tracking with any color of your \nchoosing. Just make sure that you format your value as a hexidecimal color with a # in a \nstring like: ```\"#000000\"```\n\n#### MakeStat\n\nThe last variable you need to initialize in order to track your top price is your [Stat](../class/src/index.js~CEvntFeed.html) \nvariable. This variable is used to display the status of whatever it is that you're tracking \nin a box that appears in the top left of your [pane](class/src/index.js~CEvntPane.html).\n\n```js\ngStatTop = gEvntPane.MakeStat(gCalcTop);\n\ngStatTop.title = \"Top Price\";\ngStatTop.fillStyle = \"#f4f427\";\n```\n\n- [MakeStat](../class/src/index.js~CEvntPane.html#instance-method-MakeStat) ```gEvntPane.MakeStat(gCalcTop)```  \nCreates a [Stat](../class/src/index.js~CEvntStat.html) object that is used to display any value \nprovided by the [Calc](../class/src/index.js~CEvntCalc.html) object that you pass into it in the \ntop left corner of your [Pane](../class/src/index.js~CEvntPane.html).\n\n- [title](../class/src/index.js~CEvntStat.html#instance-member-title) ```gDrawTop.lineWidth```  \nThe title represents the text that will be displayed before the value your [Stat](../class/src/index.js~CEvntStat.html) \nis tracking.\n\n- [fillStyle](../class/src/index.js~CEvntStat.html#instance-member-fillStyle) ```gDrawTop.strokeStyle```  \nThe fill style fills the background of your [Stat](../class/src/index.js~CEvntStat.html) with any \ncolor of your choosing. Just make sure that you format your value as a hexidecimal color with a # \nin a string like: ```\"#000000\"```\n\n### Bottom price\n\nIn order to track the lowest price of your symbol period in the same way as the highest, you'll \nalso need to initialize your three bottom price tracking variables.\n\n#### MakeCalc\n\nAgain, the \n[MakeCalc](../class/src/index.js~CEvntFeed.html#instance-method-MakeCalc) function is used to return a \nnew [Calc](../class/src/index.js~CEvntCalc.html) object to our ```gCalcTop``` variable equal \nto the function.\n\n```js\ngCalcBot = gPaneFeed.MakeCalc();\n```\n\n- [MakeCalc](class/src/index.js~CEvntFeed.html#instance-method-MakeCalc) ```gPaneFeed.MakeCalc()```  \nCreates a [Calc](../class/src/index.js~CEvntCalc.html) object that is able to store calculated \nvalues.\n\n#### MakeDraw\n\nThen, you can initialize \n\nWhile not integral to tracking [Event](../class/src/index.js~Event.html) values in your symbol, \ndrawing a line representing the value you're tracking can be helpful for a number of different \nreasons. Before you're sure your value tracking is working properly, [Draw](../class/src/index.js~CEvntDraw.html) \nobjects are extremely useful for troubleshooting, and after everything's working, they make it \neasy to track how the value you're tracking has been changing over time.\n\n```js\ngDrawTop = gEvntPane.MakeDraw(gCalcTop);\n\ngDrawTop.lineWidth = 3.0;\ngDrawTop.strokeStyle = \"#f4f427\";\n```\n\n- [MakeDraw](../class/src/index.js~CEvntPane.html#instance-method-MakeDraw) ```gEvntPane.MakeDraw(gCalcTop)```  \nCreates a new [Draw](../class/src/index.js~CEvntDraw.html) object that renders lines on your \n[Pane](../class/src/index.js~CEvntPane.html) to represent the state of the values you're \ntracking with the [Calc](../class/src/index.js~CEvntCalc.html) object you pass into it.\n\n- [lineWidth](../class/src/index.js~CEvntDraw.html#instance-member-lineWidth) ```gDrawTop.lineWidth```  \nThe line width is a [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) \nthat represents the width of the line in pixels.\n\n- [strokeStyle](../class/src/index.js~CEvntDraw.html#instance-member-strokeStyle) ```gDrawTop.strokeStyle```  \nThe stroke style fills the line representing the values you're tracking with any color of your \nchoosing. Just make sure that you format your value as a hexidecimal color with a # in a \nstring like: ```\"#000000\"```\n\n#### MakeStat\n\nThe last variable you need to initialize in order to track your top price is your [Stat](../class/src/index.js~CEvntFeed.html) \nvariable. This variable is used to display the status of whatever it is that you're tracking \nin a box that appears in the top left of your [pane](class/src/index.js~CEvntPane.html).\n\n```js\ngStatTop = gEvntPane.MakeStat(gCalcTop);\n\ngStatTop.title = \"Top Price\";\ngStatTop.fillStyle = \"#f4f427\";\n```\n\n- [MakeStat](../class/src/index.js~CEvntPane.html#instance-method-MakeStat) ```gEvntPane.MakeStat(gCalcTop)```  \nCreates a [Stat](../class/src/index.js~CEvntStat.html) object that is used to display any value \nprovided by the [Calc](../class/src/index.js~CEvntCalc.html) object that you pass into it in the \ntop left corner of your [Pane](../class/src/index.js~CEvntPane.html).\n\n- [title](../class/src/index.js~CEvntStat.html#instance-member-title) ```gDrawTop.lineWidth```  \nThe title represents the text that will be displayed before the value your [Stat](../class/src/index.js~CEvntStat.html) \nis tracking.\n\n- [fillStyle](../class/src/index.js~CEvntStat.html#instance-member-fillStyle) ```gDrawTop.strokeStyle```  \nThe fill style fills the background of your [Stat](../class/src/index.js~CEvntStat.html) with any \ncolor of your choosing. Just make sure that you format your value as a hexidecimal color with a # \nin a string like: ```\"#000000\"```\n\n### Complete intialization\n\nOnce you've prepared everything above, your onLoad function should accomplish the same thing \nas the one below. You will probably have arranged your code differently, but as long as \neverything is initialized, you're ready to begin working on your \n[onEvent](../function/index.html#static-function-onEvent) function.\n\n```js\nfunction onLoad()\n{\n    //------------------------------------------------\\\n    gEvntPane = MakePane();\n\n    gEvntPane.title = \"Daily Top & Bottom | ESM9 Sample\";\n    gEvntPane.fillStyle = \"#030308\";\n    //------------------------------------------------/\n\n    //------------------------------------------------\\\n    gPaneFeed = gEvntPane.MakeFeed(kSymbolName);\n    gFeedDraw = gEvntPane.MakeDraw(gPaneFeed);\n\n    gCalcTop = gPaneFeed.MakeCalc();\n    gCalcBot = gPaneFeed.MakeCalc();\n    //------------------------------------------------/\n\n    //------------------------------------------------\\\n    gDrawTop = gEvntPane.MakeDraw(gCalcTop);\n\n    gDrawTop.lineWidth = 3.0;\n    gDrawTop.strokeStyle = \"#f4f427\";\n\n    gDrawBot = gEvntPane.MakeDraw(gCalcBot);\n\n    gDrawBot.lineWidth = 3.0;\n    gDrawBot.strokeStyle = \"#ff1c58\";\n    //------------------------------------------------/\n\n    //------------------------------------------------\\\n    gStatTop = gEvntPane.MakeStat(gCalcTop);\n\n    gStatTop.title = \"Top Price\";\n    gStatTop.fillStyle = \"#f4f427\";\n\n    gStatBot = gEvntPane.MakeStat(gCalcBot);\n\n    gStatBot.title = \"Bot Price\";\n    gStatBot.fillStyle = \"#ff1c58\";\n    //------------------------------------------------/\n}\n```\n\n## Event handling\n\nNow, it's time to start working on your [onEvent](../function/index.html#static-function-onEvent) \nfunction. If you want a refresher on the purpose of the [onEvent](../function/index.html#static-function-onEvent) \nfunction, head over to the [manual](manual.html) and catch up on the [onEvent](manual.html#onevent) \nsection.\n\n### Reading your Feed\n\nWhenever you're dealing with events in your [onEvent](../function/index.html#static-function-onEvent) \nmethod, you're going to need to make use of your [Feed](class/src/index.js~CEvntFeed.html)'s \n[FeedRead](../class/src/index.js~CEvntFeed.html#instance-method-FeedRead) method to get \ninformation about each [Event](../class/src/index.js~Event.html) your function handles.\n\nBelow, you can see an easy way to capture this [Event](../class/src/index.js~Event.html). You can \ncreate a new variable to store the current [Event](../class/src/index.js~Event.html) being read \nin from your [Feed](class/src/index.js~CEvntFeed.html). We'll continue to refer to this event as \ntTick, but you can call it whatever is most memorable for you.\n\n```js\nvar tTick = pFeed.FeedRead(pSequ);\n```\n\n- [FeedRead](../class/src/index.js~CEvntFeed.html#instance-method-FeedRead) ```pFeed.FeedRead(pSequ)```  \nEach event has a sequence value for indexing its position among all of the other [Events](../class/src/index.js~Event.html). \nUsing this sequence value, ```pSequ```, [FeedRead](../class/src/index.js~CEvntFeed.html#instance-method-FeedRead) \nreturns the [Event](../class/src/index.js~Event.html) at that spot in your symbol's [Feed](class/src/index.js~CEvntFeed.html).\n\n### Your first Event\n\nThis will **not** be the case in every sample you right, as you will certainly be tracking more \nthan just prices, but for this example, our first [Event](../class/src/index.js~Event.html) is a \nspecial case. \n\nIf you don't take the time to designate the first [Event](../class/src/index.js~Event.html) \nas a special case, your ```gTopPrice``` and ```gBotPrice``` variables will still be set to \ntheir default to a value of zero, and that means your ```gBotPrice``` variable will most \nlikely never be tracked properly.\n\nTo check for whether or not your script has just come across the first [Event](../class/src/index.js~Event.html), \nyou need to use an [if...else statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else). \nIf statements allow you to execute different lines of code depending on whether or not a \ncondition you set ends up being true or false.\n\nNow, in order to designate your first [Event](../class/src/index.js~Event.html) as a special \ncase, use an [if...else statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) \nwith your ```gOnFirstEvent``` variable you created earlier to create a condition.\n\n```js\nif (gOnFirstEvent == true)\n{\n    gTopPrice = tTick.Trade.Price;\n    gBotPrice = tTick.Trade.Price;\n    gOnFirstEvent = false;\n}\n```\n\nThe statement above checks whether or not your condition, gOnFirstEvent, evaluates to true. If \nso, it sets our top and bottom prices to the first price value recorded in your symbol and sets \nyour gOnFirstEvent variable to false, so you don't run the code within this if statement again.\n\nOne thing to note is that the above if statement is logically equivalent to:\n\n```js\nif (gOnFirstEvent)\n```\n\nOmitting the ```== true``` portion of the statement is just shorthand. It works well for \ndescriptive variables like gOnFirstEvent, because it lets the statement almost read like a \nsentence. ```If on first event, do ...```\n\n### Other Events\n\nFor all other events, you're finally going to perform the two major checks to track the top and \nbottom prices of your symbol's period. To accomplish this, you can again make use of an [if...else statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else). \n\n```js\nif (tTick.Trade.Price > gTopPrice)\n{\n    gTopPrice = tTick.Trade.Price;\n}\nelse if (tTick.Trade.Price < gBotPrice)\n{\n    gBotPrice = tTick.Trade.Price;\n}\n```\n\nHere, you're first going to check whether or not the current trade price is greater than your \ntop price variable, and if so, you simply set your top price variable to the current trade price.\n\nOtherwise, you're going to need to make use of the ```else if``` portion of the statement to \nonly perform another check if the last one wasn't true. \n\nSo if the current price wasn't greater than your top price variable, then your first if statement \nwill fail, and you'll need to check whether or not the current trade price is less than your \nbottom price variable, and if so, you just set your bottom price variable to the current trade \nprice instead.\n\n### Saving values\n\nOnce you've checked whether or not the current trade price is of any significance, you'll need to \nsave your top and bottom price values to your [Calc]() objects.\n\nYour [Calc](../class/src/index.js~CEvntStat.html) variables will then relay the prices you saved \nto their corresponding [Stat](../class/src/index.js~CEvntStat.html) variables to display their \nvalues to the top left corner of your symbol [Pane](../class/src/index.js~CEvntPane.html).\n\nThis way, no matter how your [onEvent](../function/index.html#static-function-onEvent) function executes, you make sure to save both your top \nand bottom prices. Yes, you only actually need to save both of them once, but you we were to save \nthem both individually based on the different cases of your function, you would have to repeat \nthese lines a rediculous amount of times. This way, you can make sure that everything gets saved \nevery single time through the function.\n\n```js\ngCalcTop.CalcSave(pSequ, gTopPrice);\ngCalcBot.CalcSave(pSequ, gBotPrice);\n```\n\n- [CalcSave](../class/src/index.js~CEvntCalc.html#instance-method-CalcSave) ```gCalcTop.CalcSave(pSequ, gTopPrice/gBotPrice);```  \nSaves a given value to your [Calc](../class/src/index.js~CEvntStat.html) object in order to display \nit through your [Stat](../class/src/index.js~CEvntStat.html) object to the left of your [Pane](../class/src/index.js~CEvntPane.html).\n\n## Results\n\n#### Congratulations\n\nAt this point, you should now be able to test, save, and display aspects of events, and \nyou should see a chart based off of your selected Symbol for the most recent exchange period like \nthe one shown below! Feel free to zoom in and out and scroll through your newly created chart.\n\nYour script should now provide functionality similar to [this](https://github.com/PlGGS/Vertex-Analytics/blob/master/sample%20scripts/sampleTopBottomPrices.js)\n\n[//]: # \"Add finished script image ![view chart](asset/view_chart.png)\"\n\n#### Troubleshooting\n\nFor certain periods throughout the day, EVNTScript will not be able to generate charts. \nThis is because the vNine platform makes use of the time in which the exchange is down to process and archive data. \nBelow is a chart containing weekly hours of downtime.\n\n| Monday        | Tuesday       | Wednesday     | Thursday      | Friday  | Saturday   | Sunday  |\n|---------------|---------------|---------------|---------------|---------|:----------:|---------|\n| 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm- | -          | -5:00pm |\n\nAlso, please note that some contracts also stop the exchange from 3:15pm-3:30pm on weekdays.\n\n#### Contact\n\nIf you come across any major issue/bugs, please let us know by sending an email with an explanation of what occured to \n[support@vertex-analytics.com](mailto:support@vertex-analytics.com).\n\nAdditionally, if there is something that you think we could improve about this documentation, \nplease create a new issue at our repository's [issues page](https://github.com/PlGGS/xva-doc/issues).\n",
     "static": true,
@@ -4030,7 +5183,7 @@
   },
   {
     "kind": "manual",
-    "longname": "/mnt/c/Users/Blake Reset/source/repos/PlGGS/docs/src/manual/tutorial2.md",
+    "longname": "V:\\docs\\src\\manual\\tutorial2.md",
     "name": "./src/manual/tutorial2.md",
     "content": "# More Than Prices | Beginner\n\nIn the [Prices](tutorial1.html) commentary, you learned how to track and graph [Event](../class/src/index.js~Event.html) \nvalues on a [Pane](../class/src/index.js~CEvntPane.html). Scripts can track more than just prices \nthough. In some cases, it might be useful to track the [Quantities](https://bblake.info/vxa-doc/class/src/index.js~Trade.html#instance-member-Quantity) \nof [Trades](https://bblake.info/vxa-doc/class/src/index.js~Trade.html). \n\n[//]: # \"Figure out better name for tutorials/commentaries\"\n\nThis sample prepares you to efficiently track and plot values other than prices with a multitude of \nexamples and tips. Although, before doing so, there are some very important things to keep in mind.\n\n## Things to Keep in Mind\n\n### Don't Draw Your Symbol's Feed\n\nMore often than not, drawing your Symbol's [Event](../class/src/index.js~Event.html) [Feed](../class/src/index.js~CEvntFeed.html) \ncan be counterproductive, as it will default the left-hand side of your [Pane](../class/src/index.js~CEvntPane.html) \nto be based on [Prices](../class/src/index.js~Trade.html#instance-member-Price).\n\n### Price Tracking can Blind You\n\n### Timestamps on the Horizontal\n\n## Tracking Other Values\n\n### Event Quantities\n\n### Totals\n\n### Differences\n\n## Results\n\n#### Congratulations\n\n...\n\n#### Troubleshooting\n\nFor certain periods throughout the day, EVNTScript will not be able to generate charts. \nThis is because the vNine platform makes use of the time in which the exchange is down to process and archive data. \nBelow is a chart containing weekly hours of downtime.\n\n| Monday        | Tuesday       | Wednesday     | Thursday      | Friday  | Saturday   | Sunday  |\n|---------------|---------------|---------------|---------------|---------|:----------:|---------|\n| 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm- | -          | -5:00pm |\n\nAlso, please note that some contracts also stop the exchange from 3:15pm-3:30pm on weekdays.\n\n#### Contact\n\nIf you come across any major issue/bugs, please let us know by sending an email with an explanation of what occured to \n[support@vertex-analytics.com](mailto:support@vertex-analytics.com).\n\nAdditionally, if there is something that you think we could improve about this documentation, \nplease create a new issue at our repository's [issues page](https://github.com/PlGGS/xva-doc/issues).\n",
     "static": true,
@@ -4038,7 +5191,7 @@
   },
   {
     "kind": "manual",
-    "longname": "/mnt/c/Users/Blake Reset/source/repos/PlGGS/docs/src/manual/tutorial3.md",
+    "longname": "V:\\docs\\src\\manual\\tutorial3.md",
     "name": "./src/manual/tutorial3.md",
     "content": "# Visual Customization | Beginner\n\nThis sample prepares you to fully personalize your dashboard with all of the customization \nfeatures vNine offers. \n\n## Object Attributes\n\n[//]: # \"Write detailed explanationss for object attributes\"\n\n### [Pane](../class/src/index.js~CEvntPane.html)\n\n- title\n- fillStyle\n\n### [Stat](../class/src/index.js~CEvntStat.html)\n\n- title\n- textStyle\n\n### [Draw](../class/src/index.js~CEvntDraw.html)\n\n- lineWidth\n- strokeStyle\n\n### [Trig](../class/src/index.js~CEvntTrig.html)\n\n- title\n- textStyle\n- duration\n\n### [Fill](../class/src/index.js~CEvntFill.html)\n\n- fillStyle\n- textStyle\n\n## Results\n\n#### Congratulations\n\n...\n\n#### Troubleshooting\n\nFor certain periods throughout the day, EVNTScript will not be able to generate charts. \nThis is because the vNine platform makes use of the time in which the exchange is down to process and archive data. \nBelow is a chart containing weekly hours of downtime.\n\n| Monday        | Tuesday       | Wednesday     | Thursday      | Friday  | Saturday   | Sunday  |\n|---------------|---------------|---------------|---------------|---------|:----------:|---------|\n| 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm- | -          | -5:00pm |\n\nAlso, please note that some contracts also stop the exchange from 3:15pm-3:30pm on weekdays.\n\n#### Contact\n\nIf you come across any major issue/bugs, please let us know by sending an email with an explanation of what occured to \n[support@vertex-analytics.com](mailto:support@vertex-analytics.com).\n\nAdditionally, if there is something that you think we could improve about this documentation, \nplease create a new issue at our repository's [issues page](https://github.com/PlGGS/xva-doc/issues).\n",
     "static": true,
