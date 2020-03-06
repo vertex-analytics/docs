@@ -18,9 +18,9 @@ Each algorithm's script, located on the lefthand side, corresponds to a data vis
 Initially, you must click the "new script" button, shown above, in order to access all
 of the different sections of the v9 Editor.
 
-### Sections
+### Sections (Editor)
 
-#### Top-Bar
+#### Top-Bar (Editor)
 
 The top-bar houses four navigation buttons to the right that each take you to different pages of v9.
 
@@ -31,7 +31,7 @@ The top-bar houses four navigation buttons to the right that each take you to di
 | <img src="asset/v9-top-help.png">        | Navigates to the v9 Documentation |
 | <img src="asset/v9-top-sign-out.png">    | Navigates to the v9 Log In Page   |
 
-#### Left-Bar
+#### Left-Bar (Editor)
 
 The bar on the left-hand side of the v9 Editor contains options for showing and hiding
 different sections of v9.
@@ -50,7 +50,7 @@ different sections of v9.
 | <img src="asset/v9-left-dark-blue-theme.png">  | Changes the v9 Editor to a dark blue theme  |
 | <img src="asset/v9-left-light-blue-theme.png"> | Changes the v9 Editor to a light blue theme |
 
-#### Explorer
+#### Explorer (Editor)
 
 The explorer houses all of the user's scripts and Vertex Analytics sample scripts.
 
@@ -80,13 +80,13 @@ The scripts dropdown, pictured above, houses each and every one of the user's sc
 
 The templates dropdown, pictured above, houses sample scripts created by Vertex Analytics staff separated by library.
 
-#### Text Editor
+#### Text Editor (Editor)
 
 This section represents the area to the right of the explorer section where users create and edit HTML files that contains algorithms to visualize different symbol data.
 
 <img src="asset/v9-text-editor.png" width="50%" height="50%">
 
-#### Debugging Output
+#### Debugging Output (Editor)
 
 This section represents the area below the text editor where syntax and runtime errors are logged regarding current the script(s).
 
@@ -101,7 +101,7 @@ The user may choose to specify the symbol and date values that the current scrip
 
 <img src="asset/v9-pane.png" width="50%" height="50%">
 
-#### File Architecture
+#### File Architecture (Editor)
 
 As part of the file architecture, there are four main parts that make up each file:
 
@@ -109,9 +109,13 @@ As part of the file architecture, there are four main parts that make up each fi
 
   - This section refers to the top of the HTML file where both v9's propritary library and third-party libraries are imported.
 
-    - Every script imports the v9 backend via `<script src="https://v9.vertex-analytics.com/_vxaapi-1.0.0/v9.js"></script>`
+    - Every script imports the v9 backend via:
+    
+    ```
+    <script src="https://v9.vertex-analytics.com/_vxaapi-1.0.0/v9.js"></script>
+    ```
 
-- JavaScript Section
+- JavaScript ([Extending the Feed](../class/src/index.js~feed.html))
 
   ```
     <script>
@@ -131,7 +135,7 @@ As part of the file architecture, there are four main parts that make up each fi
 
     There are five lifecycle methods associated with each v9 feed. Each lifecycle method executes at a different point in time while the current script is running.
 
-    - [onOpen(](../class/src/index.js~feed.html#instance-method-onOpen)[pMeta](../typedef/index.html#static-typedef-Meta)[)](../class/src/index.js~feed.html#instance-method-onOpen)
+    - [onOpen](../class/src/index.js~feed.html#instance-method-onOpen)([pMeta](../typedef/index.html#static-typedef-Meta))
 
       ```
       onOpen(pMeta) {
@@ -145,7 +149,7 @@ As part of the file architecture, there are four main parts that make up each fi
 
         - [pMeta](): Contains metadata associated with each symbol ran within the v9 runtime.
 
-    - [onLoad()](../class/src/index.js~feed.html#instance-method-onLoad)
+    - [onLoad](../class/src/index.js~feed.html#instance-method-onLoad)()
 
       ```
       onLoad() {
@@ -155,7 +159,7 @@ As part of the file architecture, there are four main parts that make up each fi
 
       - This method is called when the pane has initally loaded all previous session events and information from the current symbol.
 
-    - [onRender()](../class/src/index.js~feed.html#instance-method-onRender)
+    - [onRender](../class/src/index.js~feed.html#instance-method-onRender)()
 
       ```
       onRender() {
@@ -165,11 +169,17 @@ As part of the file architecture, there are four main parts that make up each fi
 
       - This method is called, at most, 60 times per second once onLoad completes.
 
-    - [onEvent()](../class/src/index.js~feed.html#instance-method-onEvent)
+    - [onEvent](../class/src/index.js~feed.html#instance-method-onEvent)([pSymbol](../class/src/index.js~feed.html#instance-method-onEvent), [pEvent](../class/src/index.js~Event.html), [pRealTime](../class/src/index.js~feed.html#instance-method-onEvent))
 
       ```
       onEvent(pSymbol, pEvent, pRealTime) {
-
+          switch (pEvent.header.unionID) {
+              case v9.UnionID.<Value>:
+                  // Do something when pEvent.header.unionID is equal to v9.UnionID.<Value>
+                  break;
+              default :
+                  break;
+          }
       }
       ```
 
@@ -177,15 +187,19 @@ As part of the file architecture, there are four main parts that make up each fi
 
       <!-- - For feeds with multiple contracts, see pMeta in the onOpen() lifecycle method above. \*\*\* this isn't a feature yet -->
 
+      - [pEvent](../class/src/index.js~Event.html) is a JavaScript object that holds exchange [Event](../class/src/index.js~Event.html) information. _To determine what type of [Event](../class/src/index.js~Event.html) is currently being handled, a switch statement should be used as shown above._
+
       - Parameters
 
         - pSymbol: String representing the name of the current symbol.
 
         - [pEvent](../class/src/index.js~Event.html): Current event being handled.
+        
+          - **_When determining the type of the current [Event](../class/src/index.js~Event.html), the user must check whether or not [pEvent](../class/src/index.js~Event.html)'s [header](../class/src/index.js~Event.html#instance-member-header).[unionID](../typedef/index.html#static-typedef-Header) value against v9's UnionId enumeration_**
 
         - pRealTime: Boolean determining whether or not to only handle current events.
 
-    - [onStop()](../class/src/index.js~feed.html#instance-method-onStop)
+    - [onStop](../class/src/index.js~feed.html#instance-method-onStop)()
 
       ```
       onStop() {
@@ -230,9 +244,9 @@ v9's Dashboards are composed of either one or multiple scripts written in the v9
 
 The v9 Dashboard is where traders can create Dashboards to monitor multiple scripts they created in the v9 Editor at once.
 
-### Sections
+### Sections (Dashboard)
 
-#### Top-Bar
+#### Top-Bar (Dashboard)
 
 The top-bar houses four navigation buttons to the right that each take you to different pages of v9.
 
@@ -241,7 +255,7 @@ The top-bar houses four navigation buttons to the right that each take you to di
 | <img src="asset/v9-top-data-center.png"> | Navigates to the v9 Data Center   |
 | <img src="asset/v9-top-help.png">        | Navigates to the v9 Documentation |
 
-#### Left-Bar
+#### Left-Bar (Dashboard)
 
 The bar on the left-hand side of the v9 Editor contains options for showing and hiding
 different sections of v9.
@@ -257,7 +271,7 @@ different sections of v9.
 | <img src="asset/v9-left-dark-blue-theme.png">  | Changes the v9 Editor to a dark blue theme  |
 | <img src="asset/v9-left-light-blue-theme.png"> | Changes the v9 Editor to a light blue theme |
 
-#### Explorer
+#### Explorer (Dashboard)
 
 The explorer houses all of the user's scripts and Vertex Analytics sample scripts.
 
@@ -285,7 +299,7 @@ The dashboard dropdown, pictured above, houses each and every one of the user's 
 
 The scripts dropdown, pictured above, houses user-created scripts from the v9 Editor.
 
-#### Dashboard
+#### Dashboard (Dashboard)
 
 The dashboard section, to the right of the explorer, houses the currently selected dashboard in the explorer.
 
@@ -300,7 +314,7 @@ Users can drag and drop different scripts from their v9 Editor onto different se
 Initially, you must click the "new dashboard" button, shown above, in order to access all
 of the different sections of the v9 Editor.
 
-#### Troubleshooting
+## Troubleshooting
 
 For certain periods throughout the day, v9 will not be able to run real-time scripts, because the v9 platform makes use of the time in which the exchange is down to process and archive data.
 Below is a chart containing weekly hours of estimated downtime.
@@ -311,7 +325,7 @@ Below is a chart containing weekly hours of estimated downtime.
 
 Also, please note that the CME closes at 3:15pm to 3:30pm on weekdays.
 
-#### Contact
+## Contact
 
 If you come across any major issue/bugs, please let us know by creating an issue at this repository's [issues page](https://github.com/vertex-analytics/docs/issues).
 

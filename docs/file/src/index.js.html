@@ -655,15 +655,17 @@ v9.feed = class {
    *   @property {number} maturityMonth
    *   @property {number} maturityYear
    *   @property {number} priceDenominator
-   *   @property {string} roots // emailed ed about this. should potentially be just [{&quot;rt&quot;: &quot;XX&quot;}]
+   *   @property {string} roots 
    *   @property {number} settleDenominator
    *   @property {number} tickSize
    *   @property {number} tickValue
    *   @property {number} unitOfMeasure
    *   @property {Boolean} userDefined
    *   @property {number} vxaChannel
-   *   @property {number} vxaId // emailed ed about this. should potentially be vxaID
+   *   @property {number} vxaId 
    */
+  // emailed ed about roots. Should potentially be just [{&quot;rt&quot;: &quot;XX&quot;}]
+  // emailed ed about vxaId. should potentially be vxaID
   /**
    * @typedef {object} Meta
    * @property {Instrument[]} instruments
@@ -712,7 +714,7 @@ v9.feed = class {
    *
    * This is where you&apos;ll be doing most of your calculations on the specific things you&apos;re looking for in your symbol. It allows your script to perform different tasks depending on the current event&apos;s conditions.
    * @param {String} pSymbol - Name of the current symbol
-   * @param {Object} pEvent - Current event being handled
+   * @param {Event} pEvent - Current event being handled
    * @param {Boolean} pRealTime - Boolean determining whether or not to only handle current events
    * @abstract
    * @example

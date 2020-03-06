@@ -691,20 +691,14 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~cubeitem#strokestyle",
-    "class/src/index.js~cubeItem.html#instance-set-strokeStyle",
-    "src/index.js~cubeItem#strokeStyle",
-    "member"
-  ],
-  [
-    "src/index.js~cubeitem#strokestyle",
     "class/src/index.js~cubeItem.html#instance-get-strokeStyle",
     "src/index.js~cubeItem#strokeStyle",
     "member"
   ],
   [
-    "src/index.js~cubeitem#textstyle",
-    "class/src/index.js~cubeItem.html#instance-set-textStyle",
-    "src/index.js~cubeItem#textStyle",
+    "src/index.js~cubeitem#strokestyle",
+    "class/src/index.js~cubeItem.html#instance-set-strokeStyle",
+    "src/index.js~cubeItem#strokeStyle",
     "member"
   ],
   [
@@ -714,14 +708,20 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/index.js~cubeitem#title",
-    "class/src/index.js~cubeItem.html#instance-set-title",
-    "src/index.js~cubeItem#title",
+    "src/index.js~cubeitem#textstyle",
+    "class/src/index.js~cubeItem.html#instance-set-textStyle",
+    "src/index.js~cubeItem#textStyle",
     "member"
   ],
   [
     "src/index.js~cubeitem#title",
     "class/src/index.js~cubeItem.html#instance-get-title",
+    "src/index.js~cubeItem#title",
+    "member"
+  ],
+  [
+    "src/index.js~cubeitem#title",
+    "class/src/index.js~cubeItem.html#instance-set-title",
     "src/index.js~cubeItem#title",
     "member"
   ],
@@ -745,13 +745,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~edit#value",
-    "class/src/index.js~edit.html#instance-set-value",
+    "class/src/index.js~edit.html#instance-get-value",
     "src/index.js~edit#value",
     "member"
   ],
   [
     "src/index.js~edit#value",
-    "class/src/index.js~edit.html#instance-get-value",
+    "class/src/index.js~edit.html#instance-set-value",
     "src/index.js~edit#value",
     "member"
   ],
@@ -913,25 +913,25 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~lineitem#strokestyle",
-    "class/src/index.js~lineItem.html#instance-set-strokeStyle",
-    "src/index.js~lineItem#strokeStyle",
-    "member"
-  ],
-  [
-    "src/index.js~lineitem#strokestyle",
     "class/src/index.js~lineItem.html#instance-get-strokeStyle",
     "src/index.js~lineItem#strokeStyle",
     "member"
   ],
   [
-    "src/index.js~lineitem#textstyle",
-    "class/src/index.js~lineItem.html#instance-set-textStyle",
-    "src/index.js~lineItem#textStyle",
+    "src/index.js~lineitem#strokestyle",
+    "class/src/index.js~lineItem.html#instance-set-strokeStyle",
+    "src/index.js~lineItem#strokeStyle",
     "member"
   ],
   [
     "src/index.js~lineitem#textstyle",
     "class/src/index.js~lineItem.html#instance-get-textStyle",
+    "src/index.js~lineItem#textStyle",
+    "member"
+  ],
+  [
+    "src/index.js~lineitem#textstyle",
+    "class/src/index.js~lineItem.html#instance-set-textStyle",
     "src/index.js~lineItem#textStyle",
     "member"
   ],
