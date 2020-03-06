@@ -1,7 +1,7 @@
 # API Manual
 
 v9 is an analytical product for tracking past and current futures contracts. It allows you to programmatically perform actions based on
-incoming CME WebSocket event data with nanosecond precision and same-day transaction settlement (T-0).
+incoming Chicago Mercantile Exchange (CME) WebSocket event data with nanosecond precision and same-day transaction settlement (T-0).
 
 ## Accessing v9
 
@@ -20,7 +20,7 @@ of the different sections of the v9 Editor.
 
 ### Sections
 
-#### Top-bar
+#### Top-Bar
 
 The top-bar houses four navigation buttons to the right that each take you to different pages of v9.
 
@@ -31,7 +31,7 @@ The top-bar houses four navigation buttons to the right that each take you to di
 | <img src="asset/v9-top-help.png">        | Navigates to the v9 Documentation |
 | <img src="asset/v9-top-sign-out.png">    | Navigates to the v9 Log In Page   |
 
-#### Left-bar
+#### Left-Bar
 
 The bar on the left-hand side of the v9 Editor contains options for showing and hiding
 different sections of v9.
@@ -54,7 +54,7 @@ different sections of v9.
 
 The explorer houses all of the user's scripts and Vertex Analytics sample scripts.
 
-<img src="asset/v9-explorer.png" width="45.5%" height="45.5%">
+<img src="asset/v9-explorer.png" width="32.5%" height="32.5%">
 
 - Top buttons
 
@@ -68,7 +68,7 @@ within the explorer.
 | <img src="asset/explorer-top-save.png">   | Downloads the current script                      |
 | <img src="asset/explorer-top-delete.png"> | Deletes the current script                        |
 
-- Your scripts
+- User scripts
 
 <img src="asset/explorer-scripts-dropdown.png">
 
@@ -96,7 +96,7 @@ This section represents the area below the text editor where syntax and runtime 
 
 #### Pane
 
-The pane section, to the right of the text editor, is where the current script is visualized when run.
+The pane section, to the right of the text editor, is where a data visualization solution appears upon running the current script.
 The user may choose to specify the symbol and date values that the current script should reference here or within their script.
 
 <img src="asset/v9-pane.png" width="50%" height="50%">
@@ -139,7 +139,7 @@ As part of the file architecture, there are four main parts that make up each fi
       }
       ```
 
-      - This is the first method that is called when a script is run as soon as the current script's custom [feed](../class/src/index.js~feed.html) object (`class CustomFeed extends v9.feed`) is instantiated. It only runs once.
+      - This is the first method that is called when a script is run. It only runs once.
 
       - Parameters
 
@@ -153,7 +153,7 @@ As part of the file architecture, there are four main parts that make up each fi
       }
       ```
 
-      - This method is called when an object from the `class CustomFeed extends v9.feed` is instantiated and the pane has initally loaded all previous events and information from the current symbol.
+      - This method is called when the pane has initally loaded all previous session events and information from the current symbol.
 
     - [onRender()](../class/src/index.js~feed.html#instance-method-onRender)
 
@@ -179,7 +179,7 @@ As part of the file architecture, there are four main parts that make up each fi
 
       - Parameters
 
-        - pSymbol: Name of the current symbol.
+        - pSymbol: String representing the name of the current symbol.
 
         - [pEvent](../class/src/index.js~Event.html): Current event being handled.
 
@@ -228,8 +228,91 @@ v9's Dashboards are composed of either one or multiple scripts written in the v9
 
 <!-- , and they can easily be exported and shared with other users. -->
 
-v9 Dashboards are where traders monitor contracts using the charts built out in the v9 Editor section.
+The v9 Dashboard is where traders can create Dashboards to monitor multiple scripts they created in the v9 Editor at once.
 
-### Dashboard Sections
+### Sections
 
-#### Explorer Section
+#### Top-Bar
+
+The top-bar houses four navigation buttons to the right that each take you to different pages of v9.
+
+|                                          | Top-Bar Buttons                   |
+| ---------------------------------------- | --------------------------------- |
+| <img src="asset/v9-top-data-center.png"> | Navigates to the v9 Data Center   |
+| <img src="asset/v9-top-help.png">        | Navigates to the v9 Documentation |
+
+#### Left-Bar
+
+The bar on the left-hand side of the v9 Editor contains options for showing and hiding
+different sections of v9.
+
+|                                               | Left-Bar Top Button        |
+| --------------------------------------------- | -------------------------- |
+| <img src="asset/v9-left-explorer-button.png"> | Shows / hides the Explorer |
+
+|                                                | Left-bar Bottom Buttons                     |
+| ---------------------------------------------- | ------------------------------------------- |
+| <img src="asset/v9-left-dark-theme.png">       | Changes the v9 Editor to a dark theme       |
+| <img src="asset/v9-left-light-theme.png">      | Changes the Text Editor to a light theme    |
+| <img src="asset/v9-left-dark-blue-theme.png">  | Changes the v9 Editor to a dark blue theme  |
+| <img src="asset/v9-left-light-blue-theme.png"> | Changes the v9 Editor to a light blue theme |
+
+#### Explorer
+
+The explorer houses all of the user's scripts and Vertex Analytics sample scripts.
+
+<img src="asset/v9-dash-explorer.png" width="32.5%" height="32.5%">
+
+- Top Buttons
+
+These buttons correspond to different actions that may be performed on files
+within the explorer.
+
+|                                           | Top Explorer Buttons          |
+| ----------------------------------------- | ----------------------------- |
+| <img src="asset/explorer-top-new.png">    | Adds a new base dashboard     |
+| <img src="asset/explorer-top-delete.png"> | Deletes the current dashboard |
+
+- User Dashboards
+
+<img src="asset/v9-dash-dashboard-dropdown.png">
+
+The dashboard dropdown, pictured above, houses each and every one of the user's scripts.
+
+- User Scripts
+
+<img src="asset/explorer-scripts-dropdown.png">
+
+The scripts dropdown, pictured above, houses user-created scripts from the v9 Editor.
+
+#### Dashboard
+
+The dashboard section, to the right of the explorer, houses the currently selected dashboard in the explorer.
+
+<img src="asset/v9-dash-dashboard-running.png" width="50%" height="50%">
+
+Users can drag and drop different scripts from their v9 Editor onto different sections of the current dashboard from the explorer.
+
+<img src="asset/v9-dash-dashboard-placing.png" width="50%" height="50%">
+
+<img src="asset/explorer-top-new.png">
+
+Initially, you must click the "new dashboard" button, shown above, in order to access all
+of the different sections of the v9 Editor.
+
+#### Troubleshooting
+
+For certain periods throughout the day, v9 will not be able to run real-time scripts, because the v9 platform makes use of the time in which the exchange is down to process and archive data.
+Below is a chart containing weekly hours of estimated downtime.
+
+| Monday        | Tuesday       | Wednesday     | Thursday      | Friday  | Saturday | Sunday  |
+| ------------- | ------------- | ------------- | ------------- | ------- | :------: | ------- |
+| 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm-5:00pm | 4:00pm- |    -     | -5:00pm |
+
+Also, please note that the CME closes at 3:15pm to 3:30pm on weekdays.
+
+#### Contact
+
+If you come across any major issue/bugs, please let us know by creating an issue at this repository's [issues page](https://github.com/vertex-analytics/docs/issues).
+
+Additionally if the issue is pertinent or there is something that you think we could improve about this documentation, please send us an email at [support@vertex-analytics.com](mailto:support@vertex-analytics.com).

@@ -2,8 +2,8 @@
 <h1 id="vertex-analytics---v9-api">Vertex Analytics | v9 API</h1><p>The Vertex Analytics v9 API allows for easy understanding, calculating, and tracking of futures symbols in more than just real-time using v9 at <a href="https://v9.vertex-analytics.com">https://v9.vertex-analytics.com</a>.</p>
 <p>Contact: <a href="mailto:support@vertex-analytics.com">support@vertex-analytics.com</a></p>
 <h5 id="documentation-by--a-href--https---blakeboris-com--blake-boris--a----a-href--https---williamleiby-com--william-leiby--a---and-david-salvador">Documentation by <a href="https://blakeboris.com">Blake Boris</a>, <a href="https://williamleiby.com">William Leiby</a>, and David Salvador</h5></div><div class="manual-cards"><div class="manual-card-wrap" data-ice="cards"><div class="manual-card js_ManualCard" href="#" tabindex="-1"><div data-ice="card"><h1>API Manual</h1><p>v9 is an analytical product for tracking past and current futures contracts. It allows you to programmatically perform actions based on
-incoming CME WebSocket event data with nanosecond precision and same-day transaction settlement (T-0).</p><h2>Accessing v9</h2><p>The latest build of v9 may be accessed at <a href="https://v9.vertex-analytics.com">v9.vertex-analytics.com</a>.</p><h2>v9 Editor</h2><p>The v9 Editor is where programmers can write custom algorithms in order to build out individual data visualization solutions.</p><p>Each algorithm&apos;s script, located on the lefthand side, corresponds to a data visualization solution located on the righthand side.</p><p><img src="./manual/asset/explorer-top-new.png"></p><p>Initially, you must click the &quot;new script&quot; button, shown above, in order to access all
-of the different sections of the v9 Editor.</p><h3>Sections</h3><h4>Top-bar</h4><p>The top-bar houses four navigation buttons to the right that each take you to different pages of v9.</p><table>
+incoming Chicago Mercantile Exchange (CME) WebSocket event data with nanosecond precision and same-day transaction settlement (T-0).</p><h2>Accessing v9</h2><p>The latest build of v9 may be accessed at <a href="https://v9.vertex-analytics.com">v9.vertex-analytics.com</a>.</p><h2>v9 Editor</h2><p>The v9 Editor is where programmers can write custom algorithms in order to build out individual data visualization solutions.</p><p>Each algorithm&apos;s script, located on the lefthand side, corresponds to a data visualization solution located on the righthand side.</p><p><img src="./manual/asset/explorer-top-new.png"></p><p>Initially, you must click the &quot;new script&quot; button, shown above, in order to access all
+of the different sections of the v9 Editor.</p><h3>Sections</h3><h4>Top-Bar</h4><p>The top-bar houses four navigation buttons to the right that each take you to different pages of v9.</p><table>
 <thead>
 <tr>
 <th></th>
@@ -28,7 +28,7 @@ of the different sections of the v9 Editor.</p><h3>Sections</h3><h4>Top-bar</h4>
 <td>Navigates to the v9 Log In Page</td>
 </tr>
 </tbody>
-</table><h4>Left-bar</h4><p>The bar on the left-hand side of the v9 Editor contains options for showing and hiding
+</table><h4>Left-Bar</h4><p>The bar on the left-hand side of the v9 Editor contains options for showing and hiding
 different sections of v9.</p><table>
 <thead>
 <tr>
@@ -79,7 +79,7 @@ different sections of v9.</p><table>
 <td>Changes the v9 Editor to a light blue theme</td>
 </tr>
 </tbody>
-</table><h4>Explorer</h4><p>The explorer houses all of the user&apos;s scripts and Vertex Analytics sample scripts.</p><p><img src="./manual/asset/v9-explorer.png" width="45.5%" height="45.5%"></p><ul>
+</table><h4>Explorer</h4><p>The explorer houses all of the user&apos;s scripts and Vertex Analytics sample scripts.</p><p><img src="./manual/asset/v9-explorer.png" width="32.5%" height="32.5%"></p><ul>
 <li>Top buttons</li>
 </ul><p>These buttons correspond to different actions that may be performed on files
 within the explorer.</p><table>
@@ -108,12 +108,12 @@ within the explorer.</p><table>
 </tr>
 </tbody>
 </table><ul>
-<li>Your scripts</li>
+<li>User scripts</li>
 </ul><p><img src="./manual/asset/explorer-scripts-dropdown.png"></p><p>The scripts dropdown, pictured above, houses each and every one of the user&apos;s scripts.</p><ul>
 <li>Templates</li>
 </ul><p><img src="./manual/asset/explorer-templates-dropdown.png"></p><p>The templates dropdown, pictured above, houses sample scripts created by Vertex Analytics staff separated by library.</p><h4>Text Editor</h4><p>This section represents the area to the right of the explorer section where users create and edit HTML files that contains algorithms to visualize different symbol data.</p><p><img src="./manual/asset/v9-text-editor.png" width="50%" height="50%"></p><h4>Debugging Output</h4><p>This section represents the area below the text editor where syntax and runtime errors are logged regarding current the script(s).</p><ul>
 <li>Chrome&apos;s built-in console will handle issues with external libraries.</li>
-</ul><p><img src="./manual/asset/v9-debug.png" width="50%" height="50%"></p><h4>Pane</h4><p>The pane section, to the right of the text editor, is where the current script is visualized when run.
+</ul><p><img src="./manual/asset/v9-debug.png" width="50%" height="50%"></p><h4>Pane</h4><p>The pane section, to the right of the text editor, is where a data visualization solution appears upon running the current script.
 The user may choose to specify the symbol and date values that the current script should reference here or within their script.</p><p><img src="./manual/asset/v9-pane.png" width="50%" height="50%"></p><h4>File Architecture</h4><p>As part of the file architecture, there are four main parts that make up each file:</p><ul>
 <li><p>Library Importations</p>
 <ul>
@@ -145,7 +145,7 @@ The user may choose to specify the symbol and date values that the current scrip
 
 }</code>
 </code></pre><ul>
-<li><p>This is the first method that is called when a script is run as soon as the current script&apos;s custom <a href="./manual/../class/src/index.js~feed.html">feed</a> object (<code>class CustomFeed extends v9.feed</code>) is instantiated. It only runs once.</p>
+<li><p>This is the first method that is called when a script is run. It only runs once.</p>
 </li>
 <li><p>Parameters</p>
 <ul>
@@ -159,7 +159,7 @@ The user may choose to specify the symbol and date values that the current scrip
 
 }</code>
 </code></pre><ul>
-<li>This method is called when an object from the <code>class CustomFeed extends v9.feed</code> is instantiated and the pane has initally loaded all previous events and information from the current symbol.</li>
+<li>This method is called when the pane has initally loaded all previous session events and information from the current symbol.</li>
 </ul>
 </li>
 <li><p><a href="./manual/../class/src/index.js~feed.html#instance-method-onRender">onRender()</a></p>
@@ -182,7 +182,7 @@ The user may choose to specify the symbol and date values that the current scrip
 <ul>
 <li><p>Parameters</p>
 <ul>
-<li><p>pSymbol: Name of the current symbol.</p>
+<li><p>pSymbol: String representing the name of the current symbol.</p>
 </li>
 <li><p><a href="./manual/../class/src/index.js~Event.html">pEvent</a>: Current event being handled.</p>
 </li>
@@ -230,20 +230,130 @@ The user may choose to specify the symbol and date values that the current scrip
 </ul>
 </li>
 </ul><h2>v9 Dashboard</h2><p>v9&apos;s Dashboards are composed of either one or multiple scripts written in the v9 Editor.</p><p><!-- , and they can easily be exported and shared with other users. -->
-</p><p>v9 Dashboards are where traders monitor contracts using the charts built out in the v9 Editor section.</p><h3>Dashboard Sections</h3><h4>Explorer Section</h4></div></div><a class="manual-card-link" data-ice="link" tabindex="0" href="manual/manual.html"></a></div>
+</p><p>The v9 Dashboard is where traders can create Dashboards to monitor multiple scripts they created in the v9 Editor at once.</p><h3>Sections</h3><h4>Top-Bar</h4><p>The top-bar houses four navigation buttons to the right that each take you to different pages of v9.</p><table>
+<thead>
+<tr>
+<th></th>
+<th>Top-Bar Buttons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="./manual/asset/v9-top-data-center.png"></td>
+<td>Navigates to the v9 Data Center</td>
+</tr>
+<tr>
+<td><img src="./manual/asset/v9-top-help.png"></td>
+<td>Navigates to the v9 Documentation</td>
+</tr>
+</tbody>
+</table><h4>Left-Bar</h4><p>The bar on the left-hand side of the v9 Editor contains options for showing and hiding
+different sections of v9.</p><table>
+<thead>
+<tr>
+<th></th>
+<th>Left-Bar Top Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="./manual/asset/v9-left-explorer-button.png"></td>
+<td>Shows / hides the Explorer</td>
+</tr>
+</tbody>
+</table><table>
+<thead>
+<tr>
+<th></th>
+<th>Left-bar Bottom Buttons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="./manual/asset/v9-left-dark-theme.png"></td>
+<td>Changes the v9 Editor to a dark theme</td>
+</tr>
+<tr>
+<td><img src="./manual/asset/v9-left-light-theme.png"></td>
+<td>Changes the Text Editor to a light theme</td>
+</tr>
+<tr>
+<td><img src="./manual/asset/v9-left-dark-blue-theme.png"></td>
+<td>Changes the v9 Editor to a dark blue theme</td>
+</tr>
+<tr>
+<td><img src="./manual/asset/v9-left-light-blue-theme.png"></td>
+<td>Changes the v9 Editor to a light blue theme</td>
+</tr>
+</tbody>
+</table><h4>Explorer</h4><p>The explorer houses all of the user&apos;s scripts and Vertex Analytics sample scripts.</p><p><img src="./manual/asset/v9-dash-explorer.png" width="32.5%" height="32.5%"></p><ul>
+<li>Top Buttons</li>
+</ul><p>These buttons correspond to different actions that may be performed on files
+within the explorer.</p><table>
+<thead>
+<tr>
+<th></th>
+<th>Top Explorer Buttons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="./manual/asset/explorer-top-new.png"></td>
+<td>Adds a new base dashboard</td>
+</tr>
+<tr>
+<td><img src="./manual/asset/explorer-top-delete.png"></td>
+<td>Deletes the current dashboard</td>
+</tr>
+</tbody>
+</table><ul>
+<li>User Dashboards</li>
+</ul><p><img src="./manual/asset/v9-dash-dashboard-dropdown.png"></p><p>The dashboard dropdown, pictured above, houses each and every one of the user&apos;s scripts.</p><ul>
+<li>User Scripts</li>
+</ul><p><img src="./manual/asset/explorer-scripts-dropdown.png"></p><p>The scripts dropdown, pictured above, houses user-created scripts from the v9 Editor.</p><h4>Dashboard</h4><p>The dashboard section, to the right of the explorer, houses the currently selected dashboard in the explorer.</p><p><img src="./manual/asset/v9-dash-dashboard-running.png" width="50%" height="50%"></p><p>Users can drag and drop different scripts from their v9 Editor onto different sections of the current dashboard from the explorer.</p><p><img src="./manual/asset/v9-dash-dashboard-placing.png" width="50%" height="50%"></p><p><img src="./manual/asset/explorer-top-new.png"></p><p>Initially, you must click the &quot;new dashboard&quot; button, shown above, in order to access all
+of the different sections of the v9 Editor.</p><h4>Troubleshooting</h4><p>For certain periods throughout the day, v9 will not be able to run real-time scripts, because the v9 platform makes use of the time in which the exchange is down to process and archive data.
+Below is a chart containing weekly hours of estimated downtime.</p><table>
+<thead>
+<tr>
+<th>Monday</th>
+<th>Tuesday</th>
+<th>Wednesday</th>
+<th>Thursday</th>
+<th>Friday</th>
+<th style="text-align:center">Saturday</th>
+<th>Sunday</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4:00pm-5:00pm</td>
+<td>4:00pm-5:00pm</td>
+<td>4:00pm-5:00pm</td>
+<td>4:00pm-5:00pm</td>
+<td>4:00pm-</td>
+<td style="text-align:center">-</td>
+<td>-5:00pm</td>
+</tr>
+</tbody>
+</table><p>Also, please note that the CME closes at 3:15pm to 3:30pm on weekdays.</p><h4>Contact</h4><p>If you come across any major issue/bugs, please let us know by creating an issue at this repository&apos;s <a href="https://github.com/vertex-analytics/docs/issues">issues page</a>.</p><p>Additionally if the issue is pertinent or there is something that you think we could improve about this documentation, please send us an email at <a href="./manual/mailto:support@vertex-analytics.com">support@vertex-analytics.com</a>.</p></div></div><a class="manual-card-link" data-ice="link" tabindex="0" href="manual/manual.html"></a></div>
 </div></div></div><footer class="main-footer"><img alt="esdoc logo" class="esdoc-logo" src="image/esdoc-logo-mini.png"> <span>Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span></a></span></footer></main><aside class="sidebar initial js_sidebarLeft sidebar-left" data-ice="nav"><nav class="nav manual-nav" data-ice="manual"><ul class="nav-list manual-toc"><li class="nav-item _indent-h1" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html" class="nav-link _" data-ice="link">API Manual</a></li>
 <li class="nav-item _indent-h2" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#accessing-v9" class="nav-link _" data-ice="link">Accessing v9</a></li>
 <li class="nav-item _indent-h2" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#v9-editor" class="nav-link _" data-ice="link">v9 Editor</a></li>
 <li class="nav-item _indent-h3" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#sections" class="nav-link _" data-ice="link">Sections</a></li>
-<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#top-bar" class="nav-link _" data-ice="link">Top-bar</a></li>
-<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#left-bar" class="nav-link _" data-ice="link">Left-bar</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#top-bar" class="nav-link _" data-ice="link">Top-Bar</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#left-bar" class="nav-link _" data-ice="link">Left-Bar</a></li>
 <li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#explorer" class="nav-link _" data-ice="link">Explorer</a></li>
 <li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#text-editor" class="nav-link _" data-ice="link">Text Editor</a></li>
 <li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#debugging-output" class="nav-link _" data-ice="link">Debugging Output</a></li>
 <li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#pane" class="nav-link _" data-ice="link">Pane</a></li>
 <li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#file-architecture" class="nav-link _" data-ice="link">File Architecture</a></li>
 <li class="nav-item _indent-h2" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#v9-dashboard" class="nav-link _" data-ice="link">v9 Dashboard</a></li>
-<li class="nav-item _indent-h3" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#dashboard-sections" class="nav-link _" data-ice="link">Dashboard Sections</a></li>
-<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#explorer-section" class="nav-link _" data-ice="link">Explorer Section</a></li>
+<li class="nav-item _indent-h3" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#sections" class="nav-link _" data-ice="link">Sections</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#top-bar" class="nav-link _" data-ice="link">Top-Bar</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#left-bar" class="nav-link _" data-ice="link">Left-Bar</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#explorer" class="nav-link _" data-ice="link">Explorer</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#dashboard" class="nav-link _" data-ice="link">Dashboard</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#troubleshooting" class="nav-link _" data-ice="link">Troubleshooting</a></li>
+<li class="nav-item _indent-h4" data-ice="manualNav" data-link="manual/manual.html"><a href="manual/manual.html#contact" class="nav-link _" data-ice="link">Contact</a></li>
 </ul></nav>
 </aside><aside class="sidebar closed js_sidebarRight sidebar-right"><nav class="nav fonts-nav"><ul class="nav-list js_fontOptions"><li class="nav-item"><span class="headline nav-link">Main fonts</span></li></ul></nav><nav class="nav colorschemes-nav"><ul class="nav-list js_colorschemeOptions"><li class="nav-item"><span class="headline nav-link">Syntax themes</span></li></ul></nav></aside><script src="script/2f0514c18c642778d627.js"></script></body></html>
