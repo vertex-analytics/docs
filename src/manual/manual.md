@@ -45,9 +45,24 @@ different sections of v9.
 These buttons correspond to different actions that may be performed on files 
 within the explorer.
 
+|   | Top Explorer Buttons |
+|---|---|
+| <img src="asset/explorer-top-new.png"> | Adds a new base script        |
+| <img src="asset/explorer-top-import.png"> | Opens a window that allows for importing a script  |
+| <img src="asset/explorer-top-save.png"> | Downloads the current script |
+| <img src="asset/explorer-top-delete.png"> | Deletes the current script |
+
 - Your scripts
+
+<img src="asset/explorer-scripts-dropdown.png">
+
+The scripts dropdown, pictured above, houses each and every one of your scripts.
+
 - Templates
-- Divided up by libraries
+
+<img src="asset/explorer-templates-dropdown.png">
+
+The templates dropdown, pictured above, houses sample scripts created by Vertex Analytics staff separated by library.
 
 #### Text Editor
 
