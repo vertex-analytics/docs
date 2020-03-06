@@ -94,7 +94,7 @@ This section represents the area below the text editor where syntax and runtime 
 
 <img src="asset/v9-debug.png" width="50%" height="50%">
 
-#### Pane
+#### Pane (Editor)
 
 The pane section, to the right of the text editor, is where a data visualization solution appears upon running the current script.
 The user may choose to specify the symbol and date values that the current script should reference here or within their script.
