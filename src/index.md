@@ -1,7 +1,7 @@
 <img src="manual/asset/vertex-logo-web-dark.png" alt="logo" width="36%"/>
 # Vertex Analytics | v9 API
 
-The Vertex Analytics v9 API allows for easy understanding, calculating, and tracking of futures symbols in more than just real-time using v9 at https://v9.vertex-analytics.com.
+The Vertex Analytics v9 API allows for easy understanding, calculating, and tracking of futures symbols with nanosecond precision and same-day transaction settlement using v9 at https://v9.vertex-analytics.com.
 
 ### Contact
 

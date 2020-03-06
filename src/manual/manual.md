@@ -24,7 +24,7 @@ of the different sections of the v9 Editor.
 
 The top-bar houses four navigation buttons to the right that each take you to different pages of v9.
 
-|                                          | Top-bar Buttons                   |
+|                                          | Top-Bar Buttons                   |
 | ---------------------------------------- | --------------------------------- |
 | <img src="asset/v9-top-dashboard.png">   | Navigates to the v9 Dashboard     |
 | <img src="asset/v9-top-data-center.png"> | Navigates to the v9 Data Center   |
@@ -36,14 +36,14 @@ The top-bar houses four navigation buttons to the right that each take you to di
 The bar on the left-hand side of the v9 Editor contains options for showing and hiding
 different sections of v9.
 
-|                                                  | Left-bar Top Buttons           |
+|                                                  | Left-Bar Top Buttons           |
 | ------------------------------------------------ | ------------------------------ |
 | <img src="asset/v9-left-explorer-button.png">    | Shows / hides the Explorer     |
 | <img src="asset/v9-left-text-editor-button.png"> | Shows / hides the Text Editor  |
 | <img src="asset/v9-left-pane-button.png">        | Shows / hides the Pane         |
 | <img src="asset/v9-left-debug-button.png">       | Shows / hides the Debug Output |
 
-|                                                | Left-bar Bottom Buttons                     |
+|                                                | Left-Bar Bottom Buttons                     |
 | ---------------------------------------------- | ------------------------------------------- |
 | <img src="asset/v9-left-dark-theme.png">       | Changes the v9 Editor to a dark theme       |
 | <img src="asset/v9-left-light-theme.png">      | Changes the Text Editor to a light theme    |
@@ -115,7 +115,7 @@ As part of the file architecture, there are four main parts that make up each fi
     <script src="https://v9.vertex-analytics.com/_vxaapi-1.0.0/v9.js"></script>
     ```
 
-- JavaScript ([Extending the Feed](../class/src/index.js~feed.html))
+- JavaScript (Extending [v9](../class/src/index.js~v9.html).[feed](../class/src/index.js~feed.html))
 
   ```
     <script>
@@ -131,9 +131,9 @@ As part of the file architecture, there are four main parts that make up each fi
     </script>
   ```
 
-  - This section refers to all of the data visualization logic that is executed within v9's runtime. This includes the class declaration for the v9 event feed, the lifecycle methods associated with a v9 feed, and the instantiation of a v9 feed object after defining all of the data visualization logic within the class body.
+  - This section houses all of the data visualization logic that is executed through the v9 API. This includes the class declaration for the v9 event [v9](../class/src/index.js~v9.html).[feed](../class/src/index.js~feed.html), the lifecycle methods associated with a v9 [feed](../class/src/index.js~feed.html), and the instantiation of a [v9](../class/src/index.js~v9.html).[feed](../class/src/index.js~feed.html) object after overriding all of the data visualization logic within the CustomFeed class body.
 
-    There are five lifecycle methods associated with each v9 feed. Each lifecycle method executes at a different point in time while the current script is running.
+    There are five lifecycle methods associated with each [v9](../class/src/index.js~v9.html).[feed](../class/src/index.js~feed.html). Each lifecycle method executes at a different point in time while the current script is running.
 
     - [onOpen](../class/src/index.js~feed.html#instance-method-onOpen)([pMeta](../typedef/index.html#static-typedef-Meta))
 
@@ -195,7 +195,7 @@ As part of the file architecture, there are four main parts that make up each fi
 
         - [pEvent](../class/src/index.js~Event.html): Current event being handled.
         
-          - **_When determining the type of the current [Event](../class/src/index.js~Event.html), the user must check whether or not [pEvent](../class/src/index.js~Event.html)'s [header](../class/src/index.js~Event.html#instance-member-header).[unionID](../typedef/index.html#static-typedef-Header) value against v9's UnionId enumeration_**
+          - **_When determining the type of the current [Event](../class/src/index.js~Event.html), the user must check whether or not [pEvent](../class/src/index.js~Event.html)'s [header](../class/src/index.js~Event.html#instance-member-header).[unionID](../typedef/index.html#static-typedef-Header) value against [v9](../class/src/index.js~v9.html).[UnionId](../class/src/index.js~v9.html#instance-member-UnionID) enumeration_**
 
         - pRealTime: Boolean determining whether or not to only handle current events.
 
@@ -264,7 +264,7 @@ different sections of v9.
 | --------------------------------------------- | -------------------------- |
 | <img src="asset/v9-left-explorer-button.png"> | Shows / hides the Explorer |
 
-|                                                | Left-bar Bottom Buttons                     |
+|                                                | Left-Bar Bottom Buttons                     |
 | ---------------------------------------------- | ------------------------------------------- |
 | <img src="asset/v9-left-dark-theme.png">       | Changes the v9 Editor to a dark theme       |
 | <img src="asset/v9-left-light-theme.png">      | Changes the Text Editor to a light theme    |

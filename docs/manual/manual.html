@@ -11,7 +11,7 @@ of the different sections of the v9 Editor.</p>
 <thead>
 <tr>
 <th></th>
-<th>Top-bar Buttons</th>
+<th>Top-Bar Buttons</th>
 </tr>
 </thead>
 <tbody>
@@ -39,7 +39,7 @@ different sections of v9.</p>
 <thead>
 <tr>
 <th></th>
-<th>Left-bar Top Buttons</th>
+<th>Left-Bar Top Buttons</th>
 </tr>
 </thead>
 <tbody>
@@ -65,7 +65,7 @@ different sections of v9.</p>
 <thead>
 <tr>
 <th></th>
-<th>Left-bar Bottom Buttons</th>
+<th>Left-Bar Bottom Buttons</th>
 </tr>
 </thead>
 <tbody>
@@ -152,7 +152,7 @@ The user may choose to specify the symbol and date values that the current scrip
 </code></pre></li>
 </ul>
 </li>
-<li><p>JavaScript (<a href="./manual/../class/src/index.js~feed.html">Extending the Feed</a>)</p>
+<li><p>JavaScript (Extending <a href="./manual/../class/src/index.js~v9.html">v9</a>.<a href="./manual/../class/src/index.js~feed.html">feed</a>)</p>
 <pre><code><code class="source-code prettyprint">  &lt;script&gt;
     class CustomFeed extends v9.feed {
       onOpen(pMeta){}
@@ -165,8 +165,8 @@ The user may choose to specify the symbol and date values that the current scrip
     let feed = new CustomFeed();
   &lt;/script&gt;</code>
 </code></pre><ul>
-<li><p>This section refers to all of the data visualization logic that is executed within v9&apos;s runtime. This includes the class declaration for the v9 event feed, the lifecycle methods associated with a v9 feed, and the instantiation of a v9 feed object after defining all of the data visualization logic within the class body.</p>
-<p>There are five lifecycle methods associated with each v9 feed. Each lifecycle method executes at a different point in time while the current script is running.</p>
+<li><p>This section houses all of the data visualization logic that is executed through the v9 API. This includes the class declaration for the v9 event <a href="./manual/../class/src/index.js~v9.html">v9</a>.<a href="./manual/../class/src/index.js~feed.html">feed</a>, the lifecycle methods associated with a v9 <a href="./manual/../class/src/index.js~feed.html">feed</a>, and the instantiation of a <a href="./manual/../class/src/index.js~v9.html">v9</a>.<a href="./manual/../class/src/index.js~feed.html">feed</a> object after overriding all of the data visualization logic within the CustomFeed class body.</p>
+<p>There are five lifecycle methods associated with each <a href="./manual/../class/src/index.js~v9.html">v9</a>.<a href="./manual/../class/src/index.js~feed.html">feed</a>. Each lifecycle method executes at a different point in time while the current script is running.</p>
 <ul>
 <li><p><a href="./manual/../class/src/index.js~feed.html#instance-method-onOpen">onOpen</a>(<a href="./manual/../typedef/index.html#static-typedef-Meta">pMeta</a>)</p>
 <pre><code><code class="source-code prettyprint">onOpen(pMeta) {
@@ -222,7 +222,7 @@ The user may choose to specify the symbol and date values that the current scrip
 </li>
 <li><p><a href="./manual/../class/src/index.js~Event.html">pEvent</a>: Current event being handled.</p>
 <ul>
-<li><strong><em>When determining the type of the current <a href="./manual/../class/src/index.js~Event.html">Event</a>, the user must check whether or not <a href="./manual/../class/src/index.js~Event.html">pEvent</a>&apos;s <a href="./manual/../class/src/index.js~Event.html#instance-member-header">header</a>.<a href="./manual/../typedef/index.html#static-typedef-Header">unionID</a> value against v9&apos;s UnionId enumeration</em></strong></li>
+<li><strong><em>When determining the type of the current <a href="./manual/../class/src/index.js~Event.html">Event</a>, the user must check whether or not <a href="./manual/../class/src/index.js~Event.html">pEvent</a>&apos;s <a href="./manual/../class/src/index.js~Event.html#instance-member-header">header</a>.<a href="./manual/../typedef/index.html#static-typedef-Header">unionID</a> value against <a href="./manual/../class/src/index.js~v9.html">v9</a>.<a href="./manual/../class/src/index.js~v9.html#instance-member-UnionID">UnionId</a> enumeration</em></strong></li>
 </ul>
 </li>
 <li><p>pRealTime: Boolean determining whether or not to only handle current events.</p>
@@ -312,7 +312,7 @@ different sections of v9.</p>
 <thead>
 <tr>
 <th></th>
-<th>Left-bar Bottom Buttons</th>
+<th>Left-Bar Bottom Buttons</th>
 </tr>
 </thead>
 <tbody>
