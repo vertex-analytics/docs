@@ -528,6 +528,18 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "src/index.js~instrument",
+    "typedef/index.html#static-typedef-Instrument",
+    "src/index.js~Instrument",
+    "typedef"
+  ],
+  [
+    "src/index.js~meta",
+    "typedef/index.html#static-typedef-Meta",
+    "src/index.js~Meta",
+    "typedef"
+  ],
+  [
     "src/index.js~cubechart#constructor",
     "class/src/index.js~cubeChart.html#instance-constructor-constructor",
     "src/index.js~cubeChart#constructor",

@@ -625,6 +625,58 @@ v9.feed = class {
   }
 
   /**
+   * @typedef {Object} Instrument
+   * @property {string} activationDate
+   *   @property {string} asset
+   *   @property {Boolean} completed
+   *   @property {string} contractSymbol
+   *   @property {string} currency
+   *   @property {number} definitionID
+   *   @property {number} depthLevel
+   *   @property {number} displayFactor
+   *   @property {number} displayType
+   *   @property {number} displayTypeEx
+   *   @property {number} eosInstrumentID
+   *   @property {number} exchInstrumentID
+   *   @property {string} exchType
+   *   @property {string} exchangeCode
+   *   @property {string} expireDate
+   *   @property {string} firstDataDate
+   *   @property {string} firstDefined
+   *   @property {string} groupCode
+   *   @property {number} impliedDepth
+   *   @property {number} instrumentType
+   *   @property {string} lastDataDate
+   *   @property {string} lastDefined
+   *   @property {string} lastExchUpdateTime
+   *   @property {number} loadSource
+   *   @property {number} marketTypeID
+   *   @property {number} maturityDay
+   *   @property {number} maturityMonth
+   *   @property {number} maturityYear
+   *   @property {number} priceDenominator
+   *   @property {string} roots // emailed ed about this. should potentially be just [{"rt": "XX"}]
+   *   @property {number} settleDenominator
+   *   @property {number} tickSize
+   *   @property {number} tickValue
+   *   @property {number} unitOfMeasure
+   *   @property {Boolean} userDefined
+   *   @property {number} vxaChannel
+   *   @property {number} vxaId // emailed ed about this. should potentially be vxaID
+   */
+  /**
+   * @typedef {object} Meta
+   * @property {Instrument[]} instruments
+   * @property {string} message
+   * @property {number} records
+   * @property {number} restartTime
+   * @property {number} sessionTime
+   * @property {number} status
+   * @property {string} symbol
+   * @property {number} symbolID
+   * @property {number} userID
+   */
+  /**
    * Built in feed function that is called when the start button is pressed in order to initialize variables.
    * @param {Meta} pMeta - Object representing json meta information. It currently provides the instrument definitions of the supplied symbol.
    * @abstract
