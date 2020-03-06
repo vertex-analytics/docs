@@ -19,24 +19,24 @@ Each script, located on the lefthand side, corresponds to a data visualization s
 
 The top-bar houses four navigation buttons to the right that each take you to different pages of v9. 
 
-|   | Top-bar Buttons |
-|---|---|
-| <img src="asset/v9-top-dashboard.png"> | Navigates to the v9 Dashboard     |
-| <img src="asset/v9-top-data-center.png"> | Navigates to the v9 Data Center |
-| <img src="asset/v9-top-help.png"> | Navigates to the v9 Documentation      |
-| <img src="asset/v9-top-sign-out.png"> | Navigates to the v9 Log In Page    |
+|                                          | Top-bar Buttons                   |
+| ---------------------------------------- | --------------------------------- |
+| <img src="asset/v9-top-dashboard.png">   | Navigates to the v9 Dashboard     |
+| <img src="asset/v9-top-data-center.png"> | Navigates to the v9 Data Center   |
+| <img src="asset/v9-top-help.png">        | Navigates to the v9 Documentation |
+| <img src="asset/v9-top-sign-out.png">    | Navigates to the v9 Log In Page   |
 
 #### Left-bar
 
 The bar on the left-hand side of the v9 Editor contains options for showing and hiding 
 different sections of v9.
 
-|   | Left-bar Top Buttons |
-|---|---|
-| <img src="asset/v9-left-explorer-button.png"> | Shows / hides the Explorer        |
+|                                                  | Left-bar Top Buttons           |
+| ------------------------------------------------ | ------------------------------ |
+| <img src="asset/v9-left-explorer-button.png">    | Shows / hides the Explorer     |
 | <img src="asset/v9-left-text-editor-button.png"> | Shows / hides the Text Editor  |
-| <img src="asset/v9-left-pane-button.png"> | Shows / hides the Pane                |
-| <img src="asset/v9-left-debug-button.png"> | Shows / hides the Debug Output       |
+| <img src="asset/v9-left-pane-button.png">        | Shows / hides the Pane         |
+| <img src="asset/v9-left-debug-button.png">       | Shows / hides the Debug Output |
 
 #### Explorer
 
@@ -45,38 +45,32 @@ different sections of v9.
 These buttons correspond to different actions that may be performed on files 
 within the explorer.
 
-|   | Top Explorer Buttons |
-|---|---|
-| <img src="asset/explorer-top-new.png"> | Adds a new base script        |
-| <img src="asset/explorer-top-import.png"> | Opens a window that allows for importing a script  |
-| <img src="asset/explorer-top-save.png"> | Downloads the current script |
-| <img src="asset/explorer-top-delete.png"> | Deletes the current script |
-
 - Your scripts
-
-<img src="asset/explorer-scripts-dropdown.png">
-
-The scripts dropdown, pictured above, houses each and every one of your scripts.
-
 - Templates
-
-<img src="asset/explorer-templates-dropdown.png">
-
-The templates dropdown, pictured above, houses sample scripts created by Vertex Analytics staff separated by library.
+- Divided up by libraries
 
 #### Text Editor
 
-This section is used to edit HTML files that contain data visualization logic for a specified symbol.
+This section represents the area to the right of the file section where users create and edit HTML files that contains JavaScript logic displaying different data visualizations.
 
-#### Debug Output
+<img src="asset/v9-text-editor.png" width="50%" height="50%">
 
-This section logs syntax and runtime errors within your script(s). This does not include errors within external libraries 
+#### Debugging Output
+
+This section represents the area below the text editor where syntax and runtime errors within your script(s) are logged.
+- This does not include errors that could exist within external libraries.
+
+<img src="asset/v9-debug.png" width="50%" height="50%">
 
 #### Pane
 
-The pane section presents the data visualizations for the current script when run.
+The pane section represents the area to the right of the text editory where data visualizations are displayed for running scripts. This is also the section where users can directly put in symbol and date values for the feeds they so choose to receive.
+
+<img src="asset/v9-pane.png" width="50%" height="50%">
 
 #### HTML File Sections
+
+The file
 
 #### Library Importations
 
