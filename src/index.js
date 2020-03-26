@@ -542,8 +542,8 @@ v9.edit = class {
   /**
    * Used to retrieve user-specified values from the top of the pane (symbol and date correspond to the two default options at the top of a pane)
    * @example
-   * let symbol = new v9.edit("symbol"); //gets the symbol from the default textbox at the top of the pane
-   * let date = new v9.edit("date"); //gets the date from the default textbox at the top of the pane
+   * let symbol = new v9.edit("symbol").value; //gets the symbol from the default textbox at the top of the pane
+   * let date = new v9.edit("date").value; //gets the date from the default textbox at the top of the pane
    * 
    * let quantity = new v9.edit("QUANTITY"); //gets the string the user inputs into a custom 'QUANTITY' textbox at the top of the pane
    * @param {String} [pEditVariable]
