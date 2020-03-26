@@ -109,3 +109,6 @@ dist
 .vscode-test
 
 .DS_Store
+.vs/VSWorkspaceState.json
+.vs/docs/v16/.suo
+.vs/VSWorkspaceState.json

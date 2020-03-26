@@ -661,13 +661,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~cubeitem#format",
-    "class/src/index.js~cubeItem.html#instance-set-format",
+    "class/src/index.js~cubeItem.html#instance-get-format",
     "src/index.js~cubeItem#format",
     "member"
   ],
   [
     "src/index.js~cubeitem#format",
-    "class/src/index.js~cubeItem.html#instance-get-format",
+    "class/src/index.js~cubeItem.html#instance-set-format",
     "src/index.js~cubeItem#format",
     "member"
   ],
@@ -715,13 +715,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~cubeitem#title",
-    "class/src/index.js~cubeItem.html#instance-get-title",
+    "class/src/index.js~cubeItem.html#instance-set-title",
     "src/index.js~cubeItem#title",
     "member"
   ],
   [
     "src/index.js~cubeitem#title",
-    "class/src/index.js~cubeItem.html#instance-set-title",
+    "class/src/index.js~cubeItem.html#instance-get-title",
     "src/index.js~cubeItem#title",
     "member"
   ],
@@ -738,6 +738,24 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/index.js~edit#feditenum",
+    "class/src/index.js~edit.html#instance-member-fEditEnum",
+    "src/index.js~edit#fEditEnum",
+    "member"
+  ],
+  [
+    "src/index.js~edit#feditname",
+    "class/src/index.js~edit.html#instance-member-fEditName",
+    "src/index.js~edit#fEditName",
+    "member"
+  ],
+  [
+    "src/index.js~edit#fedittype",
+    "class/src/index.js~edit.html#instance-member-fEditType",
+    "src/index.js~edit#fEditType",
+    "member"
+  ],
+  [
     "src/index.js~edit#symbol",
     "class/src/index.js~edit.html#instance-get-symbol",
     "src/index.js~edit#symbol",
@@ -745,13 +763,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~edit#value",
-    "class/src/index.js~edit.html#instance-get-value",
+    "class/src/index.js~edit.html#instance-set-value",
     "src/index.js~edit#value",
     "member"
   ],
   [
     "src/index.js~edit#value",
-    "class/src/index.js~edit.html#instance-set-value",
+    "class/src/index.js~edit.html#instance-get-value",
     "src/index.js~edit#value",
     "member"
   ],
@@ -883,13 +901,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~lineitem#format",
-    "class/src/index.js~lineItem.html#instance-set-format",
+    "class/src/index.js~lineItem.html#instance-get-format",
     "src/index.js~lineItem#format",
     "member"
   ],
   [
     "src/index.js~lineitem#format",
-    "class/src/index.js~lineItem.html#instance-get-format",
+    "class/src/index.js~lineItem.html#instance-set-format",
     "src/index.js~lineItem#format",
     "member"
   ],
@@ -913,13 +931,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~lineitem#strokestyle",
-    "class/src/index.js~lineItem.html#instance-get-strokeStyle",
+    "class/src/index.js~lineItem.html#instance-set-strokeStyle",
     "src/index.js~lineItem#strokeStyle",
     "member"
   ],
   [
     "src/index.js~lineitem#strokestyle",
-    "class/src/index.js~lineItem.html#instance-set-strokeStyle",
+    "class/src/index.js~lineItem.html#instance-get-strokeStyle",
     "src/index.js~lineItem#strokeStyle",
     "member"
   ],
@@ -937,13 +955,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~lineitem#title",
-    "class/src/index.js~lineItem.html#instance-set-title",
+    "class/src/index.js~lineItem.html#instance-get-title",
     "src/index.js~lineItem#title",
     "member"
   ],
   [
     "src/index.js~lineitem#title",
-    "class/src/index.js~lineItem.html#instance-get-title",
+    "class/src/index.js~lineItem.html#instance-set-title",
     "src/index.js~lineItem#title",
     "member"
   ],

@@ -535,25 +535,54 @@ export class v9 {
   }
 }
 
+/**
+ * Class used for retrieving and referencing user input
+ */
 v9.edit = class {
   /**
-   * Used to retrieve specific values within a {@link feed}․ e․g: symbol and/or date
-   * @param {number} [pEditType]
+   * Used to retrieve user-specified values from the top of the pane (symbol and date correspond to the two default options at the top of a pane)
+   * @example
+   * let symbol = new v9.edit("symbol"); //gets the symbol from the default textbox at the top of the pane
+   * let date = new v9.edit("date"); //gets the date from the default textbox at the top of the pane
+   * 
+   * let quantity = new v9.edit("QUANTITY"); //gets the string the user inputs into a custom 'QUANTITY' textbox at the top of the pane
+   * @param {String} [pEditVariable]
    */
-  constructor(pEditType) {
-    /**
-     * @ignore
-     * @private
-     */
+  constructor(pEditName) 
+  {
     this.fEditType = qEditSymb;
+    this.fEditName = pEditName;
 
-    if (pEditType) {
-      if (pEditType.toUpperCase() === "SYMBOL") {
+    if (pEditName)
+    {
+      if (gEditMaps[pEditName.toUpperCase()])
+      {
+        gHome._pageerro(gUniq, "Edit name already defined");
+      }
+      else
+      {
+        gEditMaps[pEditName.toUpperCase()] = true;
+      }
+
+      if (pEditName.toUpperCase() === "SYMBOL")
+      {
         this.fEditType = qEditSymb;
       }
-      if (pEditType.toUpperCase() === "DATE") {
+      else if (pEditName.toUpperCase() === "DATE")
+      {
         this.fEditType = qEditDate;
       }
+      else
+      {
+        gEditList.push(this);
+        this.fEditType = gEditSequ++;
+      }
+
+      this.fEditEnum = gHome.MakeEdit(gUniq, this.fEditType, pEditName);
+    }
+    else
+    {
+      gHome._pageerro(gUniq, "Edit name must be defined");
     }
   }
 
@@ -735,51 +764,56 @@ v9.feed = class {
   onStop() {}
 };
 
-v9.lineChart = class {
-  constructor(pID) {
-    this.fLineEnum = gHome.MakeLine(
-      gUniq,
-      pID ? document.getElementById(pID) : null
-    );
+v9.lineChart = class
+{
+  constructor(pID)
+  {
+    this.fLineEnum = gHome.MakeLine(gUniq, (pID) ? document.getElementById(pID) : null);
   }
 
-  linePush(pItem, pRate, pTime) {
+  linePush(pItem, pRate, pTime)
+  {
     gHome.LinePush(gUniq, pItem.fCalcEnum, pRate, pTime);
   }
-};
+}
 
-v9.cubeChart = class {
-  constructor(pID) {
-    this.fCubeEnum = gHome.MakeCube(
-      gUniq,
-      pID ? document.getElementById(pID) : null
-    );
+v9.cubeChart = class
+{
+  constructor(pID)
+  {
+    this.fCubeEnum = gHome.MakeCube(gUniq, (pID) ? document.getElementById(pID) : null);
   }
 
-  cubePlus(pItem, pData, pSize) {
+  cubePlus(pItem, pData, pSize)
+  {
     gHome.CubePlus(gUniq, pItem, pData, pSize);
   }
 
-  cubeDele(pItem, pData) {
+  cubeDele(pItem, pData)
+  {
     gHome.CubeDele(gUniq, pItem, pData);
   }
 
-  cubeSave(pItem, pData, pSize) {
+  cubeSave(pItem, pData, pSize)
+  {
     gHome.CubeSave(gUniq, pItem, pData, pSize);
   }
 
-  cubeRead(pItem, pData) {
+  cubeRead(pItem, pData)
+  {
     gHome.CubeRead(gUniq, pItem, pData);
   }
 
-  cubeFree(pItem) {
+  cubeFree(pItem)
+  {
     gHome.CubeFree(gUniq, pItem);
   }
 
-  cubePush(pItem, pSave) {
+  cubePush(pItem, pSave)
+  {
     gHome.CubePush(gUniq, pItem, pSave);
   }
-};
+}
 
 v9.lineItem = class {
   constructor(pPane) {
@@ -925,7 +959,7 @@ v9.lineItem = class {
   }
 
   /**
-   * Text corresponding to current line price
+   * The line item's title that appears in the top-left corner of the pane
    * @type {String}
    * @public
    */
@@ -1088,7 +1122,7 @@ v9.cubeItem = class {
   }
 
   /**
-   * Text corresponding to current cube price
+   * The cube item's title that appears in the top-left corner of the pane
    * @type {String}
    * @public
    */
@@ -1107,7 +1141,7 @@ v9.cubeItem = class {
 };
 
 /**
- * Returns a JSON object representing the provided event
+ * Returns a JSON Object representing the provided {@link Event}
  * @param {Event} pEvent
  */
 v9.eventToJson = function(pEvent) {
@@ -1138,7 +1172,7 @@ v9.eventToJson = function(pEvent) {
 };
 
 /**
- * Returns a copy of a provided event
+ * Returns a copy of a provided {@link Event}
  * @param {Event} pEvent
  */
 v9.eventCopy = function(pEvent) {
@@ -1238,7 +1272,7 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
 };
 
 /**
- * Class used for referencing any individual event from the current {@link feed}
+ * Class used for referencing any individual {@link Event} from the current {@link feed}
  */
 export class Event {
   constructor() {
