@@ -546,6 +546,8 @@ v9.edit = class {
    * let date = new v9.edit("date").value; //gets the date from the default textbox at the top of the pane
    * 
    * let quantity = new v9.edit("QUANTITY"); //gets the string the user inputs into a custom 'QUANTITY' textbox at the top of the pane
+   * let quantity = new v9.edit("QUANTITY").value; //gets the string the user inputs into a custom 'QUANTITY' textbox at the top of the pane
+   * let quantity = new v9.edit("QUANTITY").number; //gets the number the user inputs into a custom 'QUANTITY' textbox at the top of the pane
    * @param {String} [pEditVariable]
    */
   constructor(pEditName) 
