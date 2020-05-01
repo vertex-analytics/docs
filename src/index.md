@@ -3,6 +3,8 @@
 
 The Vertex Analytics v9 API allows for easy understanding, calculating, and tracking of futures symbols with nanosecond precision and same-day transaction settlement using v9 at https://v9.vertex-analytics.com.
 
+A PDF documenting major v9 type definitions can be found [here](https://vertex-analytics.com/documentation/Data_Reference.pdf).
+
 ### Contact
 
 If you come across any major issue/bugs, please let us know by creating an issue at this repository's [issues page](https://github.com/vertex-analytics/docs/issues).
