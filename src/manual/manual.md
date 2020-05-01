@@ -105,7 +105,7 @@ The user may choose to specify the symbol and date values that the current scrip
 
 As part of the file architecture, there are four main parts that make up each file:
 
-- Library Importations
+- Library Imports
 
   - This section refers to the top of the HTML file where both v9's propritary library and third-party libraries are imported.
 
@@ -120,8 +120,8 @@ As part of the file architecture, there are four main parts that make up each fi
   ```
     <script>
       class CustomFeed extends v9.feed {
+        onInit(){}
         onOpen(pMeta){}
-        onLoad(){}
         onRender(){}
         onEvent(pSymbol, pEvent, pRealTime){}
         onStop(){}
@@ -133,7 +133,17 @@ As part of the file architecture, there are four main parts that make up each fi
 
   - This section houses all of the data visualization logic that is executed through the v9 API. This includes the class declaration for the v9 event [v9](../class/src/index.js~v9.html).[feed](../class/src/index.js~feed.html), the lifecycle methods associated with a v9 [feed](../class/src/index.js~feed.html), and the instantiation of a [v9](../class/src/index.js~v9.html).[feed](../class/src/index.js~feed.html) object after overriding all of the data visualization logic within the CustomFeed class body.
 
-    There are five lifecycle methods associated with each [v9](../class/src/index.js~v9.html).[feed](../class/src/index.js~feed.html). Each lifecycle method executes at a different point in time while the current script is running.
+    There are five main lifecycle methods associated with each [v9](../class/src/index.js~v9.html).[feed](../class/src/index.js~feed.html). Each lifecycle method executes at a different point in time while the current script is running.
+
+    - [onInit](../class/src/index.js~feed.html#instance-method-onInit)()
+
+      ```
+      onInit() {
+
+      }
+      ```
+
+      - This is the first method that is called when a script is run. It should be used to instantiate the chart, because it only runs once.
 
     - [onOpen](../class/src/index.js~feed.html#instance-method-onOpen)([pMeta](../typedef/index.html#static-typedef-Meta))
 
@@ -143,19 +153,11 @@ As part of the file architecture, there are four main parts that make up each fi
       }
       ```
 
-      - This is the first method that is called when a script is run. It only runs once.
+      - This is the second method that is called when a script is run. It only runs once per day.
 
       - Parameters
 
         - [pMeta](): Contains metadata associated with each symbol ran within the v9 runtime.
-
-    - [onLoad](../class/src/index.js~feed.html#instance-method-onLoad)()
-
-      ```
-      onLoad() {
-
-      }
-      ```
 
       - This method is called when the pane has initally loaded all previous session events and information from the current symbol.
 

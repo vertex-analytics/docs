@@ -116,7 +116,7 @@ within the explorer.</p><table>
 <li>Chrome&apos;s built-in console will handle issues with external libraries.</li>
 </ul><p><img src="./manual/asset/v9-debug.png" width="50%" height="50%"></p><h4>Pane (Editor)</h4><p>The pane section, to the right of the text editor, is where a data visualization solution appears upon running the current script.
 The user may choose to specify the symbol and date values that the current script should reference here or within their script.</p><p><img src="./manual/asset/v9-pane.png" width="50%" height="50%"></p><h4>File Architecture (Editor)</h4><p>As part of the file architecture, there are four main parts that make up each file:</p><ul>
-<li><p>Library Importations</p>
+<li><p>Library Imports</p>
 <ul>
 <li><p>This section refers to the top of the HTML file where both v9&apos;s propritary library and third-party libraries are imported.</p>
 <ul>
@@ -129,8 +129,8 @@ The user may choose to specify the symbol and date values that the current scrip
 <li><p>JavaScript (Extending <a href="./manual/../class/src/index.js~v9.html">v9</a>.<a href="./manual/../class/src/index.js~feed.html">feed</a>)</p>
 <pre><code><code class="source-code prettyprint">  &lt;script&gt;
     class CustomFeed extends v9.feed {
+      onInit(){}
       onOpen(pMeta){}
-      onLoad(){}
       onRender(){}
       onEvent(pSymbol, pEvent, pRealTime){}
       onStop(){}
@@ -140,28 +140,30 @@ The user may choose to specify the symbol and date values that the current scrip
   &lt;/script&gt;</code>
 </code></pre><ul>
 <li><p>This section houses all of the data visualization logic that is executed through the v9 API. This includes the class declaration for the v9 event <a href="./manual/../class/src/index.js~v9.html">v9</a>.<a href="./manual/../class/src/index.js~feed.html">feed</a>, the lifecycle methods associated with a v9 <a href="./manual/../class/src/index.js~feed.html">feed</a>, and the instantiation of a <a href="./manual/../class/src/index.js~v9.html">v9</a>.<a href="./manual/../class/src/index.js~feed.html">feed</a> object after overriding all of the data visualization logic within the CustomFeed class body.</p>
-<p>There are five lifecycle methods associated with each <a href="./manual/../class/src/index.js~v9.html">v9</a>.<a href="./manual/../class/src/index.js~feed.html">feed</a>. Each lifecycle method executes at a different point in time while the current script is running.</p>
+<p>There are five main lifecycle methods associated with each <a href="./manual/../class/src/index.js~v9.html">v9</a>.<a href="./manual/../class/src/index.js~feed.html">feed</a>. Each lifecycle method executes at a different point in time while the current script is running.</p>
 <ul>
+<li><p><a href="./manual/../class/src/index.js~feed.html#instance-method-onInit">onInit</a>()</p>
+<pre><code><code class="source-code prettyprint">onInit() {
+
+}</code>
+</code></pre><ul>
+<li>This is the first method that is called when a script is run. It should be used to instantiate the chart, because it only runs once.</li>
+</ul>
+</li>
 <li><p><a href="./manual/../class/src/index.js~feed.html#instance-method-onOpen">onOpen</a>(<a href="./manual/../typedef/index.html#static-typedef-Meta">pMeta</a>)</p>
 <pre><code><code class="source-code prettyprint">onOpen(pMeta) {
 
 }</code>
 </code></pre><ul>
-<li><p>This is the first method that is called when a script is run. It only runs once.</p>
+<li><p>This is the second method that is called when a script is run. It only runs once per day.</p>
 </li>
 <li><p>Parameters</p>
 <ul>
 <li><a href>pMeta</a>: Contains metadata associated with each symbol ran within the v9 runtime.</li>
 </ul>
 </li>
-</ul>
+<li><p>This method is called when the pane has initally loaded all previous session events and information from the current symbol.</p>
 </li>
-<li><p><a href="./manual/../class/src/index.js~feed.html#instance-method-onLoad">onLoad</a>()</p>
-<pre><code><code class="source-code prettyprint">onLoad() {
-
-}</code>
-</code></pre><ul>
-<li>This method is called when the pane has initally loaded all previous session events and information from the current symbol.</li>
 </ul>
 </li>
 <li><p><a href="./manual/../class/src/index.js~feed.html#instance-method-onRender">onRender</a>()</p>
