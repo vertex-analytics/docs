@@ -779,6 +779,13 @@ v9.feed = class {
   onStop() {}
 };
 
+/**
+ * Class used for rendering a line chart to the pane
+ * @example
+ * onInit() {
+ *     gChart = new v9.lineChart("container"); //gChart must be a global var defined outside of your feed
+ * }
+ */
 v9.lineChart = class
 {
   constructor(pID)
@@ -792,6 +799,13 @@ v9.lineChart = class
   }
 }
 
+/**
+ * Class used for rendering a cube chart to the pane
+ * @example
+ * onInit() {
+ *     gChart = new v9.cubeChart("container"); //gChart must be a global var defined outside of your feed
+ * }
+ */
 v9.cubeChart = class
 {
   constructor(pID)
@@ -827,6 +841,31 @@ v9.cubeChart = class
   cubePush(pItem, pSave)
   {
     gHome.CubePush(gUniq, pItem, pSave);
+  }
+}
+
+/**
+ * Class used for rendering a v9 console window to the pane
+ * @example
+ * onInit() {
+ *     gChart = new v9.console("container"); //gChart must be a global var defined outside of your feed
+ * }
+ */
+v9.console = class
+{
+  constructor(pID)
+  {
+    this.fTalkEnum = gHome.MakeTalk(gUniq, (pID) ? document.getElementById(pID) : null);
+  }
+
+  /**
+   * Function that writes a provided string to a new line of the v9 console output
+   * @param {String} pText - String to be written to the v9 console
+   * @public
+   */
+  print(pText) 
+  {
+    gHome.TalkText(gUniq, pText)
   }
 }
 

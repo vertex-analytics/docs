@@ -6,6 +6,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "evntscript/src/index.js~console",
+    "class/src/index.js~console.html",
+    "<span>console</span> <span class=\"search-result-import-path\">evntscript/src/index.js</span>",
+    "class"
+  ],
+  [
     "evntscript/src/index.js~cubechart",
     "class/src/index.js~cubeChart.html",
     "<span>cubeChart</span> <span class=\"search-result-import-path\">evntscript/src/index.js</span>",
@@ -540,6 +546,24 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "src/index.js~console#constructor",
+    "class/src/index.js~console.html#instance-constructor-constructor",
+    "src/index.js~console#constructor",
+    "method"
+  ],
+  [
+    "src/index.js~console#ftalkenum",
+    "class/src/index.js~console.html#instance-member-fTalkEnum",
+    "src/index.js~console#fTalkEnum",
+    "member"
+  ],
+  [
+    "src/index.js~console#print",
+    "class/src/index.js~console.html#instance-method-print",
+    "src/index.js~console#print",
+    "method"
+  ],
+  [
     "src/index.js~cubechart#constructor",
     "class/src/index.js~cubeChart.html#instance-constructor-constructor",
     "src/index.js~cubeChart#constructor",
@@ -661,13 +685,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~cubeitem#format",
-    "class/src/index.js~cubeItem.html#instance-get-format",
+    "class/src/index.js~cubeItem.html#instance-set-format",
     "src/index.js~cubeItem#format",
     "member"
   ],
   [
     "src/index.js~cubeitem#format",
-    "class/src/index.js~cubeItem.html#instance-set-format",
+    "class/src/index.js~cubeItem.html#instance-get-format",
     "src/index.js~cubeItem#format",
     "member"
   ],
@@ -703,25 +727,25 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~cubeitem#textstyle",
-    "class/src/index.js~cubeItem.html#instance-get-textStyle",
-    "src/index.js~cubeItem#textStyle",
-    "member"
-  ],
-  [
-    "src/index.js~cubeitem#textstyle",
     "class/src/index.js~cubeItem.html#instance-set-textStyle",
     "src/index.js~cubeItem#textStyle",
     "member"
   ],
   [
-    "src/index.js~cubeitem#title",
-    "class/src/index.js~cubeItem.html#instance-set-title",
-    "src/index.js~cubeItem#title",
+    "src/index.js~cubeitem#textstyle",
+    "class/src/index.js~cubeItem.html#instance-get-textStyle",
+    "src/index.js~cubeItem#textStyle",
     "member"
   ],
   [
     "src/index.js~cubeitem#title",
     "class/src/index.js~cubeItem.html#instance-get-title",
+    "src/index.js~cubeItem#title",
+    "member"
+  ],
+  [
+    "src/index.js~cubeitem#title",
+    "class/src/index.js~cubeItem.html#instance-set-title",
     "src/index.js~cubeItem#title",
     "member"
   ],
@@ -913,13 +937,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~lineitem#linewidth",
-    "class/src/index.js~lineItem.html#instance-set-lineWidth",
+    "class/src/index.js~lineItem.html#instance-get-lineWidth",
     "src/index.js~lineItem#lineWidth",
     "member"
   ],
   [
     "src/index.js~lineitem#linewidth",
-    "class/src/index.js~lineItem.html#instance-get-lineWidth",
+    "class/src/index.js~lineItem.html#instance-set-lineWidth",
     "src/index.js~lineItem#lineWidth",
     "member"
   ],
