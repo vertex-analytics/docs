@@ -542,9 +542,11 @@ v9.edit = class {
   /**
    * Used to retrieve user-specified values from the top of the pane (symbol and date correspond to the two default options at the top of a pane)
    * @example
+   * // Specific v9 keywords (&quot;symbol&quot; and &quot;date&quot;)
    * let symbol = new v9.edit(&quot;symbol&quot;).value; //gets the symbol from the default textbox at the top of the pane
    * let date = new v9.edit(&quot;date&quot;).value; //gets the date from the default textbox at the top of the pane
    * 
+   * // Custom user input keywords can be anything else
    * let quantity = new v9.edit(&quot;QUANTITY&quot;); //gets the string the user inputs into a custom &apos;QUANTITY&apos; textbox at the top of the pane
    * let quantity = new v9.edit(&quot;QUANTITY&quot;).value; //gets the string the user inputs into a custom &apos;QUANTITY&apos; textbox at the top of the pane
    * let quantity = new v9.edit(&quot;QUANTITY&quot;).number; //gets the number the user inputs into a custom &apos;QUANTITY&apos; textbox at the top of the pane
@@ -623,7 +625,8 @@ v9.edit = class {
 };
 
 /**
- * This class&apos; functions should be overridden in each script for handling user actions and symbol events
+ * This class&apos; functions should be overridden in each script for handling user actions and symbol events&lt;br&gt;
+ * &lt;p style=&quot;font-weight: bold;&quot;&gt;When instantiating your feed, refer to the {@link edit} class for handling all user input&lt;/p&gt;
  * @example
  * class MyFeed extends v9.feed {
  *		onOpen (pMeta) {
@@ -642,7 +645,17 @@ v9.edit = class {
  *		}
  * }
  *
- * let feed = new MyFeed(&lt;pSymbol&gt;, &lt;pDate&gt;);
+ * // use
+ * let feed = new MyFeed(); //Pulls symbol and date from v9 pane
+ * // or
+ * let feed = new MyFeed(&lt;symbol&gt;, &lt;date&gt;); //Custom symbol and date values can be entered here / implemented as variables
+ * // or even
+ * let request = {
+ *     symbol: new v9.edit(&apos;symbol&apos;).value, //Pulls symbol from v9 pane (See edit class)
+ *     startDate: &apos;20200401&apos;,
+ *     endDate: &apos;20200430&apos;
+ * };
+ * let feed = new MyFeed(request); //Pulls symbol from pane with custom start and end dates
  */
 v9.feed = class {
   /**

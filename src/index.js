@@ -542,9 +542,11 @@ v9.edit = class {
   /**
    * Used to retrieve user-specified values from the top of the pane (symbol and date correspond to the two default options at the top of a pane)
    * @example
+   * // Specific v9 keywords ("symbol" and "date")
    * let symbol = new v9.edit("symbol").value; //gets the symbol from the default textbox at the top of the pane
    * let date = new v9.edit("date").value; //gets the date from the default textbox at the top of the pane
    * 
+   * // Custom user input keywords can be anything else
    * let quantity = new v9.edit("QUANTITY"); //gets the string the user inputs into a custom 'QUANTITY' textbox at the top of the pane
    * let quantity = new v9.edit("QUANTITY").value; //gets the string the user inputs into a custom 'QUANTITY' textbox at the top of the pane
    * let quantity = new v9.edit("QUANTITY").number; //gets the number the user inputs into a custom 'QUANTITY' textbox at the top of the pane
@@ -623,7 +625,8 @@ v9.edit = class {
 };
 
 /**
- * This class' functions should be overridden in each script for handling user actions and symbol events
+ * This class' functions should be overridden in each script for handling user actions and symbol events<br>
+ * <p style="font-weight: bold;">When instantiating your feed, refer to the {@link edit} class for handling all user input</p>
  * @example
  * class MyFeed extends v9.feed {
  *		onOpen (pMeta) {
@@ -642,7 +645,17 @@ v9.edit = class {
  *		}
  * }
  *
- * let feed = new MyFeed(<pSymbol>, <pDate>);
+ * // use
+ * let feed = new MyFeed(); //Pulls symbol and date from v9 pane
+ * // or
+ * let feed = new MyFeed(<symbol>, <date>); //Custom symbol and date values can be entered here / implemented as variables
+ * // or even
+ * let request = {
+ *     symbol: new v9.edit('symbol').value, //Pulls symbol from v9 pane (See edit class)
+ *     startDate: '20200401',
+ *     endDate: '20200430'
+ * };
+ * let feed = new MyFeed(request); //Pulls symbol from pane with custom start and end dates
  */
 v9.feed = class {
   /**
