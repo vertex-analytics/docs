@@ -557,7 +557,13 @@ v9.edit = class
    */
   constructor(pEditName) 
   {
+    /**
+     * @private
+     */
     this.fEditType = qEditSymb;
+    /**
+     * @private
+     */
     this.fEditName = pEditName;
 
     if (pEditName)
@@ -585,6 +591,9 @@ v9.edit = class
         this.fEditType = gEditSequ++;
       }
 
+      /**
+       * @private
+       */
       this.fEditEnum = gHome.MakeEdit(gUniq, this.fEditType, pEditName);
     }
     else
@@ -594,17 +603,7 @@ v9.edit = class
   }
 
   /**
-   *
-   * @deprecated
-   * @type {string}
-   * */
-  set value(pEdit)
-  {
-    return gHome._pagesave(gUniq, this.fEditType, pEdit);
-  }
-
-  /**
-   * @deprecated
+   * Returns the user input as a string
    * @type {string}
    */
   get value()
@@ -613,21 +612,23 @@ v9.edit = class
   }
 
   /**
-   * @deprecated
+   * Sets the user input value to the provided string
    * @type {string}
-   */
-  get symbol()
+   * */
+  set value(pEdit)
   {
-    return this.fEditType == qEditSymb ? this.value : &quot;&quot;;
+    return gHome._pagesave(gUniq, this.fEditType, pEdit);
   }
 
   /**
-   * @deprecated
-   * @type {string}
+   * Returns the user input as a number
+   * @type {number}
    */
-  get date()
+  get number()
   {
-    return this.fEditType == qEditDate ? this.value : &quot;&quot;;
+    if (this._number) return this._number;
+    this._number = parseFloat(this.value);
+    return this._number;
   }
 };
 
