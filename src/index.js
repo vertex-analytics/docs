@@ -22,8 +22,10 @@ const littleEndian = true;
 /**
  * Class used for referencing all v9 event enumerations and data
  */
-export class v9 {
-  constructor() {
+export class v9
+{
+  constructor()
+  {
     /**
      * Value used specify a non-existent 32 bit price returned
      * @private
@@ -538,7 +540,8 @@ export class v9 {
 /**
  * Class used for retrieving and referencing user input
  */
-v9.edit = class {
+v9.edit = class
+{
   /**
    * Used to retrieve user-specified values from the top of the pane (symbol and date correspond to the two default options at the top of a pane)
    * @example
@@ -595,7 +598,8 @@ v9.edit = class {
    * @deprecated
    * @type {string}
    * */
-  set value(pEdit) {
+  set value(pEdit)
+  {
     return gHome._pagesave(gUniq, this.fEditType, pEdit);
   }
 
@@ -603,7 +607,8 @@ v9.edit = class {
    * @deprecated
    * @type {string}
    */
-  get value() {
+  get value()
+  {
     return gHome._pageread(gUniq, this.fEditType);
   }
 
@@ -611,7 +616,8 @@ v9.edit = class {
    * @deprecated
    * @type {string}
    */
-  get symbol() {
+  get symbol()
+  {
     return this.fEditType == qEditSymb ? this.value : "";
   }
 
@@ -619,7 +625,8 @@ v9.edit = class {
    * @deprecated
    * @type {string}
    */
-  get date() {
+  get date()
+  {
     return this.fEditType == qEditDate ? this.value : "";
   }
 };
@@ -648,7 +655,9 @@ v9.edit = class {
  * // use
  * let feed = new MyFeed(); //Pulls symbol and date from v9 pane
  * // or
- * let feed = new MyFeed(<symbol>, <date>); //Custom symbol and date values can be entered here / implemented as variables
+ * let feed = new MyFeed('NQ', '2020401'); //Custom symbol and date values can be entered here
+ * // or
+ * let feed = new MyFeed(symbol, date); //Custom symbol and date values can be implemented as variables
  * // or even
  * let request = {
  *     symbol: new v9.edit('symbol').value, //Pulls symbol from v9 pane (See edit class)
@@ -657,16 +666,30 @@ v9.edit = class {
  * };
  * let feed = new MyFeed(request); //Pulls symbol from pane with custom start and end dates
  */
-v9.feed = class {
+v9.feed = class
+{
   /**
    * Used to provide the symbol and date to the current {@link feed}
    * @param {String} [pSymbol]
    * @param {String} [pDate]
    */
-  constructor(pSymbol, pDate) {
+  constructor(pSymbol, pDate)
+  {
     gHome.MakeFeed(gUniq, pSymbol, pDate);
     gFeed = this;
   }
+
+  /**
+   * Built in feed function that is called when the start button is pressed in order to initialize the chart.
+   * @abstract
+   * @example
+   * onInit() {
+   *     gChart = new v9.lineChart("container"); //gChart must be a global var defined outside of your feed
+   * }
+   */
+  onInit() { }
+
+  onDone() { }
 
   /**
    * @typedef {Object} Instrument
@@ -723,7 +746,7 @@ v9.feed = class {
    * @property {number} userID
    */
   /**
-   * Built in feed function that is called when the start button is pressed in order to initialize variables.
+   * Built in feed function that is called at the start of each date between the startDate and endDate parameters of a multi-day script.
    * @param {Meta} pMeta - Object representing json meta information. It currently provides the instrument definitions of the supplied symbol.
    * @abstract
    * @example
@@ -731,17 +754,18 @@ v9.feed = class {
    *
    * }
    */
-  onOpen(pMeta) {}
+  onOpen(pMeta) { }
 
   /**
    * Built in feed function that is called once the script has read every previous event in the symbol Feed.
    * @abstract
+   * @deprecated
    * @example
    * onLoad() {
    *
    * }
    */
-  onLoad() {}
+  onLoad() { }
 
   /**
    * Built in feed function that is called once for each frame that is rendered to the viewport.
@@ -751,7 +775,7 @@ v9.feed = class {
    *
    * }
    */
-  onRender() {}
+  onRender() { }
 
   /**
    * Built in feed function that is called once for each timestamp tracked in your symbol.
@@ -766,7 +790,7 @@ v9.feed = class {
    *
    * }
    */
-  onEvent(pSymbol, pEvent, pRealTime) {}
+  onEvent(pSymbol, pEvent, pRealTime) { }
 
   /**
    * Built in feed function that is called when the stop button is pressed.
@@ -776,11 +800,11 @@ v9.feed = class {
    *
    * }
    */
-  onStop() {}
+  onStop() { }
 };
 
 /**
- * Class used for rendering a line chart to the pane
+ * Class used for rendering a line chart to the pane that should be called within the {@link onInit} function
  * @example
  * onInit() {
  *     gChart = new v9.lineChart("container"); //gChart must be a global var defined outside of your feed
@@ -800,7 +824,7 @@ v9.lineChart = class
 }
 
 /**
- * Class used for rendering a cube chart to the pane
+ * Class used for rendering a cube chart to the pane that should be called within the {@link onInit} function
  * @example
  * onInit() {
  *     gChart = new v9.cubeChart("container"); //gChart must be a global var defined outside of your feed
@@ -845,7 +869,7 @@ v9.cubeChart = class
 }
 
 /**
- * Class used for rendering a v9 console window to the pane
+ * Class used for rendering a v9 console window to the pane that should be called within the {@link onInit} function
  * @example
  * onInit() {
  *     gChart = new v9.console("container"); //gChart must be a global var defined outside of your feed
@@ -869,11 +893,15 @@ v9.console = class
   }
 }
 
-v9.lineItem = class {
-  constructor(pPane) {
-    try {
+v9.lineItem = class
+{
+  constructor(pPane)
+  {
+    try
+    {
       this.fCalcEnum = gHome.MakeCalc(gUniq, this);
-    } catch (e) {
+    } catch (e)
+    {
       gHome.PageErro(gUniq, "MakeCalc", e);
     }
   }
@@ -883,11 +911,14 @@ v9.lineItem = class {
    * @type {Number}
    * @public
    */
-  set lineWidth(pData) {
-    try {
+  set lineWidth(pData)
+  {
+    try
+    {
       this._lineWidth = pData;
       gHome.Calc_lineWidth(gUniq, this.fCalcEnum, pData);
-    } catch (e) {
+    } catch (e)
+    {
       gHome.PageErro(gUniq, "lineWidth", e);
     }
   }
@@ -897,11 +928,14 @@ v9.lineItem = class {
    * @type {String}
    * @public
    */
-  set strokeStyle(pData) {
-    try {
+  set strokeStyle(pData)
+  {
+    try
+    {
       this._strokeStyle = pData;
       gHome.Calc_strokeStyle(gUniq, this.fCalcEnum, pData);
-    } catch (e) {
+    } catch (e)
+    {
       gHome.PageErroo(gUniq, "strokeStyle", e);
     }
   }
@@ -911,11 +945,14 @@ v9.lineItem = class {
    * @type {String}
    * @public
    */
-  set format(pData) {
-    try {
+  set format(pData)
+  {
+    try
+    {
       this._format = pData;
       gHome.Calc_format(gUniq, this.fCalcEnum, pData);
-    } catch (e) {
+    } catch (e)
+    {
       gHome.PageErro(gUniq, "format", e);
     }
   }
@@ -925,11 +962,14 @@ v9.lineItem = class {
    * @type {String}
    * @public
    */
-  set textStyle(pData) {
-    try {
+  set textStyle(pData)
+  {
+    try
+    {
       this._textStyle = pData;
       gHome.Calc_textStyle(gUniq, this.fCalcEnum, pData);
-    } catch (e) {
+    } catch (e)
+    {
       gHome.PageErro(gUniq, "textStyle", e);
     }
   }
@@ -939,11 +979,14 @@ v9.lineItem = class {
    * @type {String}
    * @public
    */
-  set bodyStyle(pData) {
-    try {
+  set bodyStyle(pData)
+  {
+    try
+    {
       this._bodyStyle = pData;
       gHome.Calc_bodyStyle(gUniq, this.fCalcEnum, pData);
-    } catch (e) {
+    } catch (e)
+    {
       gHome.PageErro(gUniq, "textStyle", e);
     }
   }
@@ -953,11 +996,14 @@ v9.lineItem = class {
    * @type {String}
    * @public
    */
-  set title(pData) {
-    try {
+  set title(pData)
+  {
+    try
+    {
       this._title = pData;
       gHome.Calc_title(gUniq, this.fCalcEnum, pData);
-    } catch (e) {
+    } catch (e)
+    {
       gHome.PageErro(gUniq, "title", e);
     }
   }
@@ -967,11 +1013,14 @@ v9.lineItem = class {
    * @type {String}
    * @public
    */
-  set name(pData) {
-    try {
+  set name(pData)
+  {
+    try
+    {
       this._name = pData;
       gHome.Calc_name(gUniq, this.fCalcEnum, pData);
-    } catch (e) {
+    } catch (e)
+    {
       gHome.PageErro(gUniq, "name", e);
     }
   }
@@ -981,7 +1030,8 @@ v9.lineItem = class {
    * @type {Number}
    * @public
    */
-  get lineWidth() {
+  get lineWidth()
+  {
     return this._lineWidth;
   }
 
@@ -990,7 +1040,8 @@ v9.lineItem = class {
    * @type {String}
    * @public
    */
-  get strokeStyle() {
+  get strokeStyle()
+  {
     return this._strokeStyle;
   }
 
@@ -999,7 +1050,8 @@ v9.lineItem = class {
    * @type {String}
    * @public
    */
-  get textStyle() {
+  get textStyle()
+  {
     return this._textStyle;
   }
 
@@ -1008,7 +1060,8 @@ v9.lineItem = class {
    * @type {String}
    * @readonly
    */
-  get eventStyle() {
+  get eventStyle()
+  {
     return this._eventStyle;
   }
 
@@ -1017,7 +1070,8 @@ v9.lineItem = class {
    * @type {String}
    * @public
    */
-  get title() {
+  get title()
+  {
     return this._title;
   }
 
@@ -1026,17 +1080,22 @@ v9.lineItem = class {
    * @type {String}
    * @public
    */
-  get format() {
+  get format()
+  {
     return this._format;
   }
 };
 
-v9.cubeItem = class {
-  constructor(pPane) {
-    try {
+v9.cubeItem = class
+{
+  constructor(pPane)
+  {
+    try
+    {
       this.fCalcEnum = gHome.MakeCalc(gUniq, this);
       this.fCubeMaps = new Map();
-    } catch (e) {
+    } catch (e)
+    {
       gHome.PageErro(gUniq, "MakeCalc", e);
     }
   }
@@ -1046,11 +1105,14 @@ v9.cubeItem = class {
    * @type {Number}
    * @public
    */
-  set lineWidth(pData) {
-    try {
+  set lineWidth(pData)
+  {
+    try
+    {
       this._lineWidth = pData;
       gHome.Calc_lineWidth(gUniq, this.fCalcEnum, pData);
-    } catch (e) {
+    } catch (e)
+    {
       gHome.PageErro(gUniq, "lineWidth", e);
     }
   }
@@ -1060,11 +1122,14 @@ v9.cubeItem = class {
    * @type {String}
    * @public
    */
-  set strokeStyle(pData) {
-    try {
+  set strokeStyle(pData)
+  {
+    try
+    {
       this._strokeStyle = pData;
       gHome.Calc_strokeStyle(gUniq, this.fCalcEnum, pData);
-    } catch (e) {
+    } catch (e)
+    {
       gHome.PageErroo(gUniq, "strokeStyle", e);
     }
   }
@@ -1074,11 +1139,14 @@ v9.cubeItem = class {
    * @type {String}
    * @readonly
    */
-  set format(pData) {
-    try {
+  set format(pData)
+  {
+    try
+    {
       this._format = pData;
       gHome.Calc_format(gUniq, this.fCalcEnum, pData);
-    } catch (e) {
+    } catch (e)
+    {
       gHome.PageErro(gUniq, "format", e);
     }
   }
@@ -1088,11 +1156,14 @@ v9.cubeItem = class {
    * @type {String}
    * @public
    */
-  set textStyle(pData) {
-    try {
+  set textStyle(pData)
+  {
+    try
+    {
       this._textStyle = pData;
       gHome.Calc_textStyle(gUniq, this.fCalcEnum, pData);
-    } catch (e) {
+    } catch (e)
+    {
       gHome.PageErro(gUniq, "textStyle", e);
     }
   }
@@ -1102,11 +1173,14 @@ v9.cubeItem = class {
    * @type {String}
    * @public
    */
-  set bodyStyle(pData) {
-    try {
+  set bodyStyle(pData)
+  {
+    try
+    {
       this._bodyStyle = pData;
       gHome.Calc_bodyStyle(gUniq, this.fCalcEnum, pData);
-    } catch (e) {
+    } catch (e)
+    {
       gHome.PageErro(gUniq, "textStyle", e);
     }
   }
@@ -1116,11 +1190,14 @@ v9.cubeItem = class {
    * @type {String}
    * @public
    */
-  set title(pData) {
-    try {
+  set title(pData)
+  {
+    try
+    {
       this._title = pData;
       gHome.Calc_title(gUniq, this.fCalcEnum, pData);
-    } catch (e) {
+    } catch (e)
+    {
       gHome.PageErro(gUniq, "title", e);
     }
   }
@@ -1130,11 +1207,14 @@ v9.cubeItem = class {
    * @type {String}
    * @public
    */
-  set name(pData) {
-    try {
+  set name(pData)
+  {
+    try
+    {
       this._name = pData;
       gHome.Calc_name(gUniq, this.fCalcEnum, pData);
-    } catch (e) {
+    } catch (e)
+    {
       gHome.PageErro(gUniq, "name", e);
     }
   }
@@ -1144,7 +1224,8 @@ v9.cubeItem = class {
    * @type {Number}
    * @public
    */
-  get lineWidth() {
+  get lineWidth()
+  {
     return this._lineWidth;
   }
 
@@ -1153,7 +1234,8 @@ v9.cubeItem = class {
    * @type {String}
    * @public
    */
-  get strokeStyle() {
+  get strokeStyle()
+  {
     return this._strokeStyle;
   }
 
@@ -1162,7 +1244,8 @@ v9.cubeItem = class {
    * @type {String}
    * @public
    */
-  get textStyle() {
+  get textStyle()
+  {
     return this._textStyle;
   }
 
@@ -1171,7 +1254,8 @@ v9.cubeItem = class {
    * @type {String}
    * @readonly
    */
-  get eventStyle() {
+  get eventStyle()
+  {
     return this._eventStyle;
   }
 
@@ -1180,7 +1264,8 @@ v9.cubeItem = class {
    * @type {String}
    * @public
    */
-  get title() {
+  get title()
+  {
     return this._title;
   }
 
@@ -1189,7 +1274,8 @@ v9.cubeItem = class {
    * @type {String}
    * @public
    */
-  get format() {
+  get format()
+  {
     return this._format;
   }
 };
@@ -1198,24 +1284,30 @@ v9.cubeItem = class {
  * Returns a JSON Object representing the provided {@link Event}
  * @param {Event} pEvent
  */
-v9.eventToJson = function(pEvent) {
+v9.eventToJson = function (pEvent)
+{
   let tEvent = v9.eventCopy(pEvent);
 
-  if (tEvent !== undefined) {
+  if (tEvent !== undefined)
+  {
     let intCount = 0,
       repCount = 0;
-    const json = JSON.stringify(tEvent, (_, v) => {
-      if (typeof v === "bigint") {
+    const json = JSON.stringify(tEvent, (_, v) =>
+    {
+      if (typeof v === "bigint")
+      {
         intCount++;
         return `${v}#bigint`;
       }
       return v;
     });
-    const res = json.replace(/"(-?\d+)#bigint"/g, (_, a) => {
+    const res = json.replace(/"(-?\d+)#bigint"/g, (_, a) =>
+    {
       repCount++;
       return a;
     });
-    if (repCount > intCount) {
+    if (repCount > intCount)
+    {
       // You have a string somewhere that looks like "123#bigint";
       throw new Error(
         `BigInt serialization pattern conflict with a string value.`
@@ -1229,16 +1321,20 @@ v9.eventToJson = function(pEvent) {
  * Returns a copy of a provided {@link Event}
  * @param {Event} pEvent
  */
-v9.eventCopy = function(pEvent) {
+v9.eventCopy = function (pEvent)
+{
   let tEvent = {};
 
-  if (pEvent.header) {
+  if (pEvent.header)
+  {
     tEvent.header = {};
     tEvent.header = Object.assign(pEvent.header);
   }
 
-  try {
-    switch (pEvent.header.unionID) {
+  try
+  {
+    switch (pEvent.header.unionID)
+    {
       case v9.UnionID.TransactionMarker:
         tEvent.transactionMarker = {};
         tEvent.transactionMarker = Object.assign(pEvent.transactionMarker);
@@ -1288,7 +1384,7 @@ v9.eventCopy = function(pEvent) {
         tEvent.clearingPrice = Object.assign(pEvent.clearingPrice);
         break;
     }
-  } catch (e) {}
+  } catch (e) { }
 
   return tEvent;
 };
@@ -1301,12 +1397,15 @@ v9.eventCopy = function(pEvent) {
  * @param {Number} columnNo
  * @param {any} error
  */
-window.onerror = function(msg, url, lineNo, columnNo, error) {
+window.onerror = function (msg, url, lineNo, columnNo, error)
+{
   var string = msg.toLowerCase();
   var substring = "script error";
-  if (string.indexOf(substring) > -1) {
+  if (string.indexOf(substring) > -1)
+  {
     gHome._pageerro(gUniq, "Script Error: See Browser Console for Detail");
-  } else {
+  } else
+  {
     //var message = [
     //	'Message: ' + msg,
     //	'URL: ' + url,
@@ -1328,8 +1427,10 @@ window.onerror = function(msg, url, lineNo, columnNo, error) {
 /**
  * Class used for referencing any individual {@link Event} from the current {@link feed}
  */
-export class Event {
-  constructor() {
+export class Event
+{
+  constructor()
+  {
     /**
      * @typedef {object} Header
      * @property {number} unionID Enumerated value used to find the type of an Event object
