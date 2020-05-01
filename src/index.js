@@ -1,12 +1,17 @@
 /**
- * The current symbol being accessed by the pane
+ * 
+ * @private
  */
 const qEditSymb = 2001;
 /**
- * The current date being accessed by the pane
+ * 
+ * @private
  */
 const qEditDate = 2002;
-
+/**
+ * 
+ * @private
+ */
 const littleEndian = true;
 
 /**
