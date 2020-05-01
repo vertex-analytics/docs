@@ -634,22 +634,22 @@ v9.edit = class
 
 /**
  * This class' functions should be overridden in each script for handling user actions and symbol events<br>
- * <p style="font-weight: bold;">When instantiating your feed, refer to the {@link edit} class for handling all user input</p>
+ * When finally instantiating your feed, refer to the {@link edit} class for handling all user input
  * @example
  * class MyFeed extends v9.feed {
- *		onOpen (pMeta) {
+ *     onInit() {
+ *		}
+ * 
+ *		onOpen(pMeta) {
  *		}
  *
- *		onLoad () {
+ *		onStop() {
  *		}
  *
- *		onStop () {
+ *		onRender() {
  *		}
  *
- *		onRender () {
- *		}
- *
- *		onEvent (pSymbol,pEvent,pRealTime) {
+ *		onEvent(pSymbol,pEvent,pRealTime) {
  *		}
  * }
  *
@@ -690,6 +690,13 @@ v9.feed = class
    */
   onInit() { }
 
+  /**
+   * @abstract
+   * @example
+   * onDone() {
+   * 
+   * }
+   */
   onDone() { }
 
   /**
