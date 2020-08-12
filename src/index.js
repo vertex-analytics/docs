@@ -1455,7 +1455,7 @@ export class Event
      */
     /**
      * Each Event’s header object provides access to general Event information and is accessed using:
-     *  - <EventName>.header.<memberName>
+     *  - <EventName>․header․<memberName>
      * @type {Header}
      * @example
      * onEvent(pSymbol, pEvent, pRealTime) {
@@ -1489,7 +1489,7 @@ export class Event
      */
     /**
      * Each tradeSummary Event object is accessed using:
-     *  - <EventName>.header.tradeSummary
+     *  - <EventName>․tradeSummary․<memberName>
      * @type {TradeSummary}
      */
     this.tradeSummary = {
@@ -1514,7 +1514,7 @@ export class Event
      */
     /**
      * Each tradeMatch Event object is accessed using:
-     *  - <EventName>.header.tradeMatch
+     *  - <EventName>․tradeMatch․<memberName>
      * @type {TradeMatch}
      */
     this.tradeMatch = {
@@ -1534,7 +1534,7 @@ export class Event
      */
     /**
      * Each volumeUpdate Event object is accessed using:
-     *  - <EventName>.header.volumeUpdate
+     *  - <EventName>․volumeUpdate․<memberName>
      * @type {VolumeUpdate}
      * */
     this.volumeUpdate = {
@@ -1556,7 +1556,7 @@ export class Event
      */
     /**
      * Each bookLevel Event object is accessed using:
-     *  - <EventName>.header.bookLevel
+     *  - <EventName>․bookLevel․<memberName>
      * @type {BookLevel}
      */
     this.bookLevel = {
@@ -1584,7 +1584,7 @@ export class Event
      */
     /**
      * Each orderBook Event object is accessed using:
-     *  - <EventName>.header.orderBook
+     *  - <EventName>․orderBook․<memberName>
      * @type {OrderBook}
      */
     this.orderBook = {
@@ -1609,7 +1609,7 @@ export class Event
      */
     /**
      * Each securityStatus Event object is accessed using:
-     *  - <EventName>.header.securityStatus
+     *  - <EventName>․securityStatus․<memberName>
      * @type {SecurityStatus}
      */
     this.securityStatus = {
@@ -1635,7 +1635,7 @@ export class Event
      */
     /**
      * Each dailyStatistics Event object is accessed using:
-     *  - <EventName>.header.dailyStatistics
+     *  - <EventName>․dailyStatistics․<memberName>
      * @type {DailyStatistics}
      */
     this.dailyStatistics = {
@@ -1662,7 +1662,7 @@ export class Event
      */
     /**
      * Each sessionStatistics Event object is accessed using:
-     *  - <EventName>.header.sessionStatistics
+     *  - <EventName>․sessionStatistics․<memberName>
      * @type {SessionStatistics}
      */
     this.sessionStatistics = {
@@ -1682,7 +1682,7 @@ export class Event
      */
     /**
      * Each limitsBanding Event object is accessed using:
-     *  - <EventName>.header.limitsBanding
+     *  - <EventName>․limitsBanding․<memberName>
      * @type {LimitsBanding}
      */
     this.limitsBanding = {
@@ -1697,7 +1697,7 @@ export class Event
      */
     /**
      * Each channelReset Event object is accessed using:
-     *  - <EventName>.header.channelReset
+     *  - <EventName>․channelReset․<memberName>
      * @type {ChannelReset}
      * */
     this.channelReset = {
@@ -1710,7 +1710,7 @@ export class Event
      */
     /**
      * Each transactionMarker Event object is accessed using:
-     *  - <EventName>.header.transactionMarker
+     *  - <EventName>․transactionMarker․<memberName>
      * @type {TransactionMarker}
      * @return
      */
