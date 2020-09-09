@@ -27,10 +27,8 @@ const littleEndian = true;
 /**
  * Class used for referencing all v9 event enumerations and data
  */
-export class v9
-{
-  constructor()
-  {
+export class v9 {
+  constructor() {
     /**
      * Value used specify a non-existent 32 bit price returned
      * @private
@@ -539,8 +537,7 @@ export class v9
 /**
  * Class used for retrieving and referencing user input
  */
-v9.edit = class
-{
+v9.edit = class {
   /**
    * Used to retrieve user-specified values from the top of the pane (symbol and date correspond to the two default options at the top of a pane)
    * @example
@@ -554,8 +551,7 @@ v9.edit = class
    * let quantity = new v9.edit(&quot;QUANTITY&quot;).number; //gets the number the user inputs into a custom &apos;QUANTITY&apos; textbox at the top of the pane
    * @param {String} [pEditVariable]
    */
-  constructor(pEditName) 
-  {
+  constructor(pEditName) {
     /**
      * @private
      */
@@ -565,27 +561,21 @@ v9.edit = class
      */
     this.fEditName = pEditName;
 
-    if (pEditName)
-    {
-      if (gEditMaps[pEditName.toUpperCase()])
-      {
+    if (pEditName) {
+      if (gEditMaps[pEditName.toUpperCase()]) {
         gHome._pageerro(gUniq, &quot;Edit name already defined&quot;);
       }
-      else
-      {
+      else {
         gEditMaps[pEditName.toUpperCase()] = true;
       }
 
-      if (pEditName.toUpperCase() === &quot;SYMBOL&quot;)
-      {
+      if (pEditName.toUpperCase() === &quot;SYMBOL&quot;) {
         this.fEditType = qEditSymb;
       }
-      else if (pEditName.toUpperCase() === &quot;DATE&quot;)
-      {
+      else if (pEditName.toUpperCase() === &quot;DATE&quot;) {
         this.fEditType = qEditDate;
       }
-      else
-      {
+      else {
         gEditList.push(this);
         this.fEditType = gEditSequ++;
       }
@@ -595,8 +585,7 @@ v9.edit = class
        */
       this.fEditEnum = gHome.MakeEdit(gUniq, this.fEditType, pEditName);
     }
-    else
-    {
+    else {
       gHome._pageerro(gUniq, &quot;Edit name must be defined&quot;);
     }
   }
@@ -605,8 +594,7 @@ v9.edit = class
    * Returns the user input as a string
    * @type {string}
    */
-  get value()
-  {
+  get value() {
     return gHome._pageread(gUniq, this.fEditType);
   }
 
@@ -614,8 +602,7 @@ v9.edit = class
    * Sets the user input value to the provided string
    * @type {string}
    * */
-  set value(pEdit)
-  {
+  set value(pEdit) {
     return gHome._pagesave(gUniq, this.fEditType, pEdit);
   }
 
@@ -623,8 +610,7 @@ v9.edit = class
    * Returns the user input as a number
    * @type {number}
    */
-  get number()
-  {
+  get number() {
     if (this._number) return this._number;
     this._number = parseFloat(this.value);
     return this._number;
@@ -666,15 +652,13 @@ v9.edit = class
  * };
  * let feed = new MyFeed(request); //Pulls symbol from pane with custom start and end dates
  */
-v9.feed = class
-{
+v9.feed = class {
   /**
    * Used to provide the symbol and date to the current {@link feed}
    * @param {String} [pSymbol]
    * @param {String} [pDate]
    */
-  constructor(pSymbol, pDate)
-  {
+  constructor(pSymbol, pDate) {
     gHome.MakeFeed(gUniq, pSymbol, pDate);
     gFeed = this;
   }
@@ -817,15 +801,12 @@ v9.feed = class
  *     gChart = new v9.lineChart(&quot;container&quot;); //gChart must be a global var defined outside of your feed
  * }
  */
-v9.lineChart = class
-{
-  constructor(pID)
-  {
+v9.lineChart = class {
+  constructor(pID) {
     this.fLineEnum = gHome.MakeLine(gUniq, (pID) ? document.getElementById(pID) : null);
   }
 
-  linePush(pItem, pRate, pTime)
-  {
+  linePush(pItem, pRate, pTime) {
     gHome.LinePush(gUniq, pItem.fCalcEnum, pRate, pTime);
   }
 }
@@ -837,40 +818,32 @@ v9.lineChart = class
  *     gChart = new v9.cubeChart(&quot;container&quot;); //gChart must be a global var defined outside of your feed
  * }
  */
-v9.cubeChart = class
-{
-  constructor(pID)
-  {
+v9.cubeChart = class {
+  constructor(pID) {
     this.fCubeEnum = gHome.MakeCube(gUniq, (pID) ? document.getElementById(pID) : null);
   }
 
-  cubePlus(pItem, pData, pSize)
-  {
+  cubePlus(pItem, pData, pSize) {
     gHome.CubePlus(gUniq, pItem, pData, pSize);
   }
 
-  cubeDele(pItem, pData)
-  {
+  cubeDele(pItem, pData) {
     gHome.CubeDele(gUniq, pItem, pData);
   }
 
-  cubeSave(pItem, pData, pSize)
-  {
+  cubeSave(pItem, pData, pSize) {
     gHome.CubeSave(gUniq, pItem, pData, pSize);
   }
 
-  cubeRead(pItem, pData)
-  {
+  cubeRead(pItem, pData) {
     gHome.CubeRead(gUniq, pItem, pData);
   }
 
-  cubeFree(pItem)
-  {
+  cubeFree(pItem) {
     gHome.CubeFree(gUniq, pItem);
   }
 
-  cubePush(pItem, pSave)
-  {
+  cubePush(pItem, pSave) {
     gHome.CubePush(gUniq, pItem, pSave);
   }
 }
@@ -882,10 +855,8 @@ v9.cubeChart = class
  *     gChart = new v9.console(&quot;container&quot;); //gChart must be a global var defined outside of your feed
  * }
  */
-v9.console = class
-{
-  constructor(pID)
-  {
+v9.console = class {
+  constructor(pID) {
     this.fTalkEnum = gHome.MakeTalk(gUniq, (pID) ? document.getElementById(pID) : null);
   }
 
@@ -894,21 +865,16 @@ v9.console = class
    * @param {String} pText - String to be written to the v9 console
    * @public
    */
-  print(pText) 
-  {
+  print(pText) {
     gHome.TalkText(gUniq, pText)
   }
 }
 
-v9.lineItem = class
-{
-  constructor(pPane)
-  {
-    try
-    {
+v9.lineItem = class {
+  constructor(pPane) {
+    try {
       this.fCalcEnum = gHome.MakeCalc(gUniq, this);
-    } catch (e)
-    {
+    } catch (e) {
       gHome.PageErro(gUniq, &quot;MakeCalc&quot;, e);
     }
   }
@@ -918,14 +884,11 @@ v9.lineItem = class
    * @type {Number}
    * @public
    */
-  set lineWidth(pData)
-  {
-    try
-    {
+  set lineWidth(pData) {
+    try {
       this._lineWidth = pData;
       gHome.Calc_lineWidth(gUniq, this.fCalcEnum, pData);
-    } catch (e)
-    {
+    } catch (e) {
       gHome.PageErro(gUniq, &quot;lineWidth&quot;, e);
     }
   }
@@ -935,14 +898,11 @@ v9.lineItem = class
    * @type {String}
    * @public
    */
-  set strokeStyle(pData)
-  {
-    try
-    {
+  set strokeStyle(pData) {
+    try {
       this._strokeStyle = pData;
       gHome.Calc_strokeStyle(gUniq, this.fCalcEnum, pData);
-    } catch (e)
-    {
+    } catch (e) {
       gHome.PageErroo(gUniq, &quot;strokeStyle&quot;, e);
     }
   }
@@ -952,14 +912,11 @@ v9.lineItem = class
    * @type {String}
    * @public
    */
-  set format(pData)
-  {
-    try
-    {
+  set format(pData) {
+    try {
       this._format = pData;
       gHome.Calc_format(gUniq, this.fCalcEnum, pData);
-    } catch (e)
-    {
+    } catch (e) {
       gHome.PageErro(gUniq, &quot;format&quot;, e);
     }
   }
@@ -969,14 +926,11 @@ v9.lineItem = class
    * @type {String}
    * @public
    */
-  set textStyle(pData)
-  {
-    try
-    {
+  set textStyle(pData) {
+    try {
       this._textStyle = pData;
       gHome.Calc_textStyle(gUniq, this.fCalcEnum, pData);
-    } catch (e)
-    {
+    } catch (e) {
       gHome.PageErro(gUniq, &quot;textStyle&quot;, e);
     }
   }
@@ -986,14 +940,11 @@ v9.lineItem = class
    * @type {String}
    * @public
    */
-  set bodyStyle(pData)
-  {
-    try
-    {
+  set bodyStyle(pData) {
+    try {
       this._bodyStyle = pData;
       gHome.Calc_bodyStyle(gUniq, this.fCalcEnum, pData);
-    } catch (e)
-    {
+    } catch (e) {
       gHome.PageErro(gUniq, &quot;textStyle&quot;, e);
     }
   }
@@ -1003,14 +954,11 @@ v9.lineItem = class
    * @type {String}
    * @public
    */
-  set title(pData)
-  {
-    try
-    {
+  set title(pData) {
+    try {
       this._title = pData;
       gHome.Calc_title(gUniq, this.fCalcEnum, pData);
-    } catch (e)
-    {
+    } catch (e) {
       gHome.PageErro(gUniq, &quot;title&quot;, e);
     }
   }
@@ -1020,14 +968,11 @@ v9.lineItem = class
    * @type {String}
    * @public
    */
-  set name(pData)
-  {
-    try
-    {
+  set name(pData) {
+    try {
       this._name = pData;
       gHome.Calc_name(gUniq, this.fCalcEnum, pData);
-    } catch (e)
-    {
+    } catch (e) {
       gHome.PageErro(gUniq, &quot;name&quot;, e);
     }
   }
@@ -1037,8 +982,7 @@ v9.lineItem = class
    * @type {Number}
    * @public
    */
-  get lineWidth()
-  {
+  get lineWidth() {
     return this._lineWidth;
   }
 
@@ -1047,8 +991,7 @@ v9.lineItem = class
    * @type {String}
    * @public
    */
-  get strokeStyle()
-  {
+  get strokeStyle() {
     return this._strokeStyle;
   }
 
@@ -1057,8 +1000,7 @@ v9.lineItem = class
    * @type {String}
    * @public
    */
-  get textStyle()
-  {
+  get textStyle() {
     return this._textStyle;
   }
 
@@ -1067,8 +1009,7 @@ v9.lineItem = class
    * @type {String}
    * @readonly
    */
-  get eventStyle()
-  {
+  get eventStyle() {
     return this._eventStyle;
   }
 
@@ -1077,8 +1018,7 @@ v9.lineItem = class
    * @type {String}
    * @public
    */
-  get title()
-  {
+  get title() {
     return this._title;
   }
 
@@ -1087,22 +1027,17 @@ v9.lineItem = class
    * @type {String}
    * @public
    */
-  get format()
-  {
+  get format() {
     return this._format;
   }
 };
 
-v9.cubeItem = class
-{
-  constructor(pPane)
-  {
-    try
-    {
+v9.cubeItem = class {
+  constructor(pPane) {
+    try {
       this.fCalcEnum = gHome.MakeCalc(gUniq, this);
       this.fCubeMaps = new Map();
-    } catch (e)
-    {
+    } catch (e) {
       gHome.PageErro(gUniq, &quot;MakeCalc&quot;, e);
     }
   }
@@ -1112,14 +1047,11 @@ v9.cubeItem = class
    * @type {Number}
    * @public
    */
-  set lineWidth(pData)
-  {
-    try
-    {
+  set lineWidth(pData) {
+    try {
       this._lineWidth = pData;
       gHome.Calc_lineWidth(gUniq, this.fCalcEnum, pData);
-    } catch (e)
-    {
+    } catch (e) {
       gHome.PageErro(gUniq, &quot;lineWidth&quot;, e);
     }
   }
@@ -1129,14 +1061,11 @@ v9.cubeItem = class
    * @type {String}
    * @public
    */
-  set strokeStyle(pData)
-  {
-    try
-    {
+  set strokeStyle(pData) {
+    try {
       this._strokeStyle = pData;
       gHome.Calc_strokeStyle(gUniq, this.fCalcEnum, pData);
-    } catch (e)
-    {
+    } catch (e) {
       gHome.PageErroo(gUniq, &quot;strokeStyle&quot;, e);
     }
   }
@@ -1146,14 +1075,11 @@ v9.cubeItem = class
    * @type {String}
    * @readonly
    */
-  set format(pData)
-  {
-    try
-    {
+  set format(pData) {
+    try {
       this._format = pData;
       gHome.Calc_format(gUniq, this.fCalcEnum, pData);
-    } catch (e)
-    {
+    } catch (e) {
       gHome.PageErro(gUniq, &quot;format&quot;, e);
     }
   }
@@ -1163,14 +1089,11 @@ v9.cubeItem = class
    * @type {String}
    * @public
    */
-  set textStyle(pData)
-  {
-    try
-    {
+  set textStyle(pData) {
+    try {
       this._textStyle = pData;
       gHome.Calc_textStyle(gUniq, this.fCalcEnum, pData);
-    } catch (e)
-    {
+    } catch (e) {
       gHome.PageErro(gUniq, &quot;textStyle&quot;, e);
     }
   }
@@ -1180,14 +1103,11 @@ v9.cubeItem = class
    * @type {String}
    * @public
    */
-  set bodyStyle(pData)
-  {
-    try
-    {
+  set bodyStyle(pData) {
+    try {
       this._bodyStyle = pData;
       gHome.Calc_bodyStyle(gUniq, this.fCalcEnum, pData);
-    } catch (e)
-    {
+    } catch (e) {
       gHome.PageErro(gUniq, &quot;textStyle&quot;, e);
     }
   }
@@ -1197,14 +1117,11 @@ v9.cubeItem = class
    * @type {String}
    * @public
    */
-  set title(pData)
-  {
-    try
-    {
+  set title(pData) {
+    try {
       this._title = pData;
       gHome.Calc_title(gUniq, this.fCalcEnum, pData);
-    } catch (e)
-    {
+    } catch (e) {
       gHome.PageErro(gUniq, &quot;title&quot;, e);
     }
   }
@@ -1214,14 +1131,11 @@ v9.cubeItem = class
    * @type {String}
    * @public
    */
-  set name(pData)
-  {
-    try
-    {
+  set name(pData) {
+    try {
       this._name = pData;
       gHome.Calc_name(gUniq, this.fCalcEnum, pData);
-    } catch (e)
-    {
+    } catch (e) {
       gHome.PageErro(gUniq, &quot;name&quot;, e);
     }
   }
@@ -1231,8 +1145,7 @@ v9.cubeItem = class
    * @type {Number}
    * @public
    */
-  get lineWidth()
-  {
+  get lineWidth() {
     return this._lineWidth;
   }
 
@@ -1241,8 +1154,7 @@ v9.cubeItem = class
    * @type {String}
    * @public
    */
-  get strokeStyle()
-  {
+  get strokeStyle() {
     return this._strokeStyle;
   }
 
@@ -1251,8 +1163,7 @@ v9.cubeItem = class
    * @type {String}
    * @public
    */
-  get textStyle()
-  {
+  get textStyle() {
     return this._textStyle;
   }
 
@@ -1261,8 +1172,7 @@ v9.cubeItem = class
    * @type {String}
    * @readonly
    */
-  get eventStyle()
-  {
+  get eventStyle() {
     return this._eventStyle;
   }
 
@@ -1271,8 +1181,7 @@ v9.cubeItem = class
    * @type {String}
    * @public
    */
-  get title()
-  {
+  get title() {
     return this._title;
   }
 
@@ -1281,40 +1190,422 @@ v9.cubeItem = class
    * @type {String}
    * @public
    */
-  get format()
-  {
+  get format() {
     return this._format;
   }
 };
 
 /**
+ * Class used for managing the first 10 levels of the current book
+ * @example
+ * onInit() {
+ *     gBook = new v9.book(); //gBook must be a global var defined outside of your feed
+ * }
+ * 
+ * //Right now, it is necessary to include the following lines in your feed&apos;s onEvent function
+ * onEvent(pSymbol, pEvent, pRealTime) {
+ *     pEvent.channelReset.type;
+ *     pEvent.orderBook.orderID;
+ *     pEvent.orderBook.price;
+ *     pEvent.orderBook.quantity;
+ *     pEvent.orderBook.type;
+ *     pEvent.orderBook.action;
+ *     gBook.onEvent(pEvent);
+ * }
+ */
+v9.book = class {
+  constructor() {
+    this.fListLevB = new v9.list(&quot;fListLevB&quot;);
+    this.fListLevA = new v9.list(&quot;fListLevA&quot;);
+    this.fListOrdA = new v9.list(&quot;fListOrdA&quot;);
+    this.fListOrdB = new v9.list(&quot;fListOrdB&quot;);
+  }
+
+  BookRowsA() {
+    return this.fListLevA.ListRows();
+  }
+
+  BookRowsB() {
+    return this.fListLevB.ListRows();
+  }
+
+  BookItemA(cnt) {
+    if ((cnt &lt; 1) || (cnt &gt; this.fListLevA.ListRows())) return {};
+    return { price: this.fListLevA.fListBase[cnt - 1].key, quantity: this.fListLevA.fListBase[cnt - 1].q };
+  }
+
+  BookItemB(cnt) {
+    if ((cnt &lt; 1) || (cnt &gt; this.fListLevB.ListRows())) return {};
+    let tCnt = (this.fListLevB.ListRows() - cnt);
+    return { price: this.fListLevB.fListBase[tCnt].key, quantity: this.fListLevB.fListBase[tCnt].q };
+  }
+
+  BookTalk() {
+    this.fListLevB.ListTalk();
+    this.fListLevA.ListTalk();
+
+    for (let cnt = 0; cnt &lt; 8; cnt++) {
+      DSS(cnt, this.fListType[cnt]);
+    }
+
+    DSS(&quot;this.fErro1&quot;, this.fErro1);
+    DSS(&quot;this.fErro2&quot;, this.fErro2);
+    DSS(&quot;this.fErro3&quot;, this.fErro3);
+    DSS(&quot;this.fErro4&quot;, this.fErro4);
+    DSS(&quot;this.fErro5&quot;, this.fErro5);
+    DSS(&quot;this.fErro6&quot;, this.fErro6);
+  }
+
+  BookDeleA(quantity, price) {
+    let tItemP = { key: price, q: quantity };
+    let tFindP = this.fListLevA.ListFind(tItemP);
+
+    if (!tFindP) {
+      this.fErro1++;
+      return;
+    }
+    tFindP--;
+
+    this.fListLevA.fListBase[tFindP].q -= quantity;
+    if (this.fListLevA.fListBase[tFindP].q &lt; 0) this.fListLevA.fListBase[tFindP].q = 0;
+
+    if (this.fListLevA.fListBase[tFindP].q == 0) {
+      this.fListLevA.ListDele(tFindP);
+    }
+  }
+
+  BookPlusA(quantity, price) {
+    let tItemP = { key: price, q: quantity };
+    let tFindP = this.fListLevA.ListFind(tItemP);
+
+    if (tFindP == 0) {
+      this.fListLevA.ListSert(this.fListLevA.fSert, tItemP)
+    }
+    else {
+      tFindP--;
+      this.fListLevA.fListBase[tFindP].q += quantity;
+    }
+
+  }
+
+  BookDeleB(quantity, price) {
+    let tItemP = { key: price, q: quantity };
+    let tFindP = this.fListLevB.ListFind(tItemP);
+
+    if (!tFindP) {
+      this.fErro1++;
+      return;
+    }
+    tFindP--;
+
+    this.fListLevB.fListBase[tFindP].q -= quantity;
+    if (this.fListLevB.fListBase[tFindP].q &lt; 0) this.fListLevB.fListBase[tFindP].q = 0;
+
+    if (this.fListLevB.fListBase[tFindP].q == 0) {
+      this.fListLevB.ListDele(tFindP);
+    }
+  }
+
+  BookPlusB(quantity, price) {
+    let tItemP = { key: price, q: quantity };
+    let tFindP = this.fListLevB.ListFind(tItemP);
+
+    if (tFindP == 0) {
+      this.fListLevB.ListSert(this.fListLevB.fSert, tItemP)
+    }
+    else {
+      tFindP--;
+      this.fListLevB.fListBase[tFindP].q += quantity;
+    }
+
+  }
+
+  OrdsPlusA(orderID, quantity, price) {
+    let tItemO = { key: orderID, q: quantity, p: price };
+    let tFindO = this.fListOrdA.ListFind(tItemO);
+
+    if (tFindO == 0) {
+      this.fListOrdA.ListSert(this.fListOrdA.fSert, tItemO)
+    }
+    else {
+      this.fErro2++;
+    }
+  }
+
+  OrdsDeleA(orderID, quantity, price) {
+    let tItemO = { key: orderID, q: quantity, p: price };
+    let tFindO = this.fListOrdA.ListFind(tItemO);
+    if (!tFindO) {
+      this.fErro3++;
+      return;
+    }
+    tFindO--;
+
+    this.fListOrdA.fListBase[tFindO].q -= quantity;
+    if (this.fListOrdA.fListBase[tFindO].q &lt; 0) this.fListOrdA.fListBase[tFindO].q = 0;
+
+    if (this.fListOrdA.fListBase[tFindO].q == 0) {
+      this.fListOrdA.ListDele(tFindO);
+    }
+  }
+
+  OrdsPlusB(orderID, quantity, price) {
+    let tItemO = { key: orderID, q: quantity, p: price };
+    let tFindO = this.fListOrdB.ListFind(tItemO);
+
+    if (tFindO == 0) {
+      this.fListOrdB.ListSert(this.fListOrdB.fSert, tItemO)
+    }
+    else {
+      this.fErro2++;
+    }
+  }
+
+  OrdsDeleB(orderID, quantity, price) {
+    let tItemO = { key: orderID, q: quantity, p: price };
+    let tFindO = this.fListOrdB.ListFind(tItemO);
+    if (!tFindO) {
+      this.fErro3++;
+      return;
+    }
+    tFindO--;
+
+    this.fListOrdB.fListBase[tFindO].q -= quantity;
+    if (this.fListOrdB.fListBase[tFindO].q &lt; 0) this.fListOrdB.fListBase[tFindO].q = 0;
+
+    if (this.fListOrdB.fListBase[tFindO].q == 0) {
+      this.fListOrdB.ListDele(tFindO);
+    }
+  }
+
+  onEvent(pEvent) {
+    switch (pEvent.header.unionID) {
+      case v9.UnionID.ChannelReset:
+        {
+          let tType = pEvent.channelReset.type;
+          this.fListLevB.ListZero();
+          this.fListLevA.ListZero();
+          this.fListOrd.ListZero();
+        }
+        break;
+
+      case v9.UnionID.OrderBook:
+
+        switch (pEvent.orderBook.type) {
+
+          case v9.BookType.Bid:
+            {
+              switch (pEvent.orderBook.action) {
+
+                case v9.BookAction.Change:
+
+                  {
+                    let tItemO = { key: pEvent.orderBook.orderID, q: pEvent.orderBook.quantity, p: pEvent.orderBook.price };
+                    let tFindO = this.fListOrdB.ListFind(tItemO);
+
+                    if (tFindO == 0) {
+                      this.fErro4++;
+                      break;
+                    }
+                    tFindO--;
+
+                    this.BookDeleB(this.fListOrdB.fListBase[tFindO].q, this.fListOrdB.fListBase[tFindO].p);
+                    this.BookPlusB(pEvent.orderBook.quantity, pEvent.orderBook.price);
+
+                    this.fListOrdB.fListBase[tFindO].p = pEvent.orderBook.price;
+                    this.fListOrdB.fListBase[tFindO].q = pEvent.orderBook.quantity;
+                  }
+
+                  break;
+
+                case v9.BookAction.Overlay:
+                case v9.BookAction.New:
+                  {
+                    this.BookPlusB(pEvent.orderBook.quantity, pEvent.orderBook.price);
+                    this.OrdsPlusB(pEvent.orderBook.orderID, pEvent.orderBook.quantity, pEvent.orderBook.price);
+                  }
+                  break;
+
+                case v9.BookAction.Delete:
+                  {
+                    this.BookDeleB(pEvent.orderBook.quantity, pEvent.orderBook.price);
+                    this.OrdsDeleB(pEvent.orderBook.orderID, pEvent.orderBook.quantity, pEvent.orderBook.price);
+                  }
+                  break;
+                default:
+                  break;
+              }
+            }
+            break;
+          case v9.BookType.Ask:
+            {
+              switch (pEvent.orderBook.action) {
+
+                case v9.BookAction.Change:
+
+                  {
+                    let tItemO = { key: pEvent.orderBook.orderID, q: pEvent.orderBook.quantity, p: pEvent.orderBook.price };
+                    let tFindO = this.fListOrdA.ListFind(tItemO);
+
+                    if (tFindO == 0) {
+                      this.fErro4++;
+                      break;
+                    }
+                    tFindO--;
+
+                    this.BookDeleA(this.fListOrdA.fListBase[tFindO].q, this.fListOrdA.fListBase[tFindO].p);
+                    this.BookPlusA(pEvent.orderBook.quantity, pEvent.orderBook.price);
+
+                    this.fListOrdA.fListBase[tFindO].p = pEvent.orderBook.price;
+                    this.fListOrdA.fListBase[tFindO].q = pEvent.orderBook.quantity;
+                  }
+
+                  break;
+
+                case v9.BookAction.Overlay:
+                case v9.BookAction.New:
+                  {
+                    this.BookPlusA(pEvent.orderBook.quantity, pEvent.orderBook.price);
+                    this.OrdsPlusA(pEvent.orderBook.orderID, pEvent.orderBook.quantity, pEvent.orderBook.price);
+                  }
+                  break;
+
+                case v9.BookAction.Delete:
+                  {
+                    this.BookDeleA(pEvent.orderBook.quantity, pEvent.orderBook.price);
+                    this.OrdsDeleA(pEvent.orderBook.orderID, pEvent.orderBook.quantity, pEvent.orderBook.price);
+                  }
+                  break;
+                default:
+                  break;
+              }
+            }
+            break;
+          case v9.BookType.ImpliedBid:
+            break;
+          case v9.BookType.ImpliedAsk:
+            break;
+        }
+        break;
+      default:
+        break;
+    }
+  }
+}
+
+/**
+ * Internal v9 class used for managing JavaScript lists
+ * @example
+ * let tmpList = new v9.list(&quot;tmpList&quot;);
+ */
+v9.list = class {
+  constructor(pName) {
+    this.fName = pName;
+    this.fListBase = [];
+  }
+
+  ListRows() {
+    return this.fListBase.length;
+  }
+
+  ListZero() {
+    this.fListBase = [];
+  }
+
+  ListTalk(pName) {
+    let tListRows = this.ListRows();
+    if (tListRows &gt; 5) tListRows = 5;
+    var tText = this.fName + &quot;[&quot;;
+    for (let cnt = 0; cnt &lt; tListRows; cnt++) {
+      tText += this.fListBase[cnt].key + &quot;:&quot; + this.fListBase[cnt].q + &quot;,&quot;;
+    }
+    tText += &quot;]&quot;;
+    DSS(tText);
+  }
+
+  ListFind(pItem) {
+    this.fSert = 0;
+    if (!this.ListRows()) return 0;
+
+    let tScanOpen = 0;
+    let tScanShut = this.ListRows();		//one based
+    let tScanMean = 0;
+
+    while (tScanOpen &lt; tScanShut) {
+
+      tScanMean = tScanOpen + Math.floor((tScanShut - tScanOpen) / 2);
+
+      if (pItem.key &lt; this.fListBase[tScanMean].key) {
+        tScanShut = tScanMean;
+        this.fSert = tScanShut;
+      }
+      else if (pItem.key &gt; this.fListBase[tScanMean].key) {
+        tScanOpen = tScanMean + 1;
+        this.fSert = tScanOpen;
+      }
+      else {
+        return tScanMean + 1;
+      }
+
+    }
+
+    return 0;
+  }
+
+  ListPush(pItem) {
+    let tFind = this.ListFind(pItem);
+
+    if (tFind == 0) {
+      this.ListSert(this.fSert, pItem)
+      return 0;
+    }
+
+    return tFind;
+  }
+
+  ListSert(pEnum, pItem) {
+    this.fListBase.splice(pEnum, 0, pItem);
+  }
+
+  ListPull(pItem) {
+    let tFind = this.ListFind(pItem);
+
+    if (tFind == 0) return;
+
+    ListDele(tFind - 1)
+  }
+
+  ListDele(pEnum) {
+    this.fListBase.splice(pEnum, 1);
+  }
+
+  ListItem(pEnum) {
+    return this.fListBase[pEnum];
+  }
+}
+
+/**
  * Returns a JSON Object representing the provided {@link Event}
  * @param {Event} pEvent
  */
-v9.eventToJson = function (pEvent)
-{
+v9.eventToJson = function (pEvent) {
   let tEvent = v9.eventCopy(pEvent);
 
-  if (tEvent !== undefined)
-  {
+  if (tEvent !== undefined) {
     let intCount = 0,
       repCount = 0;
-    const json = JSON.stringify(tEvent, (_, v) =&gt;
-    {
-      if (typeof v === &quot;bigint&quot;)
-      {
+    const json = JSON.stringify(tEvent, (_, v) =&gt; {
+      if (typeof v === &quot;bigint&quot;) {
         intCount++;
         return `${v}#bigint`;
       }
       return v;
     });
-    const res = json.replace(/&quot;(-?\d+)#bigint&quot;/g, (_, a) =&gt;
-    {
+    const res = json.replace(/&quot;(-?\d+)#bigint&quot;/g, (_, a) =&gt; {
       repCount++;
       return a;
     });
-    if (repCount &gt; intCount)
-    {
+    if (repCount &gt; intCount) {
       // You have a string somewhere that looks like &quot;123#bigint&quot;;
       throw new Error(
         `BigInt serialization pattern conflict with a string value.`
@@ -1328,20 +1619,16 @@ v9.eventToJson = function (pEvent)
  * Returns a copy of a provided {@link Event}
  * @param {Event} pEvent
  */
-v9.eventCopy = function (pEvent)
-{
+v9.eventCopy = function (pEvent) {
   let tEvent = {};
 
-  if (pEvent.header)
-  {
+  if (pEvent.header) {
     tEvent.header = {};
     tEvent.header = Object.assign(pEvent.header);
   }
 
-  try
-  {
-    switch (pEvent.header.unionID)
-    {
+  try {
+    switch (pEvent.header.unionID) {
       case v9.UnionID.TransactionMarker:
         tEvent.transactionMarker = {};
         tEvent.transactionMarker = Object.assign(pEvent.transactionMarker);
@@ -1404,15 +1691,12 @@ v9.eventCopy = function (pEvent)
  * @param {Number} columnNo
  * @param {any} error
  */
-window.onerror = function (msg, url, lineNo, columnNo, error)
-{
+window.onerror = function (msg, url, lineNo, columnNo, error) {
   var string = msg.toLowerCase();
   var substring = &quot;script error&quot;;
-  if (string.indexOf(substring) &gt; -1)
-  {
+  if (string.indexOf(substring) &gt; -1) {
     gHome._pageerro(gUniq, &quot;Script Error: See Browser Console for Detail&quot;);
-  } else
-  {
+  } else {
     //var message = [
     //	&apos;Message: &apos; + msg,
     //	&apos;URL: &apos; + url,
@@ -1434,10 +1718,8 @@ window.onerror = function (msg, url, lineNo, columnNo, error)
 /**
  * Class used for referencing any individual {@link Event} from the current {@link feed}
  */
-export class Event
-{
-  constructor()
-  {
+export class Event {
+  constructor() {
     /**
      * @typedef {object} Header
      * @property {number} unionID Enumerated value used to find the type of an Event object
@@ -1714,6 +1996,7 @@ export class Event
   }
 }
 </code></pre></div><footer class="main-footer"><img alt="esdoc logo" class="esdoc-logo" src="image/esdoc-logo-mini.png"> <span>Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span></a></span></footer></main><aside class="sidebar initial js_sidebarLeft sidebar-left" data-ice="nav"><nav class="nav"><ul class="nav-list"><li class="nav-item js_navItem _" data-ice="doc"><div class="hidden fake-nav-link js_fakeLink _"><span class="kind _kind-class" data-ice="kind">C</span> <span class="name _" data-ice="name"><span><a href="class/src/index.js~Event.html">Event</a></span></span></div></li>
+<li class="nav-item js_navItem _" data-ice="doc"><div class="hidden fake-nav-link js_fakeLink _"><span class="kind _kind-class" data-ice="kind">C</span> <span class="name _" data-ice="name"><span><a href="class/src/index.js~book.html">book</a></span></span></div></li>
 <li class="nav-item js_navItem _" data-ice="doc"><div class="hidden fake-nav-link js_fakeLink _"><span class="kind _kind-class" data-ice="kind">C</span> <span class="name _" data-ice="name"><span><a href="class/src/index.js~console.html">console</a></span></span></div></li>
 <li class="nav-item js_navItem _" data-ice="doc"><div class="hidden fake-nav-link js_fakeLink _"><span class="kind _kind-class" data-ice="kind">C</span> <span class="name _" data-ice="name"><span><a href="class/src/index.js~cubeChart.html">cubeChart</a></span></span></div></li>
 <li class="nav-item js_navItem _" data-ice="doc"><div class="hidden fake-nav-link js_fakeLink _"><span class="kind _kind-class" data-ice="kind">C</span> <span class="name _" data-ice="name"><span><a href="class/src/index.js~cubeItem.html">cubeItem</a></span></span></div></li>
@@ -1721,6 +2004,7 @@ export class Event
 <li class="nav-item js_navItem _" data-ice="doc"><div class="hidden fake-nav-link js_fakeLink _"><span class="kind _kind-class" data-ice="kind">C</span> <span class="name _" data-ice="name"><span><a href="class/src/index.js~feed.html">feed</a></span></span></div></li>
 <li class="nav-item js_navItem _" data-ice="doc"><div class="hidden fake-nav-link js_fakeLink _"><span class="kind _kind-class" data-ice="kind">C</span> <span class="name _" data-ice="name"><span><a href="class/src/index.js~lineChart.html">lineChart</a></span></span></div></li>
 <li class="nav-item js_navItem _" data-ice="doc"><div class="hidden fake-nav-link js_fakeLink _"><span class="kind _kind-class" data-ice="kind">C</span> <span class="name _" data-ice="name"><span><a href="class/src/index.js~lineItem.html">lineItem</a></span></span></div></li>
+<li class="nav-item js_navItem _" data-ice="doc"><div class="hidden fake-nav-link js_fakeLink _"><span class="kind _kind-class" data-ice="kind">C</span> <span class="name _" data-ice="name"><span><a href="class/src/index.js~list.html">list</a></span></span></div></li>
 <li class="nav-item js_navItem _" data-ice="doc"><div class="hidden fake-nav-link js_fakeLink _"><span class="kind _kind-class" data-ice="kind">C</span> <span class="name _" data-ice="name"><span><a href="class/src/index.js~v9.html">v9</a></span></span></div></li>
 <li class="nav-item js_navItem _" data-ice="doc"><div class="hidden fake-nav-link js_fakeLink _"><span class="kind _kind-function" data-ice="kind">F</span> <span class="name _" data-ice="name"><span><a href="function/index.html#static-function-eventCopy">eventCopy</a></span></span></div></li>
 <li class="nav-item js_navItem _" data-ice="doc"><div class="hidden fake-nav-link js_fakeLink _"><span class="kind _kind-function" data-ice="kind">F</span> <span class="name _" data-ice="name"><span><a href="function/index.html#static-function-eventToJson">eventToJson</a></span></span></div></li>
