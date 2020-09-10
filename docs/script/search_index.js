@@ -612,30 +612,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/index.js~book#ordsdelea",
-    "class/src/index.js~book.html#instance-method-OrdsDeleA",
-    "src/index.js~book#OrdsDeleA",
-    "method"
-  ],
-  [
-    "src/index.js~book#ordsdeleb",
-    "class/src/index.js~book.html#instance-method-OrdsDeleB",
-    "src/index.js~book#OrdsDeleB",
-    "method"
-  ],
-  [
-    "src/index.js~book#ordsplusa",
-    "class/src/index.js~book.html#instance-method-OrdsPlusA",
-    "src/index.js~book#OrdsPlusA",
-    "method"
-  ],
-  [
-    "src/index.js~book#ordsplusb",
-    "class/src/index.js~book.html#instance-method-OrdsPlusB",
-    "src/index.js~book#OrdsPlusB",
-    "method"
-  ],
-  [
     "src/index.js~book#constructor",
     "class/src/index.js~book.html#instance-constructor-constructor",
     "src/index.js~book#constructor",
@@ -652,24 +628,6 @@ window.esdocSearchIndex = [
     "class/src/index.js~book.html#instance-member-fListLevB",
     "src/index.js~book#fListLevB",
     "member"
-  ],
-  [
-    "src/index.js~book#flistorda",
-    "class/src/index.js~book.html#instance-member-fListOrdA",
-    "src/index.js~book#fListOrdA",
-    "member"
-  ],
-  [
-    "src/index.js~book#flistordb",
-    "class/src/index.js~book.html#instance-member-fListOrdB",
-    "src/index.js~book#fListOrdB",
-    "member"
-  ],
-  [
-    "src/index.js~book#onevent",
-    "class/src/index.js~book.html#instance-method-onEvent",
-    "src/index.js~book#onEvent",
-    "method"
   ],
   [
     "src/index.js~console#constructor",
@@ -1015,13 +973,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~lineitem#format",
-    "class/src/index.js~lineItem.html#instance-get-format",
+    "class/src/index.js~lineItem.html#instance-set-format",
     "src/index.js~lineItem#format",
     "member"
   ],
   [
     "src/index.js~lineitem#format",
-    "class/src/index.js~lineItem.html#instance-set-format",
+    "class/src/index.js~lineItem.html#instance-get-format",
     "src/index.js~lineItem#format",
     "member"
   ],
@@ -1045,13 +1003,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/index.js~lineitem#strokestyle",
-    "class/src/index.js~lineItem.html#instance-get-strokeStyle",
+    "class/src/index.js~lineItem.html#instance-set-strokeStyle",
     "src/index.js~lineItem#strokeStyle",
     "member"
   ],
   [
     "src/index.js~lineitem#strokestyle",
-    "class/src/index.js~lineItem.html#instance-set-strokeStyle",
+    "class/src/index.js~lineItem.html#instance-get-strokeStyle",
     "src/index.js~lineItem#strokeStyle",
     "member"
   ],
@@ -1095,18 +1053,6 @@ window.esdocSearchIndex = [
     "src/index.js~list#listitem",
     "class/src/index.js~list.html#instance-method-ListItem",
     "src/index.js~list#ListItem",
-    "method"
-  ],
-  [
-    "src/index.js~list#listpull",
-    "class/src/index.js~list.html#instance-method-ListPull",
-    "src/index.js~list#ListPull",
-    "method"
-  ],
-  [
-    "src/index.js~list#listpush",
-    "class/src/index.js~list.html#instance-method-ListPush",
-    "src/index.js~list#ListPush",
     "method"
   ],
   [

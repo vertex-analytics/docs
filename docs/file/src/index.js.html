@@ -1215,31 +1215,79 @@ v9.cubeItem = class {
  */
 v9.book = class {
   constructor() {
+    /**
+     * Object used manage the internal list of bid levels
+     * @private
+     */
     this.fListLevB = new v9.list(&quot;fListLevB&quot;);
+    
+    /**
+     * Object used manage the internal list of ask levels
+     * @private
+     */
     this.fListLevA = new v9.list(&quot;fListLevA&quot;);
-    this.fListOrdA = new v9.list(&quot;fListOrdA&quot;);
+    
+    /**
+     * Object used manage the internal list of bid orders
+     * @private
+     * @ignore
+     * 
+     */
     this.fListOrdB = new v9.list(&quot;fListOrdB&quot;);
+    
+    /**
+     * Object used manage the internal list of ask orders
+     * @private
+     * @ignore
+     */
+    this.fListOrdA = new v9.list(&quot;fListOrdA&quot;);
   }
 
+  /**
+   * Returns the current ask levels of the book as a {@link list}
+   * @public
+   * @type {number}
+   */
   BookRowsA() {
     return this.fListLevA.ListRows();
   }
 
+  /**
+   * Returns the current bid levels of the book as a {@link list}
+   * @public
+   * @type {number}
+   */
   BookRowsB() {
     return this.fListLevB.ListRows();
   }
 
+  /**
+   * Returns a specific ask level of the book as an {@link Object}
+   * @param {number} cnt - Level (Tentatively 1 through 10)
+   * @public
+   * @type {Object}
+   */
   BookItemA(cnt) {
     if ((cnt &lt; 1) || (cnt &gt; this.fListLevA.ListRows())) return {};
     return { price: this.fListLevA.fListBase[cnt - 1].key, quantity: this.fListLevA.fListBase[cnt - 1].q };
   }
 
+  /**
+   * Returns a specific ask level of the book as an {@link Object}
+   * @param {number} cnt - Level (Tentatively 1 through 10)
+   * @public
+   * @type {Object}
+   */
   BookItemB(cnt) {
     if ((cnt &lt; 1) || (cnt &gt; this.fListLevB.ListRows())) return {};
     let tCnt = (this.fListLevB.ListRows() - cnt);
     return { price: this.fListLevB.fListBase[tCnt].key, quantity: this.fListLevB.fListBase[tCnt].q };
   }
 
+  /**
+   * Prints both sides of the current order book
+   * @public
+   */
   BookTalk() {
     this.fListLevB.ListTalk();
     this.fListLevA.ListTalk();
@@ -1256,6 +1304,52 @@ v9.book = class {
     DSS(&quot;this.fErro6&quot;, this.fErro6);
   }
 
+  /**
+   * Inserts the price and quantity provided into the ask levels of the current order book
+   * @param {number} quantity
+   * @param {number} price
+   * @public
+   */
+  BookPlusA(quantity, price) {
+    let tItemP = { key: price, q: quantity };
+    let tFindP = this.fListLevA.ListFind(tItemP);
+
+    if (tFindP == 0) {
+      this.fListLevA.ListSert(this.fListLevA.fSert, tItemP)
+    }
+    else {
+      tFindP--;
+      this.fListLevA.fListBase[tFindP].q += quantity;
+    }
+
+  }
+
+  /**
+   * Inserts the price and quantity provided into the bid levels of the current order book
+   * @param {number} quantity
+   * @param {number} price
+   * @public
+   */
+  BookPlusB(quantity, price) {
+    let tItemP = { key: price, q: quantity };
+    let tFindP = this.fListLevB.ListFind(tItemP);
+
+    if (tFindP == 0) {
+      this.fListLevB.ListSert(this.fListLevB.fSert, tItemP)
+    }
+    else {
+      tFindP--;
+      this.fListLevB.fListBase[tFindP].q += quantity;
+    }
+
+  }
+
+  /**
+   * Deletes the order from the ask levels of the current order book that matches the price and quantity provided  
+   * @param {number} quantity
+   * @param {number} price
+   * @public
+   */
   BookDeleA(quantity, price) {
     let tItemP = { key: price, q: quantity };
     let tFindP = this.fListLevA.ListFind(tItemP);
@@ -1273,21 +1367,13 @@ v9.book = class {
       this.fListLevA.ListDele(tFindP);
     }
   }
-
-  BookPlusA(quantity, price) {
-    let tItemP = { key: price, q: quantity };
-    let tFindP = this.fListLevA.ListFind(tItemP);
-
-    if (tFindP == 0) {
-      this.fListLevA.ListSert(this.fListLevA.fSert, tItemP)
-    }
-    else {
-      tFindP--;
-      this.fListLevA.fListBase[tFindP].q += quantity;
-    }
-
-  }
-
+  
+  /**
+   * Deletes the order from the bid levels of the current order book that matches the price and quantity provided  
+   * @param {number} quantity
+   * @param {number} price
+   * @public
+   */
   BookDeleB(quantity, price) {
     let tItemP = { key: price, q: quantity };
     let tFindP = this.fListLevB.ListFind(tItemP);
@@ -1306,20 +1392,9 @@ v9.book = class {
     }
   }
 
-  BookPlusB(quantity, price) {
-    let tItemP = { key: price, q: quantity };
-    let tFindP = this.fListLevB.ListFind(tItemP);
-
-    if (tFindP == 0) {
-      this.fListLevB.ListSert(this.fListLevB.fSert, tItemP)
-    }
-    else {
-      tFindP--;
-      this.fListLevB.fListBase[tFindP].q += quantity;
-    }
-
-  }
-
+  /**
+   * @ignore
+   */
   OrdsPlusA(orderID, quantity, price) {
     let tItemO = { key: orderID, q: quantity, p: price };
     let tFindO = this.fListOrdA.ListFind(tItemO);
@@ -1332,6 +1407,24 @@ v9.book = class {
     }
   }
 
+  /**
+   * @ignore
+   */
+  OrdsPlusB(orderID, quantity, price) {
+    let tItemO = { key: orderID, q: quantity, p: price };
+    let tFindO = this.fListOrdB.ListFind(tItemO);
+
+    if (tFindO == 0) {
+      this.fListOrdB.ListSert(this.fListOrdB.fSert, tItemO)
+    }
+    else {
+      this.fErro2++;
+    }
+  }
+
+  /**
+   * @ignore
+   */
   OrdsDeleA(orderID, quantity, price) {
     let tItemO = { key: orderID, q: quantity, p: price };
     let tFindO = this.fListOrdA.ListFind(tItemO);
@@ -1349,18 +1442,9 @@ v9.book = class {
     }
   }
 
-  OrdsPlusB(orderID, quantity, price) {
-    let tItemO = { key: orderID, q: quantity, p: price };
-    let tFindO = this.fListOrdB.ListFind(tItemO);
-
-    if (tFindO == 0) {
-      this.fListOrdB.ListSert(this.fListOrdB.fSert, tItemO)
-    }
-    else {
-      this.fErro2++;
-    }
-  }
-
+  /**
+   * @ignore
+   */
   OrdsDeleB(orderID, quantity, price) {
     let tItemO = { key: orderID, q: quantity, p: price };
     let tFindO = this.fListOrdB.ListFind(tItemO);
@@ -1378,6 +1462,9 @@ v9.book = class {
     }
   }
 
+  /**
+   * @ignore
+   */
   onEvent(pEvent) {
     switch (pEvent.header.unionID) {
       case v9.UnionID.ChannelReset:
@@ -1390,15 +1477,11 @@ v9.book = class {
         break;
 
       case v9.UnionID.OrderBook:
-
         switch (pEvent.orderBook.type) {
-
           case v9.BookType.Bid:
             {
               switch (pEvent.orderBook.action) {
-
                 case v9.BookAction.Change:
-
                   {
                     let tItemO = { key: pEvent.orderBook.orderID, q: pEvent.orderBook.quantity, p: pEvent.orderBook.price };
                     let tFindO = this.fListOrdB.ListFind(tItemO);
@@ -1504,15 +1587,24 @@ v9.list = class {
     this.fListBase = [];
   }
 
+  /**
+   * Returns the length of the list as a {@link number}
+   */
   ListRows() {
     return this.fListBase.length;
   }
 
+  /**
+   * Empties the list
+   */
   ListZero() {
     this.fListBase = [];
   }
 
-  ListTalk(pName) {
+  /**
+   * Prints up to five list key value pairs
+   */
+  ListTalk() {
     let tListRows = this.ListRows();
     if (tListRows &gt; 5) tListRows = 5;
     var tText = this.fName + &quot;[&quot;;
@@ -1523,6 +1615,10 @@ v9.list = class {
     DSS(tText);
   }
 
+  /**
+   * Binarily searches for a matching item within the list
+   * @param {Object} pItem
+   */
   ListFind(pItem) {
     this.fSert = 0;
     if (!this.ListRows()) return 0;
@@ -1532,7 +1628,6 @@ v9.list = class {
     let tScanMean = 0;
 
     while (tScanOpen &lt; tScanShut) {
-
       tScanMean = tScanOpen + Math.floor((tScanShut - tScanOpen) / 2);
 
       if (pItem.key &lt; this.fListBase[tScanMean].key) {
@@ -1546,12 +1641,16 @@ v9.list = class {
       else {
         return tScanMean + 1;
       }
-
     }
 
     return 0;
   }
 
+  /**
+   * This function is never called and doesn&apos;t even work
+   * @ignore
+   * @param {Object} pItem 
+   */
   ListPush(pItem) {
     let tFind = this.ListFind(pItem);
 
@@ -1563,10 +1662,20 @@ v9.list = class {
     return tFind;
   }
 
+  /**
+   * Inserts an item into the list at a specified index
+   * @param {number} pEnum - The zero-based location in the array from which to start removing elements (Why is this called pEnum?)
+   * @param {*} pItem - Element(s) to insert into the array in place of the deleted elements
+   */
   ListSert(pEnum, pItem) {
     this.fListBase.splice(pEnum, 0, pItem);
   }
 
+  /**
+   * This function is never called and doesn&apos;t even work
+   * @ignore
+   * @param {Object} pItem 
+   */
   ListPull(pItem) {
     let tFind = this.ListFind(pItem);
 
@@ -1575,10 +1684,18 @@ v9.list = class {
     ListDele(tFind - 1)
   }
 
+  /**
+   * Deletes a single item from the list at a specified index
+   * @param {number} pEnum - The zero-based location in the array from which to start removing elements (Why is this called pEnum?)
+   */
   ListDele(pEnum) {
     this.fListBase.splice(pEnum, 1);
   }
 
+  /**
+   * Returns a single item from the list from a specified index
+   * @param {number} pEnum - The zero-based location in the array from which to start removing elements (Why is this called pEnum?)
+   */
   ListItem(pEnum) {
     return this.fListBase[pEnum];
   }
